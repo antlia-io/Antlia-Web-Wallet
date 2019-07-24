@@ -115,11 +115,7 @@ export default function({ node }) {
           chain_id: status.node_info.network
         })
 
-<<<<<<< HEAD
         if (status.node_info.network === `chain-BYIp0m`) {
-=======
-        if (status.node_info.network === `chain-tjLx0X`) {
->>>>>>> b6fc5540fe3e1d83ccaec21e74de7d456c4888b6
           commit(`setInsecureMode`)
         }
       })

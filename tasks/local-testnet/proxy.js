@@ -9,11 +9,7 @@
 // parse command line options
 const options = {
   port: 9071,
-<<<<<<< HEAD
   target: `http://ec2-18-221-33-218.us-east-2.compute.amazonaws.com:9070`
-=======
-  target: `http://localhost:1317`
->>>>>>> b6fc5540fe3e1d83ccaec21e74de7d456c4888b6
 }
 
 // Start the proxy
