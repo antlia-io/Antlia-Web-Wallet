@@ -1,7 +1,7 @@
 import config from "src/config"
 import { getSigner } from "src/ActionModal/utils/signer.js"
 
-jest.mock("@lunie/cosmos-keys", () => ({
+jest.mock("@rnssolution/color-keys", () => ({
   signWithPrivateKey: () => Buffer.alloc(0),
   getStoredWallet: () => ({
     privateKey: "1234",

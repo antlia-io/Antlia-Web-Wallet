@@ -7,7 +7,7 @@ import {
   getNewWalletFromSeed,
   testPassword,
   storeWallet
-} from "@lunie/cosmos-keys"
+} from "@rnssolution/color-keys"
 
 export default () => {
   const state = {

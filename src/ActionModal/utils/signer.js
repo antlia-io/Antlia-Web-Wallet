@@ -1,5 +1,5 @@
 import Ledger from "@lunie/cosmos-ledger"
-import { signWithPrivateKey, getStoredWallet } from "@lunie/cosmos-keys"
+import { signWithPrivateKey, getStoredWallet } from "@rnssolution/color-keys"
 import { signWithExtension } from "src/scripts/extension-utils"
 
 export function getSigner(config, submitType = "", { address, password }) {
