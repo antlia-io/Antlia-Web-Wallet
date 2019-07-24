@@ -28,7 +28,7 @@ function convertWsArgs(args = {}) {
 }
 
 class Client extends EventEmitter {
-  constructor(uriString = `localhost:26657`) {
+  constructor(uriString = `ec2-18-221-33-218.us-east-2.compute.amazonaws.com:26657`) {
     super()
 
     // parse full-node URI
