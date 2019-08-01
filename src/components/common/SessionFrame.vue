@@ -13,7 +13,7 @@
         </div>
       </div>
       <TmBtn
-        class="session-close" 
+        class="session-close"
         value="Back to Color Wallet"
         color="secondary"
         @click.native="$router.push(`/`)"

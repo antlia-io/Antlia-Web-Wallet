@@ -2,10 +2,7 @@
   <SessionFrame>
     <div id="session-welcome">
       <router-link to="/">
-        <img
-          class="session-logo-mobile"
-          src="~assets/images/logo.png"
-        />
+        <img class="session-logo-mobile" src="~assets/images/logo.png" />
       </router-link>
 
       <h2 class="session-title">

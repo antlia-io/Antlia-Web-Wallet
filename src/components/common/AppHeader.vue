@@ -3,10 +3,7 @@
     <div class="container">
       <div class="header-item">
         <router-link to="/">
-          <img
-            class="header-item-logo"
-            src="~assets/images/logo.png"
-          />
+          <img class="header-item-logo" src="~assets/images/logo.png" />
         </router-link>
         <template v-if="!desktop">
           <div v-if="open" class="close-menu" @click="close()">
