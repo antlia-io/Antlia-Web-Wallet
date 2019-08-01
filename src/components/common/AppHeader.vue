@@ -5,7 +5,7 @@
         <router-link to="/">
           <img
             class="header-item-logo"
-            src="~assets/images/cosmos-wallet-logo.svg"
+            src="~assets/images/logo.png"
           />
         </router-link>
         <template v-if="!desktop">

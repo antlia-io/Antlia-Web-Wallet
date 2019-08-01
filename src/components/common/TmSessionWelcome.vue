@@ -4,16 +4,16 @@
       <router-link to="/">
         <img
           class="session-logo-mobile"
-          src="~assets/images/cosmos-wallet-logo.svg"
+          src="~assets/images/logo.png"
         />
       </router-link>
 
       <h2 class="session-title">
-        Welcome to Lunie
+        Welcome to Color Wallet
       </h2>
 
       <p class="session-paragraph">
-        The easiest way to send, stake, and vote on the Cosmos Hub.
+        The easiest way to send, stake, and vote on the Color.
       </p>
 
       <div class="session-list">
@@ -32,7 +32,7 @@
       </div>
 
       <p class="footnote">
-        By using Lunie, you accept our
+        By using Color Wallet, you accept our
         <router-link to="/terms" class="link">Terms of Service</router-link> and
         <router-link to="/privacy" class="link">Privacy Policy</router-link>.
       </p>

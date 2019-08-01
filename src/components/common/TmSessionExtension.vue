@@ -2,11 +2,11 @@
   <SessionFrame>
     <div class="session-container">
       <h2 class="session-title">
-        Use Lunie Browser Extension
+        Use Color Wallet Browser Extension
       </h2>
       <div v-if="!extension.enabled" class="session-main">
         <p>
-          Please install the Lunie Browser Extension from the
+          Please install the Color Wallet Browser Extension from the
           <a
             href="https://chrome.google.com/webstore/category/extensions"
             target="_blank"
@@ -17,7 +17,7 @@
       </div>
 
       <div v-else class="session-main">
-        Below is a list of accounts we received from the Lunie browser
+        Below is a list of accounts we received from the Color Wallet browser
         extension.
         <AccountList
           :accounts="accounts"

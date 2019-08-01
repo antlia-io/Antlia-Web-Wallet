@@ -10,7 +10,7 @@ exports[`TmSessionWelcome has the expected html structure 1`] = `
     >
       <img
         class="session-logo-mobile"
-        src="~assets/images/cosmos-wallet-logo.svg"
+        src="~assets/images/color-wallet-logo.png"
       />
     </router-link-stub>
      

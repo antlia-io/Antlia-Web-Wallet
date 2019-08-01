@@ -2,7 +2,7 @@
   <transition name="component-fade" mode="out-in">
     <div class="session-frame">
       <router-link to="/">
-        <img class="session-logo" src="~assets/images/cosmos-wallet-logo.svg" />
+        <img class="session-logo" src="~assets/images/color-wallet-logo.png" />
       </router-link>
       <div class="session-outer-container">
         <div class="session">
@@ -13,8 +13,8 @@
         </div>
       </div>
       <TmBtn
-        class="session-close"
-        value="Back to Lunie"
+        class="session-close" 
+        value="Back to Color Wallet"
         color="secondary"
         @click.native="$router.push(`/`)"
       />
