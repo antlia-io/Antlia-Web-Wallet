@@ -5,7 +5,7 @@
       <span class="hide-on-mobile"
         >This site uses cookies to help improve the user experience.</span
       >
-      By using Lunie, you accept our
+      By using Color, you accept our
       <router-link to="/terms" class="link">Terms of Service</router-link> and
       <router-link to="/privacy" class="link">Privacy Policy</router-link>.
     </p>
@@ -54,6 +54,10 @@ export default {
 .cookie-bar .link {
   text-decoration: underline;
   color: var(--bright);
+}
+
+p {
+  margin-bottom: 0 !important
 }
 
 .cookie-bar .close {

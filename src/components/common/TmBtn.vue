@@ -110,8 +110,7 @@ a {
   color: var(--bright, #333) !important;
   padding: 0.5rem 2rem;
   margin: 0;
-  background: var(--primary);
-  border: 1px solid var(--primary);
+  background: #261e2f;
   border-radius: 0.25rem;
   cursor: pointer;
   user-select: none;

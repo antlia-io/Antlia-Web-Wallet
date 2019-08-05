@@ -8,8 +8,8 @@
         {{ subtitle }}
       </h3>
       <slot slot="menu-body" name="menu-body">
-        <TmBalance v-if="session.signedIn" />
         <ToolBar />
+        <TmBalance v-if="session.signedIn" />
       </slot>
       <slot slot="header-buttons" name="header-buttons" />
     </TmPageHeader>

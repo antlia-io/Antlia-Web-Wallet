@@ -3,7 +3,7 @@
     <div class="li-tx__icon">
       <img
         :style="{ borderColor: color }"
-        src="~assets/images/color-logo.png"
+        src="~assets/images/cosmos-logo.png"
       />
     </div>
     <div class="li-tx__content">

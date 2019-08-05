@@ -1,12 +1,36 @@
 <template>
-  <div class="header-balance">
+<div class="card">
+  <b-progress class="mt-2" :max="max" show-value>
+      <b-progress-bar :value="unbondedAtoms * (100 / totalAtomsDisplay)" :label="`${(unbondedAtoms * (100 / totalAtomsDisplay)).toFixed(2)}%`" variant="success"></b-progress-bar>
+      <!-- <b-progress-bar :value="value * (2.5 / 10)" variant="warning"></b-progress-bar> -->
+      <b-progress-bar :value="(totalAtomsDisplay - unbondedAtoms)* (100 /totalAtomsDisplay)" :label="`${((totalAtomsDisplay - unbondedAtoms)* (100 /totalAtomsDisplay)).toFixed(2)}%`" variant="warning"></b-progress-bar>
+  </b-progress>
+  <div>
+    <div class="col-md-4">
+      <h3>Total {{ num.viewDenom(bondDenom) }} : </h3>
+      <h2 class="total-atoms__value color">
+          {{ totalAtomsDisplay }}
+      </h2>
+    </div>
+    <div class="col-md-4">
+      <p class="green"></p>
+      <h3>Liquid {{ num.viewDenom(bondDenom) }} : </h3>
+      <h2 class="color">{{ unbondedAtoms }}</h2>
+    </div>
+    <div class="col-md-4">
+      <p class="yellow"></p>
+      <h3>Delegated {{ num.viewDenom(bondDenom) }} : </h3>
+      <h2 class="color">{{ totalAtomsDisplay - unbondedAtoms }}</h2>
+    </div>
+  </div>
+</div>
+  <!-- <div class="header-balance">
     <div class="top">
       <div class="total-atoms top-section">
         <h3>Total {{ num.viewDenom(bondDenom) }}</h3>
         <h2 class="total-atoms__value">
           {{ totalAtomsDisplay }}
         </h2>
-        <Bech32 :address="session.address || ''" />
       </div>
       <div class="second-row">
         <div class="unbonded-atoms top-section">
@@ -35,25 +59,30 @@
       :rewards="totalRewards"
       :denom="bondDenom"
     />
-  </div>
+  </div> -->
 </template>
 <script>
 import num from "scripts/num"
-import Bech32 from "common/Bech32"
-import TmBtn from "common/TmBtn"
-import ModalWithdrawRewards from "src/ActionModal/components/ModalWithdrawRewards"
+// import Bech32 from "common/Bech32"
+// import TmBtn from "common/TmBtn"
+// import ModalWithdrawRewards from "src/ActionModal/components/ModalWithdrawRewards"
 import { mapGetters } from "vuex"
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.css'
+
 export default {
   name: `tm-balance`,
-  components: {
-    Bech32,
-    TmBtn,
-    ModalWithdrawRewards
-  },
+  // components: {
+  //   Bech32,
+  //   TmBtn,
+  //   ModalWithdrawRewards
+  // },
   data() {
     return {
       num,
-      lastUpdate: 0
+      // lastUpdate: 0,
+      // value: 45,
+      // max: 100
     }
   },
   computed: {
@@ -122,14 +151,64 @@ export default {
     },
     onWithdrawal() {
       this.$refs.ModalWithdrawRewards.open()
+    },
+    rendomValue() {
+        this.value = Math.random() * this.max
     }
   }
 }
 </script>
 <style scoped>
+
+.mt-2.progress {
+  margin: 1rem !important
+}
+
 .header-balance {
   display: flex;
   padding: 1rem 0 2.5rem 1rem;
+}
+
+h3 {
+  color: black !important;
+  font-size: 1rem !important;
+  display: inline
+}
+
+.col-md-4 {
+  display: inline
+}
+
+.progress {
+  height: 2rem !important
+}
+
+h2 {
+  color: black !important;
+  font-size: 1rem !important;
+  display: inline
+}
+
+.green {
+  background-color: #28a745;
+  width: 15px;
+  height: 15px;
+  display: -webkit-inline-box
+}
+
+.yellow {
+  background-color: #ffc107;
+  width: 15px;
+  height: 15px;
+  display: -webkit-inline-box
+}
+
+.color {
+  color: var(--link) !important
+}
+
+p {
+  margin-bottom: 0 !important;
 }
 
 .total-atoms.top-section {

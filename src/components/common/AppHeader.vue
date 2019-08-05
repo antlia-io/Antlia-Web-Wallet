@@ -72,7 +72,7 @@ export default {
 .app-header {
   z-index: var(--z-appHeader);
   position: relative;
-  background: var(--app-nav);
+  background: #232021;
   min-height: 100vh;
   width: var(--width-side);
 }
@@ -85,6 +85,7 @@ export default {
   flex: 1;
   display: flex;
   flex-flow: column nowrap;
+  padding: 0 !important
 }
 
 .app-header .header-item {

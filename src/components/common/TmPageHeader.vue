@@ -59,14 +59,14 @@ export default {
   padding: 1rem;
 }
 
-.tm-page-header-container {
+/* .tm-page-header-container {
   border-bottom: 1px solid var(--bc-dim);
-  background: var(--app-fg);
-}
+  background: linear-gradient(to right, #604781 ,#422f5d, #2e2040);
+} */
 
 .tm-page-header-text .tm-page-header-body {
   flex: 1;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
 }
 

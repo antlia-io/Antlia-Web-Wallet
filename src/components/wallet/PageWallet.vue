@@ -85,7 +85,7 @@ export default {
 
 <style scoped>
 .card {
-  background: var(--app-fg);
+  background: white;
   border-radius: 2px;
   padding: 1rem;
   font-size: var(--m);
@@ -96,6 +96,7 @@ export default {
 .card h3 {
   font-size: 14px;
   font-weight: 400;
+  color: black !important;
 }
 
 @media screen and (max-width: 767px) {

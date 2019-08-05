@@ -70,6 +70,7 @@ export default {
 .bech32-address .copied {
   align-items: flex-end;
   display: flex;
+  color: black;
   font-size: var(--sm);
   opacity: 0;
   padding-left: 10px;

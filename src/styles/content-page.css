@@ -14,9 +14,9 @@ h1 {
 }
 
 p {
-  margin-bottom: 1rem;
   color: var(--bright);
   font-size: 14px;
+  margin-bottom: 0 !important
 }
 
 h2 {

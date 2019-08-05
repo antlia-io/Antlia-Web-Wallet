@@ -69,7 +69,7 @@ export default {
 <style>
 .tm-connected-network {
   align-items: center;
-  background: var(--app-fg);
+  background: #3e3a3a;
   border-radius: 0.25rem;
   color: var(--dim);
   display: flex;

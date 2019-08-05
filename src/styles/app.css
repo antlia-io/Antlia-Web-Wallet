@@ -40,6 +40,8 @@ a:hover {
   flex-flow: column nowrap;
   min-width: 0;
   overflow: hidden;
+  background-image: url("./assets/images/color-final-bg.jpg");
+  background-position: center;
 }
 
 .tm-field {

@@ -9,19 +9,14 @@
       <ul>
         <li>
           <router-link to="/">
-            Network
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/wallet">
             Wallet
           </router-link>
         </li>
-        <li>
+        <!-- <li>
           <router-link to="/transactions">
             Transactions
           </router-link>
-        </li>
+        </li> -->
         <li>
           <router-link to="/staking">
             Staking
@@ -30,6 +25,11 @@
         <li>
           <router-link to="/governance">
             Governance
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/network">
+            Network
           </router-link>
         </li>
       </ul>

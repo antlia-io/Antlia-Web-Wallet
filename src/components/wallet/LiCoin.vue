@@ -1,7 +1,7 @@
 <template>
   <li :id="`li-coin--` + denomination.toLowerCase()" class="li-coin">
     <div class="li-coin__icon">
-      <img src="~assets/images/color-logo.png" />
+      <img src="~assets/images/cosmos-logo.png" />
     </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">
@@ -71,7 +71,7 @@ export default {
   font-size: var(--m);
   margin-bottom: 0.5rem;
   border: 1px solid var(--bc-dim);
-  background: var(--app-fg);
+  background: white;
   padding: 1rem;
 }
 
@@ -81,12 +81,14 @@ export default {
   border: 0.5px solid;
   border-radius: 50%;
   display: block;
+  color: orangered !important
 }
 
 .li-coin__content {
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: black !important;
   justify-content: space-between;
   width: 100%;
   padding-left: 1rem;
@@ -100,8 +102,13 @@ export default {
 
 .coin-denom {
   font-size: var(--lg);
-  color: var(--bright);
+  color: black;
   font-weight: 500;
+  margin-bottom: 0 !important
+}
+
+p.coin-amount {
+  margin-bottom: 0 !important;
 }
 
 @media screen and (max-width: 425px) {

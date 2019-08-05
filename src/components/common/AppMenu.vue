@@ -4,17 +4,17 @@
       <router-link
         id="app-menu__wallet"
         class="app-menu-item"
-        to="/wallet"
+        to="/"
         exact="exact"
         title="Wallet"
         @click.native="close"
       >
+        <i class="material-icons">home</i>
         <h2 class="app-menu-title">
           Wallet
         </h2>
-        <i class="material-icons">chevron_right</i>
       </router-link>
-      <router-link
+      <!-- <router-link
         id="app-menu__transactions"
         class="app-menu-item"
         to="/transactions"
@@ -26,7 +26,7 @@
           Transactions
         </h2>
         <i class="material-icons">chevron_right</i>
-      </router-link>
+      </router-link> -->
       <router-link
         id="app-menu__staking"
         class="app-menu-item"
@@ -34,10 +34,10 @@
         title="Staking"
         @click.native="close"
       >
+        <i class="material-icons">search</i>
         <h2 class="app-menu-title">
           Staking
         </h2>
-        <i class="material-icons">chevron_right</i>
       </router-link>
       <router-link
         id="app-menu__proposals"
@@ -46,23 +46,23 @@
         title="Governance"
         @click.native="close"
       >
+        <i class="material-icons">transfer_within_a_station</i>
         <h2 class="app-menu-title">
           Governance
         </h2>
-        <i class="material-icons">chevron_right</i>
       </router-link>
       <router-link
         id="app-menu__network"
         class="app-menu-item"
-        to="/"
+        to="/network"
         exact="exact"
         title="Network"
         @click.native="close"
       >
+        <i class="material-icons">my_location</i>
         <h2 class="app-menu-title">
           Network
         </h2>
-        <i class="material-icons">chevron_right</i>
       </router-link>
       <a
         v-if="session.signedIn"
@@ -96,13 +96,13 @@ export default {
     ConnectedNetwork
   },
   data: () => ({
-    ps: {}
+    // ps: {}
   }),
   computed: {
     ...mapGetters([`session`])
   },
   mounted() {
-    this.ps = new PerfectScrollbar(this.$el.querySelector(`.app-menu-main`))
+    // this.ps = new PerfectScrollbar(this.$el.querySelector(`.app-menu-main`))
   },
   methods: {
     close() {
@@ -137,7 +137,6 @@ export default {
 
 .app-menu .app-menu-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0.75rem;
   margin: 0.5rem;
@@ -152,7 +151,8 @@ export default {
 
 .app-menu .app-menu-item:not(.app-menu-item--link):hover {
   color: var(--bright);
-  background: var(--app-fg);
+  background: #3e3a3a;
+  text-decoration: none !important
 }
 
 .app-menu .app-menu-item--link {
@@ -169,16 +169,23 @@ export default {
 }
 
 .app-menu .app-menu-item.router-link-active {
-  background: var(--app-fg);
+  background: #3e3a3a;
 }
 
 .app-menu .app-menu-item.router-link-active i {
-  color: var(--tertiary);
+  color: white;
 }
 
 .app-menu .app-menu-item.router-link-active h2 {
   color: var(--bright);
   font-weight: 500;
+  font-size: 1rem !important;
+  margin-bottom: 0 !important
+}
+
+h2.app-menu-title {
+  font-size: 1rem !important;
+  margin-bottom: 0 !important
 }
 
 .app-menu .button {
