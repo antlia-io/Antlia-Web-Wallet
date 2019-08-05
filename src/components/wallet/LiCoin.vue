@@ -81,7 +81,7 @@ export default {
   border: 0.5px solid;
   border-radius: 50%;
   display: block;
-  color: orangered !important
+  color: orangered !important;
 }
 
 .li-coin__content {
@@ -104,7 +104,7 @@ export default {
   font-size: var(--lg);
   color: black;
   font-weight: 500;
-  margin-bottom: 0 !important
+  margin-bottom: 0 !important;
 }
 
 p.coin-amount {

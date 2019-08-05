@@ -1,29 +1,42 @@
 <template>
-<div class="card">
-  <b-progress class="mt-2" :max="max" show-value>
-      <b-progress-bar :value="unbondedAtoms * (100 / totalAtomsDisplay)" :label="`${(unbondedAtoms * (100 / totalAtomsDisplay)).toFixed(2)}%`" variant="success"></b-progress-bar>
+  <div class="card">
+    <b-progress class="mt-2" :max="max" show-value>
+      <b-progress-bar
+        :value="unbondedAtoms * (100 / totalAtomsDisplay)"
+        :label="`${(unbondedAtoms * (100 / totalAtomsDisplay)).toFixed(2)}%`"
+        variant="success"
+      ></b-progress-bar>
       <!-- <b-progress-bar :value="value * (2.5 / 10)" variant="warning"></b-progress-bar> -->
-      <b-progress-bar :value="(totalAtomsDisplay - unbondedAtoms)* (100 /totalAtomsDisplay)" :label="`${((totalAtomsDisplay - unbondedAtoms)* (100 /totalAtomsDisplay)).toFixed(2)}%`" variant="warning"></b-progress-bar>
-  </b-progress>
-  <div>
-    <div class="col-md-4">
-      <h3>Total {{ num.viewDenom(bondDenom) }} : </h3>
-      <h2 class="total-atoms__value color">
+      <b-progress-bar
+        :value="(totalAtomsDisplay - unbondedAtoms) * (100 / totalAtomsDisplay)"
+        :label="
+          `${(
+            (totalAtomsDisplay - unbondedAtoms) *
+            (100 / totalAtomsDisplay)
+          ).toFixed(2)}%`
+        "
+        variant="warning"
+      ></b-progress-bar>
+    </b-progress>
+    <div>
+      <div class="col-md-4">
+        <h3>Total {{ num.viewDenom(bondDenom) }} :</h3>
+        <h2 class="total-atoms__value color">
           {{ totalAtomsDisplay }}
-      </h2>
-    </div>
-    <div class="col-md-4">
-      <p class="green"></p>
-      <h3>Liquid {{ num.viewDenom(bondDenom) }} : </h3>
-      <h2 class="color">{{ unbondedAtoms }}</h2>
-    </div>
-    <div class="col-md-4">
-      <p class="yellow"></p>
-      <h3>Delegated {{ num.viewDenom(bondDenom) }} : </h3>
-      <h2 class="color">{{ totalAtomsDisplay - unbondedAtoms }}</h2>
+        </h2>
+      </div>
+      <div class="col-md-4">
+        <p class="green"></p>
+        <h3>Liquid {{ num.viewDenom(bondDenom) }} :</h3>
+        <h2 class="color">{{ unbondedAtoms }}</h2>
+      </div>
+      <div class="col-md-4">
+        <p class="yellow"></p>
+        <h3>Delegated {{ num.viewDenom(bondDenom) }} :</h3>
+        <h2 class="color">{{ totalAtomsDisplay - unbondedAtoms }}</h2>
+      </div>
     </div>
   </div>
-</div>
   <!-- <div class="header-balance">
     <div class="top">
       <div class="total-atoms top-section">
@@ -68,7 +81,7 @@ import num from "scripts/num"
 // import ModalWithdrawRewards from "src/ActionModal/components/ModalWithdrawRewards"
 import { mapGetters } from "vuex"
 // import 'bootstrap-vue/dist/bootstrap-vue.css'
-import 'bootstrap/dist/css/bootstrap.css'
+import "bootstrap/dist/css/bootstrap.css"
 
 export default {
   name: `tm-balance`,
@@ -79,7 +92,7 @@ export default {
   // },
   data() {
     return {
-      num,
+      num
       // lastUpdate: 0,
       // value: 45,
       // max: 100
@@ -153,15 +166,14 @@ export default {
       this.$refs.ModalWithdrawRewards.open()
     },
     rendomValue() {
-        this.value = Math.random() * this.max
+      this.value = Math.random() * this.max
     }
   }
 }
 </script>
 <style scoped>
-
 .mt-2.progress {
-  margin: 1rem !important
+  margin: 1rem !important;
 }
 
 .header-balance {
@@ -172,39 +184,39 @@ export default {
 h3 {
   color: black !important;
   font-size: 1rem !important;
-  display: inline
+  display: inline;
 }
 
 .col-md-4 {
-  display: inline
+  display: inline;
 }
 
 .progress {
-  height: 2rem !important
+  height: 2rem !important;
 }
 
 h2 {
   color: black !important;
   font-size: 1rem !important;
-  display: inline
+  display: inline;
 }
 
 .green {
   background-color: #28a745;
   width: 15px;
   height: 15px;
-  display: -webkit-inline-box
+  display: -webkit-inline-box;
 }
 
 .yellow {
   background-color: #ffc107;
   width: 15px;
   height: 15px;
-  display: -webkit-inline-box
+  display: -webkit-inline-box;
 }
 
 .color {
-  color: var(--link) !important
+  color: var(--link) !important;
 }
 
 p {

@@ -57,7 +57,7 @@ export default {
 }
 
 p {
-  margin-bottom: 0 !important
+  margin-bottom: 0 !important;
 }
 
 .cookie-bar .close {

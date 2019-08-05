@@ -152,7 +152,7 @@ export default {
 .app-menu .app-menu-item:not(.app-menu-item--link):hover {
   color: var(--bright);
   background: #3e3a3a;
-  text-decoration: none !important
+  text-decoration: none !important;
 }
 
 .app-menu .app-menu-item--link {
@@ -180,12 +180,12 @@ export default {
   color: var(--bright);
   font-weight: 500;
   font-size: 1rem !important;
-  margin-bottom: 0 !important
+  margin-bottom: 0 !important;
 }
 
 h2.app-menu-title {
   font-size: 1rem !important;
-  margin-bottom: 0 !important
+  margin-bottom: 0 !important;
 }
 
 .app-menu .button {

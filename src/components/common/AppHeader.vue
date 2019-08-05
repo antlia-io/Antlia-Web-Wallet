@@ -85,7 +85,7 @@ export default {
   flex: 1;
   display: flex;
   flex-flow: column nowrap;
-  padding: 0 !important
+  padding: 0 !important;
 }
 
 .app-header .header-item {
