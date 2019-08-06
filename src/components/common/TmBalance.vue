@@ -31,7 +31,7 @@
         <h2 class="color">{{ unbondedAtoms }}</h2>
       </div>
       <div class="col-md-4">
-        <p class="yellow"></p>
+        <p class="blue"></p>
         <h3>Delegated {{ num.viewDenom(bondDenom) }} :</h3>
         <h2 class="color">{{ totalAtomsDisplay - unbondedAtoms }}</h2>
       </div>
@@ -201,6 +201,10 @@ h2 {
   display: inline;
 }
 
+.bg-warning {
+  background-color: #0974b1 !important
+}
+
 .green {
   background-color: #28a745;
   width: 15px;
@@ -208,8 +212,8 @@ h2 {
   display: -webkit-inline-box;
 }
 
-.yellow {
-  background-color: #ffc107;
+.blue {
+  background-color: #0974b1;
   width: 15px;
   height: 15px;
   display: -webkit-inline-box;
