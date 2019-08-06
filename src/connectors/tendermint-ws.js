@@ -29,7 +29,7 @@ function convertWsArgs(args = {}) {
 
 class Client extends EventEmitter {
   constructor(
-    uriString = `ec2-18-221-33-218.us-east-2.compute.amazonaws.com:26657`
+    uriString = `18.223.52.186:26657`
   ) {
     super()
 
