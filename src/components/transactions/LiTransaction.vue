@@ -84,9 +84,8 @@ export default {
 .li-tx {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
-  border: 1px solid var(--bc-dim);
-  background: var(--app-fg);
+  border: 1px solid rgba(132, 132, 136, 0.52);
+  background: white;
   width: 100%;
   font-weight: 300;
   position: relative;
@@ -95,6 +94,14 @@ export default {
 .li-tx .copied {
   position: absolute;
   bottom: 0;
+}
+
+a {
+  color: #0a73b1
+}
+
+a:hover {
+  color: #00d6e1
 }
 
 .li-tx b {
@@ -141,13 +148,13 @@ export default {
 .li-tx__content__information,
 .li-tx__content__right {
   font-size: 14px;
-  color: var(--dim);
+  color: #2d2c2c;
 }
 
 .li-tx__content__caption {
   line-height: 18px;
   font-size: 18px;
-  color: var(--bright);
+  color: black;
 }
 
 @media screen and (max-width: 767px) {

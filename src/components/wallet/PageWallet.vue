@@ -20,11 +20,11 @@
         This account doesn't have anything in it&nbsp;yet.
       </div>
     </TmDataMsg>
-    <template slot="managed-body">
-      <div class="card">
-        <h3>Your Public Cosmos Address</h3>
+    <div class="card">
+        <h3>Your Public Color Address</h3>
         <Bech32 :address="session.address || ''" long-form />
       </div>
+    <template slot="managed-body">
       <LiCoin
         v-for="coin in filteredBalances"
         :key="coin.denom"
@@ -32,6 +32,7 @@
         class="tm-li-balance"
         @show-modal="showModal"
       />
+      <PageTransactions />
     </template>
     <SendModal ref="sendModal" />
   </TmPage>
@@ -42,6 +43,7 @@ import num from "scripts/num"
 import { mapGetters, mapActions } from "vuex"
 import orderBy from "lodash.orderby"
 import LiCoin from "./LiCoin"
+import PageTransactions from "./PageTransactions"
 import SendModal from "src/ActionModal/components/SendModal"
 import Bech32 from "common/Bech32"
 import TmPage from "common/TmPage"
@@ -52,6 +54,7 @@ export default {
   components: {
     TmDataMsg,
     LiCoin,
+    PageTransactions,
     TmPage,
     SendModal,
     Bech32

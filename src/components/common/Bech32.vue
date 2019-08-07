@@ -56,7 +56,7 @@ export default {
 }
 
 .bech32-address .address {
-  color: var(--link);
+  color: #0a73b1;
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
@@ -64,7 +64,7 @@ export default {
 }
 
 .bech32-address .address:hover {
-  color: var(--link-hover);
+  color: #00d6e1;
 }
 
 .bech32-address .copied {

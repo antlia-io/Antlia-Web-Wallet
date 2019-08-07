@@ -183,6 +183,10 @@ export default {
   padding: 1rem;
 }
 
+.row {
+  margin: 0 !important
+}
+
 .blocks.data-table th {
   padding: 0.5rem 1rem;
 }

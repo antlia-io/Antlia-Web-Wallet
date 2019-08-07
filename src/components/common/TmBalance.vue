@@ -18,7 +18,7 @@
         variant="warning"
       ></b-progress-bar>
     </b-progress>
-    <div>
+    <div class="displayinline">
       <div class="col-md-4">
         <h3>Total {{ num.viewDenom(bondDenom) }} :</h3>
         <h2 class="total-atoms__value color">
@@ -36,6 +36,10 @@
         <h2 class="color">{{ totalAtomsDisplay - unbondedAtoms }}</h2>
       </div>
     </div>
+    <!-- <div class="col-lg-4">
+      <h2>Public Address : </h2>
+      <Bech32 :address="session.address || ''" />
+    </div> -->
   </div>
   <!-- <div class="header-balance">
     <div class="top">
@@ -76,7 +80,7 @@
 </template>
 <script>
 import num from "scripts/num"
-// import Bech32 from "common/Bech32"
+import Bech32 from "common/Bech32"
 // import TmBtn from "common/TmBtn"
 // import ModalWithdrawRewards from "src/ActionModal/components/ModalWithdrawRewards"
 import { mapGetters } from "vuex"
@@ -85,15 +89,15 @@ import "bootstrap/dist/css/bootstrap.css"
 
 export default {
   name: `tm-balance`,
-  // components: {
-  //   Bech32,
-  //   TmBtn,
-  //   ModalWithdrawRewards
-  // },
+  components: {
+    Bech32,
+    // TmBtn,
+    // ModalWithdrawRewards
+  },
   data() {
     return {
-      num
-      // lastUpdate: 0,
+      num,
+      lastUpdate: 0,
       // value: 45,
       // max: 100
     }
@@ -117,12 +121,12 @@ export default {
     },
     totalAtomsDisplay() {
       return this.loaded
-        ? this.num.shortDecimals(this.num.atoms(this.totalAtoms))
+        ? this.num.atoms(this.totalAtoms)
         : `--`
     },
     unbondedAtoms() {
       return this.loaded
-        ? this.num.shortDecimals(this.num.atoms(this.liquidAtoms))
+        ? this.num.atoms(this.liquidAtoms)
         : `--`
     },
     // only be ready to withdraw of the validator rewards are loaded and the user has rewards to withdraw
@@ -201,6 +205,10 @@ h2 {
   display: inline;
 }
 
+.displayinline {
+  display: inline-flex
+}
+
 .bg-warning {
   background-color: #0974b1 !important
 }
@@ -220,7 +228,7 @@ h2 {
 }
 
 .color {
-  color: var(--link) !important;
+  color: #0a73b1 !important;
 }
 
 p {

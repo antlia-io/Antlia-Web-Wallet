@@ -33,7 +33,7 @@
       </template>
       <slot />
     </main>
-    <PageFooter />
+    <PageFooter v-if="footer" />
   </div>
 </template>
 
@@ -102,6 +102,10 @@ export default {
     signInRequired: {
       type: Boolean,
       default: false
+    },
+    footer: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
@@ -154,6 +158,7 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
+  margin: 0 !important
 }
 
 .row-unjustified {
@@ -178,7 +183,7 @@ export default {
 }
 
 .page-profile__header {
-  background-color: var(--app-fg);
+  background-color: white;
 }
 
 .page-profile__header .row:first-child {
@@ -214,7 +219,7 @@ export default {
 }
 
 .page-profile__title {
-  color: #fff;
+  color: black;
   display: inline-block;
   font-size: var(--h1);
   font-weight: 400;
@@ -256,12 +261,12 @@ export default {
 
 .info_dl {
   padding: 1rem;
-  border: 1px solid var(--bc-dim);
-  background-color: var(--app-fg);
+  border: 1px solid rgba(84, 85, 93, 0.15);
+  background-color: white;
 }
 
 .info_dl dt {
-  color: var(--dim);
+  color: black;
   font-size: var(--sm);
   margin-bottom: 2px;
   font-weight: 500;
@@ -270,7 +275,7 @@ export default {
 .info_dl dd {
   font-size: 1rem;
   line-height: 1.25rem;
-  color: var(--bright);
+  color: black;
 }
 
 .footer {

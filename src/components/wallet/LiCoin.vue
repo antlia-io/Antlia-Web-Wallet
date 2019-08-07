@@ -5,16 +5,19 @@
     </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">
-        <div col-lg-4 style="float: left">
+        <!-- <div col-lg-4 style="float: left"> -->
           <p class="coin-denom">
             {{ denomination }}
           </p>
           <p class="coin-amount">
             {{ amount }}
           </p>
-        </div>
-        <div col-lg-4 style="float: right">
-          <!-- disable send on the hub until send is enabled -->
+        <!-- </div> -->
+        <!-- <div col-lg-4 style="float: right"> -->
+          
+        <!-- </div> -->
+      </div>
+      <!-- disable send on the hub until send is enabled -->
           <TmBtn
             v-if="!lastHeader || lastHeader.chain_id === 'cosmoshub-1'"
             v-tooltip.left="tooltip"
@@ -29,9 +32,7 @@
             color="primary"
             @click.native="$emit(`show-modal`, coin.denom)"
           />
-        </div>
-      </div>
-      <!-- <div v-if="rewards">
+      <!-- <div v-if="rewards" class="top-section">
         <h3>Available Rewards</h3>
           <h2>{{ rewards }}</h2>
           <TmBtn
@@ -72,10 +73,10 @@ export default {
     }
   },
   data: () => ({
-    tooltip: `Sending tokens is currently disabled on the Cosmos Hub.`
+    tooltip: `Sending tokens is currently disabled on the Color Platform.`
   }),
   computed: {
-    ...mapGetters([`lastHeader`, `validatorsWithRewards`, `totalRewards` ]),
+    ...mapGetters([`lastHeader`, `validatorsWithRewards`, `bondDenom`, `distribution`, `totalRewards` ]),
     viewCoin() {
       return num.createDisplayCoin(this.coin, 6)
     },
@@ -84,6 +85,9 @@ export default {
     },
     denomination() {
       return this.viewCoin.denom
+    },
+    loaded() {
+      return this.wallet.loaded && this.delegation.loaded
     },
     // only be ready to withdraw of the validator rewards are loaded and the user has rewards to withdraw
     // the validator rewards are needed to filter the top 5 validators to withdraw from
@@ -117,6 +121,7 @@ export default {
   border: 1px solid var(--bc-dim);
   background: white;
   padding: 1rem;
+  border-radius: .25rem;
 }
 
 .li-coin__icon img {
@@ -142,6 +147,11 @@ export default {
 .li-coin__content__left {
   display: flex;
   flex-direction: column;
+}
+
+.top-section {
+  position: relative;
+  padding: 0 2rem;
 }
 
 .coin-denom {

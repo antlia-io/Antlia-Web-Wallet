@@ -21,7 +21,7 @@
 .data-table td {
   padding: 0.5rem;
   position: relative;
-  color: var(--bright);
+  color: black;
   vertical-align: middle;
 }
 
@@ -38,7 +38,7 @@
 
 .data-table__row {
   padding: 1rem;
-  background-color: var(--app-fg);
+  background-color: white;
   border-radius: 0.25rem;
   border: 1px solid var(--bc-dim);
 }

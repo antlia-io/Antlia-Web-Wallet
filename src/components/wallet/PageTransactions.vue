@@ -7,9 +7,14 @@
     :data-empty="dataEmpty"
     data-title="Transactions"
     :sign-in-required="true"
+    :hideHeader="true"
+    :footer="false"
   >
     <DataEmptyTx slot="no-data" />
     <template slot="managed-body">
+      <div class="card">
+        <h1>TRANSACTIONS</h1>
+      </div>
       <LiAnyTransaction
         v-for="tx in orderedTransactions"
         :key="tx.txhash"
@@ -94,3 +99,9 @@ export default {
   }
 }
 </script>
+<style>
+  h1 {
+    text-align: center;
+    color: black
+  }
+</style>
