@@ -20,11 +20,11 @@
         This account doesn't have anything in it&nbsp;yet.
       </div>
     </TmDataMsg>
-    <div class="card">
+    <template slot="managed-body">
+      <div class="card">
         <h3>Your Public Color Address</h3>
         <Bech32 :address="session.address || ''" long-form />
       </div>
-    <template slot="managed-body">
       <LiCoin
         v-for="coin in filteredBalances"
         :key="coin.denom"

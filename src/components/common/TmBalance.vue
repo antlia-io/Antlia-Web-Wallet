@@ -18,7 +18,7 @@
         variant="warning"
       ></b-progress-bar>
     </b-progress>
-    <div class="displayinline">
+    <div>
       <div class="col-md-4">
         <h3>Total {{ num.viewDenom(bondDenom) }} :</h3>
         <h2 class="total-atoms__value color">
