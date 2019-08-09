@@ -2,13 +2,13 @@ const dev = process.env.NODE_ENV === `development`
 const stargate =
   process.env.STARGATE ||
   (dev
-    ? `http://18.223.52.186:9071`
+    ? `https://color-platform.rnssol.com:1317`
     : `https://stargate.lunie.io`)
 
 const rpc =
   process.env.RPC ||
   (dev
-    ? `18.223.52.186:26657`
+    ? `https://color-platform.rnssol.com:26657`
     : `https://rpc.lunie.io:26657`)
 
 export default {
