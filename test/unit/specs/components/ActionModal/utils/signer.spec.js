@@ -9,7 +9,7 @@ jest.mock("@rnssolution/color-keys", () => ({
   })
 }))
 
-jest.mock(`@lunie/cosmos-ledger`, () => {
+jest.mock(`@rnssolution/color-ledger`, () => {
   return jest.fn().mockImplementation(() => {
     return {
       getKey: () => () => Buffer.alloc(0),

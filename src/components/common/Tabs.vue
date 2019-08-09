@@ -1,18 +1,18 @@
 <template>
-<div class="row">
-  <div class="tabs">
-    <div
-      v-for="tab in tabs"
-      :key="tab.pathName"
-      :class="{ 'tab-selected': $route.name === tab.pathName }"
-      class="tab"
-    >
-      <router-link :to="{ name: tab.pathName }">
-        {{ tab.displayName }}
-      </router-link>
+  <div class="row">
+    <div class="tabs">
+      <div
+        v-for="tab in tabs"
+        :key="tab.pathName"
+        :class="{ 'tab-selected': $route.name === tab.pathName }"
+        class="tab"
+      >
+        <router-link :to="{ name: tab.pathName }">
+          {{ tab.displayName }}
+        </router-link>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -52,7 +52,7 @@ export default {
 }
 
 .row {
-  background-color: white
+  background-color: white;
 }
 
 .tabs .tab a:hover {

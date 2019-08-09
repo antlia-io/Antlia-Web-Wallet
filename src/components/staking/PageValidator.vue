@@ -21,33 +21,33 @@
             src="~assets/images/validator-icon.svg"
           />
           <div class="col-lg-6 validator-name-and-address">
-                <div class="page-profile__status-and-title">
-                  <span
-                    v-tooltip.top="status"
-                    :class="statusColor"
-                    class="page-profile__status"
-                  />
-                  <div class="page-profile__title">
-                    {{ validator.description.moniker }}
-                  </div>
-                </div>
-                <Bech32 :address="validator.operator_address" />
+            <div class="page-profile__status-and-title">
+              <span
+                v-tooltip.top="status"
+                :class="statusColor"
+                class="page-profile__status"
+              />
+              <div class="page-profile__title">
+                {{ validator.description.moniker }}
+              </div>
+            </div>
+            <Bech32 :address="validator.operator_address" />
           </div>
           <div class="col-lg-2 page-profile__header__actions">
-              <TmBtn
-                id="delegation-btn"
-                :disabled="!connected"
-                :value="connected ? 'Delegate' : 'Connecting...'"
-                color="primary"
-                @click.native="onDelegation"
-              />
-              <TmBtn
-                id="undelegation-btn"
-                :disabled="!connected"
-                :value="connected ? 'Undelegate' : 'Connecting...'"
-                color="secondary"
-                @click.native="onUndelegation"
-              />
+            <TmBtn
+              id="delegation-btn"
+              :disabled="!connected"
+              :value="connected ? 'Delegate' : 'Connecting...'"
+              color="primary"
+              @click.native="onDelegation"
+            />
+            <TmBtn
+              id="undelegation-btn"
+              :disabled="!connected"
+              :value="connected ? 'Undelegate' : 'Connecting...'"
+              color="secondary"
+              @click.native="onUndelegation"
+            />
           </div>
 
           <!-- <div class="page-profile__header__info">
@@ -60,36 +60,36 @@
         </div>
 
         <div class="row">
-            <dl class="col-lg-3 info_dl colored_dl">
-              <dt>My Delegation</dt>
-              <dd>{{ myDelegation }}</dd>
-            </dl>
-            <dl class="col-lg-2 info_dl colored_dl">
-              <dt>My Rewards</dt>
-              <dd v-if="rewards > 0">
-                {{ rewards | atoms | shortDecimals }}
-                {{ bondDenom | viewDenom }}
-              </dd>
-              <dd v-else>--</dd>
-            </dl>
-            <dl class="col-lg-2 info_dl colored_dl">
-              <dt>Voting Power</dt>
-              <dd id="page-profile__power">
-                {{ num.percent(powerRatio) }}
-              </dd>
-            </dl>
-            <dl class="col-lg-2 info_dl colored_dl">
-              <dt>Uptime</dt>
-              <dd id="page-profile__uptime">
-                {{ uptime }}
-              </dd>
-            </dl>
-            <dl class="col-lg-3 info_dl colored_dl">
-              <dt>Commission</dt>
-              <dd id="page-profile__commission">
-                {{ num.percent(validator.commission.rate) }}
-              </dd>
-            </dl>
+          <dl class="col-lg-3 info_dl colored_dl">
+            <dt>My Delegation</dt>
+            <dd>{{ myDelegation }}</dd>
+          </dl>
+          <dl class="col-lg-2 info_dl colored_dl">
+            <dt>My Rewards</dt>
+            <dd v-if="rewards > 0">
+              {{ rewards | atoms | shortDecimals }}
+              {{ bondDenom | viewDenom }}
+            </dd>
+            <dd v-else>--</dd>
+          </dl>
+          <dl class="col-lg-2 info_dl colored_dl">
+            <dt>Voting Power</dt>
+            <dd id="page-profile__power">
+              {{ num.percent(powerRatio) }}
+            </dd>
+          </dl>
+          <dl class="col-lg-2 info_dl colored_dl">
+            <dt>Uptime</dt>
+            <dd id="page-profile__uptime">
+              {{ uptime }}
+            </dd>
+          </dl>
+          <dl class="col-lg-3 info_dl colored_dl">
+            <dt>Commission</dt>
+            <dd id="page-profile__commission">
+              {{ num.percent(validator.commission.rate) }}
+            </dd>
+          </dl>
         </div>
       </div>
 
@@ -440,7 +440,7 @@ export default {
 }
 
 .validator-name-and-address {
-  display: grid
+  display: grid;
 }
 
 @media screen and (max-width: 425px) {

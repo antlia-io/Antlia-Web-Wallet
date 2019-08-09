@@ -20,7 +20,7 @@ export default {
 .text-block {
   word-break: break-word;
   color: #0a73b1;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .text-block p {

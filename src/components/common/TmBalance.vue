@@ -90,14 +90,14 @@ import "bootstrap/dist/css/bootstrap.css"
 export default {
   name: `tm-balance`,
   components: {
-    Bech32,
+    Bech32
     // TmBtn,
     // ModalWithdrawRewards
   },
   data() {
     return {
       num,
-      lastUpdate: 0,
+      lastUpdate: 0
       // value: 45,
       // max: 100
     }
@@ -120,14 +120,10 @@ export default {
       return this.wallet.loaded && this.delegation.loaded
     },
     totalAtomsDisplay() {
-      return this.loaded
-        ? this.num.atoms(this.totalAtoms)
-        : `--`
+      return this.loaded ? this.num.atoms(this.totalAtoms) : `--`
     },
     unbondedAtoms() {
-      return this.loaded
-        ? this.num.atoms(this.liquidAtoms)
-        : `--`
+      return this.loaded ? this.num.atoms(this.liquidAtoms) : `--`
     },
     // only be ready to withdraw of the validator rewards are loaded and the user has rewards to withdraw
     // the validator rewards are needed to filter the top 5 validators to withdraw from
@@ -206,11 +202,11 @@ h2 {
 }
 
 .displayinline {
-  display: inline-flex
+  display: inline-flex;
 }
 
 .bg-warning {
-  background-color: #0974b1 !important
+  background-color: #0974b1 !important;
 }
 
 .green {

@@ -6,32 +6,32 @@
     <div class="li-coin__content">
       <div class="li-coin__content-left">
         <!-- <div col-lg-4 style="float: left"> -->
-          <p class="coin-denom">
-            {{ denomination }}
-          </p>
-          <p class="coin-amount">
-            {{ amount }}
-          </p>
+        <p class="coin-denom">
+          {{ denomination }}
+        </p>
+        <p class="coin-amount">
+          {{ amount }}
+        </p>
         <!-- </div> -->
         <!-- <div col-lg-4 style="float: right"> -->
-          
+
         <!-- </div> -->
       </div>
       <!-- disable send on the hub until send is enabled -->
-          <TmBtn
-            v-if="!lastHeader || lastHeader.chain_id === 'cosmoshub-1'"
-            v-tooltip.left="tooltip"
-            value="Send"
-            color="primary"
-          />
-          <!-- here we use the unconverted denom, as the SendModal
+      <TmBtn
+        v-if="!lastHeader || lastHeader.chain_id === 'cosmoshub-1'"
+        v-tooltip.left="tooltip"
+        value="Send"
+        color="primary"
+      />
+      <!-- here we use the unconverted denom, as the SendModal
           checks for balances based on the actual denom -->
-          <TmBtn
-            v-else
-            value="Send"
-            color="primary"
-            @click.native="$emit(`show-modal`, coin.denom)"
-          />
+      <TmBtn
+        v-else
+        value="Send"
+        color="primary"
+        @click.native="$emit(`show-modal`, coin.denom)"
+      />
       <!-- <div v-if="rewards" class="top-section">
         <h3>Available Rewards</h3>
           <h2>{{ rewards }}</h2>
@@ -76,7 +76,13 @@ export default {
     tooltip: `Sending tokens is currently disabled on the Color Platform.`
   }),
   computed: {
-    ...mapGetters([`lastHeader`, `validatorsWithRewards`, `bondDenom`, `distribution`, `totalRewards` ]),
+    ...mapGetters([
+      `lastHeader`,
+      `validatorsWithRewards`,
+      `bondDenom`,
+      `distribution`,
+      `totalRewards`
+    ]),
     viewCoin() {
       return num.createDisplayCoin(this.coin, 6)
     },
@@ -107,7 +113,7 @@ export default {
   methods: {
     onWithdrawal() {
       this.$refs.ModalWithdrawRewards.open()
-    },
+    }
   }
 }
 </script>
@@ -121,7 +127,7 @@ export default {
   border: 1px solid var(--bc-dim);
   background: white;
   padding: 1rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 .li-coin__icon img {

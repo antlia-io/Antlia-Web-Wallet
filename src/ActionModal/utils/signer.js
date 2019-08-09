@@ -1,4 +1,4 @@
-import Ledger from "@lunie/cosmos-ledger"
+import Ledger from "@rnssolution/color-ledger"
 import { signWithPrivateKey, getStoredWallet } from "@rnssolution/color-keys"
 import { signWithExtension } from "src/scripts/extension-utils"
 
