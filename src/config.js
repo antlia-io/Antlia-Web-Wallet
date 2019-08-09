@@ -2,7 +2,7 @@ const dev = process.env.NODE_ENV === `development`
 const stargate =
   process.env.STARGATE ||
   (dev
-    ? `https://color-platform.rnssol.com:1317`
+    ? `https://color-platform.rnssol.com:9071`
     : `https://stargate.lunie.io`)
 
 const rpc =

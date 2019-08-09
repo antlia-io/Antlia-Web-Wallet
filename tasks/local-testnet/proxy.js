@@ -8,7 +8,7 @@
  */
 // parse command line options
 const options = {
-  port: 1317,
+  port: 9071,
   target: `https://color-platform.rnssol.com:1317`
 }
 
