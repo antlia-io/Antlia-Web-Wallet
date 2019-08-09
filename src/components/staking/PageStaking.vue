@@ -25,7 +25,7 @@ export default {
       {
         displayName: `Validators`,
         pathName: `Validators`
-      },
+      }
       // {
       //   displayName: `Parameters`,
       //   pathName: `Staking Parameters`

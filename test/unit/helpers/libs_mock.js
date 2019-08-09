@@ -1,2 +1,2 @@
 jest.mock("@rnssolution/color-keys", () => ({}))
-jest.mock("@lunie/cosmos-ledger", () => ({}))
+jest.mock("@rnssolution/color-ledger", () => ({}))

@@ -148,7 +148,7 @@ export default {
   font-size: 14px;
   font-weight: 500;
   background-color: white;
-  margin: 0 !important
+  margin: 0 !important;
 }
 
 .info-button {

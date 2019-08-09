@@ -121,7 +121,7 @@ export default {
 }
 </script>
 <style>
-  .data-table__row {
-    border: none !important
-  }
+.data-table__row {
+  border: none !important;
+}
 </style>

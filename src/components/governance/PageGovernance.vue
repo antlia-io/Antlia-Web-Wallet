@@ -40,7 +40,7 @@ export default {
       {
         displayName: `Proposals`,
         pathName: `Proposals`
-      },
+      }
       // {
       //   displayName: `Parameters`,
       //   pathName: `Governance Parameters`
@@ -61,7 +61,7 @@ export default {
 }
 </script>
 <style>
-  .buttoncenter {
-    display: block
-  }
+.buttoncenter {
+  display: block;
+}
 </style>

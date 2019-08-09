@@ -73,54 +73,54 @@
             </dd>
           </dl>
           <dl class="info_dl colored_dl">
-              <dt>Description</dt>
-              <TextBlock :content="description" />
-            </dl>
+            <dt>Description</dt>
+            <TextBlock :content="description" />
+          </dl>
         </div>
       </div>
 
       <!-- <div class="page-profile__section"> -->
-        <div v-if="proposal.proposal_status === 'VotingPeriod'" class="row">
-          <dl v-if="displayEndDate" class="info_dl colored_dl">
-            <dt>Voting End Date</dt>
-            <dd>{{ endDate }}</dd>
-          </dl>
-          <dl
-            v-if="proposal.proposal_status === 'VotingPeriod'"
-            class="info_dl colored_dl"
-          >
-            <dt>Total Vote Count</dt>
-            <dd>{{ num.shortDecimals(num.atoms(totalVotes)) }}</dd>
-          </dl>
-          <dl class="info_dl colored_dl">
-            <dt>Yes</dt>
-            <dd>
-              {{ num.shortDecimals(num.atoms(tally.yes)) }} /
-              {{ yesPercentage }}
-            </dd>
-          </dl>
-          <dl class="info_dl colored_dl">
-            <dt>No</dt>
-            <dd>
-              {{ num.shortDecimals(num.atoms(tally.no)) }} /
-              {{ noPercentage }}
-            </dd>
-          </dl>
-          <dl class="info_dl colored_dl">
-            <dt>No with Veto</dt>
-            <dd>
-              {{ num.shortDecimals(num.atoms(tally.no_with_veto)) }} /
-              {{ noWithVetoPercentage }}
-            </dd>
-          </dl>
-          <dl class="info_dl colored_dl">
-            <dt>Abstain</dt>
-            <dd>
-              {{ num.shortDecimals(num.atoms(tally.abstain)) }} /
-              {{ abstainPercentage }}
-            </dd>
-          </dl>
-        </div>
+      <div v-if="proposal.proposal_status === 'VotingPeriod'" class="row">
+        <dl v-if="displayEndDate" class="info_dl colored_dl">
+          <dt>Voting End Date</dt>
+          <dd>{{ endDate }}</dd>
+        </dl>
+        <dl
+          v-if="proposal.proposal_status === 'VotingPeriod'"
+          class="info_dl colored_dl"
+        >
+          <dt>Total Vote Count</dt>
+          <dd>{{ num.shortDecimals(num.atoms(totalVotes)) }}</dd>
+        </dl>
+        <dl class="info_dl colored_dl">
+          <dt>Yes</dt>
+          <dd>
+            {{ num.shortDecimals(num.atoms(tally.yes)) }} /
+            {{ yesPercentage }}
+          </dd>
+        </dl>
+        <dl class="info_dl colored_dl">
+          <dt>No</dt>
+          <dd>
+            {{ num.shortDecimals(num.atoms(tally.no)) }} /
+            {{ noPercentage }}
+          </dd>
+        </dl>
+        <dl class="info_dl colored_dl">
+          <dt>No with Veto</dt>
+          <dd>
+            {{ num.shortDecimals(num.atoms(tally.no_with_veto)) }} /
+            {{ noWithVetoPercentage }}
+          </dd>
+        </dl>
+        <dl class="info_dl colored_dl">
+          <dt>Abstain</dt>
+          <dd>
+            {{ num.shortDecimals(num.atoms(tally.abstain)) }} /
+            {{ abstainPercentage }}
+          </dd>
+        </dl>
+      </div>
       <!-- </div> -->
 
       <ModalDeposit

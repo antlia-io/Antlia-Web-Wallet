@@ -8,42 +8,42 @@
       <div class="parameters__details parameters__section">
         <div class="row">
           <!-- <div class="column"> -->
-            <div class="col-lg-4 info_dl">
-              <dt>
-                Duration of Undelegation Period
-                <i
-                  v-tooltip.top="paramsTooltips.unbonding_time"
-                  class="material-icons info-button"
-                >
-                  info_outline
-                </i>
-              </dt>
-              <dd id="unbonding_time">
-                {{
-                  stakingParameters.parameters.unbonding_time
-                    ? unbondingTimeInDays + ` days`
-                    : `--`
-                }}
-              </dd>
-            </div>
-            <div class="col-lg-4 info_dl">
-              <dt>Current Staking Token</dt>
-              <dd id="bond_denom">
-                {{ bondDenom ? num.viewDenom(bondDenom) : `--` }}
-              </dd>
-            </div>
+          <div class="col-lg-4 info_dl">
+            <dt>
+              Duration of Undelegation Period
+              <i
+                v-tooltip.top="paramsTooltips.unbonding_time"
+                class="material-icons info-button"
+              >
+                info_outline
+              </i>
+            </dt>
+            <dd id="unbonding_time">
+              {{
+                stakingParameters.parameters.unbonding_time
+                  ? unbondingTimeInDays + ` days`
+                  : `--`
+              }}
+            </dd>
+          </div>
+          <div class="col-lg-4 info_dl">
+            <dt>Current Staking Token</dt>
+            <dd id="bond_denom">
+              {{ bondDenom ? num.viewDenom(bondDenom) : `--` }}
+            </dd>
+          </div>
           <!-- </div>
           <div class="column"> -->
-            <div class="col-lg-4 info_dl">
-              <dt>Maximum Number of Validators</dt>
-              <dd id="max_validators">
-                {{
-                  stakingParameters.parameters.max_validators
-                    ? stakingParameters.parameters.max_validators
-                    : `--`
-                }}
-              </dd>
-            </div>
+          <div class="col-lg-4 info_dl">
+            <dt>Maximum Number of Validators</dt>
+            <dd id="max_validators">
+              {{
+                stakingParameters.parameters.max_validators
+                  ? stakingParameters.parameters.max_validators
+                  : `--`
+              }}
+            </dd>
+          </div>
           <!-- </div> -->
         </div>
       </div>
@@ -85,4 +85,3 @@ export default {
   }
 }
 </script>
-

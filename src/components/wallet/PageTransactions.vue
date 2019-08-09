@@ -7,7 +7,7 @@
     :data-empty="dataEmpty"
     data-title="Transactions"
     :sign-in-required="true"
-    :hideHeader="true"
+    :hide-header="true"
     :footer="false"
   >
     <DataEmptyTx slot="no-data" />
@@ -100,12 +100,13 @@ export default {
 }
 </script>
 <style>
-  h1 {
-    color: black;
-    width: 100%
-  }
-  .row {
-    background: white;
-    text-align: center
-  }
+h1 {
+  color: black;
+  width: 100%;
+}
+
+.row {
+  background: white;
+  text-align: center;
+}
 </style>

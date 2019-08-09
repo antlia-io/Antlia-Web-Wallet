@@ -59,7 +59,7 @@ export default {
     TmDataLoading,
     TmDataError,
     TmDataConnecting,
-    CardSignInRequired,
+    CardSignInRequired
     // PageFooter
   },
   props: {
@@ -158,7 +158,7 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin: 0 !important
+  margin: 0 !important;
 }
 
 .row-unjustified {
@@ -265,7 +265,7 @@ export default {
   background-color: white;
   text-align: center;
   width: 50%;
-  margin-bottom: 0 !important
+  margin-bottom: 0 !important;
 }
 
 .info_dl dt {
@@ -279,7 +279,7 @@ export default {
   font-size: 1rem;
   line-height: 1.25rem;
   color: #0a73b1;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .footer {

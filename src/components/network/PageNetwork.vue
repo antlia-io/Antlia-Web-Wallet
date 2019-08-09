@@ -58,24 +58,24 @@
             </dd>
           </dl>
           <dl class="col-lg-4 info_dl">
-              <dt>Total Liquid {{ num.viewDenom(bondDenom) }}</dt>
-              <dd id="loose_tokens">
-                {{
-                  pool.pool && pool.pool.not_bonded_tokens
-                    ? num.shortDecimals(num.atoms(pool.pool.not_bonded_tokens))
-                    : `--`
-                }}
-              </dd>
+            <dt>Total Liquid {{ num.viewDenom(bondDenom) }}</dt>
+            <dd id="loose_tokens">
+              {{
+                pool.pool && pool.pool.not_bonded_tokens
+                  ? num.shortDecimals(num.atoms(pool.pool.not_bonded_tokens))
+                  : `--`
+              }}
+            </dd>
           </dl>
           <dl class="col-lg-4 info_dl">
-              <dt>Total Delegated {{ num.viewDenom(bondDenom) }}</dt>
-              <dd id="bonded_tokens">
-                {{
-                  pool.pool && pool.pool.bonded_tokens
-                    ? num.shortDecimals(num.atoms(pool.pool.bonded_tokens))
-                    : `--`
-                }}
-              </dd>
+            <dt>Total Delegated {{ num.viewDenom(bondDenom) }}</dt>
+            <dd id="bonded_tokens">
+              {{
+                pool.pool && pool.pool.bonded_tokens
+                  ? num.shortDecimals(num.atoms(pool.pool.bonded_tokens))
+                  : `--`
+              }}
+            </dd>
           </dl>
         </div>
       </div>
@@ -178,7 +178,7 @@ export default {
 }
 
 .row {
-  margin: 0 !important
+  margin: 0 !important;
 }
 
 .blocks.data-table th {

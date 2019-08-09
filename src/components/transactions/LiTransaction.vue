@@ -84,6 +84,7 @@ export default {
 .li-tx {
   display: flex;
   align-items: center;
+
   /* border: 1px solid rgba(132, 132, 136, 0.52); */
   background: white;
   width: 100%;
@@ -97,11 +98,11 @@ export default {
 }
 
 a {
-  color: #0a73b1
+  color: #0a73b1;
 }
 
 a:hover {
-  color: #00d6e1
+  color: #00d6e1;
 }
 
 .li-tx b {
