@@ -62,6 +62,8 @@ export default {
 <style>
 .panel-sort-container {
   padding: 1rem;
+  color: black;
+  background-color: white
 }
 
 .panel-sort-table-header {
@@ -79,18 +81,19 @@ export default {
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
+  color: black !important
 }
 
 .sort-by.active a {
-  color: var(--tertiary);
+  color: #0a73b1;
 }
 
 .sort-by.asc i {
-  color: var(--tertiary);
+  color: #0a73b1;
 }
 
 .sort-by.desc i {
   transform: rotate(180deg);
-  color: var(--tertiary);
+  color: #0a73b1;
 }
 </style>

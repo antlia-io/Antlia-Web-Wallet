@@ -120,3 +120,8 @@ export default {
   }
 }
 </script>
+<style>
+  .data-table__row {
+    border: none !important
+  }
+</style>

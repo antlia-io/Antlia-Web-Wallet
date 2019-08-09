@@ -2,7 +2,7 @@
   <div>
     <div class="parameters__details parameters__section">
       <div class="row">
-        <div class="column">
+        <div class="row">
           <dl class="info_dl">
             <dt>
               Minimum Deposit
@@ -21,8 +21,6 @@
               }}
             </dd>
           </dl>
-        </div>
-        <div class="column">
           <dl class="info_dl">
             <dt>
               Maximum Deposit Period
@@ -42,12 +40,7 @@
             </dd>
           </dl>
         </div>
-      </div>
-    </div>
-
-    <div class="parameters__details parameters__section">
-      <div class="row">
-        <div class="column">
+        <div class="row">
           <dl class="info_dl">
             <dt>
               Threshold
@@ -70,29 +63,6 @@
           </dl>
           <dl class="info_dl">
             <dt>
-              Veto
-              <i
-                v-tooltip.top="tallyingTooltips.veto"
-                class="material-icons info-button"
-              >
-                info_outline
-              </i>
-            </dt>
-            <dd>
-              {{
-                governanceParameters.parameters.tallying.veto
-                  ? `${parseFloat(
-                      governanceParameters.parameters.tallying.veto
-                    ) * 100} %`
-                  : `--`
-              }}
-            </dd>
-          </dl>
-        </div>
-
-        <div class="column">
-          <dl class="info_dl">
-            <dt>
               Quorum
               <i
                 v-tooltip.top="tallyingTooltips.quorum"
@@ -106,6 +76,28 @@
                 governanceParameters.parameters.tallying.quorum
                   ? `${parseFloat(
                       governanceParameters.parameters.tallying.quorum
+                    ) * 100} %`
+                  : `--`
+              }}
+            </dd>
+          </dl>
+        </div>
+        <div class="row">
+          <dl class="info_dl">
+            <dt>
+              Veto
+              <i
+                v-tooltip.top="tallyingTooltips.veto"
+                class="material-icons info-button"
+              >
+                info_outline
+              </i>
+            </dt>
+            <dd>
+              {{
+                governanceParameters.parameters.tallying.veto
+                  ? `${parseFloat(
+                      governanceParameters.parameters.tallying.veto
                     ) * 100} %`
                   : `--`
               }}
@@ -132,6 +124,14 @@
         </div>
       </div>
     </div>
+
+    <!-- <div class="parameters__details parameters__section">
+      <div class="row">
+        
+
+        
+      </div>
+    </div> -->
   </div>
 </template>
 

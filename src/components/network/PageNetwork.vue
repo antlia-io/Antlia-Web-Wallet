@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="row">
-          <dl class="info_dl colored_dl">
+          <dl class="col-lg-4 info_dl">
             <dt>Block Height</dt>
             <dd>
               {{
@@ -33,11 +33,11 @@
               }}
             </dd>
           </dl>
-          <dl class="info_dl colored_dl">
+          <dl class="col-lg-4 info_dl">
             <dt>Last Block</dt>
             <dd>{{ connected ? lastBlock : `--` }}</dd>
           </dl>
-          <dl class="info_dl colored_dl">
+          <dl class="col-lg-4 info_dl">
             <dt>Transactions</dt>
             <dd>
               {{
@@ -47,7 +47,7 @@
               }}
             </dd>
           </dl>
-          <dl class="info_dl colored_dl">
+          <dl class="col-lg-4 info_dl">
             <dt>Number of Validators</dt>
             <dd>
               {{
@@ -57,10 +57,7 @@
               }}
             </dd>
           </dl>
-        </div>
-        <div class="row">
-          <div class="column">
-            <dl class="info_dl">
+          <dl class="col-lg-4 info_dl">
               <dt>Total Liquid {{ num.viewDenom(bondDenom) }}</dt>
               <dd id="loose_tokens">
                 {{
@@ -69,10 +66,8 @@
                     : `--`
                 }}
               </dd>
-            </dl>
-          </div>
-          <div class="column">
-            <dl class="info_dl">
+          </dl>
+          <dl class="col-lg-4 info_dl">
               <dt>Total Delegated {{ num.viewDenom(bondDenom) }}</dt>
               <dd id="bonded_tokens">
                 {{
@@ -81,8 +76,7 @@
                     : `--`
                 }}
               </dd>
-            </dl>
-          </div>
+          </dl>
         </div>
       </div>
       <table v-if="connected" class="blocks data-table">

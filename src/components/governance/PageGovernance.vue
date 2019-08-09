@@ -1,14 +1,17 @@
 <template>
-  <TmPage :tabs="tabs" class="governance" data-title="Governance">
-    <TmBtn
-      id="propose-btn"
-      slot="header-buttons"
-      :disabled="!connected"
-      :value="connected ? 'Create Proposal' : 'Connecting...'"
-      color="primary"
-      @click.native="onPropose"
-    />
-    <ModalPropose ref="modalPropose" :denom="depositDenom" />
+  <TmPage class="governance" data-title="Governance">
+    <TabParameters />
+    <div class="row buttoncenter">
+      <TmBtn
+        id="propose-btn"
+        :disabled="!connected"
+        :value="connected ? 'Create Proposal' : 'Connecting...'"
+        color="primary"
+        @click.native="onPropose"
+      />
+    </div>
+    <Tabs v-if="tabs" :tabs="tabs" />
+    <!-- <ModalPropose ref="modalPropose" :denom="depositDenom" /> -->
     <router-view />
   </TmPage>
 </template>
@@ -19,13 +22,17 @@ import PerfectScrollbar from "perfect-scrollbar"
 import ModalPropose from "src/ActionModal/components/ModalPropose"
 import TmBtn from "common/TmBtn"
 import TmPage from "common/TmPage"
+import TabParameters from "./TabParameters"
+import Tabs from "common/Tabs"
 
 export default {
   name: `page-governance`,
   components: {
     ModalPropose,
     TmPage,
-    TmBtn
+    TmBtn,
+    TabParameters,
+    Tabs
   },
   data: () => ({
     query: ``,
@@ -34,10 +41,10 @@ export default {
         displayName: `Proposals`,
         pathName: `Proposals`
       },
-      {
-        displayName: `Parameters`,
-        pathName: `Governance Parameters`
-      }
+      // {
+      //   displayName: `Parameters`,
+      //   pathName: `Governance Parameters`
+      // }
     ]
   }),
   computed: {
@@ -53,3 +60,8 @@ export default {
   }
 }
 </script>
+<style>
+  .buttoncenter {
+    display: block
+  }
+</style>

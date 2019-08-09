@@ -33,7 +33,7 @@
       </template>
       <slot />
     </main>
-    <PageFooter v-if="footer" />
+    <!-- <PageFooter v-if="footer" /> -->
   </div>
 </template>
 
@@ -47,7 +47,7 @@ import TmDataError from "common/TmDataError"
 import TmDataConnecting from "common/TmDataConnecting"
 import TmBalance from "common/TmBalance"
 import ToolBar from "common/ToolBar"
-import PageFooter from "common/TmPageFooter"
+// import PageFooter from "common/TmPageFooter"
 
 export default {
   name: `tm-page`,
@@ -60,7 +60,7 @@ export default {
     TmDataError,
     TmDataConnecting,
     CardSignInRequired,
-    PageFooter
+    // PageFooter
   },
   props: {
     hideHeader: {
@@ -227,7 +227,7 @@ export default {
 }
 
 .page-profile__header__actions {
-  display: flex;
+  display: grid;
   flex-direction: column;
 }
 
@@ -263,6 +263,9 @@ export default {
   padding: 1rem;
   border: 1px solid rgba(84, 85, 93, 0.15);
   background-color: white;
+  text-align: center;
+  width: 50%;
+  margin-bottom: 0 !important
 }
 
 .info_dl dt {
@@ -275,7 +278,8 @@ export default {
 .info_dl dd {
   font-size: 1rem;
   line-height: 1.25rem;
-  color: black;
+  color: #0a73b1;
+  font-weight: bold
 }
 
 .footer {

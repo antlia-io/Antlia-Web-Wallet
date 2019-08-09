@@ -5,7 +5,7 @@
     <template v-else>
       <div class="page-profile__header page-profile__section proposal">
         <div class="row">
-          <h2 class="proposal-id">#{{ proposalId }}</h2>
+          <!-- <h2 class="proposal-id">#{{ proposalId }}</h2> -->
           <div class="page-profile__header__info">
             <div class="page-profile__status-and-title">
               <span
@@ -55,22 +55,12 @@
             <dt>Submitted</dt>
             <dd>{{ submittedAgo }}</dd>
           </dl>
-
           <dl class="info_dl colored_dl">
             <dt>Proposal Status</dt>
             <dd>
               {{ proposalStatus }}
             </dd>
           </dl>
-          <dl v-if="displayEndDate" class="info_dl colored_dl">
-            <dt>Voting End Date</dt>
-            <dd>{{ endDate }}</dd>
-          </dl>
-        </div>
-      </div>
-
-      <div class="page-profile__section">
-        <div class="row">
           <dl class="info_dl colored_dl">
             <dt>Deposit Count</dt>
             <dd>
@@ -82,6 +72,19 @@
               }}
             </dd>
           </dl>
+          <dl class="info_dl colored_dl">
+              <dt>Description</dt>
+              <TextBlock :content="description" />
+            </dl>
+        </div>
+      </div>
+
+      <!-- <div class="page-profile__section"> -->
+        <div v-if="proposal.proposal_status === 'VotingPeriod'" class="row">
+          <dl v-if="displayEndDate" class="info_dl colored_dl">
+            <dt>Voting End Date</dt>
+            <dd>{{ endDate }}</dd>
+          </dl>
           <dl
             v-if="proposal.proposal_status === 'VotingPeriod'"
             class="info_dl colored_dl"
@@ -89,8 +92,6 @@
             <dt>Total Vote Count</dt>
             <dd>{{ num.shortDecimals(num.atoms(totalVotes)) }}</dd>
           </dl>
-        </div>
-        <div v-if="proposal.proposal_status === 'VotingPeriod'" class="row">
           <dl class="info_dl colored_dl">
             <dt>Yes</dt>
             <dd>
@@ -120,15 +121,7 @@
             </dd>
           </dl>
         </div>
-        <div class="row">
-          <div class="column">
-            <dl class="info_dl colored_dl">
-              <dt>Description</dt>
-              <TextBlock :content="description" />
-            </dl>
-          </div>
-        </div>
-      </div>
+      <!-- </div> -->
 
       <ModalDeposit
         ref="modalDeposit"

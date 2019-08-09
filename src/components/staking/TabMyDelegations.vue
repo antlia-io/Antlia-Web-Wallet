@@ -144,14 +144,15 @@ export default {
 </script>
 <style>
 .tab-header {
-  color: var(--dim);
+  color: black;
   font-size: 14px;
   font-weight: 500;
-  margin: 3rem 0.5rem 0.5rem;
+  background-color: white;
+  margin: 0 !important
 }
 
 .info-button {
-  color: var(--link);
+  color: #0a73b1;
 }
 
 .unbonding-transactions .tm-li-tx::before {

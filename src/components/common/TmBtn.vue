@@ -139,6 +139,7 @@ a {
 .tm-btn .tm-btn__value {
   line-height: 1.5;
   white-space: nowrap;
+  text-transform: uppercase;
   text-overflow: ellipsis;
   overflow: hidden;
 }

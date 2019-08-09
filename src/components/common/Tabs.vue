@@ -1,4 +1,5 @@
 <template>
+<div class="row">
   <div class="tabs">
     <div
       v-for="tab in tabs"
@@ -11,6 +12,7 @@
       </router-link>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -32,7 +34,7 @@ export default {
 <style scoped>
 .tabs {
   display: flex;
-  margin-left: 2rem;
+  margin: 1rem;
 }
 
 .tabs .tab {
@@ -43,21 +45,25 @@ export default {
 }
 
 .tabs .tab a {
-  color: var(--dim);
+  color: black;
   display: block;
   font-weight: 500;
   padding-bottom: 1rem;
 }
 
+.row {
+  background-color: white
+}
+
 .tabs .tab a:hover {
-  color: var(--link);
+  color: #0a73b1;
 }
 
 .tabs .tab.tab-selected {
-  border-bottom: 2px solid var(--tertiary);
+  border-bottom: 2px solid #0a73b1;
 }
 
 .tabs .tab.tab-selected a {
-  color: var(--bright);
+  color: #0a73b1;
 }
 </style>

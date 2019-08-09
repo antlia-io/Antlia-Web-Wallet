@@ -1,5 +1,7 @@
 <template>
-  <TmPage :tabs="tabs" class="staking" data-title="Staking">
+  <TmPage class="staking" data-title="Staking">
+    <TabStakingParameters />
+    <Tabs v-if="tabs" :tabs="tabs" />
     <router-view />
   </TmPage>
 </template>
@@ -7,10 +9,12 @@
 <script>
 import { mapActions } from "vuex"
 import TmPage from "common/TmPage"
+import TabStakingParameters from "./TabStakingParameters"
+import Tabs from "common/Tabs"
 
 export default {
   name: `page-staking`,
-  components: { TmPage },
+  components: { Tabs, TmPage, TabStakingParameters },
   data: () => ({
     query: ``,
     tabs: [
@@ -22,10 +26,10 @@ export default {
         displayName: `Validators`,
         pathName: `Validators`
       },
-      {
-        displayName: `Parameters`,
-        pathName: `Staking Parameters`
-      }
+      // {
+      //   displayName: `Parameters`,
+      //   pathName: `Staking Parameters`
+      // }
     ]
   }),
   methods: {
