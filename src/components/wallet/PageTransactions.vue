@@ -12,7 +12,7 @@
   >
     <DataEmptyTx slot="no-data" />
     <template slot="managed-body">
-      <div class="card">
+      <div class="row">
         <h1>TRANSACTIONS</h1>
       </div>
       <LiAnyTransaction
@@ -101,7 +101,11 @@ export default {
 </script>
 <style>
   h1 {
-    text-align: center;
-    color: black
+    color: black;
+    width: 100%
+  }
+  .row {
+    background: white;
+    text-align: center
   }
 </style>

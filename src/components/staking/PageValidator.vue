@@ -20,10 +20,7 @@
             class="avatar"
             src="~assets/images/validator-icon.svg"
           />
-
-          <div class="page-profile__header__info">
-            <div>
-              <div class="validator-name-and-address">
+          <div class="col-lg-6 validator-name-and-address">
                 <div class="page-profile__status-and-title">
                   <span
                     v-tooltip.top="status"
@@ -35,10 +32,8 @@
                   </div>
                 </div>
                 <Bech32 :address="validator.operator_address" />
-              </div>
-            </div>
-
-            <div class="page-profile__header__actions">
+          </div>
+          <div class="col-lg-2 page-profile__header__actions">
               <TmBtn
                 id="delegation-btn"
                 :disabled="!connected"
@@ -53,17 +48,23 @@
                 color="secondary"
                 @click.native="onUndelegation"
               />
-            </div>
           </div>
+
+          <!-- <div class="page-profile__header__info">
+            <div>
+              
+            </div>
+
+            
+          </div> -->
         </div>
 
         <div class="row">
-          <div class="row row-unjustified">
-            <dl class="info_dl colored_dl">
+            <dl class="col-lg-3 info_dl colored_dl">
               <dt>My Delegation</dt>
               <dd>{{ myDelegation }}</dd>
             </dl>
-            <dl class="info_dl colored_dl">
+            <dl class="col-lg-2 info_dl colored_dl">
               <dt>My Rewards</dt>
               <dd v-if="rewards > 0">
                 {{ rewards | atoms | shortDecimals }}
@@ -71,47 +72,55 @@
               </dd>
               <dd v-else>--</dd>
             </dl>
-          </div>
-
-          <div class="row row-unjustified">
-            <dl class="info_dl colored_dl">
+            <dl class="col-lg-2 info_dl colored_dl">
               <dt>Voting Power</dt>
               <dd id="page-profile__power">
                 {{ num.percent(powerRatio) }}
               </dd>
             </dl>
-            <dl class="info_dl colored_dl">
+            <dl class="col-lg-2 info_dl colored_dl">
               <dt>Uptime</dt>
               <dd id="page-profile__uptime">
                 {{ uptime }}
               </dd>
             </dl>
-            <dl class="info_dl colored_dl">
+            <dl class="col-lg-3 info_dl colored_dl">
               <dt>Commission</dt>
               <dd id="page-profile__commission">
                 {{ num.percent(validator.commission.rate) }}
               </dd>
             </dl>
-          </div>
         </div>
       </div>
 
       <div class="page-profile__section">
         <div class="row">
-          <div class="column">
+          <div class="row">
             <dl class="info_dl">
               <dt>First Seen</dt>
               <dd>Block #{{ validator.bond_height }}</dd>
+            </dl>
+            <dl class="info_dl">
+              <dt>Current Commission Rate</dt>
+              <dd>{{ num.percent(validator.commission.rate) }}</dd>
             </dl>
             <dl class="info_dl">
               <dt>Full Operator Address</dt>
               <dd class="address">{{ validator.operator_address }}</dd>
             </dl>
             <dl class="info_dl">
+              <dt>Max Commission Rate</dt>
+              <dd>{{ num.percent(validator.commission.max_rate) }}</dd>
+            </dl>
+            <dl class="info_dl">
               <dt>Keybase ID</dt>
               <dd>
                 {{ translateEmptyDescription(validator.description.identity) }}
               </dd>
+            </dl>
+            <dl class="info_dl">
+              <dt>Max Daily Commission Change</dt>
+              <dd>{{ num.percent(validator.commission.max_change_rate) }}</dd>
             </dl>
             <dl class="info_dl">
               <dt>Website</dt>
@@ -130,28 +139,14 @@
               </dd>
             </dl>
             <dl class="info_dl">
+              <dt>Last Commission Change</dt>
+              <dd>{{ lastCommissionChange }}</dd>
+            </dl>
+            <dl class="info_dl">
               <dt>Description</dt>
               <dd class="info_dl__text-box">
                 {{ translateEmptyDescription(validator.description.details) }}
               </dd>
-            </dl>
-          </div>
-          <div class="column">
-            <dl class="info_dl">
-              <dt>Current Commission Rate</dt>
-              <dd>{{ num.percent(validator.commission.rate) }}</dd>
-            </dl>
-            <dl class="info_dl">
-              <dt>Max Commission Rate</dt>
-              <dd>{{ num.percent(validator.commission.max_rate) }}</dd>
-            </dl>
-            <dl class="info_dl">
-              <dt>Max Daily Commission Change</dt>
-              <dd>{{ num.percent(validator.commission.max_change_rate) }}</dd>
-            </dl>
-            <dl class="info_dl">
-              <dt>Last Commission Change</dt>
-              <dd>{{ lastCommissionChange }}</dd>
             </dl>
             <dl class="info_dl">
               <dt>Self Delegation</dt>
@@ -442,6 +437,10 @@ export default {
 <style scoped>
 .address {
   word-break: break-word;
+}
+
+.validator-name-and-address {
+  display: grid
 }
 
 @media screen and (max-width: 425px) {

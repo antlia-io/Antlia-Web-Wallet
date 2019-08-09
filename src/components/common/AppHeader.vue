@@ -108,7 +108,7 @@ export default {
   }
 
   .container {
-    background: var(--app-nav);
+    background: #232021;
   }
 
   .app-header .header-item {

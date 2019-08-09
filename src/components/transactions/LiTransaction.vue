@@ -84,7 +84,7 @@ export default {
 .li-tx {
   display: flex;
   align-items: center;
-  border: 1px solid rgba(132, 132, 136, 0.52);
+  /* border: 1px solid rgba(132, 132, 136, 0.52); */
   background: white;
   width: 100%;
   font-weight: 300;
