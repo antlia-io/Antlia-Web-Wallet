@@ -36,10 +36,10 @@
         <h2 class="color">{{ totalAtomsDisplay - unbondedAtoms }}</h2>
       </div>
     </div>
-    <!-- <div class="col-lg-4">
+    <div class="col-lg-4">
       <h2>Public Address : </h2>
       <Bech32 :address="session.address || ''" />
-    </div> -->
+    </div>
   </div>
   <!-- <div class="header-balance">
     <div class="top">
