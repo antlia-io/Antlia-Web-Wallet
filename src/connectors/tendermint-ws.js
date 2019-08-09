@@ -29,7 +29,7 @@ function convertWsArgs(args = {}) {
 
 class Client extends EventEmitter {
   constructor(
-    uriString = `18.223.52.186:26657`
+    uriString = `https://color-platform.rnssol.com:26657`
   ) {
     super()
 

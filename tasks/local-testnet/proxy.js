@@ -8,8 +8,8 @@
  */
 // parse command line options
 const options = {
-  port: 9071,
-  target: `http://18.223.52.186:1317`
+  port: 1317,
+  target: `https://color-platform.rnssol.com:1317`
 }
 
 // Start the proxy
