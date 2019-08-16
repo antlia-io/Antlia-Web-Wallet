@@ -21,10 +21,12 @@
       </div>
     </TmDataMsg>
     <template slot="managed-body">
-      <div class="card">
-        <h3>Your Public Color Address</h3>
-        <Bech32 :address="session.address || ''" long-form />
-      </div>
+      <!-- <template slot="address">
+        <div class="card">
+          <h3>Your Public Color Address</h3>
+          <Bech32 :address="session.address || ''" long-form />
+        </div>
+      </template> -->
       <LiCoin
         v-for="coin in filteredBalances"
         :key="coin.denom"
@@ -45,7 +47,7 @@ import orderBy from "lodash.orderby"
 import LiCoin from "./LiCoin"
 import PageTransactions from "./PageTransactions"
 import SendModal from "src/ActionModal/components/SendModal"
-import Bech32 from "common/Bech32"
+// import Bech32 from "common/Bech32"
 import TmPage from "common/TmPage"
 import TmDataMsg from "common/TmDataMsg"
 
@@ -57,7 +59,7 @@ export default {
     PageTransactions,
     TmPage,
     SendModal,
-    Bech32
+    // Bech32
   },
   data: () => ({ num, showSendModal: false }),
   computed: {
@@ -86,25 +88,3 @@ export default {
 }
 </script>
 
-<style scoped>
-.card {
-  background: white;
-  border-radius: 2px;
-  padding: 1rem;
-  font-size: var(--m);
-  margin-bottom: 0.5rem;
-  border: 1px solid var(--bc-dim);
-}
-
-.card h3 {
-  font-size: 14px;
-  font-weight: 400;
-  color: black !important;
-}
-
-@media screen and (max-width: 767px) {
-  .card {
-    display: none;
-  }
-}
-</style>

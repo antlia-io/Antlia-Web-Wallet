@@ -1,6 +1,7 @@
 <template>
   <transition v-if="show" name="slide-fade">
     <div v-focus-last class="action-modal" tabindex="0" @keyup.esc="close">
+      
       <div
         id="closeBtn"
         class="action-modal-icon action-modal-close"
@@ -27,6 +28,9 @@
         <slot />
       </div>
       <div v-else-if="step === feeStep" class="action-modal-form">
+        <a @click="goBack">
+          <i class="material-icons session-back">arrow_back</i>
+        </a>
         <TmFormGroup
           v-if="session.experimentalMode"
           :error="$v.gasPrice.$error && $v.gasPrice.$invalid"
@@ -586,6 +590,9 @@ export default {
     },
     async connectLedger() {
       await this.$store.dispatch(`connectLedgerApp`)
+    },
+    goBack() {
+      this.$router.go(defaultStep)
     }
   },
   validations() {
@@ -620,7 +627,7 @@ export default {
   flex-direction: column;
   right: 1rem;
   padding: 1.5rem 1.5rem 2rem 1.5rem;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   max-width: 564px;

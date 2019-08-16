@@ -3,27 +3,20 @@
     <b-progress class="mt-2" :max="max" show-value>
       <b-progress-bar
         :value="unbondedAtoms * (100 / totalAtomsDisplay)"
-        :label="`${(unbondedAtoms * (100 / totalAtomsDisplay)).toFixed(2)}%`"
+        :label="`${(LiquidbarValue).toFixed(2)}%`"
         variant="success"
       ></b-progress-bar>
       <!-- <b-progress-bar :value="value * (2.5 / 10)" variant="warning"></b-progress-bar> -->
       <b-progress-bar
         :value="(totalAtomsDisplay - unbondedAtoms) * (100 / totalAtomsDisplay)"
-        :label="
-          `${(
-            (totalAtomsDisplay - unbondedAtoms) *
-            (100 / totalAtomsDisplay)
-          ).toFixed(2)}%`
-        "
+        :label="`${(DelegatedbarValue).toFixed(2)}%`"
         variant="warning"
       ></b-progress-bar>
     </b-progress>
     <div>
       <div class="col-md-4">
         <h3>Total {{ num.viewDenom(bondDenom) }} :</h3>
-        <h2 class="total-atoms__value color">
-          {{ totalAtomsDisplay }}
-        </h2>
+        <h2 class="total-atoms__value color">{{ totalAtomsDisplay }}</h2>
       </div>
       <div class="col-md-4">
         <p class="green"></p>
@@ -33,13 +26,13 @@
       <div class="col-md-4">
         <p class="blue"></p>
         <h3>Delegated {{ num.viewDenom(bondDenom) }} :</h3>
-        <h2 class="color">{{ totalAtomsDisplay - unbondedAtoms }}</h2>
+        <h2 class="color">{{ delegated }}</h2>
       </div>
     </div>
-    <div class="col-lg-4">
+    <!-- <div class="col-lg-4">
       <h2>Public Address : </h2>
       <Bech32 :address="session.address || ''" />
-    </div>
+    </div> -->
   </div>
   <!-- <div class="header-balance">
     <div class="top">
@@ -97,9 +90,9 @@ export default {
   data() {
     return {
       num,
-      lastUpdate: 0
-      // value: 45,
-      // max: 100
+      lastUpdate: 0,
+      value: 0,
+      max: 100
     }
   },
   computed: {
@@ -125,6 +118,9 @@ export default {
     unbondedAtoms() {
       return this.loaded ? this.num.atoms(this.liquidAtoms) : `--`
     },
+    delegated(){
+      return this.loaded ? (this.num.atoms(this.totalAtoms) - this.num.atoms(this.liquidAtoms)) : `--`
+    },
     // only be ready to withdraw of the validator rewards are loaded and the user has rewards to withdraw
     // the validator rewards are needed to filter the top 5 validators to withdraw from
     readyToWithdraw() {
@@ -138,7 +134,20 @@ export default {
       return this.num.shortDecimals(
         this.num.atoms(rewards && rewards > 10 ? rewards : 0)
       )
+    },
+    LiquidbarValue() {
+      if (this.num.atoms(this.totalAtoms) === 0)
+        return 0
+      else 
+        return this.num.atoms(this.liquidAtoms) * (100 / this.num.atoms(this.totalAtoms))
+    },
+    DelegatedbarValue(){
+      if (this.num.atoms(this.totalAtoms) - this.num.atoms(this.liquidAtoms) === 0)
+        return 0
+      else 
+        return (this.num.atoms(this.totalAtoms) - this.num.atoms(this.liquidAtoms)) * (100 / this.num.atoms(this.totalAtoms))
     }
+
   },
   watch: {
     lastHeader: {

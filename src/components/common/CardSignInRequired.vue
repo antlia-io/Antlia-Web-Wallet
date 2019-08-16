@@ -20,5 +20,7 @@ export default {
 <style scoped>
 a {
   cursor: pointer;
+  color: #0a73b1 !important;
+  text-transform: uppercase
 }
 </style>

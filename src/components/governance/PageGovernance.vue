@@ -11,7 +11,7 @@
       />
     </div>
     <Tabs v-if="tabs" :tabs="tabs" />
-    <!-- <ModalPropose ref="modalPropose" :denom="depositDenom" /> -->
+    <ModalPropose ref="modalPropose" :denom="depositDenom" />
     <router-view />
   </TmPage>
 </template>

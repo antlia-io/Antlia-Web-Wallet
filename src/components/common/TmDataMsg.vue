@@ -49,7 +49,7 @@ export default {
 
 <style>
 .tm-data-msg {
-  background: var(--app-fg);
+  background: white;
   padding: 4rem;
   display: flex;
   align-items: center;
@@ -70,12 +70,12 @@ export default {
 
 .tm-data-msg__title {
   font-weight: 400;
-  color: var(--bright);
+  color: black;
   font-size: var(--h2);
 }
 
 .tm-data-msg__subtitle {
-  color: var(--dim);
+  color: black;
   font-size: 1rem;
 }
 

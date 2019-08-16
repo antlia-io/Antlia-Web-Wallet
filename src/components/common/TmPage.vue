@@ -10,6 +10,11 @@
       <slot slot="menu-body" name="menu-body">
         <ToolBar />
         <TmBalance v-if="session.signedIn" />
+        <div v-if="session.signedIn" class="card">
+          <h3>Your Public Color Address</h3>
+          <Bech32 :address="session.address || ''" long-form />
+        </div>
+        <!-- <slot name="address" /> -->
       </slot>
       <slot slot="header-buttons" name="header-buttons" />
     </TmPageHeader>
@@ -47,6 +52,7 @@ import TmDataError from "common/TmDataError"
 import TmDataConnecting from "common/TmDataConnecting"
 import TmBalance from "common/TmBalance"
 import ToolBar from "common/ToolBar"
+import Bech32 from "common/Bech32"
 // import PageFooter from "common/TmPageFooter"
 
 export default {
@@ -59,7 +65,8 @@ export default {
     TmDataLoading,
     TmDataError,
     TmDataConnecting,
-    CardSignInRequired
+    CardSignInRequired,
+    Bech32
     // PageFooter
   },
   props: {
@@ -145,6 +152,21 @@ export default {
 .tm-page-subtitle > div {
   color: var(--dim);
   font-size: var(--sm);
+}
+
+.card {
+  background: white;
+  border-radius: 2px;
+  padding: 1rem;
+  font-size: var(--m);
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--bc-dim);
+}
+
+.card h3 {
+  font-size: 14px;
+  font-weight: 400;
+  color: black !important;
 }
 
 .column {
