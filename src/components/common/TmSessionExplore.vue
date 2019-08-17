@@ -5,7 +5,7 @@
         Explore with any address
       </h2>
       <div class="session-main">
-        <TmFormGroup field-id="sign-in-name" field-label="Your Cosmos Address">
+        <TmFormGroup field-id="sign-in-name" field-label="Your Color Address">
           <TmField
             v-model="address"
             type="text"
@@ -19,7 +19,7 @@
           />
           <TmFormMsg
             v-else-if="$v.address.$error && !$v.address.bech32Validate"
-            name="Your Cosmos Address"
+            name="Your Color Address"
             type="bech32"
           />
         </TmFormGroup>

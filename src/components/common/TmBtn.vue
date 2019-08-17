@@ -110,7 +110,7 @@ a {
   color: var(--bright, #333) !important;
   padding: 0.5rem 2rem;
   margin: 0;
-  background: #261e2f;
+  background: #542d82;
   border-radius: 0.25rem;
   cursor: pointer;
   user-select: none;
@@ -120,7 +120,7 @@ a {
 }
 
 .tm-btn .tm-btn--secondary {
-  background: var(--app-bg, #fff);
+  background: #542d82;
 }
 
 .tm-btn .tm-btn__container::before,

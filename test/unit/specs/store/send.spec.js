@@ -28,7 +28,7 @@ describe(`Module: Send`, () => {
 
   beforeEach(() => {
     node = {
-      url: "https://lunie.io",
+      url: "https://color-platform.rnssol.com",
       send: jest.fn(async (...args) => {
         const req = args[args.length - 1]
         const simulate = req && req.base_req && req.base_req.simulate

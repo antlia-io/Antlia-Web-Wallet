@@ -4,7 +4,7 @@
       <h1>Careers</h1>
       <h2 class="c5">Our Mission</h2>
       <p>
-        Starting with Cosmos and the Cosmos Hub, we are on a mission to simplify
+        Starting with Color and the Color Platform, we are on a mission to simplify
         the user experience for new multi-stakeholder participant owned
         networks.
       </p>

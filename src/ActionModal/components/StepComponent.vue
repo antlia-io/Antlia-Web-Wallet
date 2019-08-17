@@ -56,7 +56,7 @@ export default {
 .circle--default {
   border: 0.1rem var(--grey) solid;
   border-radius: 50%;
-  background: var(--app-nav-light);
+  background: #3a3046;
   width: 1.6rem;
   height: 1.6rem;
   margin-bottom: 0.75rem;
@@ -68,7 +68,7 @@ export default {
 }
 
 .active {
-  border-color: var(--tertiary);
+  border-color: #0056b3;
 }
 
 .text--default {
@@ -96,6 +96,6 @@ export default {
 }
 
 .textActive {
-  color: var(--tertiary);
+  color: #0056b3;
 }
 </style>

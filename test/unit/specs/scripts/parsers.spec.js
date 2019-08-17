@@ -27,7 +27,7 @@ const signedMessage = {
       ],
       gas: "39953"
     },
-    memo: "(Sent via Lunie)"
+    memo: "(Sent via Color Wallet)"
   }
 }
 
@@ -58,7 +58,7 @@ const signedActionMessage = {
       ],
       gas: "39953"
     },
-    memo: "(Sent via Lunie)"
+    memo: "(Sent via Color Wallet)"
   }
 }
 
@@ -70,12 +70,12 @@ describe(`parsers helper`, () => {
         value: {
           msg: "some message",
           fee: 0.01,
-          memo: "Sent from Lunie"
+          memo: "Sent from Color Wallet"
         }
       }
     }
     expect(
-      parseTx(`{"msgs":"some message","fee":0.01,"memo":"Sent from Lunie"}`)
+      parseTx(`{"msgs":"some message","fee":0.01,"memo":"Sent from Color Wallet"}`)
     ).toMatchObject(shortMessage)
   })
 

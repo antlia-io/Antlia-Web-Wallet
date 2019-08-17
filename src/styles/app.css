@@ -79,10 +79,11 @@ input.tm-field {
 }
 
 .input-suffix {
-  background: var(--bc-dim);
+  background: rgb(84, 45, 130);
   display: inline-block;
   position: absolute;
-  padding: 7px 8px;
+  padding: 5px 8px;
+  margin-top: 2px;
   font-size: var(--sm);
   text-transform: uppercase;
   right: 30px;

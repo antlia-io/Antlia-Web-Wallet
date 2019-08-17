@@ -13,7 +13,7 @@ describe(`ModalPropose`, () => {
 
   const inputs = {
     amount: 15,
-    title: `A new text proposal for Cosmos`,
+    title: `A new text proposal for Color`,
     description: `a valid description for the proposal`
   }
 

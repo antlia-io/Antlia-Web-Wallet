@@ -35,7 +35,7 @@ exports[`SessionFrame shows an overview of all wallets to sign in with from the 
   <tmbtn-stub
     class="session-close"
     color="secondary"
-    value="Back to Lunie"
+    value="Back to Color Wallet"
   />
 </div>
 `;

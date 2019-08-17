@@ -139,7 +139,7 @@ import TmBtn from "src/components/common/TmBtn"
 import ActionModal from "./ActionModal"
 import transaction from "../utils/transactionTypes"
 
-const defaultMemo = "(Sent via Lunie)"
+const defaultMemo = "(Sent via Color Wallet)"
 
 export default {
   name: `send-modal`,

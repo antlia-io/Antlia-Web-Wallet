@@ -1,11 +1,11 @@
 {
-  "name": "lunie",
-  "productName": "lunie",
+  "name": "colorwallet",
+  "productName": "Color",
   "version": "1.0.0-beta.98",
-  "description": "Lunie is the user interface for the Cosmos Hub.",
-  "author": "Lunie International Software Systems Inc. <hello@lunie.io>",
+  "description": "Color Wallet is the user interface for the Color.",
+  "author": "Color Platform Organization. <hello@color-platform.org>",
   "license": "Apache-2.0",
-  "homepage": "https://lunie.io",
+  "homepage": "https://color-platform.rnssol.com/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luniehq/lunie.git"

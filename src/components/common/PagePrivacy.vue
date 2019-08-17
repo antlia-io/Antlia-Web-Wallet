@@ -6,10 +6,9 @@
       <p><span class="c5">When this Privacy Policy Applies</span></p>
       <p>
         <span class="c0"
-          >This Privacy Policy applies to the use of Lunie.io, the Lunie
-          Universal Wallet (&ldquo;App&rdquo;) and the use and/or access of any
-          of the products, services or content provided by or on behalf of Lunie
-          International Software Systems Inc. (&ldquo;Lunie&rdquo;) in
+          >This Privacy Policy applies to the use of Color Wallet, the Color Wallet (&ldquo;App&rdquo;) and the use and/or access of any
+          of the products, services or content provided by or on behalf of RNS 
+          Solutions Pvt Ltd. (&ldquo;Color Wallet&rdquo;) in
           connection with this Privacy Policy is linked or posted together
           referred to as the &ldquo;Services&rdquo;. &nbsp;Please read this
           &nbsp;Privacy Policy before using the Services because it tells you
@@ -28,15 +27,14 @@
       </p>
       <p>
         <span class="c0"
-          >&ldquo;Lunie&rdquo;, &ldquo;the Lunie App&rdquo;, &ldquo;the Lunie
+          >&ldquo;Color Wallet&rdquo;, &ldquo;the Color App&rdquo;, &ldquo;the Color Wallet
           Services&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;,
-          &ldquo;ours&rdquo; and similar terms refers to Lunie International
-          Software Systems Inc. in this Privacy Policy. &nbsp;</span
+          &ldquo;ours&rdquo; and similar terms refers to RNS Solutions Pvt Ltd. in this Privacy Policy. &nbsp;</span
         >
       </p>
       <p>
         <span
-          >This Privacy Policy does not apply to (i) any Lunie services that has
+          >This Privacy Policy does not apply to (i) any Color services that has
           its own privacy policy or a different privacy policy, in which case
           that privacy policy, not this privacy policy will apply and (ii) to
           information that is collected offline or by any third-party website or
@@ -219,7 +217,7 @@
             >Device-specific settings and other hardware settings, including
             operating system and other software settings, browser type, browser
             language, time zones, and certain cookies or other technologies that
-            may associate your device information with your Lunie account;</span
+            may associate your device information with your Color account;</span
           >
         </li>
         <li class="c1">
@@ -442,7 +440,7 @@
           >Moreover, if you access third-party websites through the App or the
           Services you may encounter third-party advertising. &nbsp;If you
           click-through to a third-party website, you are no longer on a site
-          hosted by Lunie and activity on the third-party site will be governed
+          hosted by Color and activity on the third-party site will be governed
           by the third-party&rsquo;s privacy policy. &nbsp;You should review
           this privacy policy to understand what information will be collected
           and what technology the third-party uses to collect this information.
@@ -656,7 +654,7 @@
           except in connection with providing services.</span
         >
       </p>
-      <p><span class="c4">Protection of Lunie and Others</span></p>
+      <p><span class="c4">Protection of Color Wallet and Others</span></p>
       <p>
         <span class="c0"
           >We and our third party service providers may disclose and otherwise
@@ -695,7 +693,7 @@
         </li>
         <li class="c1">
           <span class="c0"
-            >Protect the rights or property of Lunie, its users or the public as
+            >Protect the rights or property of Color Wallet, its users or the public as
             required or permitted by law</span
           >
         </li>
@@ -715,7 +713,7 @@
       <p>
         <span class="c0"
           >We may share your information if (i) disclosure could mitigate
-          Lunie&rsquo;s liability in an actual or threatened lawsuit, (ii) as
+          Color Wallet&rsquo;s liability in an actual or threatened lawsuit, (ii) as
           necessary to protect legal rights of our users, customers, business
           partners or other interested parties, (iii) to pursue available
           remedies or limit the damages, (iv) to enforce our agreements
@@ -851,7 +849,7 @@
         <li class="c1"><span class="c0">Delete your account </span></li>
         <li class="c1">
           <span class="c0"
-            >Contact us at privacy@lunie.io with your request.
+            >Contact us at hello@color-platform.org with your request.
           </span>
         </li>
       </ul>
@@ -894,7 +892,7 @@
       <p>
         <span class="c0"
           >If you are an EEA resident, you have the right to lodge a complaint
-          with the data protection authority privacy@lunie.io about how we
+          with the data protection authority hello@color-platform.org about how we
           process your personal information,</span
         >
       </p>
@@ -904,7 +902,7 @@
           1798.83 permits individual California residents to request certain
           information regarding our disclosure of personal information to third
           parties for their direct marketing purposes. &nbsp;To make such a
-          request, please contact us at privacy@lunie.io.</span
+          request, please contact us at hello@color-platform.org</span
         >
       </p>
       <p><span class="c5">Children Privacy</span></p>
@@ -931,7 +929,7 @@
         <span class="c0"
           >Parents or legal guardians who are concerned about the transfer of
           personal information from their children may contact us at
-          privacy@lunie.io.</span
+          hello@color-platform.org</span
         >
       </p>
       <p>
@@ -1017,7 +1015,7 @@
       <p>
         <span class="c0"
           >If you have any questions, comments or concerns regarding our Privacy
-          Policy or practices, please contact us at privacy@lunie.io.
+          Policy or practices, please contact us at hello@color-platform.org
         </span>
       </p>
     </div>

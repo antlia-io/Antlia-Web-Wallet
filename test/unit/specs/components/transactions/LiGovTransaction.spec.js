@@ -15,7 +15,7 @@ describe(`LiGovTransaction`, () => {
     txType: ``,
     time: new Date(Date.now()).toISOString(),
     block: 500,
-    memo: `TESTING (Sent via Lunie)`
+    memo: `TESTING (Sent via Color Wallet)`
   }
 
   beforeEach(() => {

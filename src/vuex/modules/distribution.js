@@ -90,7 +90,7 @@ export default ({ node }) => {
     ) {
       state.loading = true
       try {
-        // TODO move array fallback into cosmos-api
+        // TODO move array fallback into color-api
         const rewardsArray =
           (await node.get.delegatorRewardsFromValidator(
             session.address,

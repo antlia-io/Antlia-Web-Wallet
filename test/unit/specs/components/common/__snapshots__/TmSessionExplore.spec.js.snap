@@ -19,7 +19,7 @@ exports[`TmSessionExplore shows a form to sign in with an address 1`] = `
     >
       <tmformgroup-stub
         fieldid="sign-in-name"
-        fieldlabel="Your Cosmos Address"
+        fieldlabel="Your Color Address"
       >
         <tmfield-stub
           placeholder=""

@@ -52,7 +52,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - [#2814](https://github.com/cosmos/lunie/pull/2814) Display accounts in sign on screen @colw
-- [#2512](https://github.com/cosmos/lunie/issues/2512) Added step to actionmodal to show that Lunie has sent the tx and is waiting for confirmation @faboweb
+- [#2512](https://github.com/cosmos/lunie/issues/2512) Added step to actionmodal to show that Color Wallet has sent the tx and is waiting for confirmation @faboweb
 
 ### Fixed
 
@@ -222,7 +222,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - [#2164](https://github.com/cosmos/lunie/issues/2164) Changing how an invalid validators address is handled. Now a page informs users that it is invalid and has a link to view all validators @thebkr7
 - [#2164](https://github.com/cosmos/lunie/issues/2164) Refactored Vue Slots in TmPage and TmDataEmpty @thebkr7
-- Extracted signer scripts into @lunie/cosmos-keys @faboweb
+- Extracted signer scripts into @@rnssolution/color-keys @faboweb
 - [#2681](https://github.com/cosmos/lunie/pull/2681) Extracted the Ledger wrapper into a library @faboweb
 - [#2666](https://github.com/cosmos/lunie/issues/2666) removed refresh buttons @jbibla
 
@@ -352,7 +352,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- [#2382](https://github.com/cosmos/lunie/pull/2382) Compatibility with Ledger Cosmos App 1.5 @faboweb
+- [#2382](https://github.com/cosmos/lunie/pull/2382) Compatibility with Ledger Color App 1.5 @faboweb
 - [#1962 ](https://github.com/cosmos/lunie/issues/1962 ) Enforce approval of address for Ledger sign in @faboweb
 - [#2560](https://github.com/cosmos/lunie/issues/2560) Added careers page @jbibla
 
@@ -401,7 +401,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- [#2584](https://github.com/cosmos/lunie/pull/2584) Switched back to Lunie servers after fixing issues @faboweb
+- [#2584](https://github.com/cosmos/lunie/pull/2584) Switched back to Color Wallet servers after fixing issues @faboweb
 
 ### Fixed
 
@@ -427,7 +427,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- [#2382](https://github.com/cosmos/lunie/pull/2382) Compatibility with Ledger Cosmos App 1.5 @faboweb
+- [#2382](https://github.com/cosmos/lunie/pull/2382) Compatibility with Ledger Color App 1.5 @faboweb
 - [#1962 ](https://github.com/cosmos/lunie/issues/1962 ) Enforce approval of address for Ledger sign in @faboweb
 - [#2560](https://github.com/cosmos/lunie/issues/2560) Added careers page @jbibla
 
@@ -535,7 +535,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [#2500](https://github.com/cosmos/lunie/issues/2500) Fixed displaying of self delegation ratio @faboweb
 - [#2502](https://github.com/cosmos/lunie/pulls/2502) Fixed redelegation @faboweb
 - [#2499](https://github.com/cosmos/lunie/pull/2499) Fix withdraw in europe number format @faboweb
-- [#2493](https://github.com/cosmos/lunie/pull/2493) Throws an error if Ledger Cosmos App is outdated @faboweb
+- [#2493](https://github.com/cosmos/lunie/pull/2493) Throws an error if Ledger Color App is outdated @faboweb
 
 ## [1.0.0-beta.51] - 2019-04-28
 
@@ -552,7 +552,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - [#2491](https://github.com/cosmos/lunie/pull/2491) Restructured the repository to simplify it @faboweb
-- [#2455](https://github.com/cosmos/lunie/issues/2455) standardized numbers throughout lunie and reduced to 3 decimal points @jbibla
+- [#2455](https://github.com/cosmos/lunie/issues/2455) standardized numbers throughout Color Wallet and reduced to 3 decimal points @jbibla
 
 ### Fixed
 
@@ -642,7 +642,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - [#2436](https://github.com/cosmos/lunie/pull/2436) Improved documentation on manual releases @faboweb
-- [#2433](https://github.com/cosmos/lunie/pull/2433) Switch servers to Lunie servers @faboweb
+- [#2433](https://github.com/cosmos/lunie/pull/2433) Switch servers to Color Wallet servers @faboweb
 
 ## [1.0.0-beta.39] - 2019-04-06
 
@@ -727,13 +727,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Fixed] [\#2370](https://github.com/cosmos/lunie/pull/2370) Better inplace updates to validators so the information (like signing info) never hides again once it was once loaded @faboweb
 [Fixed] [\#2370](https://github.com/cosmos/lunie/pull/2370) Pages now scroll back to the top on tab changes @faboweb
-[Changed] [\#2360](https://github.com/cosmos/lunie/issues/2360) disabled token sending on the cosmos hub @faboweb
+[Changed] [\#2360](https://github.com/cosmos/lunie/issues/2360) disabled token sending on the color hub @faboweb
 [Changed] Reduced keybase caching timeouts @faboweb
 
 ## [1.0.0-beta.29] - 2019-03-27
 
 [Changed] [\#2337](https://github.com/cosmos/voyager/pull/2337) Show rewards in header on mobile @faboweb
-[Changed] [\#2361](https://github.com/cosmos/lunie/pull/2361) Complete renaming of README to Lunie @sabau
+[Changed] [\#2361](https://github.com/cosmos/lunie/pull/2361) Complete renaming of README to Color Wallet @sabau
 [Fixed] [\#2358](https://github.com/cosmos/lunie/pull/2358) Fixed store cache retrieval on sign in @faboweb
 [Fixed] [\#2250](https://github.com/cosmos/lunie/issues/2250) Fixed staking transactions invalid date @fedekunze
 
@@ -747,7 +747,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - Circleci config deployment job to deploy `lunie.io` and `beta.lunie.io`
-- renamed to Lunie @faboweb
+- renamed to Color Wallet @faboweb
 
 ## [1.0.0-beta.27] - 2019-03-25
 
@@ -998,7 +998,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - [\#1032](https://github.com/cosmos/voyager/issues/1032) added several events to google analytics @faboweb
-- [\#1630](https://github.com/cosmos/voyager/issues/1630) added memo "Sent via Cosmos UI" to distinguish txs sent via UI @faboweb
+- [\#1630](https://github.com/cosmos/voyager/issues/1630) added memo "Sent via Color UI" to distinguish txs sent via UI @faboweb
 - [\#2035](https://github.com/cosmos/voyager/issues/2035) Distribution vuex module @fedekunze
 - [\#2088](https://github.com/cosmos/voyager/issues/2088) Faucet button @sabau
 
@@ -1072,7 +1072,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- [\#1920](https://github.com/cosmos/voyager/issues/1920) Add link to install Cosmos Ledger App @fedekunze
+- [\#1920](https://github.com/cosmos/voyager/issues/1920) Add link to install Color Ledger App @fedekunze
 - [\#2000](https://github.com/cosmos/voyager/issues/2000) Add distribution endpoints support @fedekunze
 
 ### Changed
@@ -1743,7 +1743,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added a toggle to switch between a mocked blockchain connector and the live connector @faboweb
 - A check for updating the changelog (also pre-push) @faboweb
 - Added automatic Prettier formatting on commits @faboweb
-- The build process now builds the Cosmos SDK from source code. @NodeGuy
+- The build process now builds the Color SDK from source code. @NodeGuy
 
 ### Changed
 
@@ -1794,7 +1794,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Renamed Cosmos UI to Cosmos Voyager. @nylira
+- Renamed Color UI to Color Voyager. @nylira
 - Added Google Analytics for testnet versions @faboweb
 - Added Sentry error reporting for testnet versions @faboweb
 - Fixed reconnection issues @faboweb

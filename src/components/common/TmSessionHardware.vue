@@ -9,7 +9,7 @@
         <HardwareState :loading="status === `connect` ? false : true">
           <template v-if="status === `connect` || status === `detect`">
             <p>
-              Please plug in your Ledger&nbsp;Nano and open the Cosmos Ledger
+              Please plug in your Ledger&nbsp;Nano and open the Color Ledger
               app
             </p>
           </template>

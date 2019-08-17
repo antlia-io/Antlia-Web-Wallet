@@ -24,7 +24,7 @@
         </div>
         <div class="row">
           <dl class="col-lg-4 info_dl">
-            <dt>Block Height</dt>
+            <dt>BLOCK HEIGHT</dt>
             <dd>
               {{
                 lastHeader.height
@@ -34,31 +34,11 @@
             </dd>
           </dl>
           <dl class="col-lg-4 info_dl">
-            <dt>Last Block</dt>
+            <dt>LAST BLOCK</dt>
             <dd>{{ connected ? lastBlock : `--` }}</dd>
           </dl>
           <dl class="col-lg-4 info_dl">
-            <dt>Transactions</dt>
-            <dd>
-              {{
-                lastHeader.total_txs !== undefined
-                  ? num.shortDecimals(lastHeader.total_txs)
-                  : `--`
-              }}
-            </dd>
-          </dl>
-          <dl class="col-lg-4 info_dl">
-            <dt>Number of Validators</dt>
-            <dd>
-              {{
-                delegates.delegates.length > 0
-                  ? num.shortDecimals(delegates.delegates.length)
-                  : `--`
-              }}
-            </dd>
-          </dl>
-          <dl class="col-lg-4 info_dl">
-            <dt>Total Liquid {{ num.viewDenom(bondDenom) }}</dt>
+            <dt>TOTAL LIQUID {{ num.viewDenom(bondDenom) }}</dt>
             <dd id="loose_tokens">
               {{
                 pool.pool && pool.pool.not_bonded_tokens
@@ -68,7 +48,28 @@
             </dd>
           </dl>
           <dl class="col-lg-4 info_dl">
-            <dt>Total Delegated {{ num.viewDenom(bondDenom) }}</dt>
+            <dt>TRANSACTIONS</dt>
+            <dd>
+              {{
+                lastHeader.total_txs !== undefined
+                  ? num.shortDecimals(lastHeader.total_txs)
+                  : `--`
+              }}
+            </dd>
+          </dl>
+          <dl class="col-lg-4 info_dl">
+            <dt>NUMBER OF VALIDATORS</dt>
+            <dd>
+              {{
+                delegates.delegates.length > 0
+                  ? num.shortDecimals(delegates.delegates.length)
+                  : `--`
+              }}
+            </dd>
+          </dl>
+          
+          <dl class="col-lg-4 info_dl">
+            <dt>TOTAL DELEGATED {{ num.viewDenom(bondDenom) }}</dt>
             <dd id="bonded_tokens">
               {{
                 pool.pool && pool.pool.bonded_tokens
@@ -153,13 +154,13 @@ export default {
     properties() {
       return [
         {
-          title: `Block Number`,
+          title: `BLOCK NUMBER`,
           value: `block_number`,
           tooltip: `Block Number`,
           class: `blockNumber`
         },
         {
-          title: `Transactions`,
+          title: `TRANSACTIONS`,
           value: `transactions`,
           tooltip: `Number of transactions per block`,
           class: `transactions`
@@ -175,6 +176,10 @@ export default {
 <style scoped>
 .block td {
   padding: 1rem;
+}
+
+.page-profile__status-and-title {
+  display: block
 }
 
 .row {

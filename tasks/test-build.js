@@ -41,7 +41,7 @@ async function main() {
 
   if (!executablePath) {
     console.error(
-      `\nPlease define the executable you want to test like "yarn run test:exe ./Cosmos Voyager.exe"\n`
+      `\nPlease define the executable you want to test like "yarn run test:exe ./Color Voyager.exe"\n`
     )
     process.exit(-1)
   }

@@ -5,7 +5,7 @@ exports[`LiDistributionTransaction set withdraw address 1`] = `
   block="500"
   color="#F2B134"
   fees="[object Object]"
-  memo="TESTING (Sent via Lunie)"
+  memo="TESTING (Sent via Color Wallet)"
   time="1970-01-01T00:00:42.000Z"
 >
   <div>
@@ -25,7 +25,7 @@ exports[`LiDistributionTransaction transaction without fees 1`] = `
   block="500"
   color="#F2B134"
   fees="[object Object]"
-  memo="TESTING (Sent via Lunie)"
+  memo="TESTING (Sent via Color Wallet)"
   time="1970-01-01T00:00:42.000Z"
 >
   <div>
@@ -53,7 +53,7 @@ exports[`LiDistributionTransaction withdraw delegation rewards 1`] = `
   block="500"
   color="#F2B134"
   fees="[object Object]"
-  memo="TESTING (Sent via Lunie)"
+  memo="TESTING (Sent via Color Wallet)"
   time="1970-01-01T00:00:42.000Z"
 >
   <div>
@@ -81,7 +81,7 @@ exports[`LiDistributionTransaction withdraw validator commission 1`] = `
   block="500"
   color="#F2B134"
   fees="[object Object]"
-  memo="TESTING (Sent via Lunie)"
+  memo="TESTING (Sent via Color Wallet)"
   time="1970-01-01T00:00:42.000Z"
 >
   <div>

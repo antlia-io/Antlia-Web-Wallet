@@ -157,7 +157,7 @@ describe(`SendModal`, () => {
       type: "MsgSend",
       toAddress: "cosmos12345",
       amounts: [{ amount: "2000000", denom: "STAKE" }],
-      memo: "(Sent via Lunie)"
+      memo: "(Sent via Color Wallet)"
     })
   })
 

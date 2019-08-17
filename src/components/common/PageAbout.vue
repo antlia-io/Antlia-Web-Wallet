@@ -3,11 +3,11 @@
     <div class="card">
       <h1>About</h1>
       <p>🎉 <router-link to="careers">We're Hiring!</router-link></p>
-      <h2 class="c5">What is Lunie?</h2>
+      <h2 class="c5">What is Color Wallet?</h2>
       <p>
-        Lunie is a user interface for sending and receiving Cosmos tokens,
+        Color Wallet is a user interface for sending and receiving Color tokens,
         viewing your transaction history, delegating your ATOMs, and
-        participating in governance on the Cosmos Hub.
+        participating in governance on the Color.
       </p>
       <p>
         Over the coming months we will be announcing a number of new products
@@ -15,8 +15,7 @@
         and more enjoyable.
       </p>
       <p>
-        This software is developed by the team at Lunie International Software
-        Systems Inc. We're
+        This software is developed by the team at RNS Solutions Pvt Ltd. We're
         <a
           href="https://github.com/luniehq/lunie"
           target="_blank"
@@ -31,17 +30,17 @@
     <div class="card">
       <h2 class="c5">Security</h2>
       <p>
-        Lunie is non-custodial. We believe that maintaining ownership over your
+        Color Wallet is non-custodial. We believe that maintaining ownership over your
         keys is an important part of participating in these networks.
       </p>
       <p>
         <b>
-          For your safety and security, Lunie will not ask for or store your
+          For your safety and security, Color Wallet will not ask for or store your
           private keys or seed phrases.</b
         >
       </p>
       <p>
-        To send transactions with Lunie, you'll have to sign them with your
+        To send transactions with Color Wallet, you'll have to sign them with your
         Ledger Nano. If you don't have a Ledger Nano, you can
         <a
           href="https://shop.ledger.com/?r=3dd204ef7508"
@@ -51,7 +50,7 @@
         >.
       </p>
       <p>
-        To learn more about our security policies on Lunie.io, please visit our
+        To learn more about our security policies on Color Wallet, please visit our
         <router-link to="security">security page</router-link>.
       </p>
     </div>
@@ -92,7 +91,7 @@
           target="_blank"
           rel="noopener norefferer"
           >Twitter</a
-        >, email us at contact@lunie.io, or click the <i>feedback</i> button on
+        >, email us at hello@color-platform.org, or click the <i>feedback</i> button on
         the left.
       </p>
     </div>

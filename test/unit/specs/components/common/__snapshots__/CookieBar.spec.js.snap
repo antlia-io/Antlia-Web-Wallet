@@ -13,7 +13,7 @@ exports[`CookieBar shows the cookie bar 1`] = `
       This site uses cookies to help improve the user experience.
     </span>
     
-    By using Lunie, you accept our
+    By using Color Wallet, you accept our
     
     <router-link-stub
       class="link"

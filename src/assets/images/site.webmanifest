@@ -1,6 +1,6 @@
 {
-  "name": "Lunie",
-  "short_name": "Lunie",
+  "name": "colorwallet",
+  "short_name": "colorwallet",
   "icons": [
     {
       "src": "/static/icons/android-chrome-192x192.png",
@@ -15,5 +15,5 @@
   ],
   "background_color": "#15182d",
   "display": "standalone",
-  "description": "The official wallet of the Cosmos Hub."
+  "description": "The official wallet of the Color Platform."
 }

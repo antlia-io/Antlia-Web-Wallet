@@ -5,45 +5,43 @@
       <p class="c3">Effective Date: March 28, 2019</p>
       <p class="c3">
         These Terms of Service (the &ldquo;Terms&rdquo; or this
-        &ldquo;Agreement&rdquo;) apply to the &ldquo;universal wallet&rdquo;
-        service Lunie.io (&ldquo;Lunie&rdquo; or the &ldquo;App&rdquo;) and
-        other digital services offered on behalf of Lunie International Software
-        Systems Inc. (&ldquo;Lunie&rdquo;). Lunie is a corporation organized
-        under the laws of Ontario, Canada. The &ldquo;universal wallet&rdquo;
+        &ldquo;Agreement&rdquo;) apply to the &ldquo;color wallet&rdquo;
+        service color-platform.org (&ldquo;Color Wallet&rdquo; or the &ldquo;App&rdquo;) and
+        other digital services offered on behalf of RNS Solutions Pvt Ltd. (&ldquo;Color&rdquo;). Color is a corporation organized
+        under the laws of Korea. The &ldquo;color wallet&rdquo;
         application and other digital services, software, websites,
         applications, user interfaces, features, functionalities, content and
         related updates and upgrades are referred to in these Terms collectively
         as the &ldquo;Services&rdquo;.
       </p>
       <p class="c3">
-        These Terms are a legal contract between you and Lunie that governs your
-        use of Lunie and your rights and obligations relating to the Services.
+        These Terms are a legal contract between you and Color that governs your
+        use of Color Wallet and your rights and obligations relating to the Services.
       </p>
       <p class="c3">
         <span
-          >As used in these Terms Lunie, &ldquo;we&rdquo;, &ldquo;us&rdquo;,
-          &ldquo;ours&rdquo; and similar terms refers to Lunie International
-          Software Systems Inc.. The term &ldquo;Developers&rdquo; and
+          >As used in these Terms Color, &ldquo;we&rdquo;, &ldquo;us&rdquo;,
+          &ldquo;ours&rdquo; and similar terms refers to Color Platform. The term &ldquo;Developers&rdquo; and
           &ldquo;Third-Party Developers&rdquo; in these Terms refer to
-          third-party developers who have (i) developed features for Lunie
-          and/or (ii) provide support and/or services in relation to Lunie (an
+          third-party developers who have (i) developed features for Color
+          and/or (ii) provide support and/or services in relation to Color (an
           example is analytics) or the Services and/or (iii) provide support
-          and/or services to users of Lunie and/or Services (examples are
+          and/or services to users of Color Wallet and/or Services (examples are
           customer support and features that allow you to value Digital Assets
           (as defined below</span
         >)).
       </p>
       <p class="c3">
         THESE TERMS CONTAIN IMPORTANT TERMS AND CONDITIONS THAT AFFECT YOU AND
-        YOUR USE OF LUNIE AND THE SERVICES, INCLUDING A PROVISION REGARDING
+        YOUR USE OF COLOR WALLET AND THE SERVICES, INCLUDING A PROVISION REGARDING
         BINDING ARBITRATION (OTHER THAN CERTAIN SMALL CLAIMS), A LIMITATION OF
-        THE AMOUNT OF TIME YOU HAVE TO BRING CLAIMS AGAINST LUNIE AND A WAIVER
+        THE AMOUNT OF TIME YOU HAVE TO BRING CLAIMS AGAINST COLOR WALLET AND A WAIVER
         OF CERTAIN RIGHTS TO JURY TRIAL AND/OR CLASS ACTIONS. PLEASE READ THE
         DISPUTE RESOLUTION SECTION 16 IN ITS ENTIRETY.
       </p>
       <p class="c3">
-        PLEASE READ THESE TERMS CAREFULLY BEFORE YOU USE LUNIE AND/OR SERVICES.
-        BY SETTING UP A LUNIE ACCOUNT AND/OR USING LUNIE OR THE SERVICES, YOU
+        PLEASE READ THESE TERMS CAREFULLY BEFORE YOU USE COLOR WALLET AND/OR SERVICES.
+        BY SETTING UP A COLOR WALLET ACCOUNT AND/OR USING COLOR WALLET OR THE SERVICES, YOU
         AFFIRM THAT:
       </p>
       <ul class="lst-kix_list_10-0 start">
@@ -55,7 +53,7 @@
         </li>
       </ul>
       <p class="c3">
-        IF YOU DO NOT AGREE TO THESE TERMS, THEN YOU MUST NOT USE LUNIE OR THE
+        IF YOU DO NOT AGREE TO THESE TERMS, THEN YOU MUST NOT USE COLOR WALLET OR THE
         SERVICES.
       </p>
       <ol class="c5 lst-kix_list_7-0 start" start="1">
@@ -66,18 +64,18 @@
           it frequently. If we make changes to these Terms, we will provide
           notice of such changes as appropriate, such as by sending an email
           notification to the address you have provided, providing notice on
-          Lunie and/or updating the &ldquo;last updated&rdquo; date on the top
-          of these Terms. Your continued use of Lunie and the Services will
+          Color Wallet and/or updating the &ldquo;last updated&rdquo; date on the top
+          of these Terms. Your continued use of Color Wallet and the Services will
           confirm your acceptance of the changes. If you do not agree to the
-          changes, you must stop using Lunie and the Services. We encourage you
+          changes, you must stop using Color Wallet and the Services. We encourage you
           to review these Terms from time to time to ensure you understand the
-          terms and conditions that apply to your access to, and use of, Lunie
+          terms and conditions that apply to your access to, and use of, Color Wallet
           and the Services.
         </p>
         <li class="c2">Account</li>
         <p class="c3">
           You may be required to create an account (&ldquo;Account&rdquo;) to
-          use certain features of Lunie and/or the Services. When you create an
+          use certain features of Color Wallet and/or the Services. When you create an
           Account, you must comply with the verification and setup process in
           order to use these Service features. You agree you will maintain your
           Account information to ensure that it is always current, complete and
@@ -89,7 +87,7 @@
           be bound by these Terms.
         </p>
         <p class="c3">
-          Lunie and the Services are intended solely for users who are 13 or
+          Color Wallet and the Services are intended solely for users who are 13 or
           older. Registration by anyone under the age of 13 is unauthorized and
           in violation of these Terms. If you are aged between the relevant
           minimum age and 18 (or the age of majority where you live), you and
@@ -106,12 +104,12 @@
           not placed on the U.S. Department of Commerce&rsquo;s Denied Persons
           List or Entity List or any other U.S. export control list, (d) will
           not use IP proxying or other methods to disguise the place of your
-          residence, (e) will not use Lunie or the Services if any applicable
+          residence, (e) will not use Color Wallet or the Services if any applicable
           laws in your country prohibit you from doing so in accordance with
-          these Terms, (f) will not use Lunie or the Services in any way that is
+          these Terms, (f) will not use Color Wallet or the Services in any way that is
           illegal or unlawful, in any way that promotes or otherwise supports
-          illegal or unlawful activities, or violates Lunie&rsquo;s Rules of
-          Conduct and (g) have not previously had your right to use Lunie or the
+          illegal or unlawful activities, or violates Color Wallet&rsquo;s Rules of
+          Conduct and (g) have not previously had your right to use Color Wallet or the
           Services suspended or terminated.
         </p>
         <p class="c3">
@@ -128,19 +126,19 @@
         </p>
         <li class="c2">Services</li>
         <p class="c3">
-          Lunie and the Services provide software tools for users to access and
+          Color Wallet and the Services provide software tools for users to access and
           manage various features and functions related to digital assets
           including tokens, cryptocurrencies, virtual currencies or any other
-          digital assets you own that are supported by Lunie and the Services
+          digital assets you own that are supported by Color Wallet and the Services
           (collectively, &ldquo;Digital Assets&rdquo;), including interfacing
           with third-party sources for certain information regarding the value
           of Digital Assets. The Services do not purchase, sell, store or
           exchange Digital Assets. We do not recommend that you use the Services
           unless you are familiar with Digital Assets, Blockchain technology and
-          can securely store your own private key. Lunie includes information
-          about various Digital Assets native to the Cosmos System, however,
+          can securely store your own private key. Color Wallet includes information
+          about various Digital Assets native to the Color System, however,
           such inclusion or availability of information does not imply
-          endorsement by us of such Digital Assets. Lunie is not associated with
+          endorsement by us of such Digital Assets. Color Wallet is not associated with
           the operators of any Digital Assets and makes information related to
           such Digital Assets available for your convenience only. You
           understand and accept the inherent security risks of using the
@@ -149,13 +147,13 @@
         <p class="c3">
           We and/or our third-party partners retain full and complete title to
           all information and materials provided by us or our partners on or
-          through Lunie and the Services, including any artwork, graphics, text,
+          through Color Wallet and the Services, including any artwork, graphics, text,
           video and audio clips, trademarks, logos and other content
-          (collectively, &ldquo;Lunie Content&rdquo;), except in each case, as
-          provided in the next sentence. Lunie is releasing its source code in
-          fully open source format and all of Lunie&rsquo;s source code is
+          (collectively, &ldquo;Color Wallet Content&rdquo;), except in each case, as
+          provided in the next sentence. Color is releasing its source code in
+          fully open source format and all of Color&rsquo;s source code is
           licensed under the Apache 2.0 License. For purposes of clarification,
-          Lunie Content is part of the Services. All trademarks are the property
+          Color Content is part of the Services. All trademarks are the property
           of their respective owners.
         </p>
         <p class="c3">
@@ -169,38 +167,38 @@
           </li>
           <li class="c3 c6">
             Copy, modify, reproduce, adapt, reverse engineer, distribute, frame,
-            republish, upload, display, post, transmit or transfer Lunie, except
-            as permitted by the Apache 2.0 license with regard to the Lunie
+            republish, upload, display, post, transmit or transfer Color, except
+            as permitted by the Apache 2.0 license with regard to the Color
             source code;
           </li>
           <li class="c3 c6">
             <span
-              >License or sell Lunie or the Services in any form or by any
+              >License or sell Color or the Services in any form or by any
               means;</span
             >
           </li>
           <li class="c3 c6">
             Change any of the notices about copyright, trademarks or other
-            intellectual property rights that may be part of Lunie or the
+            intellectual property rights that may be part of Color or the
             Services; or
           </li>
-          <li class="c3 c6">Scrape data or code from Lunie or the Services.</li>
+          <li class="c3 c6">Scrape data or code from Color or the Services.</li>
         </ul>
         <p class="c3">
           <span
             >Although we make reasonable efforts to update the information on
-            Lunie and the Services, we make no representations, warranties or
+            Color Wallet and the Services, we make no representations, warranties or
             guarantees, whether express</span
-          >or implied, that Lunie or the Services are accurate, complete or up
+          >or implied, that Color Wallet or the Services are accurate, complete or up
           to date. Except as required by law,we disclaim any duty to update the
-          information included on Lunie or the Services. All information on
-          Lunie and the Services is subject to change without notice.
+          information included on Color Wallet or the Services. All information on
+          Color Wallet and the Services is subject to change without notice.
         </p>
         <p class="c3">
-          You do not acquire any right or interest in Lunie or the Services,
+          You do not acquire any right or interest in Color Wallet or the Services,
           except for the limited use right expressly stated in these Terms. If
-          you access and use Lunie, then we grant you a limited, non-exclusive,
-          and non-transferable license to download, install, and use Lunie for
+          you access and use Color Wallet, then we grant you a limited, non-exclusive,
+          and non-transferable license to download, install, and use Color Wallet for
           your personal, non-commercial use on a computer and, when applicable,
           amobile smartphone and/or tablet device owned or controlled by you
           (your &ldquo;Device&rdquo;) on the terms and conditions set forth in
@@ -213,14 +211,14 @@
         <p class="c3">
           You are responsible for the software, Device and other hardware,
           Internet service and mobile data service (and all associated fees)
-          that you need to access and use Lunie and/or the Services. We do not
-          currently charge any fees for Lunie or the Services but reserve the
+          that you need to access and use Color Wallet and/or the Services. We do not
+          currently charge any fees for Color Wallet or the Services but reserve the
           right to do so in the future. If we impose a fee, you will be given
           thirty (30) days&rsquo; prior notice by means of an amendment to these
           Terms prior to the fees becoming effective.
         </p>
         <p class="c3">
-          Eligibility: To access and use Lunie and the Services, you must be a
+          Eligibility: To access and use Color Wallet and the Services, you must be a
           resident of a Permitted Region (see Section 15 for details) and be the
           age of majority or older in your state or country of residence.
         </p>
@@ -238,7 +236,7 @@
           are also solely responsible for placing security measures on your
           Device. You are responsible for all use of your Account, including
           your login credentials (i.e., username and password) and activation
-          codes and passwords. We treat access to Lunie and/or the Services
+          codes and passwords. We treat access to Color Wallet and/or the Services
           through your Account credentials as authorized by you. Unauthorized
           access to password-protected or secure areas is prohibited and may
           lead to criminal prosecution. Please notify us immediately using the
@@ -275,17 +273,17 @@
         <p class="c3">
           The list of Digital Assets supported by the Services may be updated or
           modified from time to time in our sole discretion and is located on
-          the Lunie webpage.
+          the Color Wallet webpage.
         </p>
         <p class="c3">
           Availability of the Services: We do not guarantee availability of
-          Lunie and/or the Services at all times of the day. The availability of
-          Lunie and the Services may be subject to limitations, delays and other
+          Color Wallet and/or the Services at all times of the day. The availability of
+          Color Wallet and the Services may be subject to limitations, delays and other
           problems inherent in the use of the Internet and electronic
           communications, blockchain network congestion or network issues, all
           of which are outside of our control.
         </p>
-        <li class="c2">Restrictions on Use of Lunie and Services</li>
+        <li class="c2">Restrictions on Use of Color Wallet and Services</li>
         <p class="c3">
           You may use the Services for lawful, non-commercial purposes only. You
           agree that you willnot(and you agree not to encourage or allow any
@@ -301,31 +299,31 @@
           </li>
           <li class="c3 c6">
             Copy, modify, translate, adapt or otherwise create derivative works
-            or improvements (whether or not patentable) of any part of Lunie or
+            or improvements (whether or not patentable) of any part of Color Wallet or
             the Services, except in each case the open source source code as
             permitted by the Apache 2.0 License;
           </li>
           <li class="c3 c6">
             Remove, alter or obscure any copyright, trademark or other
-            intellectual property or proprietary notices contained in Lunie or
+            intellectual property or proprietary notices contained in Color Wallet or
             the Services;
           </li>
           <li class="c3 c6">
             Use any robot, spider, site search/retrieval application or other
             automated device, process or means to access, retrieve, scrape, data
-            mine or index any portion of Lunie or the Services;
+            mine or index any portion of Color Wallet or the Services;
           </li>
           <li class="c3 c6">
             Distribute, rent, sublicense, lease, lend, sell, resell, assign,
             transfer, transmit, stream, broadcast or otherwise make available or
-            exploit any features or functionality of Lunie or the Services
+            exploit any features or functionality of Color Wallet or the Services
             including through time-sharing, use of service bureau or by
-            otherwise making Lunie or the Services available on a network on
+            otherwise making Color Wallet or the Services available on a network on
             which they are accessible by more than one device at any time;
           </li>
           <li class="c3 c6">
             Reformat or frame any portion of the web pages that are part of
-            Lunie or the Services without our written consent;
+            Color Wallet or the Services without our written consent;
           </li>
           <li class="c3 c6">
             Negligently, recklessly, knowingly, or intentionally transmit or
@@ -336,8 +334,8 @@
           <li class="c3 c6">
             Cause or launch any programs or scripts for the purpose of unduly
             burdening or hindering the operation and/or functionality of any
-            aspect of Lunie or the Services or otherwise interfere with
-            others&rsquo; use and enjoyment of Lunie or the Services;
+            aspect of Color Wallet or the Services or otherwise interfere with
+            others&rsquo; use and enjoyment of Color Wallet or the Services;
           </li>
           <li class="c3 c6">Create an Account under fraudulent pretenses;</li>
           <li class="c3 c6">
@@ -352,17 +350,17 @@
           </li>
           <li class="c3 c6">
             Attempt to circumvent or evade any content filtering or blocking
-            techniques we employ, or attempt to access Lunie or the Services
+            techniques we employ, or attempt to access Color Wallet or the Services
             from anywhere other than a Permitted Region, as defined herein.
           </li>
         </ul>
         <li class="c2">Communication</li>
         <p class="c3">
-          By using the Services and accessing Lunie you consent to receiving
+          By using the Services and accessing Color Wallet you consent to receiving
           electronic communications from us regarding your Account. These
           communications may be emails, text messages, or other types of
           messages and may include notices about your Account, confirmation
-          emails, payment emails, emails relating to Lunie, the Services,
+          emails, payment emails, emails relating to Color Wallet, the Services,
           changes in these Terms (including the Privacy Policy) or other matters
           and are part of your relationship with us. You agree that any notices,
           agreements, disclosures or other communications that we send to you
@@ -394,30 +392,30 @@
           &ldquo;STOP&rdquo; on any texts. Please review our Privacy Policy for
           further detail on communications.
         </p>
-        <li class="c2">Modification to Lunie And Services</li>
+        <li class="c2">Modification to Color Wallet And Services</li>
         <p class="c3">
           We may from time to time perform upgrades, updates, bug fixes, or
-          error corrections to Lunie or the Services (&ldquo;Updates&rdquo;) or
-          otherwise make Lunie or the Services unavailable.
+          error corrections to Color Wallet or the Services (&ldquo;Updates&rdquo;) or
+          otherwise make Color Wallet or the Services unavailable.
         </p>
 
         <p class="c3">
           Based on your Device settings, when your Device is connected to the
-          Internet either Lunie may automatically download and install all
+          Internet either Color Wallet may automatically download and install all
           available Updates or may receive notice of or be prompted to download
           and install available Updates. Please promptly download and install
-          all Updates to ensure that Lunie operates properly.
+          all Updates to ensure that Color Wallet operates properly.
         </p>
         <p class="c3">
           <span
             >To the maximum extent authorized under applicable law, we reserve
             the right to change, remove, delete, restrict, block access to or
-            stop providing Lunie and/or any or all of the Services at any time
+            stop providing Color Wallet and/or any or all of the Services at any time
             and without notice. Except as expressly agreed in writing, we have
-            no obligation to provide access to or support for Lunie and the
+            no obligation to provide access to or support for Color Wallet and the
             Services and we are not responsible for any delay, delivery
             failureor other damage resulting from use</span
-          >of Lunie or the Services. Updates are part of the Services and
+          >of Color Wallet or the Services. Updates are part of the Services and
           subject to these Terms. Your continued use of the Services after the
           Effective Date constitutes your acceptance of the Updates.
         </p>
@@ -425,45 +423,45 @@
           <span
             >WE MAY, IN OUR SOLE DISCRETION LIMIT, SUSPEND, MODIFY, TERMINATE OR
             DELETE ACCOUNTS OR ACCESS TO THE SERVICES OR YOUR ACCOUNT AND
-            PROHIBIT ACCESS TO LUNIE AND OR THE SERVICES AND OR YOUR ACCOUNT AND
+            PROHIBIT ACCESS TO COLOR WALLET AND OR THE SERVICES AND OR YOUR ACCOUNT AND
             WE ARE UNDER NO OBLIGATION TO YOU OR ANY THIRD-PARTY FOR ANY SUCH
             LIMITATION, SUSPENSION, MODIFICATION, TERMINATION, DELETION,
             SUSPENSION, PROHIBITION, DELAY OR REMOVAL</span
           >.<a id="id.30j0zll"></a>
         </p>
         <p class="c3">
-          We do not guarantee that Lunie and/or Services can be accessed on all
+          We do not guarantee that Color Wallet and/or Services can be accessed on all
           devices, by means of a specific Internet or connection provider, or in
           all geographic locations. We may use technology to verify your
           geographic location.
         </p>
         <p class="c3">
           <span
-            >Certain software may be required to access and use Lunie and/or the
+            >Certain software may be required to access and use Color Wallet and/or the
             Services. We may need to automatically update some of the software
-            you obtain through Lunie and/or the Services or provide you with new
+            you obtain through Color Wallet and/or the Services or provide you with new
             software to keep these functioning properly, which could include bug
             fixes, patches, enhanced features, missing plug-ins and new
             versions. We may perform these updates, including to software or
             content residing on your computer or device without notifying you.
-            By using Lunie, you agree to such automatic updating</span
+            By using Color Wallet, you agree to such automatic updating</span
           ><span class="c1">.</span>
         </p>
         <li class="c2">Rules of Conduct</li>
         <p class="c3">
-          Your online conduct and interaction with others who use Lunie and/or
+          Your online conduct and interaction with others who use Color Wallet and/or
           the Services must comply with the rules of conduct set forth below and
           should be governed by common sense and basic etiquette. Our
           third-party partners may impose additional rules of conduct in their
           end user agreements. We may terminate your Account immediately,
           without refund (if payments are charged), for any conduct or activity
           that is illegal, violates the rules of conduct, or otherwise
-          negatively affects the enjoyment of Lunie or the Services by other
+          negatively affects the enjoyment of Color Wallet or the Services by other
           users. You acknowledge that we do not have to give you notice before
           terminating your Account.
         </p>
         <p class="c3">
-          When you access or use Lunie or the Services, you agree that you will
+          When you access or use Color Wallet or the Services, you agree that you will
           not:
         </p>
         <ul class="lst-kix_list_2-0 start">
@@ -473,9 +471,9 @@
             or regulation.
           </li>
           <li class="c3 c6">
-            Access or use Lunie or Services in any manner that could interfere
+            Access or use Color Wallet or Services in any manner that could interfere
             with, disrupt, negatively affect, or inhibit anyone from fully
-            enjoying Lunie or the Services, including but not limited to in any
+            enjoying Color Wallet or the Services, including but not limited to in any
             manner that is, abusive, defamatory, harassing, threatening,
             bigoted, hateful, profane, threatening, offensive, vulgar, bullying,
             obscene, sexually explicit, defamatory, infringing, invades
@@ -492,12 +490,12 @@
             pornographic or otherwise offensive or reasonably objectionable.
           </li>
           <li class="c3 c6">
-            Use any server or network used to support or provide Lunie or a
+            Use any server or network used to support or provide Color Wallet or a
             Service, including any hacking or cracking into a Service.
           </li>
           <li class="c3 c6">
             Use any software or program that damages, interferes with or
-            disrupts Lunie or a Service or another&#39;s computer or property,
+            disrupts Color Wallet or a Service or another&#39;s computer or property,
             such as denial of service attacks, spamming, hacking, or uploading
             computer viruses, worms, Trojan horses, cancelbots, spyware,
             corrupted files and time bombs or any similar software or program.
@@ -525,7 +523,7 @@
           </li>
           <li class="c3 c6">
             Attempt to obtain, or phish for, a password, account information, or
-            other private information from anyone else on Lunie or utilizing the
+            other private information from anyone else on Color Wallet or utilizing the
             Services.
           </li>
           <li class="c3 c6">
@@ -544,10 +542,10 @@
           </li>
           <li class="c3 c6">
             Attempt to use the Services on or through any platform or service
-            other than Lunie.
+            other than Color.
           </li>
           <li class="c3 c6">
-            Use a Service or access Lunie in a Restricted Region. We may use
+            Use a Service or access Color Wallet in a Restricted Region. We may use
             technology to verify your geographic location.
           </li>
           <li class="c3 c6">
@@ -565,14 +563,14 @@
         <p class="c3">
           If you or someone using your Account violates these rules, we may take
           action against you, including revoking access to all or part of the
-          Services and Lunie, or terminating your Account. When practical, we
+          Services and Color Wallet, or terminating your Account. When practical, we
           will notify you of the action it will take in response to violations
           of these rules or breach of this Agreement.
         </p>
         <p class="c3">
           If you encounter another user who is violating any of these rules,
           please report this activity to us by contacting Customer Support at
-          support@lunie.io.
+          hello@color-platform.org
         </p>
         <li class="c2">Links to Other Websites and Services</li>
         <p class="c3">
@@ -602,8 +600,8 @@
           network availability or availability of or access to the Services.
         </p>
         <p class="c3">
-          LUNIE AND THE SERVICES AND POSTING OF USER GENERATED CONTENT AND
-          FEEDBACK IS AT YOUR SOLE RISK. LUNIE AND SERVICES AND ALL OTHER
+          COLOR WALLET AND THE SERVICES AND POSTING OF USER GENERATED CONTENT AND
+          FEEDBACK IS AT YOUR SOLE RISK. COLOR WALLET AND SERVICES AND ALL OTHER
           MATERIALS AND INFORMATION AVAILABLE THROUGH THEM ARE PROVIDED ON AN
           &#39;AS IS&#39; AND &#39;AS AVAILABLE&#39; BASIS WITHOUT WARRANTY OF
           ANY KIND.
@@ -611,19 +609,19 @@
         <p id="h.1fob9te" class="c3">
           TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE, OUR OFFICERS, DIRECTORS,
           EMPLOYEES, AGENTS, SERVICE PROVIDERS, SUPPLIERS, DISTRIBUTORS AND
-          LICENSORS (FOR PURPOSES OF THIS PARAGRAPH, THE &ldquo;LUNIE
+          LICENSORS (FOR PURPOSES OF THIS PARAGRAPH, THE &ldquo;COLOR WALLET
           PARTIES&rdquo;) DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, STATUTORY
-          OR OTHERWISE, IN CONNECTION WITH LUNIE, THE SERVICE AND ALL OTHER
+          OR OTHERWISE, IN CONNECTION WITH COLOR WALLET, THE SERVICE AND ALL OTHER
           CONTENT, MATERIALS AND INFORMATION AVAILABLE THROUGH THEM AS WELL AS
           OUR USE OF ANY UGC AND/ OR FEEDBACK PROVIDED BY YOU AND YOUR USE OF
-          LUNIE, THE SERVICES, AND ANY CONTENT, MATERIAL OR INFORMATION IN
-          CONNECTION WITH LUNIE (COLLECTIVELY, THE &ldquo;DISCLAIMED
+          COLOR WALLET, THE SERVICES, AND ANY CONTENT, MATERIAL OR INFORMATION IN
+          CONNECTION WITH COLOR WALLET (COLLECTIVELY, THE &ldquo;DISCLAIMED
           ITEMS&rdquo;) INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF
           ACCURACY, COMPLETENESS, CURRENTNESS, NONINFRINGEMENT, MERCHANTABILITY
           OR FITNESS FOR A PARTICULAR PURPOSE TITLE, AND NON-INFRINGEMENT, AND
           WARRANTIES THAT MAY ARISE OUT OF COURSE OF DEALING, COURSE OF
           PERFORMANCE, USAGE, OR TRADE PRACTICE. WITHOUT LIMITATION TO THE
-          FOREGOING. LUNIE PROVIDES NO WARRANTY OR UNDERTAKING, AND MAKES NO
+          FOREGOING. COLOR WALLET PROVIDES NO WARRANTY OR UNDERTAKING, AND MAKES NO
           REPRESENTATION OF ANY KIND THAT THE DISCLAIMED ITEMS WILL MEET YOUR
           REQUIREMENTS, ACHIEVE ANY INTENDED RESULTS, BE COMPATIBLE, OR WORK
           WITH ANY OTHER SOFTWARE, APPLICATIONS, SYSTEMS, OR SERVICES, OPERATE
@@ -633,10 +631,10 @@
         </p>
         <p class="c3">
           <span
-            >THE LUNIE PARTIES MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE
+            >THE COLOR WALLET PARTIES MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE
             ACCURACY OR COMPLETENESS OF THE DISCLAIMED ITEMS, OUR EMAILS, OTHER
             ELECTRONIC COMMUNICATIONS, OR THE CONTENT OF ANY SERVICES LINKED TO
-            THE DISCLAIMED ITEMS. THE LUNIE PARTIES ASSUME NO LIABILITY OR
+            THE DISCLAIMED ITEMS. THE COLOR WALLET PARTIES ASSUME NO LIABILITY OR
             RESPONSIBILITY FOR ANY (A) LOSS OR DAMAGE OF ANY KIND RESULTING FROM
             ERRORS, MISTAKES, OMISSIONS, OR INACCURACIES IN THE DISCLAIMED
             ITEMS; (B) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE
@@ -657,7 +655,7 @@
         <p class="c3">
           WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR
           ANY CONTENT, PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD-PARTY
-          THROUGH THE DISCLAIMED ITEMS AND THIRD-PARTIES, AND THE LUNIE PARTIES
+          THROUGH THE DISCLAIMED ITEMS AND THIRD-PARTIES, AND THE COLOR WALLET PARTIES
           WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY
           TRANSACTION BETWEEN YOU AND THIRD-PARTY PROVIDERS OF PRODUCTS OR
           SERVICES. AS WITH ANY TRANSACTION FOR A PRODUCT OR SERVICE THROUGH ANY
@@ -666,24 +664,24 @@
         </p>
         <p class="c3">
           SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF OR LIMITATIONS ON
-          IMPLIED WARRANTIES OR THE LIMITATIONS ON LUNIELICABLE STATUTORY RIGHTS
+          IMPLIED WARRANTIES OR THE LIMITATIONS ON COLORLICABLE STATUTORY RIGHTS
           OF A CONSUMER, SO SOME OR ALL OF THE ABOVE EXCLUSIONS AND LIMITATIONS
           MAY NOT APPLY TO YOU.
         </p>
         <li class="c2">Indemnification</li>
         <p id="h.3znysh7" class="c3">
           <span
-            >You agree to indemnify, defend and hold Lunie and the Lunie
+            >You agree to indemnify, defend and hold Color Wallet and the Color Wallet
             Parties, and the directors, officers, agents and employees of each,
             harmless from and against any and all losses, damages, liabilities,
             deficiencies, claims, actions, judgments, settlements, interest,
             awards, penalties, fines, costs, or expenses of whatever</span
           >kind, including attorneys&rsquo; fees arising from or relating to
-          your use or misuse of Lunie and or the Services, your breach of these
+          your use or misuse of Color Wallet and or the Services, your breach of these
           Terms (including the Privacy Policy and Rules of Conduct), your
           violation of any law or regulation, or your violation of any rights of
           a third-party, or any such violation by others you authorized to use
-          your Lunie Account.
+          your Color Account.
         </p>
         <li class="c2">Notice to California Residents</li>
         <p class="c3">
@@ -702,16 +700,15 @@
         </p>
         <p class="c3">
           <span
-            >The provider of the Services is: Lunie International Software
-            Systems Inc. If the Services are deemed as electronic commercial
+            >The provider of the Services is: RNS Solutions Pvt Ltd. If the Services are deemed as electronic commercial
             service, you may file a complaint regarding the Services or to
             receive further information regarding use</span
           >of the Services by sending a letter to the attention of
-          terms@lunie.io.
+          hello@color-platform.org
         </p>
         <li class="c2">Limitation of Liability</li>
         <p class="c3">
-          <span>UNDER NO CIRCUMSTANCES SHALL ANY LUNIE PARTY</span>OR ANY OF
+          <span>UNDER NO CIRCUMSTANCES SHALL ANY COLOR WALLET PARTY</span>OR ANY OF
           THEIR DIRECTORS, OFFICERS, AGENTS OR EMPLOYEES BE LIABLE TO YOU OR
           ANYONE ELSE FOR ANY DAMAGES, INCLUDING, WITHOUT LIMITATION, LIABILITY
           FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR
@@ -720,10 +717,10 @@
           HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, RESULTING FROM:
         </p>
         <p class="c3">
-          (A) YOUR USE OF, OR INABILITY TO USE, LUNIE OR SERVICES;
+          (A) YOUR USE OF, OR INABILITY TO USE, COLOR WALLET OR SERVICES;
         </p>
         <p class="c3">
-          (B) ANY CONTENT, MATERIALS OR INFORMATION AVAILABLE THROUGH LUNIE OR
+          (B) ANY CONTENT, MATERIALS OR INFORMATION AVAILABLE THROUGH COLOR WALLET OR
           SERVICES;
         </p>
         <p class="c3">
@@ -742,7 +739,7 @@
         <p class="c3">
           BECAUSE SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF
           CERTAIN CATEGORIES OF DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO
-          YOU. IN SUCH JURISDICTIONS, THE LUNIE PARTIES&rsquo; AGGREGATE
+          YOU. IN SUCH JURISDICTIONS, THE COLOR WALLET PARTIES&rsquo; AGGREGATE
           LIABILITY IS LIMITED TO THE FULLEST EXTENT PERMITTED BY SUCH
           JURISDICTIONS LAW.
         </p>
@@ -772,10 +769,10 @@
           Servicesare provided for access and use only bypersons located in
           certain states, countries, and territories (collectively,
           &ldquo;Permitted Regions&rdquo;). You acknowledge that you may not be
-          able to access Lunie or all or some of the Services or particular
+          able to access Color Wallet or all or some of the Services or particular
           features of the Services outside of Permitted Regions and that access
           thereto may not be legal by certain persons or in certain countries.
-          If you access Lunie or the Services from outside a Permitted Region,
+          If you access Color Wallet or the Services from outside a Permitted Region,
           you are responsible for compliance with local laws.
         </p>
         <li class="c2">Dispute resolution</li>
@@ -783,14 +780,14 @@
           PLEASE READ THE FOLLOWING SECTION CAREFULLY BECAUSE IT REQUIRES YOU TO
           SUBMIT TO BINDING ARBITRATION (JURY TRIAL WAIVER) OF ANY AND ALL
           DISPUTES (OTHER THAN SPECIFIED INTELLECTUAL PROPERTY CLAIMS AND SMALL
-          CLAIMS) WITH LUNIE LIMITS THE AMOUNT OF TIME YOU HAVE TO BRING CLAIMS
-          AGAINST LUNIE AND LIMITS THE MANNER IN WHICH YOU CAN SEEK RELIEF FROM
-          LUNIE (NO CLASS ARBITRATIONS, CLASS ACTIONS OR REPRESENTATIVE ACTIONS
+          CLAIMS) WITH COLOR WALLET LIMITS THE AMOUNT OF TIME YOU HAVE TO BRING CLAIMS
+          AGAINST COLOR WALLET AND LIMITS THE MANNER IN WHICH YOU CAN SEEK RELIEF FROM
+          COLOR WALLET (NO CLASS ARBITRATIONS, CLASS ACTIONS OR REPRESENTATIVE ACTIONS
           OR ARBITRATIONS).
         </p>
         <p class="c3">Binding Arbitration; Disputes; Small Claims.</p>
         <p class="c3">
-          You and Lunie agree to waive any right to a jury trial, or the right
+          You and Color Wallet agree to waive any right to a jury trial, or the right
           to have any Dispute resolved in any court, and instead accept the use
           of binding arbitration (which is the referral of a Dispute to one or
           more impartial persons for a final and binding determination);
@@ -805,14 +802,14 @@
           Agreement&rdquo;. &ldquo;Dispute&rdquo; as used in this Section 16
           means any dispute, cause of action, claim, or controversy arising out
           of or in any way related to us, these Terms, the subject matter of
-          these Terms, or access to and use of Lunie or the Services, including
+          these Terms, or access to and use of Color Wallet or the Services, including
           but not limited to contract, personal injury, tort, warranty, statute
           or regulation, or other legal or equitable basis and disputes that
           involve third-parties (such as the Third-Party Developers or Payment
           Providers), except any dispute, cause of action, claim, or controversy
           relating to our intellectual property (such as trademarks, trade
           dress, domain names, trade secrets, copyrights, and/or patents). You
-          and Lunie empower the arbitrator with the exclusive authority to
+          and Color Wallet empower the arbitrator with the exclusive authority to
           resolve any dispute relating to the interpretation, applicability or
           enforceability of these Terms or formation of this contract, including
           the arbitrability of any dispute and any claim that all or any part of
@@ -824,18 +821,17 @@
           Relief.
         </p>
         <p class="c3">
-          YOU AND LUNIE BOTH AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER
+          YOU AND COLOR BOTH AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER
           ONLY ON AN INDIVIDUAL BASIS AND NOT AS A PLAINTIFF OR CLASS MEMBER IN
           ANY PURPORTED CLASS OR REPRESENTATIVE ACTION OR PROCEEDING. UNLESS
-          BOTH YOU AND LUNIE AGREE OTHERWISE, THE ARBITRATOR MAY NOT CONSOLIDATE
+          BOTH YOU AND COLOR AGREE OTHERWISE, THE ARBITRATOR MAY NOT CONSOLIDATE
           OR JOIN MORE THAN ONE PERSON&#39;S OR PARTY&#39;S CLAIMS AND MAY NOT
           OTHERWISE PRESIDE OVER ANY FORM OF A CONSOLIDATED, REPRESENTATIVE, OR
           CLASS PROCEEDING. ALSO, THE ARBITRATOR MAY AWARD RELIEF (INCLUDING
           MONETARY, INJUNCTIVE, AND DECLARATORY RELIEF) ONLY IN FAVOR OF THE
           INDIVIDUAL PARTY SEEKING RELIEF AND ONLY TO THE EXTENT NECESSARY TO
           PROVIDE RELIEF NECESSITATED BY THAT PARTY&#39;S INDIVIDUAL CLAIM(S).
-          ANY RELIEF AWARDED CANNOT AFFECT OTHER USERS OF THE LUNIE SERVICE OR
-          LUNIE.
+          ANY RELIEF AWARDED CANNOT AFFECT OTHER USERS OF THE COLOR WALLET SERVICE.
         </p>
         <p class="c3">Pre-Arbitration Dispute Resolution.</p>
         <p class="c3">
@@ -843,7 +839,7 @@
             >We are interested in resolving disputes amicably. So, before you
             commence arbitration, please contact us to explain your complaint,
             as we may be able to resolve it without the need for arbitration.
-            You and Lunie agree that you shall attempt to resolve any dispute
+            You and Color Wallet agree that you shall attempt to resolve any dispute
             informally for at least 30 days before initiating arbitration. The
             informal negotiations commence upon receipt of written notice from
             one person to the other (&quot;Notice of Dispute&quot;). The Notice
@@ -852,13 +848,13 @@
             claim or dispute; and (c) set forth the specific relief sought. We
             will send a Notice of Dispute to your billing or email address. You
             will send your Notice of Dispute labeled &ldquo;Attention Notice of
-            Dispute terms@lunie.io.</span
+            Dispute hello@color-platform.org</span
           >
         </p>
         <p class="c3">Time for filing Claims</p>
         <p class="c3">
           You agree that regardless of any statute or law to the contrary, any
-          claim or cause of action arising out of or related to use of Lunie,
+          claim or cause of action arising out of or related to use of Color Wallet,
           the Services or these Terms (including the Privacy Policy) must be
           filed within one year after such claim or cause of action arose or be
           forever barred.
@@ -892,16 +888,16 @@
           court only for very limited reasons.
         </p>
         <p class="c3">
-          For all such arbitration proceedings, you and Lunie each irrevocably
+          For all such arbitration proceedings, you and Color each irrevocably
           submit to the exclusive jurisdiction of JAMS arbitration in Ontario,
           Canada and waive any jurisdictional, venue, or inconvenient forum
           objections to such arbitration. If the value of the relief sought is
-          $7,500 or less you or Lunie may elect to have the arbitration
+          $7,500 or less you or Color may elect to have the arbitration
           conducted by telephone or based solely on written submissions, which
-          election shall be binding on you and Lunie subject to the
+          election shall be binding on you and Color subject to the
           arbitrator&#39;s discretion to require an in-person hearing, if the
           circumstances warrant. Attendance at any in-person hearing may be made
-          by telephone by you and/or Lunie, unless the arbitrator requires
+          by telephone by you and/or Color, unless the arbitrator requires
           otherwise.
         </p>
         <p class="c3">
@@ -909,9 +905,9 @@
           with the laws of the Province of Ontario, Canada, including recognized
           principles of equity, and will honor all claims of privilege
           recognized by law. The arbitrator shall not be bound by rulings in
-          prior arbitrations involving different users of the Services or Lunie
+          prior arbitrations involving different users of the Services or Color Wallet
           but is bound by rulings in prior arbitrations involving you and your
-          use of the Services and/or Lunie to the extent required by applicable
+          use of the Services and/or Color Wallet to the extent required by applicable
           law.
         </p>
         <p class="c3">Costs of Arbitration.</p>
@@ -953,7 +949,7 @@
         <p class="c3">
           <span
             >Notwithstanding any provision in these Terms to the contrary, you
-            and Lunie agree that if we make any change</span
+            and Color Wallet agree that if we make any change</span
           >to this Arbitration Agreement (other than a change to any notice
           address or website link provided herein) in the future, that change
           shall not apply to any claim that was filed in a legal proceeding
@@ -969,21 +965,21 @@
         <p class="c3">
           The terms on which we process any personal information that we collect
           from you or that you provide to us are described in our Privacy
-          Policy, located at https://lunie.io/privacy. The Privacy Policy is
-          incorporated into these Terms, and by using Lunie and/or the Services,
+          Policy, located at https://color-platform.org. The Privacy Policy is
+          incorporated into these Terms, and by using Color Wallet and/or the Services,
           you agree to the Privacy Policy and consent to the processing of any
           personal information as described in the Privacy Policy and you
           warrant that all data that you provide is accurate.
         </p>
         <p class="c3">
-          Your data is collected, used, stored and transmitted by Lunie on
+          Your data is collected, used, stored and transmitted by Color Wallet on
           servers owned and managed by Amazon Web Services in the United States,
           in accordance with our Privacy Policy.
         </p>
         <p class="c3">
           In addition, certain third-parties (such as the third-party partners
           and the manufacturers of your computer, mobile phone or other devices)
-          may collect information about you when you use Lunie and/or the
+          may collect information about you when you use Color Wallet and/or the
           Services. These third-parties have their own privacy policies and will
           treat the information they collect about you according to these
           policies. We encourage you to review these privacy policies before
@@ -998,7 +994,7 @@
           or other user-created content (collectively, &ldquo;UGC&rdquo;).
         </p>
         <p class="c3">
-          UGC includes any content you make available to other users of Lunie or
+          UGC includes any content you make available to other users of Color Wallet or
           the Services through social channels (including but not limited to
           message boards, bulletin boards, messaging or chat tools) and any
           information you make available to us (including but not limited to any
@@ -1021,7 +1017,7 @@
           opinions, views, advice, or recommendations posted or sent by the
           users. We do not assume any responsibility or liability for UGC, for
           removing it, or not removing it or other content. We have no
-          obligation or liability for UGC made available on Lunie and we have no
+          obligation or liability for UGC made available on Color Wallet and we have no
           obligation to pre-screen, edit or monitor UGC. We do reserve the
           right, in our sole discretion, remove, edit or disable UGC for any
           reason, including if we reasonably determine that UGC violates this
@@ -1053,7 +1049,7 @@
         <p class="c3">
           <span
             >You also grant allother users who can access and use your UGC on
-            the Services or Lunie the right to use,copy, modify, display,
+            the Services or Color Wallet the right to use,copy, modify, display,
             perform, create derivative works from,</span
           ><a id="id.2et92p0"></a
           ><span class="c1"
@@ -1065,7 +1061,7 @@
         <p class="c3">
           Separate and apart from UGC, you may submit questions, comments,
           suggestions, ideas, plans, notes, drawings, original or creative
-          materials or other information about us, Lunie and/or the Services
+          materials or other information about us, Color Wallet and/or the Services
           (collectively, &ldquo;Feedback&rdquo;). You represent and warrant that
           you have sufficient rights in all Feedback that you contribute to
           grant the rights in such Feedback described in the next sentence to
@@ -1077,7 +1073,7 @@
         <p class="c3">
           <span
             >If you are a copyright owner or an agent thereof and believe that
-            any UGC or other content on Lunie or Services infringes upon your
+            any UGC or other content on Color Wallet or Services infringes upon your
             copyrights, you may submit a notification pursuant to the Digital
             Millennium Copyright Act (&ldquo;DMCA&#39;</span
           >&rdquo;) by providing our Copyright Agent with the following
@@ -1093,7 +1089,7 @@
             Identification of the copyrighted work claimed to have been
             infringed, or if multiple copyrighted works are covered by a single
             notification, a representative list of such works and an explanation
-            of where such work or work(s) can be found on Lunie;
+            of where such work or work(s) can be found on Color Wallet;
           </li>
           <li class="c3 c6">
             Identification of the material that is claimed to be infringing or
@@ -1122,12 +1118,12 @@
         <p class="c3">
           <span
             >Send notifications of claimed infringement labeled &ldquo;Attention
-            DMCA Notices&rdquo; to terms@lunie.io</span
+            DMCA Notices&rdquo; to hello@color-platform.org</span
           >
           (the &ldquo;DMCA Agent&rdquo;. For clarity, only DMCA notices should
           go to the DMCA Agent; any other feedback, comments, requests for
           technical support, and other communications should be directed to our
-          customer service at terms@lunie.io. You acknowledge that if you fail
+          customer service at hello@color-platform.org. You acknowledge that if you fail
           to comply with all of the requirements of these Terms, your DMCA
           notice may not be valid.
         </p>
@@ -1139,7 +1135,7 @@
             from the copyright owner, the copyright owner&#39;s agent, or
             pursuant to the law, to post and use the material in your UGC, you
             may send a counter-notice containing the following information to
-            terms@lunie.io.</span
+            hello@color-platform.org</span
           >
         </p>
         <ul class="lst-kix_list_6-0">
@@ -1175,30 +1171,30 @@
         <li class="c2">Termination</li>
         <p id="h.tyjcwt" class="c3">
           This Agreement is effective until terminated by you or us. We may
-          terminate your access and use of Lunie and/or Services and/or your
+          terminate your access and use of Color Wallet and/or Services and/or your
           Account if we determine that you have violated this Agreement or that
           there has been otherwise unlawful, improper or fraudulent use of the
           Services associated with your Account. When practical, we will notify
           you of the termination. You may lose your user name(s) associated with
           your Account as a result of an Account termination. If your Account is
           terminated, you will not have access to your Account, and you may be
-          barred from accessing or using Lunie and any Service again. Upon
+          barred from accessing or using Color Wallet and any Service again. Upon
           termination, all of the licenses granted to you hereunder shall
           immediately terminate.
         </p>
         <p class="c3">
           Instead of termination, we may issue you a warning or suspend your
-          access to Lunie or Services.
+          access to Color Wallet or Services.
         </p>
         <p class="c3">
-          You can stop using Lunie or the Services at any time. You may
+          You can stop using Color Wallet or the Services at any time. You may
           terminate your Account at any time for any reason, effective upon
           written notice to us.
         </p>
         <p class="c3">
           Upon termination, (a) all rights granted to you under these Terms will
           also terminate; and (b) you must cease all use of the Services and
-          delete all copies of Lunie from your Device. Termination will not
+          delete all copies of Color from your Device. Termination will not
           limit any of our other rights or remedies. Any provision that is by
           its terms intended to survive termination shall survive termination of
           these Terms.
@@ -1206,7 +1202,7 @@
         <li class="c2">General Terms</li>
         <ul class="lst-kix_list_17-0 start">
           <li class="c3 c6">
-            These Terms control the relationship between Lunie and you. They do
+            These Terms control the relationship between Color and you. They do
             not create any third-party beneficiary rights;
           </li>
           <li class="c3 c6">
@@ -1217,7 +1213,7 @@
           </li>
           <li class="c3 c6">
             These Terms, together with our Privacy Policy, contain the entire
-            understanding by and between Lunie and you with respect to the
+            understanding by and between Color and you with respect to the
             matters contained herein;
           </li>
           <li class="c3 c6">
@@ -1233,7 +1229,7 @@
             any other occasion;
           </li>
           <li class="c3 c6">
-            Nothing contained in these Terms will be deemed to constitute Lunie
+            Nothing contained in these Terms will be deemed to constitute Color
             or you as the agent or representative of the other or as joint
             venturers or partners;
           </li>
@@ -1255,7 +1251,7 @@
             computer software), the English language version controls.
           </li>
           <li class="c3 c6">
-            These Terms, and any dispute between you and Lunie, shall be
+            These Terms, and any dispute between you and Color, shall be
             governed by the laws of the Province of Ontario, Canada, without
             regard to principles of conflicts of law, provided that the Federal
             Arbitration Act shall govern the interpretation and enforcement of
@@ -1264,9 +1260,9 @@
             to a particular claim or dispute (except for small-claims court
             actions), as a result of a decision by thearbitrator or a court
             order, you agree that any claim or dispute that has arisen or may
-            arise between you and Lunie must be resolved exclusively by a state
+            arise between you and Color must be resolved exclusively by a state
             or federal court located in the Province of Ontario, Canada. You and
-            Lunie agree to submit to the personal jurisdiction of the courts
+            Color agree to submit to the personal jurisdiction of the courts
             located within the Province of Ontario, Canadafor the purpose of
             litigating all such claims or disputes.
           </li>
@@ -1290,7 +1286,7 @@
       </ol>
       <p class="c3">
         If you have any questions, comments or concerns regarding our Privacy
-        Policy or practices, please contact us at terms@lunie.io.
+        Policy or practices, please contact us at hello@color-platform.org
       </p>
       <div></div>
     </div>

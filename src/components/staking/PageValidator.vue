@@ -61,11 +61,11 @@
 
         <div class="row">
           <dl class="col-lg-3 info_dl colored_dl">
-            <dt>My Delegation</dt>
+            <dt>MY DELEGATION</dt>
             <dd>{{ myDelegation }}</dd>
           </dl>
           <dl class="col-lg-2 info_dl colored_dl">
-            <dt>My Rewards</dt>
+            <dt>MY REWARDS</dt>
             <dd v-if="rewards > 0">
               {{ rewards | atoms | shortDecimals }}
               {{ bondDenom | viewDenom }}
@@ -73,19 +73,19 @@
             <dd v-else>--</dd>
           </dl>
           <dl class="col-lg-2 info_dl colored_dl">
-            <dt>Voting Power</dt>
+            <dt>VOTING POWER</dt>
             <dd id="page-profile__power">
               {{ num.percent(powerRatio) }}
             </dd>
           </dl>
           <dl class="col-lg-2 info_dl colored_dl">
-            <dt>Uptime</dt>
+            <dt>UPTIME</dt>
             <dd id="page-profile__uptime">
               {{ uptime }}
             </dd>
           </dl>
           <dl class="col-lg-3 info_dl colored_dl">
-            <dt>Commission</dt>
+            <dt>COMMISSION</dt>
             <dd id="page-profile__commission">
               {{ num.percent(validator.commission.rate) }}
             </dd>
@@ -437,6 +437,10 @@ export default {
 <style scoped>
 .address {
   word-break: break-word;
+}
+
+.page-profile__status-and-title {
+  display: flex
 }
 
 .validator-name-and-address {

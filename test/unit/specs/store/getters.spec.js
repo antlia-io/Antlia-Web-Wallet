@@ -195,7 +195,7 @@ describe(`Store: getters`, () => {
       connection: {
         externals: {
           node: {
-            url: "http://lunie.io"
+            url: "https://color-platform.rnssol.com"
           }
         },
         lastHeader: {
@@ -225,7 +225,7 @@ describe(`Store: getters`, () => {
     }
 
     const context = {
-      url: "http://lunie.io",
+      url: "https://color-platform.rnssol.com",
       chainId: "cosmoshub",
       connected: true,
       userAddress: "cosmos1abcdefghijklmop",

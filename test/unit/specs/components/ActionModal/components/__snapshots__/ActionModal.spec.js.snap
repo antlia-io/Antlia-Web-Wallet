@@ -473,7 +473,7 @@ exports[`ActionModal should show the action modal when user has logged in with e
     >
       <div>
         
-          Please send the transaction to be signed in the Lunie Browser
+          Please send the transaction to be signed in the Color Browser
           Extension.
         
       </div>
@@ -553,7 +553,7 @@ exports[`ActionModal should show the action modal when user has logged in with e
        
       <div>
         
-          Please open the Lunie Browser Extension, review the details, and
+          Please open the Color Browser Extension, review the details, and
           approve the transaction.
         
       </div>

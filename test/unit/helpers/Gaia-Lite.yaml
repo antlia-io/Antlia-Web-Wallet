@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   version: 1.1.0
-  title: Gaia-Lite (former LCD) to interface with Cosmos BaseServer via REST
+  title: Gaia-Lite (former LCD) to interface with Color BaseServer via REST
   description: Specification for Gaia-lite provided by `gaiacli rest-server`
 tags:
   - name: ICS0

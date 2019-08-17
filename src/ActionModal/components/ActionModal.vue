@@ -28,7 +28,7 @@
         <slot />
       </div>
       <div v-else-if="step === feeStep" class="action-modal-form">
-        <a @click="goBack">
+        <a @click="gotostepone">
           <i class="material-icons session-back">arrow_back</i>
         </a>
         <TmFormGroup
@@ -79,6 +79,9 @@
         />
       </div>
       <div v-else-if="step === signStep" class="action-modal-form">
+        <a @click="gotosteptwo">
+          <i class="material-icons session-back">arrow_back</i>
+        </a>
         <TmFormGroup
           v-if="signMethods.length > 1"
           class="action-modal-form-group"
@@ -102,7 +105,7 @@
               sending
                 ? `Please verify and sign the transaction on your Ledger`
                 : `Please plug in your Ledger&nbsp;Nano and open
-            the Cosmos app`
+            the Color app`
             }}
           </div>
           <div v-else>
@@ -116,15 +119,15 @@
           :loading="!!sending"
         >
           <div v-if="extension.enabled && !sending">
-            Please send the transaction to be signed in the Lunie Browser
+            Please send the transaction to be signed in the Color Browser
             Extension.
           </div>
           <div v-if="extension.enabled && sending">
-            Please open the Lunie Browser Extension, review the details, and
+            Please open the Color Browser Extension, review the details, and
             approve the transaction.
           </div>
           <div v-if="!extension.enabled">
-            Please install the Lunie Browser Extension from the
+            Please install the Color Browser Extension from the
             <a
               href="https://chrome.google.com/webstore/category/extensions"
               target="_blank"
@@ -199,7 +202,6 @@
                 v-if="requiresSignIn"
                 v-focus
                 value="Sign In"
-                color="primary"
                 @click.native="goToSession"
                 @click.enter.native="goToSession"
               />
@@ -207,18 +209,15 @@
                 v-else-if="sending"
                 :value="submitButtonCaption"
                 disabled="disabled"
-                color="primary"
               />
               <TmBtn
                 v-else-if="!connected"
                 value="Connecting..."
                 disabled="disabled"
-                color="primary"
               />
               <TmBtn
                 v-else-if="step !== signStep"
                 ref="next"
-                color="primary"
                 value="Next"
                 :disabled="
                   disabled || (step === feeStep && $v.invoiceTotal.$invalid)
@@ -227,7 +226,6 @@
               />
               <TmBtn
                 v-else
-                color="primary"
                 value="Send"
                 :disabled="!session.browserWithLedgerSupport"
                 @click.native="validateChangeStep"
@@ -281,7 +279,7 @@ const signMethodOptions = {
     value: SIGN_METHODS.LEDGER
   },
   EXTENSION: {
-    key: `Lunie Browser Extension`,
+    key: `Color Browser Extension`,
     value: SIGN_METHODS.EXTENSION
   },
   LOCAL: {
@@ -591,8 +589,11 @@ export default {
     async connectLedger() {
       await this.$store.dispatch(`connectLedgerApp`)
     },
-    goBack() {
-      this.$router.go(defaultStep)
+    gotostepone() {
+      this.step = defaultStep
+    },
+    gotosteptwo() {
+      this.step = feeStep
     }
   },
   validations() {
@@ -622,7 +623,7 @@ export default {
 
 <style>
 .action-modal {
-  background: var(--app-nav-light);
+  background: #3a3046;
   display: flex;
   flex-direction: column;
   right: 1rem;
@@ -630,7 +631,7 @@ export default {
   position: absolute;
   bottom: 0;
   width: 100%;
-  max-width: 564px;
+  max-width: 630px;
   min-height: 400px;
   z-index: var(--z-modal);
   border-top-left-radius: 0.25rem;
@@ -643,7 +644,7 @@ export default {
   flex-direction: column;
   text-align: center;
   display: flex;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
 }
 
 .action-modal-title {
@@ -675,6 +676,10 @@ export default {
   color: var(--link);
 }
 
+.stepsbutton {
+  background-color: #542d82 !important
+}
+
 .action-modal-form .tm-form-group {
   display: block;
   padding: 0.75rem 0;
@@ -683,7 +688,7 @@ export default {
 .action-modal-footer {
   display: flex;
   justify-content: flex-end;
-  padding: 1.5rem 0 1rem;
+  /* padding: 1.5rem 0 1rem; */
 
   /* keeps button in bottom right no matter the size of the action modal */
   flex-grow: 1;
@@ -705,13 +710,13 @@ export default {
   font-size: var(--sm);
   font-weight: 500;
   font-style: italic;
-  color: var(--dim);
+  color: white;
   display: inline-block;
 }
 
 .form-message.notice {
   border-radius: 2px;
-  background-color: #1c223e;
+  background-color: #504261;
   font-weight: 300;
   margin: 2rem 0;
   padding: 1rem 1rem;

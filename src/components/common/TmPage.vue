@@ -221,7 +221,7 @@ export default {
 }
 
 .page-profile__header__info {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
   width: 100%;

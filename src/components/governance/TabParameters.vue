@@ -143,19 +143,19 @@ export default {
   data: () => ({
     atoms,
     depositTooltips: {
-      description: `Governance deposit parameters for the Cosmos Hub`,
+      description: `Governance deposit parameters for the Color Platform`,
       min_deposit: `Minimum deposit required before for a proposal can enter the voting period`,
       max_deposit_period: `Deposits must reach the "minimum deposit" threshold in this period of time`
     },
     tallyingTooltips: {
-      description: `Tally parameters for governance in the Cosmos Hub`,
+      description: `Tally parameters for governance in the Color Platform`,
       threshold: `Percentage of "Yes" votes required for proposal to pass`,
       veto: `Percentage of "No With Veto" votes required for proposal to be vetoed`,
       quorum: `Percentage of tokens required to vote on a proposal to be considered valid`
     },
     votingTooltips: {
-      description: `Voting parameters for governance in the Cosmos Hub`,
-      voting_period: `Length of the voting period for proposals on the Cosmos Hub`
+      description: `Voting parameters for governance in the Color Platform`,
+      voting_period: `Length of the voting period for proposals on the Color Platform`
     }
   }),
   computed: {
