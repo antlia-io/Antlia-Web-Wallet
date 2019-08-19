@@ -55,31 +55,31 @@
       </p>
     </div>
 
-    <div class="card">
+    <!-- <div class="card">
       <h2 class="c5">Team</h2>
       <div class="flex-row">
         <div class="profile">
           <img src="~assets/images/team/fabo.jpg" />
           <div class="profile-info">
-            <span>Fabian Weber</span>
+            <span>Bilal Asif</span>
             <span class="flag">🇩🇪</span>
           </div>
         </div>
         <div class="profile">
           <img src="~assets/images/team/jordan.jpg" />
           <div class="profile-info">
-            <span>Jordan Bibla</span>
+            <span>Faisal Naveed</span>
             <span class="flag">🇨🇦</span>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="card">
       <h2 class="c5">Contact</h2>
       <p>
         Please let us know what you think! You can find us on
         <a
-          href="https://github.com/cosmos/lunie"
+          href="https://github.com/ColorPlatform/"
           target="_blank"
           rel="noopener norefferer"
         >
@@ -87,7 +87,7 @@
         >
         and
         <a
-          href="https://twitter.com/luniehq"
+          href="https://twitter.com/colorsorgmx"
           target="_blank"
           rel="noopener norefferer"
           >Twitter</a

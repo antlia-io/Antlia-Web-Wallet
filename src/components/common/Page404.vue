@@ -5,7 +5,7 @@
       <h3>Error code: 404</h3>
     </TmPart>
     <TmPart>
-      <p>Here are some helpful links to get you out of here:</p>
+      <p class="para">Here are some helpful links to get you out of here:</p>
       <ul>
         <li>
           <router-link to="/">
@@ -52,22 +52,26 @@ export default {
 <style>
 .four-oh-four {
   padding: 2rem;
-  background: var(--black);
+  background: white;
   border-left: 1px solid var(--bc-dim);
 }
 
 .four-oh-four h2 {
-  color: var(--bright);
+  color: black;
   font-size: var(--h1);
   font-weight: 500;
   line-height: 3rem;
 }
 
 .four-oh-four h3 {
-  color: var(--text);
+  color: red;
   font-size: var(--h3);
   font-weight: 500;
   margin-top: 0;
+}
+
+.para {
+  color: black
 }
 
 .four-oh-four ul {

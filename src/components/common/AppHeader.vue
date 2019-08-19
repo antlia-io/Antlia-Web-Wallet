@@ -74,7 +74,7 @@ export default {
   position: relative;
   background: #232021;
   min-height: 100vh;
-  width: var(--width-side);
+  width: 7.5%;
 }
 
 .mobile-menu-action {

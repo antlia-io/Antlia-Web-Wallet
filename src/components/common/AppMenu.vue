@@ -10,9 +10,9 @@
         @click.native="close"
       >
         <i class="material-icons">home</i>
-        <h2 class="app-menu-title">
+        <!-- <h2 class="app-menu-title">
           Wallet
-        </h2>
+        </h2> -->
       </router-link>
       <!-- <router-link
         id="app-menu__transactions"
@@ -35,9 +35,9 @@
         @click.native="close"
       >
         <i class="material-icons">search</i>
-        <h2 class="app-menu-title">
+        <!-- <h2 class="app-menu-title">
           Staking
-        </h2>
+        </h2> -->
       </router-link>
       <router-link
         id="app-menu__proposals"
@@ -47,9 +47,9 @@
         @click.native="close"
       >
         <i class="material-icons">transfer_within_a_station</i>
-        <h2 class="app-menu-title">
+        <!-- <h2 class="app-menu-title">
           Governance
-        </h2>
+        </h2> -->
       </router-link>
       <router-link
         id="app-menu__network"
@@ -60,9 +60,9 @@
         @click.native="close"
       >
         <i class="material-icons">my_location</i>
-        <h2 class="app-menu-title">
+        <!-- <h2 class="app-menu-title">
           Network
-        </h2>
+        </h2> -->
       </router-link>
       <a
         v-if="session.signedIn"
@@ -193,6 +193,11 @@ h2.app-menu-title {
   font-size: var(--lg);
 }
 
+i.material-icons {
+  font-size: 30px;
+  margin-left: 8px  
+}
+
 @media screen and (max-width: 1023px) {
   .app-menu {
     background: var(--app-nav);
@@ -213,9 +218,9 @@ h2.app-menu-title {
 }
 
 @media screen and (min-width: 1023px) {
-  .app-menu {
+  /* .app-menu {
     width: var(--width-side);
-  }
+  } */
 
   .app-menu .button {
     display: none;

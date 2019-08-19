@@ -14,19 +14,19 @@
         </div>
 
         <div class="row">
-          <dl class="info_dl colored_dl">
+          <dl class="info_dl colored_dl width">
             <dt>Time</dt>
             <dd>{{ blockTime }}</dd>
           </dl>
         </div>
       </div>
 
+      <h3 v-if="block.transactions" class="page-profile__section-title">
+        Transactions
+      </h3>
       <div class="page-profile__section block">
-        <div class="row">
-          <div class="column">
-            <h3 v-if="block.transactions" class="page-profile__section-title">
-              Transactions
-            </h3>
+        <!-- <div class="row">
+          <div class="column"> -->
             <TmDataMsg
               v-if="block.transactions && block.transactions.length === 0"
               icon="info_outline"
@@ -54,8 +54,8 @@
               "
             />
             <br />
-          </div>
-        </div>
+          <!-- </div>
+        </div> -->
       </div>
     </template>
   </TmPage>
@@ -137,3 +137,11 @@ export default {
   }
 }
 </script>
+<style>
+  .page-profile__status-and-title {
+    display: block
+  }
+  .width {
+    width: 100%
+  }
+</style>
