@@ -17,6 +17,7 @@
           :error="$v.fields.signUpName.$error"
           field-id="sign-up-name"
           field-label="Account Name"
+          style="-webkit-text-fill-color: black"
         >
           <TmField
             id="sign-up-name"
@@ -43,6 +44,7 @@
           :error="$v.fields.signUpPassword.$error"
           field-id="sign-up-password"
           field-label="Password"
+          style="-webkit-text-fill-color: black"
         >
           <TmField
             id="sign-up-password"
@@ -72,6 +74,7 @@
           :error="$v.fields.signUpPasswordConfirm.$error"
           field-id="sign-up-password-confirm"
           field-label="Confirm Password"
+          style="-webkit-text-fill-color: black"
         >
           <TmField
             id="sign-up-password-confirm"
@@ -92,6 +95,7 @@
           field-id="sign-up-seed"
           class="sign-up-seed-group"
           field-label="Seed Phrase"
+          style="-webkit-text-fill-color: black"
         >
           <FieldSeed id="sign-up-seed" v-model="fields.signUpSeed" />
         </TmFormGroup>

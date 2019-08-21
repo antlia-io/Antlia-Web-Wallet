@@ -68,7 +68,7 @@ export default {
 .tm-form-group__label {
   display: block;
   line-height: 2rem;
-  color: var(--txt);
+  color: white;
   text-align: left;
   font-weight: 500;
 }

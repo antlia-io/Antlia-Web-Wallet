@@ -19,7 +19,7 @@
 html,
 body,
 #app {
-  background: var(--app-bg);
+  background: #d3d2d7;
 }
 
 a {
@@ -37,7 +37,7 @@ a:hover {
   font-size: var(--x);
   line-height: 1.5;
   font-family: var(--sans);
-  color: var(--txt);
+  color: white;
   display: flex;
   flex-flow: column nowrap;
   min-width: 0;
@@ -78,6 +78,10 @@ input.tm-field {
   margin-right: 1rem;
 }
 
+.e-content-animation {
+  margin-left: 0px !important
+}
+
 .input-suffix {
   background: rgb(84, 45, 130);
   display: inline-block;
@@ -98,6 +102,7 @@ input.tm-field {
   padding-left: 1.5rem;
   text-indent: -1.5rem;
   line-height: 14px;
+  color: black
 }
 
 #app-content {
@@ -110,7 +115,7 @@ input.tm-field {
   z-index: var(--z-appHeader) !important;
 }
 
-@media screen and (min-width: 1023px) {
+@media screen and (max-width: 1800px) {
   #app {
     padding-top: 0;
     flex-flow: row nowrap;

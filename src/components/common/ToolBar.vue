@@ -76,14 +76,4 @@ export default {
   cursor: pointer;
   color: var(--bright);
 }
-
-@media screen and (max-width: 1023px) {
-  .tool-bar a {
-    display: none;
-  }
-
-  .sign-in-button {
-    display: none;
-  }
-}
 </style>

@@ -26,6 +26,7 @@
         v-if="$v.denom.$error && !$v.denom.required"
         name="Denomination"
         type="required"
+        color="white"
       />
     </TmFormGroup>
 

@@ -89,6 +89,7 @@ export default {
   .tm-data-msg {
     display: block;
     padding: 2rem;
+    margin: 1rem
   }
 
   .tm-data-msg__icon {

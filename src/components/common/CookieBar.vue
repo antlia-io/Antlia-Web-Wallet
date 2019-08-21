@@ -69,7 +69,6 @@ p {
 
 @media (max-width: 1024px) {
   .cookie-bar {
-    position: fixed;
     top: auto;
     bottom: 0;
     z-index: 99;

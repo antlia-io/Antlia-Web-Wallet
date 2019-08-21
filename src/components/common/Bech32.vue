@@ -63,6 +63,13 @@ export default {
   white-space: nowrap;
 }
 
+@media screen and (max-width: 572px) {
+  .bech32-address .address {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+}
 .bech32-address .address:hover {
   color: #00d6e1;
 }

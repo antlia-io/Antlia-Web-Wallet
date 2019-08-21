@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table class="data-table">
+    <table class="data-table table-responsive">
       <thead>
         <PanelSort :sort="sort" :properties="properties" />
       </thead>
@@ -161,3 +161,10 @@ export default {
   }
 }
 </script>
+<style>
+  @media screen and (min-width: 838px) {
+  .table-responsive {
+    display: inline-table;
+  }
+}
+</style>

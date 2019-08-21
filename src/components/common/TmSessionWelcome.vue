@@ -1,9 +1,9 @@
 <template>
   <SessionFrame>
     <div id="session-welcome">
-      <router-link to="/">
+      <!-- <router-link to="/">
         <img class="session-logo-mobile" src="~assets/images/logo.png" />
-      </router-link>
+      </router-link> -->
 
       <h2 class="session-title">
         Welcome to Color Wallet

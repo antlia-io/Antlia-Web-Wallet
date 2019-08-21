@@ -337,9 +337,9 @@ export default {
     padding: 2rem 0;
   }
 
-  .row {
+  /* .row {
     flex-direction: column;
-  }
+  } */
 
   .page-profile__header__actions {
     margin-right: 0;

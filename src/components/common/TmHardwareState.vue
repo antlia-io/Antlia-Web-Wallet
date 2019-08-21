@@ -32,11 +32,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--app-fg);
+  background: white;
   margin: 1.5rem auto 0;
   padding: 1.5rem;
   user-select: none;
-  border: 2px solid var(--bc);
+  border: 2px solid rgb(176, 180, 207);
   border-radius: 2px;
 }
 
@@ -52,6 +52,6 @@ export default {
 }
 
 .tm-hardware-state__label {
-  color: var(--bright);
+  color: black;
 }
 </style>

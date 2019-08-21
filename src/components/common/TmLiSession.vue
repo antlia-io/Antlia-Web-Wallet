@@ -40,7 +40,7 @@ export default {
   padding: 1rem;
   margin-bottom: 0.25rem;
   border: 2px solid var(--bc);
-  background-color: var(--app-fg);
+  background-color: white;
   border-radius: 0.25rem;
 }
 
@@ -60,7 +60,7 @@ export default {
 }
 
 .tm-li-session-title {
-  color: var(--bright);
+  color: black;
   font-size: var(--h4);
   font-weight: 400;
 }
@@ -74,7 +74,7 @@ export default {
 }
 
 .material-icons.circle {
-  border: 2px solid var(--dim);
+  border: 2px solid black;
   border-radius: 50%;
   padding: 0.5rem;
 }
