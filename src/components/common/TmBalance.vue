@@ -3,13 +3,12 @@
     <b-progress class="mt-2" :max="max" show-value>
       <b-progress-bar
         :value="unbondedAtoms * (100 / totalAtomsDisplay)"
-        :label="`${(LiquidbarValue).toFixed(2)}%`"
+        :label="`${LiquidbarValue.toFixed(2)}%`"
         variant="success"
       ></b-progress-bar>
-      <!-- <b-progress-bar :value="value * (2.5 / 10)" variant="warning"></b-progress-bar> -->
       <b-progress-bar
         :value="(totalAtomsDisplay - unbondedAtoms) * (100 / totalAtomsDisplay)"
-        :label="`${(DelegatedbarValue).toFixed(2)}%`"
+        :label="`${DelegatedbarValue.toFixed(2)}%`"
         variant="warning"
       ></b-progress-bar>
     </b-progress>
@@ -29,64 +28,16 @@
         <h2 class="color">{{ delegated }}</h2>
       </div>
     </div>
-    <!-- <div class="col-lg-4">
-      <h2>Public Address : </h2>
-      <Bech32 :address="session.address || ''" />
-    </div> -->
   </div>
-  <!-- <div class="header-balance">
-    <div class="top">
-      <div class="total-atoms top-section">
-        <h3>Total {{ num.viewDenom(bondDenom) }}</h3>
-        <h2 class="total-atoms__value">
-          {{ totalAtomsDisplay }}
-        </h2>
-      </div>
-      <div class="second-row">
-        <div class="unbonded-atoms top-section">
-          <h3>Liquid {{ num.viewDenom(bondDenom) }}</h3>
-          <h2>{{ unbondedAtoms }}</h2>
-        </div>
-        <div v-if="rewards" class="top-section">
-          <h3>Available Rewards</h3>
-          <h2>{{ rewards }}</h2>
-          <TmBtn
-            id="withdraw-btn"
-            :disabled="!readyToWithdraw"
-            class="withdraw-rewards"
-            :value="'Withdraw'"
-            :to="''"
-            type="anchor"
-            size="sm"
-            @click.native="readyToWithdraw && onWithdrawal()"
-          />
-        </div>
-      </div>
-    </div>
-    <slot />
-    <ModalWithdrawRewards
-      ref="ModalWithdrawRewards"
-      :rewards="totalRewards"
-      :denom="bondDenom"
-    />
-  </div> -->
 </template>
 <script>
 import num from "scripts/num"
-import Bech32 from "common/Bech32"
-// import TmBtn from "common/TmBtn"
-// import ModalWithdrawRewards from "src/ActionModal/components/ModalWithdrawRewards"
 import { mapGetters } from "vuex"
-// import 'bootstrap-vue/dist/bootstrap-vue.css'
 import "bootstrap/dist/css/bootstrap.css"
 
 export default {
   name: `tm-balance`,
-  components: {
-    Bech32
-    // TmBtn,
-    // ModalWithdrawRewards
-  },
+  components: {},
   data() {
     return {
       num,
@@ -119,33 +70,19 @@ export default {
       return this.loaded ? this.num.atoms(this.liquidAtoms) : `--`
     },
     delegated(){
-      return this.loaded ? (this.num.atoms(this.totalAtoms) - this.num.atoms(this.liquidAtoms)) : `--`
-    },
-    // only be ready to withdraw of the validator rewards are loaded and the user has rewards to withdraw
-    // the validator rewards are needed to filter the top 5 validators to withdraw from
-    readyToWithdraw() {
-      return this.totalRewards > 0
-    },
-    rewards() {
-      if (!this.distribution.loaded) {
-        return `--`
-      }
-      const rewards = this.totalRewards
-      return this.num.shortDecimals(
-        this.num.atoms(rewards && rewards > 10 ? rewards : 0)
-      )
+      return this.loaded ? ((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) : `--`
     },
     LiquidbarValue() {
       if (this.num.atoms(this.totalAtoms) === 0)
         return 0
       else 
-        return this.num.atoms(this.liquidAtoms) * (100 / this.num.atoms(this.totalAtoms))
+        return (this.num.atoms(this.liquidAtoms)) * (100 / (this.num.atoms(this.totalAtoms)))
     },
     DelegatedbarValue(){
-      if (this.num.atoms(this.totalAtoms) - this.num.atoms(this.liquidAtoms) === 0)
+      if (((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) === 0)
         return 0
       else 
-        return (this.num.atoms(this.totalAtoms) - this.num.atoms(this.liquidAtoms)) * (100 / this.num.atoms(this.totalAtoms))
+        return ((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) * (100 / (this.num.atoms(this.totalAtoms)))
     }
 
   },
@@ -170,12 +107,6 @@ export default {
       this.lastUpdate = height
       this.$store.dispatch(`getRewardsFromMyValidators`)
       this.$store.dispatch(`queryWalletBalances`)
-    },
-    onWithdrawal() {
-      this.$refs.ModalWithdrawRewards.open()
-    },
-    rendomValue() {
-      this.value = Math.random() * this.max
     }
   }
 }

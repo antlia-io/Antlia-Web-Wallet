@@ -11,6 +11,7 @@
             type="text"
             placeholder=""
             vue-focus="vue-focus"
+            style="color: black"
           />
           <TmFormMsg
             v-if="$v.address.$error && !$v.address.required"

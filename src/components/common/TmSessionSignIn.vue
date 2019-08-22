@@ -30,6 +30,7 @@
             id="sign-in-password"
             v-model="signInPassword"
             type="password"
+            style="color: black"
           />
           <TmFormMsg
             v-if="$v.signInPassword.$error && !$v.signInPassword.required"

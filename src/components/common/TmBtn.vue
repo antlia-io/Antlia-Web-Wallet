@@ -7,13 +7,13 @@
   >
     {{ value }}
   </router-link>
-  <a v-else-if="type === 'anchor'" :disabled="disabled">
+  <button v-else-if="type === 'anchor'" :disabled="disabled" class="tm-btn">
     <span :class="btnClass">
       <i v-if="icon" :class="'tm-btn__icon material-icons'" aria-hidden="true">
         {{ icon }} </i
       ><span v-if="value" class="tm-btn__value">{{ value }}</span>
     </span>
-  </a>
+  </button>
   <button v-else :type="type" class="tm-btn" :disabled="disabled">
     <span :class="btnClass">
       <i v-if="icon" :class="'tm-btn__icon material-icons'" aria-hidden="true">

@@ -194,10 +194,10 @@ export default {
 }
 
 .page-profile__section-title {
-  margin: 0 0 0.25rem 1rem;
-  color: var(--dim);
-  font-size: var(--sm);
-  font-weight: 500;
+  /* margin: 0 0 0.25rem 1rem; */
+  color: black;
+  /* font-size: var(--sm);
+  font-weight: 500; */
 }
 
 .page-profile__section--between > .row {

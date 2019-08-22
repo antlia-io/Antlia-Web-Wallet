@@ -206,7 +206,7 @@ input[type="checkbox"] {
 }
 
 .tm-field::placeholder {
-  color: grey;
+  color: grey !important;
 }
 
 .tm-field:disabled {

@@ -32,20 +32,22 @@
         color="primary"
         @click.native="$emit(`show-modal`, coin.denom)"
       />
-      <!-- <div v-if="rewards" class="top-section">
-        <h3>Available Rewards</h3>
-          <h2>{{ rewards }}</h2>
-          <TmBtn
+      
+    </div>
+    <div class="li-coin__content">
+      <div v-if="rewards" class="li-coin__content-left">
+          <p class="coin-denom">Available Rewards</p>
+          <p class="coin-amount">{{ rewards }}</p>
+      </div>
+      <TmBtn
             id="withdraw-btn"
             :disabled="!readyToWithdraw"
-            class="withdraw-rewards"
             :value="'Withdraw'"
             :to="''"
             type="anchor"
-            size="sm"
+            color="primary"
             @click.native="readyToWithdraw && onWithdrawal()"
           />
-      </div> -->
     </div>
     <ModalWithdrawRewards
       ref="ModalWithdrawRewards"
@@ -75,12 +77,24 @@ export default {
   data: () => ({
     tooltip: `Sending tokens is currently disabled on the Color Platform.`
   }),
+  data() {
+    return {
+      num,
+      lastUpdate: 0
+    }
+  },
   computed: {
     ...mapGetters([
+      `connected`,
+      `session`,
+      `wallet`,
+      `delegation`,
+      `liquidAtoms`,
       `lastHeader`,
-      `validatorsWithRewards`,
+      `totalAtoms`,
       `bondDenom`,
       `distribution`,
+      `validatorsWithRewards`,
       `totalRewards`
     ]),
     viewCoin() {
@@ -111,6 +125,11 @@ export default {
     }
   },
   methods: {
+    update(height) {
+      this.lastUpdate = height
+      this.$store.dispatch(`getRewardsFromMyValidators`)
+      this.$store.dispatch(`queryWalletBalances`)
+    },
     onWithdrawal() {
       this.$refs.ModalWithdrawRewards.open()
     }
@@ -183,6 +202,11 @@ p.coin-amount {
 
   .li-coin__content-left {
     padding-bottom: 0.5rem;
+  }
+}
+@media screen and (max-width: 587px) {
+  .li-coin__content {
+    display: block
   }
 }
 </style>

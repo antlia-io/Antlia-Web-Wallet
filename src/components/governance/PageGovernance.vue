@@ -4,6 +4,7 @@
     <div class="row buttoncenter">
       <TmBtn
         id="propose-btn"
+        slot="header-buttons"
         :disabled="!connected"
         :value="connected ? 'Create Proposal' : 'Connecting...'"
         color="primary"

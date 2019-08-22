@@ -25,6 +25,7 @@
             type="text"
             placeholder="Must be at least 5 characters"
             vue-focus="vue-focus"
+            style="color: black"
           />
           <TmFormMsg
             v-if="$v.fields.signUpName.$error && !$v.fields.signUpName.required"
@@ -51,6 +52,7 @@
             v-model="fields.signUpPassword"
             type="password"
             placeholder="Must be at least 10 characters"
+            style="color: black"
           />
           <TmFormMsg
             v-if="
@@ -81,6 +83,7 @@
             v-model="fields.signUpPasswordConfirm"
             type="password"
             placeholder="Enter password again"
+            style="color: black"
           />
           <TmFormMsg
             v-if="
@@ -97,7 +100,7 @@
           field-label="Seed Phrase"
           style="-webkit-text-fill-color: black"
         >
-          <FieldSeed id="sign-up-seed" v-model="fields.signUpSeed" />
+          <FieldSeed id="sign-up-seed" v-model="fields.signUpSeed" style="color: black"/>
         </TmFormGroup>
         <TmFormGroup
           class="field-checkbox"

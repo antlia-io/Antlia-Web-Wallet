@@ -17,6 +17,7 @@
             type="text"
             placeholder="Must have at least 5 characters"
             vue-focus="vue-focus"
+            style="color: black"
           />
           <TmFormMsg
             v-if="$v.fields.importName.$error && !$v.fields.importName.required"
@@ -43,6 +44,7 @@
             v-model="fields.importPassword"
             type="password"
             placeholder="Must be at least 10 characters"
+            style="color: black"
           />
           <TmFormMsg
             v-if="
@@ -73,6 +75,7 @@
             v-model="fields.importPasswordConfirm"
             type="password"
             placeholder="Enter password again"
+            style="color: black"
           />
           <TmFormMsg
             v-if="
@@ -94,6 +97,7 @@
             :value="fields.importSeed"
             placeholder="Must be exactly 24 words"
             @input="val => (fields.importSeed = val)"
+            style="color: black"
           />
           <TmFormMsg
             v-if="$v.fields.importSeed.$error && !$v.fields.importSeed.required"
