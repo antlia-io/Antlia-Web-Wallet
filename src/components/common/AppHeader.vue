@@ -1,29 +1,29 @@
 <template>
   <ejs-sidebar id="dockSidebar" :enableDock='enableDock' :width='width' :dockSize='dockSize' ref="dockSidebar" :position = "position">
     <div class="header-item">
-      <router-link to="/">
+      <router-link to="/wallet">
         <img class="header-item-logo" src="~assets/images/logo.png" />
       </router-link>
     </div>
     <div class="dock">
       <ul>
-        <li class="sidebar-item" id="toggle" @click="toggleClick">
-          <i class="material-icons">menu</i>
-          <!-- <i v-else class="material-icons">close</i> -->
+        <li :class="buttonState" class="sidebar-item" id="toggle" @click="toggleClick">
+          <i v-if="!buttonActive" class="material-icons">menu</i>
+          <i v-else class="material-icons">close</i>
         </li>
-        <li class="sidebar-item hover" @click="home()" title="Wallet">
+        <li class="sidebar-item hover" @click="home()" v-on:click="active = 'home'" :class="{active:active === 'home'}" title="Wallet">
           <i class="material-icons">home</i>
           <span class="e-text">Wallet</span>
         </li>
-        <li class="sidebar-item hover" @click="staking()" title="Staking">
-          <i class="material-icons">search</i>
+        <li class="sidebar-item hover" @click="staking()" v-on:click="active = 'staking'" :class="{active:active === 'staking'}" title="Staking">
+          <i class="material-icons">swap_horiz</i>
           <span class="e-text">Staking</span>
         </li>
-        <li class="sidebar-item hover" @click="governance()" title="Governance">
+        <li class="sidebar-item hover" @click="governance()" v-on:click="active = 'governance'" :class="{active:active === 'governance'}" title="Governance">
           <i class="material-icons">transfer_within_a_station</i>
           <span class="e-text">Governance</span>
         </li>
-        <li class="sidebar-item hover" @click="network()" title="Network">
+        <li class="sidebar-item hover" @click="network()" v-on:click="active = 'network'" :class="{active:active === 'network'}" title="Network">
           <i class="material-icons">my_location</i>
           <span class="e-text">Network</span>
         </li>
@@ -68,7 +68,10 @@ export default {
             enableDock : true,
             dockSize : '72px',
             width : '220px',
-            position :'Left'
+            position :'Left',
+            buttonActive: false,
+            active: 'network'
+            
         }
     },
   // data: () => ({
@@ -76,7 +79,10 @@ export default {
   //   desktop: false
   // }),
   computed: {
-    ...mapGetters([`session`])
+    ...mapGetters([`session`]),
+    buttonState() {
+      return this.buttonActive ? 'button--active' : 'button--inactive';
+    },
   },
   mounted() {
     // this.watchWindowSize()
@@ -95,9 +101,13 @@ export default {
     // },
     toggleClick: function() {
       this.$refs.dockSidebar.toggle();
+      this.buttonActive = !this.buttonActive;
     },
+    // showCloseButton() {
+    //   this.buttonActive = !this.buttonActive;
+    // },
     home() {
-      this.$router.push(`/`)
+      this.$router.push(`/wallet`)
     },
     staking() {
       this.$router.push(`/staking`)
@@ -106,7 +116,7 @@ export default {
       this.$router.push(`/governance`)
     },
     network() {
-      this.$router.push(`/network`)
+      this.$router.push(`/`)
     },
     // show() {
     //   this.open = true
@@ -148,9 +158,17 @@ export default {
   margin-top: 2rem
 }
 
+div#dockSidebar:focus {
+  outline: none
+}
+
 #wrapper .column {
     display: inline-block;
     padding: 10px;
+}
+
+.active {
+  background: #0a73b1
 }
 
 #dockSidebar.e-sidebar.e-right.e-close {
@@ -190,7 +208,7 @@ export default {
 /* end of dockbar icon Style */
 
 #dockSidebar.e-close .sidebar-item {
-    padding: 5px 20px 15px 20px
+    padding: 15px 20px 15px 20px
 }
 
 #dockSidebar.e-open .sidebar-item {

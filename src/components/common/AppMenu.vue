@@ -4,7 +4,7 @@
       <router-link
         id="app-menu__wallet"
         class="app-menu-item"
-        to="/"
+        to="/wallet"
         exact="exact"
         title="Wallet"
         @click.native="close"
@@ -54,7 +54,7 @@
       <router-link
         id="app-menu__network"
         class="app-menu-item"
-        to="/network"
+        to="/"
         exact="exact"
         title="Network"
         @click.native="close"

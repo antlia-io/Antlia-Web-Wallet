@@ -8,7 +8,7 @@
       <p class="para">Here are some helpful links to get you out of here:</p>
       <ul>
         <li>
-          <router-link to="/">
+          <router-link to="/wallet">
             Wallet
           </router-link>
         </li>
@@ -28,7 +28,7 @@
           </router-link>
         </li>
         <li>
-          <router-link to="/network">
+          <router-link to="/">
             Network
           </router-link>
         </li>

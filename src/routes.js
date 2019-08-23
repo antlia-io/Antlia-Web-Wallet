@@ -61,7 +61,7 @@ export default [
     component: require(`./components/staking/PageValidator`).default
   },
   {
-    path: `/`,
+    path: `/wallet`,
     name: `wallet`,
     component: require(`./components/wallet/PageWallet`).default,
     meta: { requiresAuth: true }
@@ -73,7 +73,7 @@ export default [
     meta: { requiresAuth: true }
   },
   {
-    path: `/network`,
+    path: `/`,
     name: `network`,
     component: require(`./components/network/PageNetwork`).default
   },

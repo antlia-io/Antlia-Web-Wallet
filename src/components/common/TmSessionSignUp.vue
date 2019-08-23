@@ -230,7 +230,7 @@ export default {
           password: this.fields.signUpPassword,
           name: this.fields.signUpName
         })
-        this.$router.push(`/`)
+        this.$router.push(`/wallet`)
       } catch (error) {
         this.$store.commit(`notifyError`, {
           title: `Couldn't create account`,

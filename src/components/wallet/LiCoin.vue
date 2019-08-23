@@ -119,7 +119,7 @@ export default {
         return `--`
       }
       const rewards = this.totalRewards
-      return this.num.shortDecimals(
+      return this.num.fullDecimals(
         this.num.atoms(rewards && rewards > 10 ? rewards : 0)
       )
     }
