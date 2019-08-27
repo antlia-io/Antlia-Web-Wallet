@@ -213,6 +213,13 @@ p {
   display: flex;
 }
 
+@media screen and (max-width: 867px) {
+  .col-md-4 {
+    display: flex;
+    max-width: none
+  }
+}
+
 /* TODO fix scaling on medium sized screens and pick proper break point */
 @media screen and (max-width: 550px) {
   .header-balance {

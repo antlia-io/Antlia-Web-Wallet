@@ -37,7 +37,14 @@ const config = {
     rules: [
       {
         test: /\.js$/,
-        use: `babel-loader`,
+        use: {
+          loader: `babel-loader`,
+          options: {
+            plugins: [
+                "@babel/plugin-syntax-dynamic-import"
+            ]
+          }
+        },
         include: [path.resolve(__dirname, `src`)],
         exclude: /node_modules/
       },

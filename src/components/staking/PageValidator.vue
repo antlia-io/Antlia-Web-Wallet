@@ -38,7 +38,7 @@
               id="delegation-btn"
               :disabled="!connected"
               :value="connected ? 'Delegate' : 'Connecting...'"
-              color="primary"
+              color="secondary"
               @click.native="onDelegation"
             />
             <TmBtn

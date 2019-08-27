@@ -1,7 +1,7 @@
 <template>
   <li :id="`li-coin--` + denomination.toLowerCase()" class="li-coin">
     <div class="li-coin__icon">
-      <img src="~assets/images/cosmos-logo.png" />
+      <img rel=preload src="~assets/images/cosmos-logo.png" />
     </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">
@@ -195,7 +195,7 @@ p.coin-amount {
   font-weight: 500;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 470px) {
   .li-coin__icon {
     display: none;
   }

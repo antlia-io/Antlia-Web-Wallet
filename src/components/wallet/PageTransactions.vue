@@ -109,4 +109,16 @@ h1 {
   background: white;
   text-align: center;
 }
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 2rem
+  }
+}
+
+@media screen and (max-width: 512px) {
+  h1 {
+    font-size: 1.5rem
+  }
+}
 </style>

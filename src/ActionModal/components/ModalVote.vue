@@ -170,6 +170,8 @@ export default {
 }
 
 .vote-options button.active span {
-  background: var(--tertiary);
+  background: #49395c;
+  border-radius: 5px;
+  padding: 1px 43px;
 }
 </style>

@@ -12,7 +12,7 @@
     @close="clear"
   >
     <TmFormGroup class="action-modal-form-group" field-id="to" field-label="To">
-      <TmField id="to" v-model="to" type="text" readonly />
+      <TmField id="to" v-model="to" type="text" />
     </TmFormGroup>
 
     <TmFormGroup

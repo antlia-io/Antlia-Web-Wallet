@@ -1,8 +1,9 @@
 <template>
   <ejs-sidebar id="dockSidebar" :enableDock='enableDock' :width='width' :dockSize='dockSize' ref="dockSidebar" :position = "position">
     <div class="header-item">
-      <router-link to="/wallet">
-        <img class="header-item-logo" src="~assets/images/logo.png" />
+      <router-link :class="buttonState" @click="toggleClick" to="/wallet">
+        <img v-if="!buttonActive" rel=preload class="header-item-logo" src="~assets/images/logo.png" />
+        <img v-else rel=preload class="header-item-logo2" src="~assets/images/ColorWhiteplatform1.png" />
       </router-link>
     </div>
     <div class="dock">
@@ -30,30 +31,11 @@
       </ul>
     </div>
   </ejs-sidebar>
-  <!-- <nav class="app-header" :class="{ mobile: !desktop }">
-    <div class="container">
-      <div class="header-item">
-        <router-link to="/">
-          <img class="header-item-logo" src="~assets/images/logo.png" />
-        </router-link>
-        <template v-if="!desktop">
-          <div v-if="open" class="close-menu" @click="close()">
-            <i class="material-icons mobile-menu-action">close</i>
-          </div>
-          <div v-if="!open" class="open-menu" @click="show()">
-            <i class="material-icons mobile-menu-action">menu</i>
-          </div>
-        </template>
-      </div>
-      <AppMenu v-if="open || desktop" @close="close" />
-    </div>
-  </nav> -->
 </template>
 
 <script>
 import { mapGetters } from "vuex"
 import noScroll from "no-scroll"
-// import AppMenu from "common/AppMenu"
 import Vue from "vue";
 import { SidebarPlugin } from '@syncfusion/ej2-vue-navigations';
 import { ButtonPlugin,RadioButtonPlugin} from '@syncfusion/ej2-buttons';
@@ -62,7 +44,6 @@ Vue.use(SidebarPlugin, ButtonPlugin, RadioButtonPlugin);
 
 export default {
   name: `app-header`,
-  // components: { AppMenu },
   data: function() {
         return {
             enableDock : true,
@@ -73,10 +54,6 @@ export default {
             active: this.$route.fullPath
         }
     },
-  // data: () => ({
-  //   open: false,
-  //   desktop: false
-  // }),
   computed: {
     ...mapGetters([`session`]),
     buttonState() {
@@ -84,30 +61,16 @@ export default {
     },
   },
   mounted() {
-    // this.watchWindowSize()
-    // window.onresize = this.watchWindowSize
     this.$refs.dockSidebar.hide();
     this.$refs.dockSidebar.classList.remove('e-active');
   },
-  // updated() {
-  //   this.watchWindowSize()
-  //   window.onresize = this.watchWindowSize
-  // },
   methods: {
-    // close() {
-    //   this.open = false
-    //   noScroll.off()
-    // },
     toggleClick: function() {
       this.$refs.dockSidebar.toggle();
       this.buttonActive = !this.buttonActive;
     },
-    // showCloseButton() {
-    //   this.buttonActive = !this.buttonActive;
-    // },
     home() {
       this.$router.push(`/wallet`)
-      console.log(this.$route.fullPath)
     },
     staking() {
       this.$router.push(`/staking`)
@@ -117,26 +80,7 @@ export default {
     },
     network() {
       this.$router.push(`/`)
-      console.log(this.$route)
-    },
-    // show() {
-    //   this.open = true
-    //   noScroll.on()
-    // },
-    // watchWindowSize() {
-    //   const w = Math.max(
-    //     document.documentElement.clientWidth,
-    //     window.innerWidth || 0
-    //   )
-
-    //   if (w >= 1024) {
-    //     this.close()
-    //     this.desktop = true
-    //     return
-    //   } else {
-    //     this.desktop = false
-    //   }
-    // }
+    }
   }
 }
 </script>
@@ -274,6 +218,7 @@ div#dockSidebar:focus {
     background: #232021;
     /* overflow: hidden; */
     min-height: 100vh;
+    /* top: 0; */
     position: fixed
 }
 /* end of sidebar styles */
@@ -320,6 +265,11 @@ i.material-icons {
   margin: 0.5rem;
 }
 
+.header-item-logo2 {
+  height: 1.5rem;
+  margin: 1rem;
+}
+
 @media screen and (max-width: 1023px) {
   .app-header {
     width: 100%;
@@ -339,8 +289,8 @@ i.material-icons {
     cursor: pointer;
   }
 
-  .header-item-logo {
+  /* .header-item-logo {
     height: 2.5rem;
-  }
+  } */
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="li-tx">
     <div class="li-tx__icon">
-      <img
+      <img rel=preload 
         :style="{ borderColor: color }"
         src="~assets/images/cosmos-logo.png"
       />

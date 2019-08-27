@@ -69,10 +69,10 @@ p {
 
 @media (max-width: 1024px) {
   .cookie-bar {
-    top: auto;
+    /* top: auto; */
     bottom: 0;
     z-index: 99;
-    padding: 0.5rem;
+    padding: .5rem;
     justify-content: space-around;
   }
 
