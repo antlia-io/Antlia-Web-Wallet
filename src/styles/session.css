@@ -1,5 +1,5 @@
 .session-frame {
-  position: absolute;
+  position: relative;
   /* top: 0; */
   left: 0;
   /* bottom: 0; */
@@ -10,6 +10,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-image: url("./assets/images/color-final-bg.jpg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  overflow: hidden; */
 }
 
 .session-outer-container {

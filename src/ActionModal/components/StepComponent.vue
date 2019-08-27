@@ -68,7 +68,7 @@ export default {
 }
 
 .active {
-  border-color: #0056b3;
+  border-color: #0a73b1;
 }
 
 .text--default {
@@ -96,6 +96,6 @@ export default {
 }
 
 .textActive {
-  color: #0056b3;
+  color: #0a73b1;
 }
 </style>

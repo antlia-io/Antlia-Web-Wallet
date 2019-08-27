@@ -11,19 +11,19 @@
           <i v-if="!buttonActive" class="material-icons">menu</i>
           <i v-else class="material-icons">close</i>
         </li>
-        <li class="sidebar-item hover" @click="home()" v-on:click="active = 'home'" :class="{active:active === 'home'}" title="Wallet">
+        <li class="sidebar-item hover" @click="home()" v-on:click="active = 'home'" :class="{active:this.$route.fullPath === '/wallet'}" title="Wallet">
           <i class="material-icons">home</i>
           <span class="e-text">Wallet</span>
         </li>
-        <li class="sidebar-item hover" @click="staking()" v-on:click="active = 'staking'" :class="{active:active === 'staking'}" title="Staking">
+        <li class="sidebar-item hover" @click="staking()" v-on:click="active = 'staking'" :class="{active:(this.$route.fullPath === '/staking/my-delegations') || (this.$route.fullPath === '/staking/validators') || (this.$route.fullPath === '/staking/validators/'+$route.params.validator)}" title="Staking">
           <i class="material-icons">swap_horiz</i>
           <span class="e-text">Staking</span>
         </li>
-        <li class="sidebar-item hover" @click="governance()" v-on:click="active = 'governance'" :class="{active:active === 'governance'}" title="Governance">
+        <li class="sidebar-item hover" @click="governance()" v-on:click="active = 'governance'" :class="{active:(this.$route.fullPath === '/governance/proposals') || (this.$route.fullPath === '/governance/'+$route.params.proposalId)}" title="Governance">
           <i class="material-icons">transfer_within_a_station</i>
           <span class="e-text">Governance</span>
         </li>
-        <li class="sidebar-item hover" @click="network()" v-on:click="active = 'network'" :class="{active:active === 'network'}" title="Network">
+        <li class="sidebar-item hover" @click="network()" v-on:click="active = 'network'" :class="{active:(this.$route.fullPath === '/') || (this.$route.fullPath === '/blocks/'+$route.params.height)}" title="Network">
           <i class="material-icons">my_location</i>
           <span class="e-text">Network</span>
         </li>
@@ -70,8 +70,7 @@ export default {
             width : '220px',
             position :'Left',
             buttonActive: false,
-            active: 'network'
-            
+            active: this.$route.fullPath
         }
     },
   // data: () => ({
@@ -108,6 +107,7 @@ export default {
     // },
     home() {
       this.$router.push(`/wallet`)
+      console.log(this.$route.fullPath)
     },
     staking() {
       this.$router.push(`/staking`)
@@ -117,6 +117,7 @@ export default {
     },
     network() {
       this.$router.push(`/`)
+      console.log(this.$route)
     },
     // show() {
     //   this.open = true
@@ -273,7 +274,7 @@ div#dockSidebar:focus {
     background: #232021;
     /* overflow: hidden; */
     min-height: 100vh;
-    position: relative
+    position: fixed
 }
 /* end of sidebar styles */
 

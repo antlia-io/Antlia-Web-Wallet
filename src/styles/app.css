@@ -78,12 +78,12 @@ input.tm-field {
   margin-right: 1rem;
 }
 
-.e-content-animation {
+/* .e-content-animation {
   margin-left: 0px !important
-}
+} */
 
 .input-suffix {
-  background: rgb(84, 45, 130);
+  background: #0a73b1;
   display: inline-block;
   position: absolute;
   padding: 5px 8px;
