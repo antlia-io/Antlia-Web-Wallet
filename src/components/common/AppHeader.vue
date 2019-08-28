@@ -16,7 +16,7 @@
           <i class="material-icons">home</i>
           <span class="e-text">Wallet</span>
         </li>
-        <li class="sidebar-item hover" @click="staking()" v-on:click="active = 'staking'" :class="{active:(this.$route.fullPath === '/staking/my-delegations') || (this.$route.fullPath === '/staking/validators') || (this.$route.fullPath === '/staking/validators/'+$route.params.validator)}" title="Staking">
+        <li class="sidebar-item hover" @click="staking()" v-on:click="active = 'staking'" :class="{active:(this.$route.fullPath === '/staking/my-delegations') || (this.$route.fullPath === '/staking/validators/') || (this.$route.fullPath === '/staking/validators') || (this.$route.fullPath === '/staking/validators/'+$route.params.validator)}" title="Staking">
           <i class="material-icons">swap_horiz</i>
           <span class="e-text">Staking</span>
         </li>

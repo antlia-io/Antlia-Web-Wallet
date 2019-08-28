@@ -21,12 +21,6 @@
       </div>
     </TmDataMsg>
     <template slot="managed-body">
-      <!-- <template slot="address">
-        <div class="card">
-          <h3>Your Public Color Address</h3>
-          <Bech32 :address="session.address || ''" long-form />
-        </div>
-      </template> -->
       <LiCoin
         v-for="coin in filteredBalances"
         :key="coin.denom"
@@ -47,7 +41,6 @@ import orderBy from "lodash.orderby"
 import LiCoin from "./LiCoin"
 import PageTransactions from "./PageTransactions"
 import SendModal from "src/ActionModal/components/SendModal"
-// import Bech32 from "common/Bech32"
 import TmPage from "common/TmPage"
 import TmDataMsg from "common/TmDataMsg"
 
@@ -58,8 +51,7 @@ export default {
     LiCoin,
     PageTransactions,
     TmPage,
-    SendModal,
-    // Bech32
+    SendModal
   },
   data: () => ({ num, showSendModal: false }),
   computed: {

@@ -14,19 +14,6 @@
           Wallet
         </h2> -->
       </router-link>
-      <!-- <router-link
-        id="app-menu__transactions"
-        class="app-menu-item"
-        to="/transactions"
-        exact="exact"
-        title="Transactions"
-        @click.native="close"
-      >
-        <h2 class="app-menu-title">
-          Transactions
-        </h2>
-        <i class="material-icons">chevron_right</i>
-      </router-link> -->
       <router-link
         id="app-menu__staking"
         class="app-menu-item"
@@ -35,9 +22,6 @@
         @click.native="close"
       >
         <i class="material-icons">search</i>
-        <!-- <h2 class="app-menu-title">
-          Staking
-        </h2> -->
       </router-link>
       <router-link
         id="app-menu__proposals"
@@ -47,9 +31,6 @@
         @click.native="close"
       >
         <i class="material-icons">transfer_within_a_station</i>
-        <!-- <h2 class="app-menu-title">
-          Governance
-        </h2> -->
       </router-link>
       <router-link
         id="app-menu__network"
@@ -60,9 +41,6 @@
         @click.native="close"
       >
         <i class="material-icons">my_location</i>
-        <!-- <h2 class="app-menu-title">
-          Network
-        </h2> -->
       </router-link>
       <a
         v-if="session.signedIn"

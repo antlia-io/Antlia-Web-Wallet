@@ -23,13 +23,13 @@ body,
 }
 
 a {
-  color: #0a73b1;
+  color: #0a73b1 !important;
   text-decoration: none;
   font-weight: bold;
 }
 
 a:hover {
-  color: var(--link-hover);
+  color: #00d6e1 !important;
   text-decoration: none !important;
 }
 

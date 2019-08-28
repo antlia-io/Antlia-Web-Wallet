@@ -53,7 +53,7 @@ export default {
 
 .cookie-bar .link {
   text-decoration: underline;
-  color: var(--bright);
+  color: var(--bright) !important;
 }
 
 p {
@@ -64,7 +64,7 @@ p {
   cursor: pointer;
   height: 1rem;
   width: 1rem;
-  color: var(--bright);
+  color: var(--bright) !important;
 }
 
 @media (max-width: 1024px) {
