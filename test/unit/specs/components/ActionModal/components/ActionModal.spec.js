@@ -30,7 +30,7 @@ const modalContext = {
   connection: {
     externals: {
       node: {
-        url: "https://stargate.color-platform.org/"
+        url: "https://color-platform.rnssol.com/"
       }
     },
     lastHeader: {

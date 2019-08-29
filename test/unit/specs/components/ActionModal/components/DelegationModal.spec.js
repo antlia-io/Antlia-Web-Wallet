@@ -6,7 +6,7 @@ import Vuelidate from "vuelidate"
 import mockValues from "test/unit/helpers/mockValues.js"
 
 const context = {
-  url: "https://stargate.color-platform.org/",
+  url: "https://color-platform.rnssol.com/",
   chainId: "cosmoshub",
   connected: true,
   userAddress: mockValues.addresses[0],
