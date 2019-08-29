@@ -206,7 +206,7 @@ if (process.env.NODE_ENV === `production`) {
   )
 
   // don't set the content security policy in e2e tests as we need to connect to a testnet
-  if (!process.env.E2E_TESTS) {
+  if (process.env.E2E_TESTS) {
     // adds the content security policy to the index.html
     config.plugins.push(
       new CSPWebpackPlugin({

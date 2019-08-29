@@ -195,7 +195,7 @@ describe(`Store: getters`, () => {
       connection: {
         externals: {
           node: {
-            url: "https://color-platform.rnssol.com"
+            url: "https://stargate.color-platform.org"
           }
         },
         lastHeader: {
@@ -225,7 +225,7 @@ describe(`Store: getters`, () => {
     }
 
     const context = {
-      url: "https://color-platform.rnssol.com",
+      url: "https://stargate.color-platform.org",
       chainId: "cosmoshub",
       connected: true,
       userAddress: "cosmos1abcdefghijklmop",

@@ -9,7 +9,7 @@
 // parse command line options
 const options = {
   port: 9071,
-  target: `https://color-platform.rnssol.com:1317`
+  target: `https://stargate.color-platform.org`
 }
 
 // Start the proxy

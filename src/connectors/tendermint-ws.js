@@ -28,7 +28,7 @@ function convertWsArgs(args = {}) {
 }
 
 class Client extends EventEmitter {
-  constructor(uriString = `https://color-platform.rnssol.com:26657`) {
+  constructor(uriString = `https://stargate.color-platform.org:26657`) {
     super()
 
     // parse full-node URI
