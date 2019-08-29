@@ -23,7 +23,7 @@
                 v-if="proposal.proposal_status === 'VotingPeriod'"
                 id="vote-btn"
                 :value="connected ? 'Vote' : 'Connecting...'"
-                :disabled="!connected"
+                :disabled="!connected || !session.signedIn"
                 color="primary"
                 @click.native="() => onVote()"
               />
@@ -31,7 +31,7 @@
                 v-if="proposal.proposal_status === 'DepositPeriod'"
                 id="deposit-btn"
                 :value="connected ? 'Deposit' : 'Connecting...'"
-                :disabled="!connected"
+                :disabled="!connected || !session.signedIn"
                 color="primary"
                 @click.native="onDeposit"
               />

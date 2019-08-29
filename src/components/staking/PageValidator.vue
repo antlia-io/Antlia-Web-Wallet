@@ -36,14 +36,14 @@
           <div class="col-lg-2 page-profile__header__actions">
             <TmBtn
               id="delegation-btn"
-              :disabled="!connected"
+              :disabled="!connected || !session.signedIn"
               :value="connected ? 'Delegate' : 'Connecting...'"
               color="secondary"
               @click.native="onDelegation"
             />
             <TmBtn
               id="undelegation-btn"
-              :disabled="!connected"
+              :disabled="!connected || !session.signedIn"
               :value="connected ? 'Undelegate' : 'Connecting...'"
               color="secondary"
               @click.native="onUndelegation"
