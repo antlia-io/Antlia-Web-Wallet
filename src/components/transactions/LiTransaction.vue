@@ -3,7 +3,7 @@
     <div class="li-tx__icon">
       <img rel=preload 
         :style="{ borderColor: color }"
-        src="~assets/images/cosmos-logo.png"
+        src="~assets/images/color-logo.png"
       />
     </div>
     <div class="li-tx__content">
@@ -116,8 +116,9 @@ a:hover {
 .li-tx__icon img {
   max-height: 100%;
   max-width: 52px;
+  padding: 5px;
   border: 2px solid;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   display: block;
 }
 

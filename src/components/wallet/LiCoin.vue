@@ -1,7 +1,7 @@
 <template>
   <li :id="`li-coin--` + denomination.toLowerCase()" class="li-coin">
     <div class="li-coin__icon">
-      <img rel=preload src="~assets/images/cosmos-logo.png" />
+      <img rel=preload src="~assets/images/color-logo.png" />
     </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">
@@ -152,8 +152,9 @@ export default {
 .li-coin__icon img {
   max-height: 100%;
   max-width: 52px;
+  padding: 5px;
   border: 0.5px solid;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   display: block;
   color: orangered !important;
 }

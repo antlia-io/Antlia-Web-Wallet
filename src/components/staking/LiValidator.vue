@@ -15,7 +15,7 @@
           data-table__row__info__image
           data-table__row__info__image--no-img
         "
-        src="~assets/images/validator-icon.svg"
+        src="~assets/images/color-logo.png"
       />
       <div class="data-table__row__info__container">
         <span
