@@ -56,10 +56,9 @@ export default {
 .circle--default {
   border: 0.1rem var(--grey) solid;
   border-radius: 50%;
-  background: #f2f3f2;
+  background: #3a3046;
   width: 1.6rem;
   height: 1.6rem;
-  color: black;
   margin-bottom: 0.75rem;
   font-size: var(--xs);
   display: flex;
