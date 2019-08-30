@@ -166,6 +166,7 @@ export default {
 .card h3 {
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: .5rem;
   color: black !important;
 }
 

@@ -129,6 +129,7 @@ h3 {
   color: black !important;
   font-size: 1rem !important;
   display: inline;
+  line-height: 1.2;
 }
 
 .col-md-4 {
@@ -143,6 +144,7 @@ h2 {
   color: black !important;
   font-size: 1rem !important;
   display: inline;
+  font-weight: 500;
 }
 
 .displayinline {
