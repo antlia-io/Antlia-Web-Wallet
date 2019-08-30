@@ -5,7 +5,8 @@
         Explore with any address
       </h2>
       <div class="session-main">
-        <TmFormGroup field-id="sign-in-name" field-label="Your Color Address" style="-webkit-text-fill-color: black">
+        <TmFormGroup field-id="sign-in-name" field-label="Your Color Address"> 
+          <!-- style="-webkit-text-fill-color: black" -->
           <TmField
             v-model="address"
             type="text"
@@ -15,7 +16,7 @@
           />
           <TmFormMsg
             v-if="$v.address.$error && !$v.address.required"
-            name="Name"
+            name="Color Address"
             type="required"
           />
           <TmFormMsg

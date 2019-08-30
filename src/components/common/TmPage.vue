@@ -194,10 +194,12 @@ export default {
 }
 
 .page-profile__section-title {
-  /* margin: 0 0 0.25rem 1rem; */
   color: black;
-  /* font-size: var(--sm);
-  font-weight: 500; */
+  font-size: 1.75rem;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
 }
 
 .page-profile__section--between > .row {
@@ -246,6 +248,8 @@ export default {
   font-size: var(--h1);
   font-weight: 400;
   padding: 0 0.5rem;
+  margin-bottom: .5rem;
+  line-height: 1.2;
 }
 
 .page-profile__header__actions {

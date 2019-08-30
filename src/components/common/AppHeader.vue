@@ -263,6 +263,7 @@ i.material-icons {
 .header-item-logo {
   height: 3rem;
   margin: 0.5rem;
+  vertical-align: middle;
 }
 
 .header-item-logo2 {

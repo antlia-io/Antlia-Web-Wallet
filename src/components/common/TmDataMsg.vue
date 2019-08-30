@@ -63,7 +63,7 @@ export default {
 .tm-data-msg__icon i.material-icons {
   font-size: 2rem;
   color: var(--txt);
-  background: var(--warning);
+  background: #ffc107;
   padding: 0.5rem;
   border-radius: 50%;
 }

@@ -623,7 +623,7 @@ export default {
 
 <style>
 .action-modal {
-  background: #3a3046;
+  background: white;
   display: flex;
   flex-direction: column;
   right: 1rem;
@@ -636,7 +636,7 @@ export default {
   z-index: var(--z-modal);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  box-shadow: 0 2px 8px rgba(200, 200, 200, 0.1);
+  box-shadow: 0 32px 23px hsla(0, 0%, 0%, 0.52);
 }
 
 .action-modal-header {
@@ -651,7 +651,7 @@ export default {
   flex: 1;
   font-size: var(--h2);
   font-weight: 400;
-  color: var(--bright);
+  color: black;
   padding-bottom: 2rem;
 }
 
