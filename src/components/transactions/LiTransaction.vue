@@ -84,8 +84,6 @@ export default {
 .li-tx {
   display: flex;
   align-items: center;
-
-  /* border: 1px solid rgba(132, 132, 136, 0.52); */
   background: white;
   width: 100%;
   font-weight: 300;
@@ -93,7 +91,6 @@ export default {
 }
 
 .li-tx .copied {
-  position: absolute;
   bottom: 0;
 }
 
@@ -118,7 +115,6 @@ a:hover {
   max-width: 52px;
   padding: 5px;
   border: 2px solid;
-  /* border-radius: 50%; */
   display: block;
 }
 

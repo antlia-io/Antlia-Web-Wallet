@@ -30,7 +30,7 @@ describe(`PageNetwork`, () => {
           not_bonded_tokens: 9008256400.444444
         }
       },
-      bondDenom: `stake`,
+      bondDenom: `color`,
       blocks: [
         {
           header: {

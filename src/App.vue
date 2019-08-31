@@ -10,6 +10,7 @@
         <router-view />
       </div>
       <TmNotifications :notifications="notifications" />
+      <ConnectedNetwork />
     </div>
   </div>
 </template>
@@ -18,6 +19,7 @@
 import { mapGetters } from "vuex"
 import AppHeader from "common/AppHeader"
 import CookieBar from "common/CookieBar"
+import ConnectedNetwork from "common/TmConnectedNetwork"
 import MaintenanceBar from "common/MaintenanceBar"
 import DisconnectedBar from "common/DisconnectedBar"
 import TmNotifications from "common/TmNotifications"
@@ -30,7 +32,8 @@ export default {
     TmNotifications,
     CookieBar,
     MaintenanceBar,
-    DisconnectedBar
+    DisconnectedBar,
+    ConnectedNetwork
   },
   computed: {
     ...mapGetters([`notifications`, `session`])

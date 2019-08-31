@@ -49,14 +49,6 @@
               @click.native="onUndelegation"
             />
           </div>
-
-          <!-- <div class="page-profile__header__info">
-            <div>
-              
-            </div>
-
-            
-          </div> -->
         </div>
 
         <div class="row">

@@ -6,7 +6,6 @@
       </h2>
       <div class="session-main">
         <TmFormGroup field-id="sign-in-name" field-label="Select Account">
-          <!-- style="-webkit-text-fill-color: black" -->
           <TmField
             id="sign-in-name"
             v-model="signInAddress"
@@ -81,6 +80,7 @@ export default {
     ...mapGetters([`keystore`]),
     accounts() {
       let accounts = this.keystore.accounts
+      console.log(accounts)
       return accounts.map(({ name, address }) => ({
         value: address,
         key: name

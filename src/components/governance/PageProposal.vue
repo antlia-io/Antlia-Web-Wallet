@@ -5,7 +5,6 @@
     <template v-else>
       <div class="page-profile__header page-profile__section proposal">
         <div class="row">
-          <!-- <h2 class="proposal-id">#{{ proposalId }}</h2> -->
           <div class="page-profile__header__info">
             <div class="page-profile__status-and-title">
               <span
@@ -79,7 +78,6 @@
         </div>
       </div>
 
-      <!-- <div class="page-profile__section"> -->
       <div v-if="proposal.proposal_status === 'VotingPeriod'" class="row">
         <dl v-if="displayEndDate" class="info_dl colored_dl">
           <dt>Voting End Date</dt>
@@ -121,7 +119,6 @@
           </dd>
         </dl>
       </div>
-      <!-- </div> -->
 
       <ModalDeposit
         ref="modalDeposit"

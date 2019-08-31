@@ -46,7 +46,7 @@ export default {
   },
   data: () => ({
     logPath: ``,
-    issueUrl: `https://github.com/cosmos/voyager/issues`
+    issueUrl: `https://github.com/RNSSolution/color-wallet/issues`
   }),
   computed: {
     ...mapGetters([`session`, `lastHeader`])

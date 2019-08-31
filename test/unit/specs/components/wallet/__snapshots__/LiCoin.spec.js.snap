@@ -9,7 +9,7 @@ exports[`LiCoin has the expected html structure 1`] = `
     class="li-coin__icon"
   >
     <img
-      src="~assets/images/cosmos-logo.png"
+      src="~assets/images/color-logo.png"
     />
   </div>
    
@@ -23,7 +23,7 @@ exports[`LiCoin has the expected html structure 1`] = `
         class="coin-denom"
       >
         
-        STAKE
+        COLOR
       
       </p>
        

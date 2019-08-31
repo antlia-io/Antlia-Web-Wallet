@@ -18,7 +18,6 @@
           field-id="sign-up-name"
           field-label="Account Name"
         >
-        <!-- style="-webkit-text-fill-color: black" -->
           <TmField
             id="sign-up-name"
             v-model.trim="fields.signUpName"
@@ -163,7 +162,7 @@
           >
           or the
           <a
-            href="https://hub.cosmos.network/docs/delegator-guide-cli.html#creating-an-account"
+            href="https://rnssolution.github.io/colorprojectdocs/joinTestNet/"
             target="_blank"
             rel="noopener norefferer"
             >command line</a

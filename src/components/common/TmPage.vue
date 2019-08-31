@@ -14,7 +14,6 @@
           <h3>Your Public Color Address</h3>
           <Bech32 :address="session.address || ''" long-form />
         </div>
-        <!-- <slot name="address" /> -->
       </slot>
       <slot slot="header-buttons" name="header-buttons" />
     </TmPageHeader>
@@ -38,7 +37,6 @@
       </template>
       <slot />
     </main>
-    <!-- <PageFooter v-if="footer" /> -->
   </div>
 </template>
 
@@ -53,7 +51,6 @@ import TmDataConnecting from "common/TmDataConnecting"
 import TmBalance from "common/TmBalance"
 import ToolBar from "common/ToolBar"
 import Bech32 from "common/Bech32"
-// import PageFooter from "common/TmPageFooter"
 
 export default {
   name: `tm-page`,
@@ -67,7 +64,6 @@ export default {
     TmDataConnecting,
     CardSignInRequired,
     Bech32
-    // PageFooter
   },
   props: {
     hideHeader: {
@@ -224,7 +220,6 @@ export default {
 }
 
 .page-profile__header__info {
-  /* display: flex; */
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -338,14 +333,6 @@ export default {
 }
 
 @media screen and (max-width: 767px) {
-  /* .tm-page-main {
-    padding: 2rem 0;
-  } */
-
-  /* .row {
-    flex-direction: column;
-  } */
-
   .page-profile__header__actions {
     margin-right: 0;
   }

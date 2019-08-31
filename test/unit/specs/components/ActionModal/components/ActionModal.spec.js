@@ -30,7 +30,7 @@ const modalContext = {
   connection: {
     externals: {
       node: {
-        url: "https://color-platform.rnssol.com/"
+        url: "https://wallet.color-platform.org/"
       }
     },
     lastHeader: {

@@ -47,7 +47,7 @@ describe(`LiValidator`, () => {
         session: {
           signedIn: true
         },
-        bondDenom: `stake`,
+        bondDenom: `color`,
         lastHeader: ``,
         pool: {
           pool: {

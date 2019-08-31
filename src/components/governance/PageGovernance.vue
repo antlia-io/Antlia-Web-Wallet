@@ -42,10 +42,6 @@ export default {
         displayName: `Proposals`,
         pathName: `Proposals`
       }
-      // {
-      //   displayName: `Parameters`,
-      //   pathName: `Governance Parameters`
-      // }
     ]
   }),
   computed: {

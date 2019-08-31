@@ -20,7 +20,7 @@ exports[`TmBtn allows for customization 1`] = `
 exports[`TmBtn displays as a link 1`] = `
 <router-link
   exact="exact"
-  to="/stake"
+  to="/color"
 >
   
   button

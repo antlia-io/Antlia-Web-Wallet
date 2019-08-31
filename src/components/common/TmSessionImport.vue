@@ -10,7 +10,6 @@
           field-id="import-name"
           field-label="Account Name"
         >
-         <!-- style="-webkit-text-fill-color: black" -->
           <TmField
             id="import-name"
             v-model.trim="fields.importName"

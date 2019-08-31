@@ -3,7 +3,7 @@ import distributionModule from "modules/distribution.js"
 describe(`Module: Fee Distribution`, () => {
   let module, state, commit, dispatch, actions, mutations, rootState
   const coinArray = [
-    { denom: `stake`, amount: `100` },
+    { denom: `COLOR`, amount: `100` },
     { denom: `photino`, amount: `15` }
   ]
   const parameters = {
@@ -146,7 +146,7 @@ describe(`Module: Fee Distribution`, () => {
       it(`success`, async () => {
         const validatorAddr = `cosmosvaloper1address`
         await actions.getRewardsFromValidator(
-          { state, rootState, commit, getters: { bondDenom: "stake" } },
+          { state, rootState, commit, getters: { bondDenom: "COLOR" } },
           validatorAddr
         )
         expect(node.get.delegatorRewardsFromValidator).toHaveBeenCalledWith(
@@ -165,7 +165,7 @@ describe(`Module: Fee Distribution`, () => {
           Promise.reject(Error(`invalid validator address`))
         )
         await actions.getRewardsFromValidator(
-          { state, rootState, commit, getters: { bondDenom: "stake" } },
+          { state, rootState, commit, getters: { bondDenom: "COLOR" } },
           validatorAddr
         )
         expect(node.get.delegatorRewardsFromValidator).toHaveBeenCalledWith(

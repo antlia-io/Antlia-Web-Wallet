@@ -38,7 +38,7 @@ export default {
   width: 100%;
   padding: 1rem;
   font-family: var(--sans);
-  background-color: #551f38;
+  background-color: red;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;

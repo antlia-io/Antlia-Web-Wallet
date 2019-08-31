@@ -124,14 +124,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="parameters__details parameters__section">
-      <div class="row">
-        
-
-        
-      </div>
-    </div> -->
   </div>
 </template>
 

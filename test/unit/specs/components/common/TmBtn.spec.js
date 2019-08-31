@@ -17,7 +17,7 @@ describe(`TmBtn`, () => {
   it(`displays as a link`, () => {
     wrapper.setProps({
       type: `link`,
-      to: `/stake`
+      to: `/color`
     })
     expect(wrapper.vm.$el).toMatchSnapshot()
   })

@@ -43,7 +43,7 @@ exports[`TmSessionSignUp has the expected html structure 1`] = `
         or the
         
         <a
-          href="https://hub.cosmos.network/docs/delegator-guide-cli.html#creating-an-account"
+          href="https://rnssolution.github.io/colorprojectdocs/joinTestNet/"
           rel="noopener norefferer"
           target="_blank"
         >

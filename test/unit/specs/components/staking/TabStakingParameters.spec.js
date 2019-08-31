@@ -4,7 +4,7 @@ import TabStakingParameters from "src/components/staking/TabStakingParameters"
 const stakingParameters = {
   unbonding_time: `259200000000000`,
   max_validators: 100,
-  bond_denom: `STAKE`
+  bond_denom: `COLOR`
 }
 
 describe(`TabStakingParameters`, () => {
@@ -19,7 +19,7 @@ describe(`TabStakingParameters`, () => {
       parameters: stakingParameters,
       loaded: true
     },
-    bondDenom: `stake`
+    bondDenom: `color`
   }
 
   beforeEach(() => {
@@ -56,7 +56,7 @@ describe(`TabStakingParameters`, () => {
           loaded: false,
           loading: false
         },
-        bondDenom: `stake`
+        bondDenom: `color`
       }
     }
 
@@ -80,7 +80,7 @@ describe(`TabStakingParameters`, () => {
           loaded: false,
           loading: false
         },
-        bondDenom: `stake`
+        bondDenom: `color`
       }
     }
 
@@ -106,7 +106,7 @@ describe(`TabStakingParameters`, () => {
           loaded: false,
           loading: true
         },
-        bondDenom: `stake`
+        bondDenom: `color`
       }
     }
 
@@ -130,7 +130,7 @@ describe(`TabStakingParameters`, () => {
           loaded: false,
           loading: false
         },
-        bondDenom: `stake`
+        bondDenom: `color`
       }
     }
 

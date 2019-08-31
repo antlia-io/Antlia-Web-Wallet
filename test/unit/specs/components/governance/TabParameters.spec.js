@@ -37,7 +37,7 @@ describe(`TabParameters`, () => {
   })
 
   it(`displays the minimum deposit`, () => {
-    expect(wrapper.vm.minimumDeposit).toEqual(`100 STAKEs`)
+    expect(wrapper.vm.minimumDeposit).toEqual(`100 COLORs`)
   })
 
   it(`displays deposit period in days`, () => {

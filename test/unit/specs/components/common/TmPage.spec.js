@@ -13,7 +13,7 @@ describe(`TmPage`, () => {
 
   beforeEach(() => {
     getters = {
-      session: () => ({ address: `cosmos`, atoms: 1 }),
+      session: () => ({ address: `color`, atoms: 1 }),
       connected: () => true
     }
     actions = {

@@ -3,13 +3,13 @@
     <b-progress v-if="hidebar" class="mt-2" :max="max" show-value>
       <b-progress-bar
         :value="unbondedAtoms * (100 / totalAtomsDisplay)"
-        :label="`${(unbondedAtoms * (100 / totalAtomsDisplay)).toFixed(2)}%`"
+        :label="`${LiquidbarValue.toFixed(2)}%`"
         variant="success"
         animated
       ></b-progress-bar>
       <b-progress-bar
         :value="(totalAtomsDisplay - unbondedAtoms) * (100 / totalAtomsDisplay)"
-        :label="`${((totalAtomsDisplay - unbondedAtoms) * (100 / totalAtomsDisplay)).toFixed(2)}%`"
+        :label="`${DelegatedbarValue.toFixed(2)}%`"
         variant="warning"
         animated
       ></b-progress-bar>
@@ -77,18 +77,18 @@ export default {
     delegated(){
       return this.loaded ? ((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) : `--`
     },
-    // LiquidbarValue() {
-    //   if (this.num.atoms(this.totalAtoms) === 0)
-    //     return 0
-    //   else 
-    //     return (this.num.atoms(this.liquidAtoms)) * (100 / (this.num.atoms(this.totalAtoms)))
-    // },
-    // DelegatedbarValue(){
-    //   if (((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) === 0)
-    //     return 0
-    //   else 
-    //     return ((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) * (100 / (this.num.atoms(this.totalAtoms)))
-    // }
+    LiquidbarValue() {
+      if (this.num.atoms(this.totalAtoms) === 0)
+        return 0
+      else 
+        return (this.num.atoms(this.liquidAtoms)) * (100 / (this.num.atoms(this.totalAtoms)))
+    },
+    DelegatedbarValue(){
+      if (((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) === 0)
+        return 0
+      else 
+        return ((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) * (100 / (this.num.atoms(this.totalAtoms)))
+    }
   },
   watch: {
     lastHeader: {
@@ -145,6 +145,7 @@ h2 {
   font-size: 1rem !important;
   display: inline;
   font-weight: 500;
+  line-height: 1.2;
 }
 
 .displayinline {

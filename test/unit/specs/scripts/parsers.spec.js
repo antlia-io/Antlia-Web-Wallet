@@ -10,7 +10,7 @@ const signedMessage = {
           amount: [
             {
               amount: "10000000",
-              denom: "stake"
+              denom: "color"
             }
           ],
           from_address: "cosmos1ek9cd8ewgxg9w5xllq9um0uf4aaxaruvcw4v9e",
@@ -22,7 +22,7 @@ const signedMessage = {
       amount: [
         {
           amount: "40",
-          denom: "stake"
+          denom: "color"
         }
       ],
       gas: "39953"
@@ -41,7 +41,7 @@ const signedActionMessage = {
           amount: [
             {
               amount: "10000000",
-              denom: "stake"
+              denom: "color"
             }
           ],
           from_address: "cosmos1ek9cd8ewgxg9w5xllq9um0uf4aaxaruvcw4v9e",
@@ -53,7 +53,7 @@ const signedActionMessage = {
       amount: [
         {
           amount: "40",
-          denom: "stake"
+          denom: "color"
         }
       ],
       gas: "39953"
@@ -86,7 +86,7 @@ describe(`parsers helper`, () => {
   it(`should parse a signedmessaged parseValueObj`, () => {
     const parsedValueObj = {
       amount: "10000000",
-      denom: "stake"
+      denom: "color"
     }
     expect(parseValueObj(signedMessage)).toMatchObject(parsedValueObj)
   })
@@ -95,7 +95,7 @@ describe(`parsers helper`, () => {
     const parsedValueObj = [
       {
         amount: "10000000",
-        denom: "stake"
+        denom: "color"
       }
     ]
     expect(parseValueObj(signedActionMessage)).toMatchObject(parsedValueObj)

@@ -6,7 +6,7 @@ import Vuelidate from "vuelidate"
 import mockValues from "test/unit/helpers/mockValues.js"
 
 const context = {
-  url: "https://color-platform.rnssol.com/",
+  url: "https://wallet.color-platform.org/",
   chainId: "cosmoshub",
   connected: true,
   userAddress: mockValues.addresses[0],
@@ -133,14 +133,14 @@ describe(`DelegationModal`, () => {
         type: "MsgDelegate",
         validatorAddress: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctplpn3au`,
         amount: "10000000",
-        denom: "STAKE"
+        denom: "COLOR"
       })
     })
 
     it("should return correct notification message for delegating", () => {
       expect(wrapper.vm.notifyMessage).toEqual({
         title: `Successful delegation!`,
-        body: `You have successfully delegated your STAKEs`
+        body: `You have successfully delegated your COLORs`
       })
     })
   })
@@ -163,7 +163,7 @@ describe(`DelegationModal`, () => {
           "cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctplpn3au",
         validatorDestinationAddress: "cosmosDstAddress1",
         amount: "10000000",
-        denom: "STAKE"
+        denom: "COLOR"
       })
       // expect(wrapper.vm.transactionData).toEqual()
     })
@@ -171,7 +171,7 @@ describe(`DelegationModal`, () => {
     it("should return correct notification message for delegating", () => {
       expect(wrapper.vm.notifyMessage).toEqual({
         title: `Successful redelegation!`,
-        body: `You have successfully redelegated your STAKEs`
+        body: `You have successfully redelegated your COLORs`
       })
     })
   })
