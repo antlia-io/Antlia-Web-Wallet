@@ -51,7 +51,7 @@ describe(`TmModalError`, () => {
         .find(`.tm-modal-error__title`)
         .text()
         .trim()
-    ).toBe(`Voyager ran into an error`)
+    ).toBe(`Color Wallet ran into an error`)
   })
 
   it(`shows a title if specified`, () => {
@@ -71,7 +71,7 @@ describe(`TmModalError`, () => {
         .text()
         .trim()
     ).toContain(
-      `Voyager has encountered a critical error that blocks the app from running. Please create an issue and include a copy of the app logs.`
+      `Color Wallet has encountered a critical error that blocks the app from running. Please create an issue and include a copy of the app logs.`
     )
   })
 

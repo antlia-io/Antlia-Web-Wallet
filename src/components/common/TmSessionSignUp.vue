@@ -137,7 +137,7 @@
                 type="checkbox"
               />
               I'd like to opt in for remote error tracking to help improve
-              Voyager.
+              Color Wallet.
             </label>
           </div>
         </TmFormGroup>

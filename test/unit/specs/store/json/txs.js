@@ -39,7 +39,7 @@ export const bankTxs = [
   },
   {
     hash: `not a real hash 1`,
-    time: new Date(2042).toISOString(), // set by Voyager
+    time: new Date(2042).toISOString(), // set by Color Wallet
     height: `3438`,
     tx: {
       type: `8EFE47F0625DE8`,
@@ -79,7 +79,7 @@ export const bankTxs = [
   },
   {
     hash: `not a real hash 2`,
-    time: new Date(1142).toISOString(), // set by Voyager
+    time: new Date(1142).toISOString(), // set by Color Wallet
     height: `466`,
     tx: {
       type: `8EFE47F0625DE8`,
@@ -215,7 +215,7 @@ export const stakingTxs = [
   },
   {
     hash: `not a real hash 5`,
-    time: new Date(42000).toISOString(), // set by Voyager
+    time: new Date(42000).toISOString(), // set by Color Wallet
     height: `568`,
     tx: {
       type: `8EFE47F0625DE8`,
@@ -380,7 +380,7 @@ export const stakingTxs = [
 export const governanceTxs = [
   {
     hash: `not a real hash 9`,
-    time: new Date(42540).toISOString(), // set by Voyager
+    time: new Date(42540).toISOString(), // set by Color Wallet
     height: `56673`,
     tx: {
       type: `8EFE47F0625DE8`,
@@ -468,7 +468,7 @@ export const governanceTxs = [
   },
   {
     hash: `not a real hash 11`,
-    time: new Date(43300).toISOString(), // set by Voyager
+    time: new Date(43300).toISOString(), // set by Color Wallet
     height: `56673`,
     tx: {
       type: `8EFE47F0625DE8`,
@@ -512,7 +512,7 @@ export const distributionTxs = [
     log: `[{"msg_index":"0","success":true,"log":""}]`,
     gas_wanted: `500000`,
     gas_used: `58806`,
-    time: new Date(43300).toISOString(), // set by Voyager
+    time: new Date(43300).toISOString(), // set by Color Wallet
     tags: [
       {
         key: `action`,
@@ -569,7 +569,7 @@ export const distributionTxs = [
     log: `[{"msg_index":"0","success":true,"log":""}]`,
     gas_wanted: `500000`,
     gas_used: `58806`,
-    time: new Date(43300).toISOString(), // set by Voyager
+    time: new Date(43300).toISOString(), // set by Color Wallet
     tags: [
       {
         key: `action`,
@@ -618,7 +618,7 @@ export const distributionTxs = [
     log: `[{"msg_index":"0","success":true,"log":""}]`,
     gas_wanted: `500000`,
     gas_used: `58806`,
-    time: new Date(43300).toISOString(), // set by Voyager
+    time: new Date(43300).toISOString(), // set by Color Wallet
     tags: [
       {
         key: `action`,
