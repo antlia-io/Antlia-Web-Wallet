@@ -52,7 +52,7 @@
       }}
     </td>
     <td class="li-validator__voting-power">
-      {{ validator.tokens ? percentOfVotingPower : `--` }}
+      {{num.shortDecimals(num.atoms(validator.tokens))}} ( {{ validator.tokens ? percentOfVotingPower : `--` }} )
     </td>
     <td class="li-validator__commission">
       {{ validator.commission ? num.percent(validator.commission) : `--` }}

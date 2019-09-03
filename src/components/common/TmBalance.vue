@@ -16,17 +16,17 @@
     </b-progress>
     <div>
       <div class="col-md-4">
-        <h3>Total {{ num.viewDenom(bondDenom) }} :</h3>
+        <h3>Total {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="total-atoms__value color">{{ totalAtomsDisplay }}</h2>
       </div>
       <div class="col-md-4">
         <p class="green"></p>
-        <h3>Liquid {{ num.viewDenom(bondDenom) }} :</h3>
+        <h3>Liquid {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="color">{{ unbondedAtoms }}</h2>
       </div>
       <div class="col-md-4">
         <p class="blue"></p>
-        <h3>Delegated {{ num.viewDenom(bondDenom) }} :</h3>
+        <h3>Delegated {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="color">{{ delegated }}</h2>
       </div>
     </div>
@@ -129,7 +129,7 @@ h3 {
   color: black !important;
   font-size: 1rem !important;
   display: inline;
-  line-height: 1.2;
+  /* line-height: 1.2; */
 }
 
 .col-md-4 {
@@ -144,6 +144,7 @@ h2 {
   color: black !important;
   font-size: 1rem !important;
   display: inline;
+  overflow: hidden;
   font-weight: 500;
   line-height: 1.2;
 }

@@ -1,7 +1,28 @@
+
+.table-validator table th,
+.table-validator table td{
+    width: 16%;
+}
+
+.table-proposal table th,
+.table-proposal table td{
+    width: 12%;
+}
+
+.table-proposal table th:first-child,
+.table-proposal table td:first-child{
+    width: 40%;
+}
+
+.table-proposal .data-table__row__info {
+  display: table-cell
+}
+
 .data-table {
   border-spacing: 0 0.25rem;
   width: 100%;
   padding: 0;
+  background: white;
   table-layout: auto;
 }
 

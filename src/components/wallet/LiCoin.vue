@@ -204,4 +204,13 @@ p.coin-amount {
     display: block
   }
 }
+
+@media screen and (max-width: 420px) {
+  .li-coin {
+    padding: .5rem
+  }
+  .li-coin__content {
+    padding-left: .5rem
+  }
+}
 </style>
