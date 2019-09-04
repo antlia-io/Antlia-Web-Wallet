@@ -1,4 +1,4 @@
-![Color-Wallet logo — spaceship blasting off](/src/assets/images/ColorWhiteplatform1.png)
+![Color-Wallet logo — spaceship blasting off](/src/assets/images/Colorblackplatform.png)
 
 # Welcome to Color Wallet!
 
