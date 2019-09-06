@@ -12,7 +12,7 @@ describe(`TableInvoice`, () => {
       propsData: {
         amount: 17.2,
         estimatedFee: 0.030864,
-        bondDenom: `STAKE`
+        bondDenom: `COLOR`
       }
     })
   })
@@ -22,7 +22,7 @@ describe(`TableInvoice`, () => {
   })
 
   it(`should display the correct subtotal`, async () => {
-    expect(wrapper.text()).toMatch(/17.2[0]+ STAKE/)
+    expect(wrapper.text()).toMatch(/17.2[0]+ COLOR/)
   })
 
   it(`should display the correct network fee`, async () => {
@@ -30,6 +30,6 @@ describe(`TableInvoice`, () => {
   })
 
   it(`should display the correct total`, async () => {
-    expect(wrapper.text()).toMatch(/17.23086[0-9]+ STAKE/)
+    expect(wrapper.text()).toMatch(/17.23086[0-9]+ COLOR/)
   })
 })

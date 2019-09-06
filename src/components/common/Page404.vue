@@ -12,11 +12,6 @@
             Wallet
           </router-link>
         </li>
-        <!-- <li>
-          <router-link to="/transactions">
-            Transactions
-          </router-link>
-        </li> -->
         <li>
           <router-link to="/staking">
             Staking
@@ -52,6 +47,7 @@ export default {
 <style>
 .four-oh-four {
   padding: 2rem;
+  margin: 1rem;
   background: white;
   border-left: 1px solid var(--bc-dim);
 }

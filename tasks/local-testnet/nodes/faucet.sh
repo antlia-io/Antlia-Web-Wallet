@@ -53,7 +53,7 @@ while true; do
             if [ $? -eq 0 ]; then
                 echo "$dt - $DESTINATION already funded, accounts are only funded once"
             else
-                # echo "stakes $AMOUNTS at $DESTINATION"
+                # echo "color $AMOUNTS at $DESTINATION"
                 echo ${PASSWORD} | gaiacli tx send ${DESTINATION} ${AMOUNTS} --home ${HOME} --from ${ACCOUNT} --chain-id=${NETWORK} --yes --node ${NODE} --sequence $SEQUENCE &> /dev/null
                 if [ ! $? -eq 0 ]; then
                     echo "!!Funding didn't work!!"

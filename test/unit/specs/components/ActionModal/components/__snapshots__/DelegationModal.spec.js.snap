@@ -45,7 +45,7 @@ exports[`DelegationModal should display the delegation modal form 1`] = `
     <span
       class="input-suffix"
     >
-      STAKE
+      COLOR
     </span>
      
     <tmfield-stub
@@ -60,7 +60,7 @@ exports[`DelegationModal should display the delegation modal form 1`] = `
       
       Available to Delegate:
       1000
-      STAKEs
+      COLORs
     
     </span>
      

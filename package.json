@@ -5,7 +5,7 @@
   "description": "Color Wallet is the user interface for the Color.",
   "author": "Color Platform Organization. <hello@color-platform.org>",
   "license": "Apache-2.0",
-  "homepage": "https://color-platform.rnssol.com/",
+  "homepage": "https://wallet.color-platform.org/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luniehq/lunie.git"

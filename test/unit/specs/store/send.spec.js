@@ -28,7 +28,7 @@ describe(`Module: Send`, () => {
 
   beforeEach(() => {
     node = {
-      url: "https://color-platform.rnssol.com",
+      url: "https://wallet.color-platform.org/",
       send: jest.fn(async (...args) => {
         const req = args[args.length - 1]
         const simulate = req && req.base_req && req.base_req.simulate
@@ -64,7 +64,7 @@ describe(`Module: Send`, () => {
         {
           txProps: {
             toAddress: "cosmos1234",
-            amounts: [{ amount: 5000000, denom: "stake" }]
+            amounts: [{ amount: 5000000, denom: "COLOR" }]
           },
           txMeta: {
             gasEstimate: 100000,

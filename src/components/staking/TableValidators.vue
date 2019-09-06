@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="table-validator">
     <table class="data-table table-responsive">
       <thead>
         <PanelSort :sort="sort" :properties="properties" />
@@ -161,10 +161,3 @@ export default {
   }
 }
 </script>
-<style>
-  @media screen and (min-width: 838px) {
-  .table-responsive {
-    display: inline-table;
-  }
-}
-</style>

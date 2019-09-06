@@ -1,16 +1,12 @@
 <template>
   <SessionFrame>
     <div id="session-welcome">
-      <!-- <router-link to="/">
-        <img class="session-logo-mobile" src="~assets/images/logo.png" />
-      </router-link> -->
-
       <h2 class="session-title">
         Welcome to Color Wallet
       </h2>
 
       <p class="session-paragraph">
-        The easiest way to send, stake, and vote on the Color.
+        The easiest way to send, color, and vote on the Color.
       </p>
 
       <div class="session-list">

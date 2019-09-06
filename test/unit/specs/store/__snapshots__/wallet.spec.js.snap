@@ -14,7 +14,7 @@ Object {
       "denoms": Array [
         "mycoin",
         "fermion",
-        "STAKE",
+        "COLOR",
       ],
       "faucet": "http://gimme.money",
     },

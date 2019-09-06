@@ -3,7 +3,7 @@
     <i></i>
     <p>
       You are currently not connected.
-      <a class="link" @click="reconnect">Try Reconnecting</a>?
+      <a class="link" @click="reconnect">Try Reconnecting </a>?
     </p>
     <a class="close">
       <i class="material-icons" @click="reconnect">refresh</i>
@@ -36,7 +36,7 @@ export default {
   width: 100%;
   padding: 1rem;
   font-family: var(--sans);
-  background-color: #551f38;
+  background-color: red;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;

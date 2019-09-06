@@ -9,7 +9,6 @@
           :error="$v.$error && $v.fields.importName.$invalid"
           field-id="import-name"
           field-label="Account Name"
-          style="-webkit-text-fill-color: black"
         >
           <TmField
             id="import-name"
@@ -37,7 +36,6 @@
           :error="$v.$error && $v.fields.importPassword.$invalid"
           field-id="import-password"
           field-label="Password"
-          style="-webkit-text-fill-color: black"
         >
           <TmField
             id="import-password"
@@ -68,7 +66,6 @@
           :error="$v.$error && $v.fields.importPasswordConfirm.$invalid"
           field-id="import-password-confirmation"
           field-label="Confirm Password"
-          style="-webkit-text-fill-color: black"
         >
           <TmField
             id="import-password-confirmation"
@@ -90,7 +87,6 @@
           :error="$v.$error && $v.fields.importSeed.$invalid"
           field-id="import-seed"
           field-label="Seed Phrase"
-          style="-webkit-text-fill-color: black"
         >
           <FieldSeed
             id="import-seed"
@@ -125,7 +121,7 @@
                 type="checkbox"
               />
               I'd like to opt in for remote error tracking to help improve
-              Voyager.
+              Color Wallet.
             </label>
           </div>
         </TmFormGroup>

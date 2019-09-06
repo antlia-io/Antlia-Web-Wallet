@@ -11,7 +11,7 @@ const mockRootState = {
   session: { signedIn: true }
 }
 const faucet = `http://gimme.money`
-const denoms = [`mycoin`, `fermion`, `STAKE`]
+const denoms = [`mycoin`, `fermion`, `COLOR`]
 const config = { faucet, denoms }
 
 describe(`Module: Wallet`, () => {
@@ -94,7 +94,7 @@ describe(`Module: Wallet`, () => {
       const dispatch = jest.fn(() => Promise.resolve())
       state.balances = [
         {
-          denom: `stake`,
+          denom: `COLOR`,
           amount: `100`
         }
       ]

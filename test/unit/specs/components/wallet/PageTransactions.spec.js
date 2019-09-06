@@ -67,7 +67,7 @@ describe(`PageTransactions`, () => {
                 description: `This is a test proposal`,
                 initial_deposit: [
                   {
-                    denom: `STAKE`,
+                    denom: `COLOR`,
                     amount: `100`
                   }
                 ]
@@ -91,7 +91,7 @@ describe(`PageTransactions`, () => {
                 proposal_id: `1`,
                 amount: [
                   {
-                    denom: `STAKE`,
+                    denom: `COLOR`,
                     amount: `100`
                   }
                 ]
@@ -112,7 +112,7 @@ describe(`PageTransactions`, () => {
                 delegator_address: addresses[0],
                 delegation: {
                   amount: `24`,
-                  denom: `STAKE`
+                  denom: `COLOR`
                 }
               }
             }
@@ -227,7 +227,7 @@ describe(`PageTransactions`, () => {
         }
       }
     },
-    bondDenom: `STAKE`,
+    bondDenom: `COLOR`,
     session: {
       address: addresses[0]
     },

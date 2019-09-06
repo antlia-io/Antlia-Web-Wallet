@@ -2,7 +2,7 @@ export const stakingParameters = {
   parameters: {
     unbonding_time: `259200000000000`,
     max_validators: 100,
-    bond_denom: `STAKE`
+    bond_denom: `COLOR`
   }
 }
 
@@ -11,7 +11,7 @@ export const governanceParameters = {
     deposit: {
       min_deposit: [
         {
-          denom: `STAKE`,
+          denom: `COLOR`,
           amount: `10.0000000000`
         }
       ],

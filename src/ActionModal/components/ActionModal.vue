@@ -639,12 +639,15 @@ export default {
   box-shadow: 0 2px 8px rgba(200, 200, 200, 0.1);
 }
 
+.action-modal:focus {
+  outline: none
+}
+
 .action-modal-header {
   align-items: center;
   flex-direction: column;
   text-align: center;
   display: flex;
-  /* padding-bottom: 2rem; */
 }
 
 .action-modal-title {
@@ -687,9 +690,6 @@ export default {
 
 .action-modal-footer {
   display: flex;
-  /* justify-content: flex-end; */
-  /* padding: 1.5rem 0 1rem; */
-
   /* keeps button in bottom right no matter the size of the action modal */
   flex-grow: 1;
   align-self: flex-end;

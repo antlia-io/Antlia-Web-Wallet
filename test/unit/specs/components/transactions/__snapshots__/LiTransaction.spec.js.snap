@@ -8,7 +8,7 @@ exports[`LiTransaction should show a network fee 1`] = `
     class="li-tx__icon"
   >
     <img
-      src="~assets/images/cosmos-logo.png"
+      src="~assets/images/color-logo.png"
       style="border-color: #ffffff;"
     />
   </div>
@@ -84,7 +84,7 @@ exports[`LiTransaction should show a network fee of 0 1`] = `
     class="li-tx__icon"
   >
     <img
-      src="~assets/images/cosmos-logo.png"
+      src="~assets/images/color-logo.png"
       style="border-color: #ffffff;"
     />
   </div>
@@ -160,7 +160,7 @@ exports[`LiTransaction should show a transaction item 1`] = `
     class="li-tx__icon"
   >
     <img
-      src="~assets/images/cosmos-logo.png"
+      src="~assets/images/color-logo.png"
       style="border-color: #ffffff;"
     />
   </div>

@@ -7,7 +7,6 @@
     <div>
       <div class="parameters__details parameters__section">
         <div class="row">
-          <!-- <div class="column"> -->
           <div class="col-lg-4 info_dl">
             <dt>
               Duration of Undelegation Period
@@ -32,8 +31,6 @@
               {{ bondDenom ? num.viewDenom(bondDenom) : `--` }}
             </dd>
           </div>
-          <!-- </div>
-          <div class="column"> -->
           <div class="col-lg-4 info_dl">
             <dt>Maximum Number of Validators</dt>
             <dd id="max_validators">
@@ -44,7 +41,6 @@
               }}
             </dd>
           </div>
-          <!-- </div> -->
         </div>
       </div>
     </div>

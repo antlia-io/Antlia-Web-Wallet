@@ -310,14 +310,14 @@ exports[`PageValidator shows a validator profile information errors signing info
     </div>
      
     <delegationmodal-stub
-      denom="STAKE"
+      denom="COLOR"
       fromoptions="[object Object]"
       to="cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctqzh8yqw"
       validator="[object Object]"
     />
      
     <undelegationmodal-stub
-      denom="STAKE"
+      denom="COLOR"
       maximum="0"
       to="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
       validator="[object Object]"
@@ -636,14 +636,14 @@ exports[`PageValidator shows a validator profile information if user has signed 
     </div>
      
     <delegationmodal-stub
-      denom="STAKE"
+      denom="COLOR"
       fromoptions="[object Object]"
       to="cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctqzh8yqw"
       validator="[object Object]"
     />
      
     <undelegationmodal-stub
-      denom="STAKE"
+      denom="COLOR"
       maximum="0"
       to="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
       validator="[object Object]"
@@ -962,14 +962,14 @@ exports[`PageValidator shows a validator profile information if user hasn't sign
     </div>
      
     <delegationmodal-stub
-      denom="STAKE"
+      denom="COLOR"
       fromoptions=""
       to="cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctqzh8yqw"
       validator="[object Object]"
     />
      
     <undelegationmodal-stub
-      denom="STAKE"
+      denom="COLOR"
       maximum="0"
       to=""
       validator="[object Object]"

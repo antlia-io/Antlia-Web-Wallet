@@ -14,7 +14,6 @@
           <h3>Your Public Color Address</h3>
           <Bech32 :address="session.address || ''" long-form />
         </div>
-        <!-- <slot name="address" /> -->
       </slot>
       <slot slot="header-buttons" name="header-buttons" />
     </TmPageHeader>
@@ -38,7 +37,6 @@
       </template>
       <slot />
     </main>
-    <!-- <PageFooter v-if="footer" /> -->
   </div>
 </template>
 
@@ -53,7 +51,6 @@ import TmDataConnecting from "common/TmDataConnecting"
 import TmBalance from "common/TmBalance"
 import ToolBar from "common/ToolBar"
 import Bech32 from "common/Bech32"
-// import PageFooter from "common/TmPageFooter"
 
 export default {
   name: `tm-page`,
@@ -67,7 +64,6 @@ export default {
     TmDataConnecting,
     CardSignInRequired,
     Bech32
-    // PageFooter
   },
   props: {
     hideHeader: {
@@ -166,6 +162,7 @@ export default {
 .card h3 {
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: .5rem;
   color: black !important;
 }
 
@@ -194,10 +191,12 @@ export default {
 }
 
 .page-profile__section-title {
-  /* margin: 0 0 0.25rem 1rem; */
   color: black;
-  /* font-size: var(--sm);
-  font-weight: 500; */
+  font-size: 1.75rem;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
 }
 
 .page-profile__section--between > .row {
@@ -221,7 +220,6 @@ export default {
 }
 
 .page-profile__header__info {
-  /* display: flex; */
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -246,6 +244,8 @@ export default {
   font-size: var(--h1);
   font-weight: 400;
   padding: 0 0.5rem;
+  margin-bottom: .5rem;
+  line-height: 1.2;
 }
 
 .page-profile__header__actions {
@@ -333,14 +333,6 @@ export default {
 }
 
 @media screen and (max-width: 767px) {
-  /* .tm-page-main {
-    padding: 2rem 0;
-  } */
-
-  /* .row {
-    flex-direction: column;
-  } */
-
   .page-profile__header__actions {
     margin-right: 0;
   }

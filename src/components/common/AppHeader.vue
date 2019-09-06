@@ -204,7 +204,6 @@ div#dockSidebar:focus {
 
 .sidebar-item {
     text-align: center;
-    /* border-bottom: 1px #e5e5e58a solid; */
 }
 
 #dockSidebar.e-sidebar.e-open .sidebar-item {
@@ -214,33 +213,11 @@ div#dockSidebar:focus {
 }
 
 #dockSidebar.e-sidebar {
-    /* z-index: var(--z-appHeader); */
     background: #232021;
-    /* overflow: hidden; */
     min-height: 100vh;
-    /* top: 0; */
     position: fixed
 }
 /* end of sidebar styles */
-
-.app-header {
-  z-index: var(--z-appHeader);
-  position: relative;
-  background: #232021;
-  min-height: 100vh;
-  width: 7.5%;
-}
-
-.mobile-menu-action {
-  font-size: 1.5rem !important;
-}
-
-.app-header > .container {
-  flex: 1;
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 0 !important;
-}
 
 .app-header .header-item {
   padding: 1.25rem;
@@ -256,13 +233,10 @@ i.material-icons {
   color: white
 }
 
-/* i.material-icons:hover {
-  color: #0a73b1
-} */
-
 .header-item-logo {
   height: 3rem;
   margin: 0.5rem;
+  vertical-align: middle;
 }
 
 .header-item-logo2 {
@@ -271,15 +245,6 @@ i.material-icons {
 }
 
 @media screen and (max-width: 1023px) {
-  .app-header {
-    width: 100%;
-    min-height: 0;
-  }
-
-  .container {
-    background: #232021;
-  }
-
   .app-header .header-item {
     display: flex;
     align-items: center;
@@ -288,9 +253,5 @@ i.material-icons {
     color: var(--link);
     cursor: pointer;
   }
-
-  /* .header-item-logo {
-    height: 2.5rem;
-  } */
 }
 </style>

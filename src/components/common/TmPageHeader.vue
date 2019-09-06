@@ -16,7 +16,6 @@
         <slot name="menu" />
       </menu>
       <div class="tabs-and-buttons">
-        <!-- <Tabs v-if="tabs" :tabs="tabs" /> -->
         <div v-if="$slots['header-buttons']" class="header-buttons">
           <slot name="header-buttons" />
         </div>
@@ -26,16 +25,8 @@
 </template>
 
 <script>
-// import Tabs from "common/Tabs"
 export default {
   name: `tm-page-header`
-  // components: { Tabs},
-  // props: {
-  //   tabs: {
-  //     type: Array,
-  //     default: () => []
-  //   }
-  // }
 }
 </script>
 
@@ -59,15 +50,8 @@ export default {
   padding: 1rem;
 }
 
-/* .tm-page-header-container {
-  border-bottom: 1px solid var(--bc-dim);
-  background: linear-gradient(to right, #604781 ,#422f5d, #2e2040);
-} */
-
 .tm-page-header-text .tm-page-header-body {
   flex: 1;
-
-  /* display: flex; */
   justify-content: space-between;
 }
 

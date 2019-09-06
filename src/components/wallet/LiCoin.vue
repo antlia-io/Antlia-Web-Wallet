@@ -5,17 +5,12 @@
     </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">
-        <!-- <div col-lg-4 style="float: left"> -->
         <p class="coin-denom">
           {{ denomination }}
         </p>
         <p class="coin-amount">
           {{ amount }}
         </p>
-        <!-- </div> -->
-        <!-- <div col-lg-4 style="float: right"> -->
-
-        <!-- </div> -->
       </div>
       <!-- disable send on the hub until send is enabled -->
       <TmBtn
@@ -154,7 +149,6 @@ export default {
   max-width: 52px;
   padding: 5px;
   border: 0.5px solid;
-  /* border-radius: 50%; */
   display: block;
   color: orangered !important;
 }
@@ -208,6 +202,15 @@ p.coin-amount {
 @media screen and (max-width: 587px) {
   .li-coin__content {
     display: block
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .li-coin {
+    padding: .5rem
+  }
+  .li-coin__content {
+    padding-left: .5rem
   }
 }
 </style>

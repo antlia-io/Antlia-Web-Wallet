@@ -1,35 +1,21 @@
 <template>
   <transition name="component-fade" mode="out-in">
     <div class="session-frame">
-      <!-- <router-link to="/">
-        <img class="session-logo" src="~assets/images/color-wallet-logo.png" />
-      </router-link> -->
       <div class="session-outer-container">
         <div class="session">
           <a @click="goBack">
-            <i class="material-icons session-back blackcolor">arrow_back</i>
+            <i class="material-icons session-back">arrow_back</i>
           </a>
           <slot></slot>
         </div>
       </div>
-      <!-- <TmBtn
-        class="session-close"
-        value="Back to Color Wallet"
-        color="secondary"
-        @click.native="$router.push(`/`)"
-      /> -->
     </div>
   </transition>
 </template>
 
 <script>
-import TmBtn from "common/TmBtn"
-
 export default {
   name: `session-frame`,
-  components: {
-    TmBtn
-  },
   methods: {
     goBack() {
       this.$router.go(`-1`)
@@ -40,7 +26,4 @@ export default {
 
 <style>
 @import "../../styles/session.css";
-  .blackcolor {
-    color: black
-  }
 </style>

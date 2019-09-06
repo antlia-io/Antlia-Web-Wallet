@@ -205,7 +205,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Code Improvements
 
-- updated the cosmos-js module and renamed it to cosmos-api @faboweb
+- updated the color-js module and renamed it to color-api @faboweb
 
 ## [1.0.0-beta.81] - 2019-06-13
 
@@ -222,7 +222,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - [#2164](https://github.com/cosmos/lunie/issues/2164) Changing how an invalid validators address is handled. Now a page informs users that it is invalid and has a link to view all validators @thebkr7
 - [#2164](https://github.com/cosmos/lunie/issues/2164) Refactored Vue Slots in TmPage and TmDataEmpty @thebkr7
-- Extracted signer scripts into @@rnssolution/color-keys @faboweb
+- Extracted signer scripts into @rnssolution/color-keys @faboweb
 - [#2681](https://github.com/cosmos/lunie/pull/2681) Extracted the Ledger wrapper into a library @faboweb
 - [#2666](https://github.com/cosmos/lunie/issues/2666) removed refresh buttons @jbibla
 
@@ -327,7 +327,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- [#2627](https://github.com/cosmos/lunie/issues/2627) Fix fee submission in cosmos-js @faboweb
+- [#2627](https://github.com/cosmos/lunie/issues/2627) Fix fee submission in color-js @faboweb
 
 ## [1.0.0-beta.73] - 2019-05-19
 
@@ -339,7 +339,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- [#2628](https://github.com/cosmos/lunie/pull/2628) Fix issue with productive bundling in downstream cosmos-js library @faboweb
+- [#2628](https://github.com/cosmos/lunie/pull/2628) Fix issue with productive bundling in downstream color-js library @faboweb
 
 ## [1.0.0-beta.71] - 2019-05-18
 
@@ -358,12 +358,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- [#2568](https://github.com/cosmos/lunie/pull/2568) Show amount of source stake available to delegate or redelgate @colw
+- [#2568](https://github.com/cosmos/lunie/pull/2568) Show amount of source color available to delegate or redelgate @colw
 
 ### Fixed
 
 - [#2614](https://github.com/cosmos/lunie/pull/2614) Dispaly correct atom value for banking transactions @colw
-- [#2568](https://github.com/cosmos/lunie/pull/2568) Do not add stake to total when redelegating @colw
+- [#2568](https://github.com/cosmos/lunie/pull/2568) Do not add color to total when redelegating @colw
 - [#2621](https://github.com/cosmos/lunie/pull/2621) Bring back withdraw button on european browsers @faboweb
 - [#2570](https://github.com/cosmos/lunie/pull/2570) Load validators when linking to a validator directly @faboweb
 
@@ -433,11 +433,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- [#2568](https://github.com/cosmos/lunie/pull/2568) Show amount of source stake available to delegate or redelgate @colw
+- [#2568](https://github.com/cosmos/lunie/pull/2568) Show amount of source color available to delegate or redelgate @colw
 
 ### Fixed
 
-- [#2568](https://github.com/cosmos/lunie/pull/2568) Do not add stake to total when redelegating @colw
+- [#2568](https://github.com/cosmos/lunie/pull/2568) Do not add color to total when redelegating @colw
 - [#2570](https://github.com/cosmos/lunie/pull/2570) Load validators when linking to a validator directly @faboweb
 - [#1995](https://github.com/cosmos/lunie/issues/1995) Prevent users from signing in or creating a new account if their user agent is not Chrome @migueog
 
@@ -450,7 +450,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - [#2557](https://github.com/cosmos/lunie/pull/2557) Do not add undelegation amount to transaction subtotal @colw
-- [#2563](https://github.com/cosmos/lunie/pull/2563) Temporaryly switching to cosmos nodes @faboweb
+- [#2563](https://github.com/cosmos/lunie/pull/2563) Temporarily switching to color nodes @faboweb
 
 ## [1.0.0-beta.62] - 2019-05-08
 
@@ -1279,11 +1279,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [\#1640](https://github.com/cosmos/voyager/issues/1640) Hide the table proposals when there are no available ones @fedekunze
 - [\#1640](https://github.com/cosmos/voyager/issues/1640) Fixed an error that prevented the search bar to be displayed using `Ctrl+F` @fedekunze
 - Fixed testnet config build script @faboweb
-- [\#1677](https://github.com/cosmos/voyager/issues/1677) Fixed inconsistent status colors on proposals @faboweb
+- [\#1677](https://github.com/cosmos/voyager/issues/1677) Fixed inconsistent status color on proposals @faboweb
 - [\#1687](https://github.com/cosmos/voyager/issues/1687) Removing cached state if decrypting fails. @faboweb
 - [\#1662](https://github.com/cosmos/voyager/issues/1662) Fixed wrong node version in readme @faboweb
   [\#1642](https://github.com/cosmos/voyager/issues/1642) Refactor table styles and fixed bad aligned headers @faboweb
-- [\#1677](https://github.com/cosmos/voyager/issues/1677) Fixed inconsistent status colors on proposals @fedekunze
+- [\#1677](https://github.com/cosmos/voyager/issues/1677) Fixed inconsistent status color on proposals @fedekunze
 - [\#1696](https://github.com/cosmos/voyager/issues/1696) Fixed broken css variables @jbibla
 - [\#1687](https://github.com/cosmos/voyager/issues/1687) Removing cached state if decrypting fails. @faboweb
 - [\#1662](https://github.com/cosmos/voyager/issues/1662) Fixed wrong node version in readme @faboweb
@@ -1438,7 +1438,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Run lint test in CI. @NodeGuy
 - current atoms in PageBond still showed old atoms right after staking @ƒaboweb
 - fix showing undefined for bonding denom in staking sucess message @faboweb
-- fix not showing a lock (I have stake with this one) on a validator if stake is less then 1 @faboweb
+- fix not showing a lock (I have color with this one) on a validator if color is less then 1 @faboweb
 - fix showing wrong error on pagebond validation @okwme
 
 ## [0.10.1] - 2018-08-29
@@ -1585,7 +1585,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Using vue-jest for transpiling in tests for better code coverage output @faboweb
 - Default to gaia-7001 @okwme
 - Changed `yarn testnet` to `yarn start` @okwme
-- Updated colors throughout @jbibla
+- Updated color throughout @jbibla
 - Update network @okwme
 
 ### Fixed
@@ -1642,7 +1642,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed critical dependency warning @okwme
 - Fixed theme bg bug @okwme
 - Fixed sorting bug on staking page @okwme
-- "About Cosmos Voyager" menu item is now responsive on Windows and Linux @mappum
+- "About Color Voyager" menu item is now responsive on Windows and Linux @mappum
 - Fixed preference page style bug @okwme
 - Fixed missing node-ip in connection indicator @faboweb
 - Launch sequence for dev improved @okwme

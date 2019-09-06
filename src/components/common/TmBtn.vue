@@ -179,4 +179,10 @@ a {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .tm-btn .tm-btn__container {
+    padding: .5rem
+  }
+}
 </style>

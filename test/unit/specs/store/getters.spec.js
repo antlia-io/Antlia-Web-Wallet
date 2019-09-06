@@ -13,11 +13,11 @@ import validators from "./json/validators.js"
 describe(`Store: getters`, () => {
   it(`liquidAtoms`, () => {
     const result = liquidAtoms({
-      stakingParameters: { parameters: { bond_denom: `stake` } },
+      stakingParameters: { parameters: { bond_denom: `COLOR` } },
       wallet: {
         balances: [
           {
-            denom: `stake`,
+            denom: `COLOR`,
             amount: 42
           }
         ]
@@ -149,7 +149,7 @@ describe(`Store: getters`, () => {
           }
         },
         {
-          bondDenom: "stake"
+          bondDenom: "COLOR"
         }
       )
     ).toEqual([
@@ -171,7 +171,7 @@ describe(`Store: getters`, () => {
   it("totalRewards", () => {
     expect(
       totalRewards(null, {
-        bondDenom: "stake",
+        bondDenom: "COLOR",
         validatorsWithRewards: [
           [
             "validator1",
@@ -195,7 +195,7 @@ describe(`Store: getters`, () => {
       connection: {
         externals: {
           node: {
-            url: "https://color-platform.rnssol.com"
+            url: "https://wallet.color-platform.org/"
           }
         },
         lastHeader: {
@@ -225,7 +225,7 @@ describe(`Store: getters`, () => {
     }
 
     const context = {
-      url: "https://color-platform.rnssol.com",
+      url: "https://wallet.color-platform.org/",
       chainId: "cosmoshub",
       connected: true,
       userAddress: "cosmos1abcdefghijklmop",

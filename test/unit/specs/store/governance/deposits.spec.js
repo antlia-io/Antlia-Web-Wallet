@@ -6,7 +6,7 @@ const mockRootState = {
   wallet: {
     balances: [
       {
-        denom: `stake`,
+        denom: `COLOR`,
         amount: 100
       }
     ]
@@ -60,7 +60,7 @@ describe(`Module: Deposits`, () => {
     const commit = jest.fn()
     const amount = [
       {
-        denom: `stake`,
+        denom: `COLOR`,
         amount: `15`
       }
     ]
@@ -77,7 +77,7 @@ describe(`Module: Deposits`, () => {
 
       jest.runAllTimers()
       expect(commit).toHaveBeenCalledWith(`updateWalletBalance`, {
-        denom: `stake`,
+        denom: `COLOR`,
         amount: 85
       })
       expect(dispatch.mock.calls[i]).toEqual([

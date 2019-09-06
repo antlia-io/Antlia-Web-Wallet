@@ -16,7 +16,7 @@ exports[`PageGovernance disables proposal creation if not connected 1`] = `
   />
    
   <modalpropose-stub
-    denom="stake"
+    denom="color"
   />
    
   <router-view-stub />
@@ -38,7 +38,7 @@ exports[`PageGovernance has the expected html structure 1`] = `
   />
    
   <modalpropose-stub
-    denom="stake"
+    denom="color"
   />
    
   <router-view-stub />

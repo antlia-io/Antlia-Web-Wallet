@@ -18,7 +18,7 @@ describe(`PageGovernance`, () => {
       dispatch: jest.fn(),
       getters: {
         proposals: {},
-        depositDenom: `stake`,
+        depositDenom: `color`,
         connected: true,
         session: {}
       }
@@ -48,7 +48,7 @@ describe(`PageGovernance`, () => {
       dispatch: jest.fn(),
       getters: {
         proposals: {},
-        depositDenom: `stake`,
+        depositDenom: `color`,
         connected: false,
         session: {}
       }

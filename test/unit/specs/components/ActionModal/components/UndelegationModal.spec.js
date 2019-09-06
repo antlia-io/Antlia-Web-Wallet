@@ -5,7 +5,7 @@ import UndelegationModal from "src/ActionModal/components/UndelegationModal"
 import Vuelidate from "vuelidate"
 
 const context = {
-  url: "https://color-platform.rnssol.com/",
+  url: "https://wallet.color-platform.org/",
   chainId: "cosmoshub",
   connected: true,
   userAddress: "cosmos1abcdefghijklmop",
@@ -19,7 +19,7 @@ describe(`UndelegationModal`, () => {
   const stakingParameters = {
     unbonding_time: `259200000000000`,
     max_validators: 100,
-    bond_denom: `STAKE`
+    bond_denom: `COLOR`
   }
   const validator = {
     operator_address: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctplpn3au`
@@ -34,7 +34,7 @@ describe(`UndelegationModal`, () => {
       commit: jest.fn(),
       dispatch: jest.fn(),
       getters: {
-        bondDenom: `stake`,
+        bondDenom: `color`,
         liquidAtoms: 1000042,
         modalContext: context
       }
@@ -112,14 +112,14 @@ describe(`UndelegationModal`, () => {
         validatorAddress:
           "cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctplpn3au",
         amount: "10000000",
-        denom: "STAKE"
+        denom: "COLOR"
       })
     })
 
     it("should return correct notification message", () => {
       expect(wrapper.vm.notifyMessage).toEqual({
         title: `Successful undelegation!`,
-        body: `You have successfully undelegated 10 STAKEs.`
+        body: `You have successfully undelegated 10 COLORs.`
       })
     })
   })

@@ -32,11 +32,11 @@ export default {
   components: { TmBtn },
   props: {
     title: {
-      default: `Voyager ran into an error`,
+      default: `Color Wallet ran into an error`,
       type: String
     },
     body: {
-      default: `Voyager has encountered a critical error that blocks the app from running. Please create an issue and include a copy of the app logs.`,
+      default: `Color Wallet has encountered a critical error that blocks the app from running. Please create an issue and include a copy of the app logs.`,
       type: String
     },
     icon: {
@@ -46,7 +46,7 @@ export default {
   },
   data: () => ({
     logPath: ``,
-    issueUrl: `https://github.com/cosmos/voyager/issues`
+    issueUrl: `https://github.com/RNSSolution/color-wallet/issues`
   }),
   computed: {
     ...mapGetters([`session`, `lastHeader`])

@@ -5,7 +5,7 @@
       <TmBtn
         id="propose-btn"
         slot="header-buttons"
-        :disabled="!connected"
+        :disabled="!connected || !session.signedIn"
         :value="connected ? 'Create Proposal' : 'Connecting...'"
         color="primary"
         @click.native="onPropose"
@@ -42,10 +42,6 @@ export default {
         displayName: `Proposals`,
         pathName: `Proposals`
       }
-      // {
-      //   displayName: `Parameters`,
-      //   pathName: `Governance Parameters`
-      // }
     ]
   }),
   computed: {

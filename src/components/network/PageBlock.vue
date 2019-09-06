@@ -25,8 +25,6 @@
         Transactions
       </h3>
       <div class="page-profile__section block">
-        <!-- <div class="row">
-          <div class="column"> -->
             <TmDataMsg
               v-if="block.transactions && block.transactions.length === 0"
               icon="info_outline"
@@ -54,8 +52,6 @@
               "
             />
             <br />
-          <!-- </div>
-        </div> -->
       </div>
     </template>
   </TmPage>

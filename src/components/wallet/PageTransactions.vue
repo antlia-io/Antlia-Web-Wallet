@@ -103,6 +103,11 @@ export default {
 h1 {
   color: black;
   width: 100%;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: sans-serif;
+  font-size: 2.5rem;
 }
 
 .row {
@@ -119,6 +124,12 @@ h1 {
 @media screen and (max-width: 512px) {
   h1 {
     font-size: 1.5rem
+  }
+}
+
+@media screen and (max-width: 360px) {
+  h1 {
+    font-size: 1rem
   }
 }
 </style>
