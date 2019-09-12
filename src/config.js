@@ -1,13 +1,13 @@
 const dev = process.env.NODE_ENV === `development`
 const stargate =
   process.env.STARGATE ||
-  (dev ? `https://color-platform.rnssol.com:9071` : `https://color-platform.rnssol.com:9071`)
+  (dev ? `https://testnet.color-platform.rnssol.com:9071` : `https://testnet.color-platform.rnssol.com:9071`)
 
 const rpc =
   process.env.RPC ||
   (dev
-    ? `https://color-platform.rnssol.com:26657`
-    : `https://color-platform.rnssol.com:26657`)
+    ? `https://rpc.testnet.color-platform.rnssol.com`
+    : `https://rpc.testnet.color-platform.rnssol.com`)
 
 export default {
   name: `colorwallet`,

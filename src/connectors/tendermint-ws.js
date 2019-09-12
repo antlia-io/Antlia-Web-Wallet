@@ -28,19 +28,20 @@ function convertWsArgs(args = {}) {
 }
 
 class Client extends EventEmitter {
-  constructor(uriString = `https://color-platform.rnssol.com:26657`) {
+  constructor(uriString = `https://rpc.testnet.color-platform.rnssol.com`) {
     super()
 
     // parse full-node URI
     let { protocol, hostname, port } = url.parse(uriString)
 
     // default port
-    if (!port) {
-      port = 26657
-    }
+    
+    // if (!port) {
+    //   port = 26657
+    // }
 
     this.websocket = true
-    this.uri = `${protocol}//${hostname}:${port}/websocket`
+    this.uri = `${protocol}//${hostname}/websocket`
     this.call = this.callWs
     this.connectWs()
   }
