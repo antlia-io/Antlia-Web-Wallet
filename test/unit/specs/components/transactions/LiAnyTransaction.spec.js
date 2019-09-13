@@ -17,7 +17,7 @@ describe(`LiAnyTransaction`, () => {
     transaction: bankTxs[0],
     validators,
     address: `cosmos1address`,
-    bondingDenom: `atom`,
+    bondingDenom: `color`,
     validatorsUrl: `/validators`
   }
 
@@ -64,7 +64,7 @@ describe(`LiAnyTransaction`, () => {
 
   it(`returns default fee object when no fee present`, () => {
     const propsNoFee = {
-      bondingDenom: "atom",
+      bondingDenom: "color",
       transaction: {
         tx: {
           value: {
@@ -75,7 +75,7 @@ describe(`LiAnyTransaction`, () => {
     }
     expect(LiAnyTransaction.computed.fees.call(propsNoFee)).toEqual({
       amount: "0",
-      denom: "atom"
+      denom: "color"
     })
   })
 
@@ -89,7 +89,7 @@ describe(`LiAnyTransaction`, () => {
               amount: [
                 {
                   amount: "123",
-                  denom: "atom"
+                  denom: "color"
                 }
               ]
             }
@@ -99,7 +99,7 @@ describe(`LiAnyTransaction`, () => {
     }
     expect(LiAnyTransaction.computed.fees.call(propswithFee)).toEqual({
       amount: "123",
-      denom: "atom"
+      denom: "color"
     })
   })
 })

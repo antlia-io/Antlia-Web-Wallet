@@ -14,7 +14,7 @@
       </div>
       <!-- disable send on the hub until send is enabled -->
       <TmBtn
-        v-if="!lastHeader || lastHeader.chain_id === 'cosmoshub-1'"
+        v-if="!lastHeader || lastHeader.chain_id === 'colors-test-01'"
         v-tooltip.left="tooltip"
         value="Send"
         color="primary"

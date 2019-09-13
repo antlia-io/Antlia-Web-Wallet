@@ -12,7 +12,7 @@ describe(`PageBlock`, () => {
   const getters = {
     connected: true,
     delegation: {},
-    bondDenom: `atom`,
+    bondDenom: `color`,
     lastHeader: {
       height: `1000`
     },

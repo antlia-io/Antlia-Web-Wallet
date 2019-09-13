@@ -7,7 +7,7 @@ import mockValues from "test/unit/helpers/mockValues.js"
 
 const context = {
   url: "https://wallet.color-platform.org/",
-  chainId: "cosmoshub",
+  chainId: "colors-test-01",
   connected: true,
   userAddress: mockValues.addresses[0],
   committedDelegations: [],

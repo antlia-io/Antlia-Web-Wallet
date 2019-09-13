@@ -20,6 +20,7 @@
     "start": "concurrently --names frontend,proxy,testnet \"npm run frontend\" \"npm run proxy\"",
     "startlocal": "concurrently --names frontendlocal,testnet \"npm run frontendlocal\" ",
     "serve": "concurrently --names production  \"npm run production\" ",
+    "serve:dist": "live-server --https=node_modules/live-server-https --port=9080 --no-browser ./dist",
     "production": "node ./server.js",
     "lint": "npm run lint:eslint && npm run lint:css",
     "lint:eslint": "eslint -f ./node_modules/eslint-friendly-formatter \"{,**/}*.{js,vue}\"",

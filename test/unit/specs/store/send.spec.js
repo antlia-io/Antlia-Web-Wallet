@@ -12,7 +12,7 @@ const mockRootState = {
   connection: {
     connected: true,
     lastHeader: {
-      chain_id: `mock-chain`
+      chain_id: `colors-test-01`
     }
   },
   ledger: { isConnected: false },

@@ -14,7 +14,7 @@ const mockState = {
   },
   connection: {
     lastHeader: {
-      chain_id: `test-net`
+      chain_id: `colors-test-01`
     }
   },
   transactions: {
