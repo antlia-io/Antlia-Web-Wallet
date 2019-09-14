@@ -50,11 +50,11 @@ describe(`Module: Connection`, () => {
         },
         {
           height: 5,
-          chain_id: `colors-test-01`
+          chain_id: `test-chain`
         }
       )
       expect(state.lastHeader.height).toBe(5)
-      expect(state.lastHeader.chain_id).toBe(`colors-test-01`)
+      expect(state.lastHeader.chain_id).toBe(`test-chain`)
     })
 
     it(`sets nodeUrl from config.json`, () => {
@@ -212,7 +212,7 @@ describe(`Module: Connection`, () => {
 
     expect(dispatch).toHaveBeenCalledWith(`setLastHeader`, {
       height: 42,
-      chain_id: `colors-test-01`
+      chain_id: `test-net`
     })
   })
 
@@ -242,7 +242,7 @@ describe(`Module: Connection`, () => {
         cb({
           header: {
             height: 43,
-            chain_id: `colors-test-01`,
+            chain_id: `test-net2`,
             validators_hash: `abcd`
           }
         })
@@ -258,7 +258,7 @@ describe(`Module: Connection`, () => {
 
     expect(dispatch).toHaveBeenCalledWith(`setLastHeader`, {
       height: 43,
-      chain_id: `colors-test-01`,
+      chain_id: `test-net2`,
       validators_hash: `abcd`
     })
   })

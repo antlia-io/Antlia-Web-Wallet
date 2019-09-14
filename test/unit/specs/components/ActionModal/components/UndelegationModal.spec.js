@@ -6,7 +6,7 @@ import Vuelidate from "vuelidate"
 
 const context = {
   url: "https://wallet.color-platform.org/",
-  chainId: "colors-test-01",
+  chainId: "cosmoshub",
   connected: true,
   userAddress: "cosmos1abcdefghijklmop",
   committedDelegations: [],

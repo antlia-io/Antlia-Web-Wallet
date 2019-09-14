@@ -34,7 +34,7 @@ const modalContext = {
       }
     },
     lastHeader: {
-      chain_id: "colors-test-01"
+      chain_id: "cosmoshub"
     },
     connected: true
   },

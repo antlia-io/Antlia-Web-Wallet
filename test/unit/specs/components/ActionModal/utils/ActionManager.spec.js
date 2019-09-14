@@ -40,7 +40,7 @@ describe("ActionManager", () => {
     actionManager = new ActionManager()
     actionManager.setContext({
       url: "blah",
-      chainId: "colors-test-01",
+      chainId: "cosmos",
       connected: true,
       userAddress: "cosmos12345",
       totalRewards: 1234,
@@ -66,14 +66,14 @@ describe("ActionManager", () => {
   it("should set context", () => {
     const context = {
       url: "blah",
-      chainId: "colors-test-01",
+      chainId: "cosmos",
       connected: true
     }
     expect(actionManager.setContext(context))
     expect(actionManager.cosmos)
     expect(actionManager.context).toEqual({
       url: "blah",
-      chainId: "colors-test-01",
+      chainId: "cosmos",
       connected: true
     })
   })
@@ -91,7 +91,7 @@ describe("ActionManager", () => {
       actionManager = new ActionManager()
       actionManager.setContext({
         url: "blah",
-        chainId: "colors-test-01",
+        chainId: "cosmos",
         connected: false
       })
       actionManager.readyCheck()
@@ -144,7 +144,7 @@ describe("ActionManager", () => {
     beforeEach(() => {
       const context = {
         url: "blah",
-        chainId: "colors-test-01",
+        chainId: "cosmos",
         connected: true,
         userAddress: "cosmos12345",
         totalRewards: 1234,
@@ -181,7 +181,7 @@ describe("ActionManager", () => {
       actionManager = new ActionManager()
       const context = {
         url: "blah",
-        chainId: "colors-test-01",
+        chainId: "cosmos",
         connected: true
       }
       actionManager.setContext(context)

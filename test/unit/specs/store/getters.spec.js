@@ -199,7 +199,7 @@ describe(`Store: getters`, () => {
           }
         },
         lastHeader: {
-          chain_id: "colors-test-01"
+          chain_id: "cosmoshub"
         },
         connected: true
       },
@@ -226,7 +226,7 @@ describe(`Store: getters`, () => {
 
     const context = {
       url: "https://wallet.color-platform.org/",
-      chainId: "colors-test-01",
+      chainId: "cosmoshub",
       connected: true,
       userAddress: "cosmos1abcdefghijklmop",
       rewards: {

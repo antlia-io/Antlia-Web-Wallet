@@ -16,7 +16,7 @@ describe(`LiCoin`, () => {
         $store: {
           getters: {
             lastHeader: {
-              chain_id: `colors-test-01`
+              chain_id: `testnet`
             }
           }
         }
