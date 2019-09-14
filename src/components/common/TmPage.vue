@@ -135,7 +135,7 @@ export default {
 
 .tm-page-main {
   flex: 1;
-  position: relative;
+  /* position: relative; */
   padding: 1rem;
 }
 
