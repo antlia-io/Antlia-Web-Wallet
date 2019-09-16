@@ -9,7 +9,7 @@
 // parse command line options
 const options = {
   port: 9071,
-  target: `https://rpc.testnet.color-platform.rnssol.com`
+  target: `https://lcd.testnet.color-platform.rnssol.com`
 }
 
 // Start the proxy
@@ -92,7 +92,7 @@ const server = http.createServer(
       res,
       {
         target: options.target,
-        secure: true,
+        secure: false,
         changeOrigin: true
       },
       function(err) {
