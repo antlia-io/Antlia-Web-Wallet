@@ -88,7 +88,7 @@ exports[`LiStakeTransaction delegations with fees 1`] = `
     </b>
      
     <span>
-      ATOM
+      COLOR
     </span>
   </div>
    
@@ -123,7 +123,7 @@ exports[`LiStakeTransaction delegations without fees 1`] = `
     </b>
      
     <span>
-      ATOM
+      COLOR
     </span>
   </div>
    
@@ -218,7 +218,7 @@ exports[`LiStakeTransaction redelegations with fees 1`] = `
     </b>
      
     <span>
-      ATOM
+      COLOR
     </span>
   </div>
    
@@ -266,7 +266,7 @@ exports[`LiStakeTransaction redelegations without fees 1`] = `
     </b>
      
     <span>
-      ATOM
+      COLOR
     </span>
   </div>
    
@@ -314,7 +314,7 @@ exports[`LiStakeTransaction unbonding delegations should default to ended if no 
     </b>
      
     <span>
-      ATOM
+      COLOR
     </span>
      
     <!---->
@@ -354,7 +354,7 @@ exports[`LiStakeTransaction unbonding delegations should show unbonding delegati
     </b>
      
     <span>
-      ATOM
+      COLOR
     </span>
      
     <!---->
@@ -394,7 +394,7 @@ exports[`LiStakeTransaction unbonding delegations with fees 1`] = `
     </b>
      
     <span>
-      ATOM
+      COLOR
     </span>
      
     <span
@@ -440,7 +440,7 @@ exports[`LiStakeTransaction unbonding delegations without fees 1`] = `
     </b>
      
     <span>
-      ATOM
+      COLOR
     </span>
      
     <!---->

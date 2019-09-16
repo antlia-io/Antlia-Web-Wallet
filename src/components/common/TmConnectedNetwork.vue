@@ -3,7 +3,7 @@
     <div class="tm-connected-network__connection">
       <div id="tm-connected-network__icon" class="tm-connected-network__icon">
         <span
-          v-tooltip.top="`Network is up and running`"
+          v-tooltip.left="`Network is up and running`"
           class="page-profile__status green"
         />
       </div>
@@ -11,14 +11,14 @@
         id="tm-connected-network__string"
         class="tm-connected-network__string"
       >
-        <span v-tooltip.top="networkTooltip" class="chain-id">
+        <span v-tooltip.left="networkTooltip" class="chain-id">
           {{ lastHeader.chain_id }}
         </span>
       </div>
     </div>
     <div id="tm-connected-network__block" class="tm-connected-network__string">
       <router-link
-        v-tooltip.top="'Block Height'"
+        v-tooltip.left="'Block Height'"
         :to="{ name: `block`, params: { height: lastHeader.height } }"
       >
         {{ blockHeight }}
@@ -32,7 +32,7 @@
   >
     <img class="tm-connected-network-loader" src="~assets/images/loader.svg" />
     <div
-      v-tooltip.top="networkTooltip"
+      v-tooltip.left="networkTooltip"
       class="
         tm-connected-network__string
         tm-connected-network__string--connecting

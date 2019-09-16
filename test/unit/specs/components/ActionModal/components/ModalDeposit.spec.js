@@ -121,7 +121,7 @@ describe(`ModalDeposit`, () => {
     })
     expect(wrapper.vm.notifyMessage).toEqual({
       title: `Successful deposit!`,
-      body: `You have successfully deposited your ATOMs on proposal #1`
+      body: `You have successfully deposited your COLORs on proposal #1`
     })
   })
 })

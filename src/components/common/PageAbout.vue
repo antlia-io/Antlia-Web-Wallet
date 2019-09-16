@@ -6,7 +6,7 @@
       <h2 class="c5">What is Color Wallet?</h2>
       <p>
         Color Wallet is a user interface for sending and receiving Color tokens,
-        viewing your transaction history, delegating your ATOMs, and
+        viewing your transaction history, delegating your COLORs, and
         participating in governance on the Color.
       </p>
       <p>

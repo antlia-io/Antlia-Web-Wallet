@@ -1,5 +1,7 @@
 FROM node:10-alpine
 
+RUN apk add git
+
 WORKDIR /usr/src/app
 
 
@@ -9,5 +11,7 @@ RUN npm install -g yarn
 RUN yarn version
 
 COPY package.json ./
-RUN npm install
-CMD [ "yarn", "serve" ]
+
+CMD ["sh","start.sh"] 
+
+

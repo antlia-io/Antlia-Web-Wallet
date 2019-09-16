@@ -115,7 +115,7 @@ export default function({ node }) {
           chain_id: status.node_info.network
         })
 
-        if (status.node_info.network === `chain-BYIp0m`) {
+        if (status.node_info.network === `colors-test-01`) {
           commit(`setInsecureMode`)
         }
       })

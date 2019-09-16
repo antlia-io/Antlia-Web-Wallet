@@ -50,7 +50,7 @@ describe(`LiTransaction`, () => {
     })
     // Non breaking space present before fee value
     // eslint-disable-next-line no-irregular-whitespace
-    expect(wrapper.text()).toContain(`Network Fee: 0 ATOM`)
+    expect(wrapper.text()).toContain(`Network Fee: 0 COLOR`)
     expect(wrapper.vm.$el).toMatchSnapshot()
   })
 

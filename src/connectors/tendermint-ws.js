@@ -4,7 +4,7 @@
  * Extracted from https://github.com/nomic-io/js-tendermint
  * TODO missing tests
  */
-
+import {rpc} from "../../src/config"
 const EventEmitter = require(`events`)
 const url = require(`url`)
 const old = require(`old`)
@@ -28,7 +28,7 @@ function convertWsArgs(args = {}) {
 }
 
 class Client extends EventEmitter {
-  constructor(uriString = `https://rpc.testnet.color-platform.rnssol.com`) {
+  constructor(uriString = rpc) {
     super()
 
     // parse full-node URI
