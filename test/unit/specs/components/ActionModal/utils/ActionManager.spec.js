@@ -148,7 +148,7 @@ describe("ActionManager", () => {
         connected: true,
         userAddress: "cosmos12345",
         totalRewards: 1234,
-        bondDenom: "uatom",
+        bondDenom: "ucolor",
         rewards: {
           address1: { uatom: 100 },
           address2: { uatom: 1 },
@@ -195,14 +195,14 @@ describe("ActionManager", () => {
       expect(result)
 
       expect(mockMsgSend).toHaveBeenCalledWith("cosmos12345", {
-        amounts: [{ amount: "20000", denom: "uatom" }],
+        amounts: [{ amount: "20000", denom: "ucolor" }],
         toAddress: "cosmos123"
       })
 
       expect(MsgSendFn).toHaveBeenCalledWith(
         {
           gas: "12335",
-          gasPrices: [{ amount: "2000000000", denom: "uatom" }],
+          gasPrices: [{ amount: "2000000000", denom: "ucolor" }],
           memo: "memo"
         },
         "signer"
@@ -221,7 +221,7 @@ describe("ActionManager", () => {
       expect(MsgSendFn).toHaveBeenCalledWith(
         {
           gas: "12335",
-          gasPrices: [{ amount: "2000000000", denom: "uatom" }],
+          gasPrices: [{ amount: "2000000000", denom: "ucolor" }],
           memo: "memo"
         },
         "signer"

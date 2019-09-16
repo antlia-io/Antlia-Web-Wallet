@@ -67,7 +67,7 @@ exports[`PageBlock shows a page with information about a certain block 1`] = `
          
         <lianytransaction-stub
           address=""
-          bondingdenom="atom"
+          bondingdenom="color"
           height="100"
           proposalsurl="/governance"
           time="42000"
@@ -78,7 +78,7 @@ exports[`PageBlock shows a page with information about a certain block 1`] = `
         />
         <lianytransaction-stub
           address=""
-          bondingdenom="atom"
+          bondingdenom="color"
           height="100"
           proposalsurl="/governance"
           time="42000"
@@ -89,7 +89,7 @@ exports[`PageBlock shows a page with information about a certain block 1`] = `
         />
         <lianytransaction-stub
           address=""
-          bondingdenom="atom"
+          bondingdenom="color"
           height="100"
           proposalsurl="/governance"
           time="42000"

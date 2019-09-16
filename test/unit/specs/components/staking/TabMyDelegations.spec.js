@@ -24,7 +24,7 @@ describe(`Component: TabMyDelegations`, () => {
     },
     committedDelegations: {},
     connected: true,
-    bondDenom: `uatom`,
+    bondDenom: `ucolor`,
     session: { signedIn: true },
     lastHeader: { height: `20` }
   }

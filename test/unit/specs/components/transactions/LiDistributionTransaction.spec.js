@@ -12,10 +12,10 @@ describe(`LiDistributionTransaction`, () => {
     tx: {},
     url: `/validator`,
     validators,
-    bondingDenom: `uatom`,
+    bondingDenom: `ucolor`,
     fees: {
       amount: `3421`,
-      denom: `uatom`
+      denom: `ucolor`
     },
     txType: ``,
     time: new Date(Date.now()).toISOString(),

@@ -64,7 +64,7 @@ describe(`ActionModal`, () => {
         extension: {
           enabled: true
         },
-        bondDenom: `uatom`,
+        bondDenom: `ucolor`,
         wallet: {
           loading: false
         },
@@ -84,7 +84,7 @@ describe(`ActionModal`, () => {
         validate: jest.fn(),
         transactionData: {
           type: "MsgSend",
-          denom: "uatom",
+          denom: "ucolor",
           validatorAddress: "cosmos12345"
         }
       },
@@ -113,7 +113,7 @@ describe(`ActionModal`, () => {
       },
       transactionData: {
         type: "TYPE",
-        denom: "uatom",
+        denom: "ucolor",
         validatorAddress: "cosmos12345"
       },
       submissionErrorPrefix: `PREFIX`,
@@ -295,7 +295,7 @@ describe(`ActionModal`, () => {
     })
   })
 
-  describe(`validates total price does not exceed available atoms`, () => {
+  describe(`validates total price does not exceed available color`, () => {
     beforeEach(() => {
       wrapper.setData({ gasPrice: 10 })
       wrapper.setData({ gasEstimate: 2 })
@@ -324,7 +324,7 @@ describe(`ActionModal`, () => {
         amounts: [
           {
             amount: "100000",
-            denom: "uatoms"
+            denom: "ucolor"
           }
         ],
         memo: "A memo"
@@ -352,7 +352,7 @@ describe(`ActionModal`, () => {
         amounts: [
           {
             amount: "1230000000",
-            denom: "uatoms"
+            denom: "ucolor"
           }
         ],
         memo: "A memo"
@@ -393,7 +393,7 @@ describe(`ActionModal`, () => {
         amounts: [
           {
             amount: "100000",
-            denom: "uatoms"
+            denom: "ucolor"
           }
         ],
         memo: "A memo"
@@ -420,7 +420,7 @@ describe(`ActionModal`, () => {
         amounts: [
           {
             amount: "100000",
-            denom: "uatoms"
+            denom: "ucolor"
           }
         ],
         memo: "A memo"
@@ -439,11 +439,11 @@ describe(`ActionModal`, () => {
       expect($store.dispatch).toHaveBeenCalledWith(`postMsgSend`, {
         txMeta: {
           gasEstimate: 12345,
-          gasPrice: { amount: "0.000000025", denom: "uatom" },
+          gasPrice: { amount: "0.000000025", denom: "ucolor" },
           password: null,
           submitType: "local"
         },
-        txProps: { denom: "uatom", validatorAddress: "cosmos12345" }
+        txProps: { denom: "ucolor", validatorAddress: "cosmos12345" }
       })
     })
 
@@ -467,7 +467,7 @@ describe(`ActionModal`, () => {
         amounts: [
           {
             amount: "100000",
-            denom: "uatoms"
+            denom: "ucolor"
           }
         ],
         memo: "A memo"
@@ -501,7 +501,7 @@ describe(`ActionModal`, () => {
         amounts: [
           {
             amount: "100000",
-            denom: "uatoms"
+            denom: "ucolor"
           }
         ],
         memo: "A memo"

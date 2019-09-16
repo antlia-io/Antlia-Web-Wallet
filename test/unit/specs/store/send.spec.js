@@ -16,11 +16,11 @@ const mockRootState = {
     }
   },
   ledger: { isConnected: false },
-  stakingParameters: { parameters: { bond_denom: `uatom` } }
+  stakingParameters: { parameters: { bond_denom: `ucolor` } }
 }
 
 const mockState = {
-  bondDenom: "uatom"
+  bondDenom: "ucolor"
 }
 
 describe(`Module: Send`, () => {
@@ -56,7 +56,7 @@ describe(`Module: Send`, () => {
       const commit = jest.fn()
       const getters = {
         liquidAtoms: 10000000,
-        bondDenom: `uatom`
+        bondDenom: `ucolor`
       }
 
       actions.postMsgSend(
@@ -68,13 +68,13 @@ describe(`Module: Send`, () => {
           },
           txMeta: {
             gasEstimate: 100000,
-            gasPrice: { amount: 10, denom: "uatom" }
+            gasPrice: { amount: 10, denom: "ucolor" }
           }
         }
       )
 
       expect(commit).toHaveBeenCalledWith(`updateWalletBalance`, {
-        denom: `uatom`,
+        denom: `ucolor`,
         amount: 4000000
       })
     })

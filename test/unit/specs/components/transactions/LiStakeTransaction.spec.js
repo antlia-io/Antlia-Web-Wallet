@@ -11,10 +11,10 @@ describe(`LiStakeTransaction`, () => {
     txType: `cosmos-sdk/MsgCreateValidator`,
     validators,
     url: `/validator`,
-    bondingDenom: `uatom`,
+    bondingDenom: `ucolor`,
     fees: {
       amount: `3421`,
-      denom: `uatom`
+      denom: `ucolor`
     },
     time: new Date(Date.now()).toISOString(),
     block: 500,
@@ -48,7 +48,7 @@ describe(`LiStakeTransaction`, () => {
         txType: `cosmos-sdk/MsgEditValidator`,
         fees: {
           amount: `3421`,
-          denom: `uatom`
+          denom: `ucolor`
         }
       })
     })
@@ -72,7 +72,7 @@ describe(`LiStakeTransaction`, () => {
         txType: `cosmos-sdk/MsgDelegate`,
         fees: {
           amount: `3421`,
-          denom: `uatom`
+          denom: `ucolor`
         }
       })
     })
@@ -109,7 +109,7 @@ describe(`LiStakeTransaction`, () => {
         txType: `cosmos-sdk/MsgUndelegate`,
         fees: {
           amount: `3421`,
-          denom: `uatom`
+          denom: `ucolor`
         }
       })
     })
@@ -150,7 +150,7 @@ describe(`LiStakeTransaction`, () => {
         txType: `cosmos-sdk/MsgBeginRedelegate`,
         fees: {
           amount: `3421`,
-          denom: `uatom`
+          denom: `ucolor`
         }
       })
     })
@@ -178,7 +178,7 @@ describe(`LiStakeTransaction`, () => {
         txType: `cosmos-sdk/MsgUnjail`,
         fees: {
           amount: `3421`,
-          denom: `uatom`
+          denom: `ucolor`
         }
       })
     })

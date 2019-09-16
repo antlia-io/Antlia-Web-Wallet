@@ -4,7 +4,7 @@ export const sendTx = {
     amounts: [
       {
         amount: "20000",
-        denom: "uatom"
+        denom: "ucolor"
       }
     ]
   },
@@ -12,7 +12,7 @@ export const sendTx = {
     gasEstimate: 12335,
     gasPrice: {
       amount: 2000,
-      denom: "uatom"
+      denom: "ucolor"
     },
     submitType: "",
     password: ""
@@ -24,7 +24,7 @@ export const withdrawTx = {
   txMetaData: {
     gasPrice: {
       amount: 2000,
-      denom: "uatom"
+      denom: "ucolor"
     },
     submitType: "",
     password: ""

@@ -220,7 +220,7 @@ describe(`Store: getters`, () => {
     }
 
     const getters = {
-      bondDenom: "uatom",
+      bondDenom: "ucolor",
       totalRewards: 123
     }
 
@@ -236,7 +236,7 @@ describe(`Store: getters`, () => {
       },
       delegates: [],
       localKeyPairName: "localKeyPairName",
-      bondDenom: "uatom",
+      bondDenom: "ucolor",
       totalRewards: 123
     }
 

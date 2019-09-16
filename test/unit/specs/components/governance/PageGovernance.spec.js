@@ -34,7 +34,7 @@ describe(`PageGovernance`, () => {
   })
 
   it(`has the expected html structure`, async () => {
-    // somehow we need to wait one tick for the total atoms to update
+    // somehow we need to wait one tick for the total color to update
     await wrapper.vm.$nextTick()
     expect(wrapper.vm.$el).toMatchSnapshot()
   })

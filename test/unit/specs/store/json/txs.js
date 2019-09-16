@@ -11,13 +11,13 @@ export const bankTxs = [
             type: `cosmos-sdk/MsgSend`,
             value: {
               from_address: `A`,
-              amount: [{ denom: `uatom`, amount: `12340000000` }],
+              amount: [{ denom: `ucolor`, amount: `12340000000` }],
               to_address: `B`
             }
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -49,7 +49,7 @@ export const bankTxs = [
             type: `cosmos-sdk/MsgSend`,
             value: {
               from_address: `B`,
-              amount: [{ denom: `uatom`, amount: `12340000000` }],
+              amount: [{ denom: `ucolor`, amount: `12340000000` }],
               to_address: `A`
             }
           }
@@ -89,7 +89,7 @@ export const bankTxs = [
             type: `cosmos-sdk/MsgSend`,
             value: {
               amount: [
-                { denom: `uatom`, amount: `12340000000` },
+                { denom: `ucolor`, amount: `12340000000` },
                 { denom: `fabocoins`, amount: `10000000` },
                 { denom: `karolycoins`, amount: `420000000` }
               ],
@@ -99,7 +99,7 @@ export const bankTxs = [
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -160,14 +160,14 @@ export const stakingTxs = [
               validator_address: `cosmosvaloper1qecshyc40kshszkwrtscgmsdd8tz3n4hrj9yf2`,
               pubkey: `cosmosvalconspub1zcjduepqjja8zg8ccvdd5rx50ad79faaaucq5vr98pr7eawnslqrscelwhaszhaq83`,
               amount: {
-                denom: `uatom`,
+                denom: `ucolor`,
                 amount: `1000000`
               }
             }
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `101587`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -199,14 +199,14 @@ export const stakingTxs = [
             value: {
               validator_address: `cosmosvaloper1qecshyc40kshszkwrtscgmsdd8tz3n4hrj9yf2`,
               amount: {
-                denom: `uatom`,
+                denom: `ucolor`,
                 amount: `1000000`
               }
             }
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `101587`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -227,13 +227,13 @@ export const stakingTxs = [
               validator_address: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctqzh8yqw`,
               amount: {
                 amount: `42000000000`,
-                denom: `uatom`
+                denom: `ucolor`
               }
             }
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -268,14 +268,14 @@ export const stakingTxs = [
               shares_amount: `323.000000000000000000`,
               delegator_address: `cosmos1ek9cd8ewgxg9w5xllq9um0uf4aaxaruvcw4v9e`,
               amount: {
-                denom: `uatom`,
+                denom: `ucolor`,
                 amount: `1000000`
               }
             }
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -310,14 +310,14 @@ export const stakingTxs = [
               validator_dst_address: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctplpn3au`,
               shares_amount: `30000000`,
               amount: {
-                denom: `uatom`,
+                denom: `ucolor`,
                 amount: `1000000`
               }
             }
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -362,14 +362,14 @@ export const stakingTxs = [
             value: {
               address: `cosmosvaloper1qecshyc40kshszkwrtscgmsdd8tz3n4hrj9yf2`,
               amount: {
-                denom: `uatom`,
+                denom: `ucolor`,
                 amount: `1000000`
               }
             }
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `101587`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -395,7 +395,7 @@ export const governanceTxs = [
               description: `This is a test proposal`,
               initial_deposit: [
                 {
-                  denom: `uatom`,
+                  denom: `ucolor`,
                   amount: `1000000000`
                 }
               ]
@@ -403,7 +403,7 @@ export const governanceTxs = [
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -438,7 +438,7 @@ export const governanceTxs = [
               proposal_id: `1`,
               amount: [
                 {
-                  denom: `uatom`,
+                  denom: `ucolor`,
                   amount: `1000000000`
                 }
               ]
@@ -446,7 +446,7 @@ export const governanceTxs = [
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -484,7 +484,7 @@ export const governanceTxs = [
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         memo: `TESTING (Sent via Lunie)`
@@ -547,7 +547,7 @@ export const distributionTxs = [
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         signatures: [
@@ -596,7 +596,7 @@ export const distributionTxs = [
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         signatures: [
@@ -645,7 +645,7 @@ export const distributionTxs = [
           }
         ],
         fee: {
-          amount: [{ amount: `3421`, denom: `uatom` }],
+          amount: [{ amount: `3421`, denom: `ucolor` }],
           gas: `500000`
         },
         memo: `TESTING (Sent via Lunie)`

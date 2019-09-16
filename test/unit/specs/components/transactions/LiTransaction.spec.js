@@ -10,7 +10,7 @@ describe(`LiTransaction`, () => {
     memo: `TESTING (Sent via Color Wallet)`,
     fees: {
       amount: `3421`,
-      denom: `uatom`
+      denom: `ucolor`
     }
   }
   const day = 86400000
@@ -45,7 +45,7 @@ describe(`LiTransaction`, () => {
     wrapper.setProps({
       fees: {
         amount: "0",
-        denom: "uatom"
+        denom: "ucolor"
       }
     })
     // Non breaking space present before fee value

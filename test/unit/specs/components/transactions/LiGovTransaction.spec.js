@@ -9,7 +9,7 @@ describe(`LiGovTransaction`, () => {
     bondingDenom: `color`,
     fees: {
       amount: `3421`,
-      denom: `uatom`
+      denom: `ucolor`
     },
     tx: {},
     txType: ``,

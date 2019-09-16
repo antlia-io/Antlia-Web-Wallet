@@ -378,7 +378,7 @@ export default {
       return atoms(this.liquidAtoms)
     },
     estimatedFee() {
-      return Number(this.gasPrice) * Number(this.gasEstimate) // already in atoms
+      return Number(this.gasPrice) * Number(this.gasEstimate) // already in color
     },
     invoiceTotal() {
       return (
@@ -609,7 +609,7 @@ export default {
         required: requiredIf(
           () => this.step === feeStep && this.session.experimentalMode
         ),
-        // we don't use SMALLEST as min gas price because it can be a fraction of uatom
+        // we don't use SMALLEST as min gas price because it can be a fraction of ucolor
         // min is 0 because we support sending 0 fees
         between: between(0, this.balanceInAtoms)
       },

@@ -84,7 +84,7 @@ describe(`UndelegationModal`, () => {
         expect(wrapper.vm.validateForm()).toBe(false)
       })
 
-      it(`to true if the amount is positive and the user has enough liquid atoms`, () => {
+      it(`to true if the amount is positive and the user has enough liquid color`, () => {
         wrapper.setData({ amount: 50 })
         expect(wrapper.vm.validateForm()).toBe(true)
       })

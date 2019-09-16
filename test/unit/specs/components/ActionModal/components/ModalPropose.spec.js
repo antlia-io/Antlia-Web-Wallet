@@ -26,7 +26,7 @@ describe(`ModalPropose`, () => {
         connection: { connected: true },
         liquidAtoms: 200000000,
         wallet: {
-          balances: [{ denom: `uatom`, amount: `20000000` }],
+          balances: [{ denom: `ucolor`, amount: `20000000` }],
           loading: false
         }
       }
@@ -37,7 +37,7 @@ describe(`ModalPropose`, () => {
         $store
       },
       propsData: {
-        denom: `uatom`
+        denom: `ucolor`
       },
       sync: false
     })
@@ -125,7 +125,7 @@ describe(`ModalPropose`, () => {
 
     describe(`successful`, () => {
       it(`if the user has enough balance and the fields are within the length ranges`, async () => {
-        wrapper.vm.wallet.balances = [{ denom: `uatom`, amount: `20000000` }]
+        wrapper.vm.wallet.balances = [{ denom: `ucolor`, amount: `20000000` }]
         wrapper.setData(inputs)
         await wrapper.vm.$nextTick()
         expect(wrapper.vm.validateForm()).toBe(true)
@@ -168,7 +168,7 @@ describe(`ModalPropose`, () => {
         initialDeposits: [
           {
             amount: "10000000",
-            denom: "uatom"
+            denom: "ucolor"
           }
         ]
       })
