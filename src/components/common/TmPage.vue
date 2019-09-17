@@ -129,6 +129,7 @@ export default {
 .tm-page {
   flex: 1;
   display: flex;
+  margin-left: 72px;
   flex-flow: column nowrap;
   position: relative;
 }
@@ -187,7 +188,7 @@ export default {
 }
 
 .page-profile__section {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .page-profile__section-title {
@@ -341,6 +342,9 @@ export default {
 @media screen and (max-width: 1023px) {
   .tm-page-main {
     min-height: 100vh;
+  }
+  .tm-page {
+    margin: 0
   }
 }
 </style>

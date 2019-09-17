@@ -145,8 +145,7 @@ h2 {
   font-size: 1rem !important;
   display: inline;
   overflow: hidden;
-  font-weight: 500;
-  line-height: 1.2;
+  font-weight: 500
 }
 
 .displayinline {

@@ -31,7 +31,7 @@
               {{ bondDenom ? num.viewDenom(bondDenom) : `--` }}
             </dd>
           </div>
-          <div class="col-lg-4 info_dl">
+          <div class="col-lg-4 info_dl width">
             <dt>Maximum Number of Validators</dt>
             <dd id="max_validators">
               {{

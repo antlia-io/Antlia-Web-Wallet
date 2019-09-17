@@ -127,4 +127,10 @@ export default {
   margin-right: 0.5rem;
   width: 1rem;
 }
+
+/* @media screen and (max-width: 668px){
+  .tm-connected-network {
+    margin-bottom: 3.5rem
+  }
+} */
 </style>

@@ -4,11 +4,12 @@
     <DisconnectedBar />
     <div id="app">
       <router-view name="session" />
-      <AppHeader />
       <div id="app-content">
+        <AppHeader />
         <CookieBar />
         <router-view />
       </div>
+      <MobileMenu />
       <TmNotifications :notifications="notifications" />
       <ConnectedNetwork />
     </div>
@@ -18,6 +19,7 @@
 <script>
 import { mapGetters } from "vuex"
 import AppHeader from "common/AppHeader"
+import MobileMenu from "common/MobileMenu"
 import CookieBar from "common/CookieBar"
 import ConnectedNetwork from "common/TmConnectedNetwork"
 import MaintenanceBar from "common/MaintenanceBar"
@@ -33,7 +35,8 @@ export default {
     CookieBar,
     MaintenanceBar,
     DisconnectedBar,
-    ConnectedNetwork
+    ConnectedNetwork,
+    MobileMenu
   },
   computed: {
     ...mapGetters([`notifications`, `session`])

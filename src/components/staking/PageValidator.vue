@@ -76,7 +76,7 @@
               {{ uptime }}
             </dd>
           </dl>
-          <dl class="col-lg-3 info_dl colored_dl">
+          <dl class="col-lg-3 info_dl colored_dl width">
             <dt>COMMISSION</dt>
             <dd id="page-profile__commission">
               {{ num.percent(validator.commission.rate) }}
