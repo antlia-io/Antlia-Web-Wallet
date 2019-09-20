@@ -19,10 +19,10 @@ describe(`ModalDeposit`, () => {
       getters: {
         session: { signedIn: true },
         connection: { connected: true },
-        bondDenom: `ucolor`,
+        bondDenom: `uclr`,
         liquidAtoms: 1000000,
         wallet: {
-          balances: [{ denom: `ucolor`, amount: `10` }],
+          balances: [{ denom: `uclr`, amount: `10` }],
           loading: false
         }
       }
@@ -36,7 +36,7 @@ describe(`ModalDeposit`, () => {
       propsData: {
         proposalId: `1`,
         proposalTitle: mockValues.state.proposals[`1`].title,
-        denom: `ucolor`
+        denom: `uclr`
       },
       sync: false
     })
@@ -92,7 +92,7 @@ describe(`ModalDeposit`, () => {
 
     describe(`succeeds`, () => {
       it(`when the user has enough balance to submit a deposit`, async () => {
-        wrapper.vm.wallet.balances = [{ denom: `ucolor`, amount: `20000000` }]
+        wrapper.vm.wallet.balances = [{ denom: `uclr`, amount: `20000000` }]
         wrapper.setData({ amount: 10 })
         expect(wrapper.vm.validateForm()).toBe(true)
       })
@@ -109,7 +109,7 @@ describe(`ModalDeposit`, () => {
       amounts: [
         {
           amount: "2000000",
-          denom: "ucolor"
+          denom: "uclr"
         }
       ]
     })
@@ -121,7 +121,7 @@ describe(`ModalDeposit`, () => {
     })
     expect(wrapper.vm.notifyMessage).toEqual({
       title: `Successful deposit!`,
-      body: `You have successfully deposited your COLORs on proposal #1`
+      body: `You have successfully deposited your CLR on proposal #1`
     })
   })
 })

@@ -8,7 +8,7 @@ describe(`LiCoin`, () => {
     wrapper = shallowMount(LiCoin, {
       propsData: {
         coin: {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `10000000000`
         }
       },
@@ -33,6 +33,6 @@ describe(`LiCoin`, () => {
   })
 
   it(`should capitalize the coin denomination`, () => {
-    expect(wrapper.vm.denomination).toEqual(`COLOR`)
+    expect(wrapper.vm.denomination).toEqual(`CLR`)
   })
 })

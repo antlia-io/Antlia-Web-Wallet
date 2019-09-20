@@ -35,7 +35,7 @@ const state = {
           amount: `23000000000`
         },
         {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `10000000000`
         }
       ],
@@ -97,7 +97,7 @@ const state = {
                 description: `This is a test proposal`,
                 initial_deposit: [
                   {
-                    denom: `COLOR`,
+                    denom: `CLR`,
                     amount: `1000000000`
                   }
                 ]
@@ -121,7 +121,7 @@ const state = {
                 proposal_id: `1`,
                 amount: [
                   {
-                    denom: `COLOR`,
+                    denom: `CLR`,
                     amount: `1000000000`
                   }
                 ]
@@ -142,7 +142,7 @@ const state = {
                 delegator_address: addresses[0],
                 delegation: {
                   amount: `240000000`,
-                  denom: `COLOR`
+                  denom: `CLR`
                 }
               }
             }
@@ -267,14 +267,14 @@ const state = {
     parameters: {
       unbonding_time: `2592000000000000`,
       max_validators: 100,
-      bond_denom: `COLOR`
+      bond_denom: `CLR`
     }
   },
   governanceParameters: {
     deposit: {
       min_deposit: [
         {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `100000000.00000000000`
         }
       ],
@@ -304,13 +304,13 @@ const state = {
       description: `Proposal description`,
       initial_deposit: [
         {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `1000000000`
         }
       ],
       total_deposit: [
         {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `1000000000`
         }
       ],
@@ -333,13 +333,13 @@ const state = {
       description: `custom text proposal description`,
       initial_deposit: [
         {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `2000000000`
         }
       ],
       total_deposit: [
         {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `2000000000`
         }
       ],
@@ -362,13 +362,13 @@ const state = {
       description: `custom text proposal description`,
       initial_deposit: [
         {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `200000000`
         }
       ],
       total_deposit: [
         {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `1700000000`
         }
       ],
@@ -391,13 +391,13 @@ const state = {
       description: `this proposal was rejected`,
       initial_deposit: [
         {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `1000000000`
         }
       ],
       total_deposit: [
         {
-          denom: `COLOR`,
+          denom: `CLR`,
           amount: `1000000000`
         }
       ],
@@ -486,11 +486,11 @@ const state = {
         depositor: validators[0],
         amount: [
           {
-            denom: `COLOR`,
+            denom: `CLR`,
             amount: `150000000`
           },
           {
-            denom: `COLOR`,
+            denom: `CLR`,
             amount: `50000000`
           }
         ]
@@ -500,7 +500,7 @@ const state = {
         depositor: validators[1],
         amount: [
           {
-            denom: `COLOR`,
+            denom: `CLR`,
             amount: `50000000`
           }
         ]
@@ -512,7 +512,7 @@ const state = {
         depositor: validators[0],
         amount: [
           {
-            denom: `COLOR`,
+            denom: `CLR`,
             amount: `2000000000`
           }
         ]
@@ -524,7 +524,7 @@ const state = {
         depositor: validators[0],
         amount: [
           {
-            denom: `COLOR`,
+            denom: `CLR`,
             amount: `200000000`
           }
         ]
@@ -534,7 +534,7 @@ const state = {
         depositor: validators[1],
         amount: [
           {
-            denom: `COLOR`,
+            denom: `CLR`,
             amount: `1500000000`
           }
         ]
@@ -546,7 +546,7 @@ const state = {
         depositor: validators[0],
         amount: [
           {
-            denom: `COLOR`,
+            denom: `CLR`,
             amount: `1000000000`
           }
         ]

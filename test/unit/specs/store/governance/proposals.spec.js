@@ -5,7 +5,7 @@ const mockRootState = {
   wallet: {
     balances: [
       {
-        denom: `COLOR`,
+        denom: `CLR`,
         amount: 1000000000
       }
     ]
@@ -222,7 +222,7 @@ describe(`Module: Proposals`, () => {
       initial_deposit: [
         {
           amount: "1000000000",
-          denom: `COLOR`
+          denom: `CLR`
         }
       ]
     })

@@ -9,6 +9,8 @@
     :sign-in-required="true"
     :hide-header="true"
     :footer="false"
+    id="transactionscss"
+    class="finishmarginleft"
   >
     <DataEmptyTx slot="no-data" />
     <template slot="managed-body">
@@ -113,6 +115,14 @@ h1 {
 .row {
   background: white;
   text-align: center;
+}
+
+.finishmarginleft {
+  margin: 0
+}
+
+#transactionscss .padding0 {
+  padding: 0
 }
 
 @media screen and (max-width: 767px) {

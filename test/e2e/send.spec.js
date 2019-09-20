@@ -28,7 +28,7 @@ module.exports = {
     browser.url(browser.launch_url + "/#/transactions")
     browser.expect
       .element(".li-tx__content__caption__title")
-      .text.to.contain("Sent 1.3 COLORs")
+      .text.to.contain("Sent 1.3 CLR")
       .before(10 * 1000)
   }
 }

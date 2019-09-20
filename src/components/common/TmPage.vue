@@ -17,7 +17,7 @@
       </slot>
       <slot slot="header-buttons" name="header-buttons" />
     </TmPageHeader>
-    <main class="tm-page-main">
+    <main class="tm-page-main padding0">
       <CardSignInRequired v-if="signInRequired && !session.signedIn" />
       <template v-else-if="managed">
         <TmDataConnecting v-if="!loaded && !connected" />

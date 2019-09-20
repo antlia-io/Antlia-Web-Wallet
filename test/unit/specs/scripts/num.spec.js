@@ -37,21 +37,21 @@ describe(`number helper`, () => {
     expect(num.prettyDecimals(12)).toBe(`12`)
   })
 
-  it(`should convert ucolor denom to color denom`, () => {
-    expect(num.viewDenom(`ucolor`)).toBe(`COLOR`)
+  it(`should convert uclr denom to clr denom`, () => {
+    expect(num.viewDenom(`uclr`)).toBe(`CLR`)
   })
 
   it(`should convert SDK coins to view coins with 6 decimal points`, () => {
     expect(
       num.createDisplayCoin(
         {
-          denom: `ucolor`,
+          denom: `uclr`,
           amount: 1000000
         },
         6
       )
     ).toEqual({
-      denom: `COLOR`,
+      denom: `CLR`,
       amount: `1.000000`
     })
   })
@@ -59,11 +59,11 @@ describe(`number helper`, () => {
   it(`should convert SDK coins to view coins with 3 decimal points`, () => {
     expect(
       num.createDisplayCoin({
-        denom: `ucolor`,
+        denom: `uclr`,
         amount: 1000000
       })
     ).toEqual({
-      denom: `COLOR`,
+      denom: `CLR`,
       amount: `1`
     })
   })

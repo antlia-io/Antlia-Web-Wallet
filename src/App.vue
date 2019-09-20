@@ -5,8 +5,8 @@
     <div id="app">
       <router-view name="session" />
       <div id="app-content">
-        <AppHeader />
         <CookieBar />
+        <AppHeader />
         <router-view />
       </div>
       <MobileMenu />

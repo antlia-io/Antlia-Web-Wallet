@@ -16,7 +16,7 @@
 
 .session-outer-container {
   position: relative;
-  padding: 4rem 0;
+  padding: 8rem 1rem;
 }
 
 .session-logo {
@@ -42,7 +42,7 @@
 }
 
 .session-main {
-  flex: 1;
+  /* flex: 1; */
   padding: 0 1rem;
   color: black
 }
@@ -131,7 +131,7 @@
 @media screen and (max-width: 667px) {
   .session {
     height: 100vh;
-    padding: 4rem 0 0 5rem;
+    /* padding: 4rem 0 0 5rem; */
   }
 
   .session-outer-container {

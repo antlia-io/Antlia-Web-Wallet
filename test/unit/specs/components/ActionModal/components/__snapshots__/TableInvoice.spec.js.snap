@@ -11,7 +11,7 @@ exports[`TableInvoice should render correctly 1`] = `
       </span>
        
       <span>
-         17.200000 COLOR 
+         17.200000 CLR 
       </span>
     </li>
      
@@ -23,7 +23,7 @@ exports[`TableInvoice should render correctly 1`] = `
       <span>
         
         0.030864
-        COLOR
+        CLR
       
       </span>
     </li>
@@ -36,7 +36,7 @@ exports[`TableInvoice should render correctly 1`] = `
       </span>
        
       <span>
-         17.230864 COLOR 
+         17.230864 CLR 
       </span>
     </li>
   </ul>

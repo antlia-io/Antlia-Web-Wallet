@@ -14,7 +14,7 @@ describe(`TmBalance`, () => {
         },
         liquidAtoms: 1230000000,
         totalAtoms: 3210000000,
-        bondDenom: `color`,
+        bondDenom: `clr`,
         distribution: {
           loaded: true
         },

@@ -338,6 +338,10 @@ textarea.tm-field {
   position: relative;
 }
 
+#delegation-modal .tm-select select,.tm-field-select-addon,.input-group-addon  {
+  color: white
+}
+
 .tm-select select {
   appearance: none;
   background: var(--input-bg);

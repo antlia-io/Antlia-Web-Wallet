@@ -11,7 +11,7 @@ describe(`SendModal`, () => {
 
   const balances = [
     {
-      denom: `COLOR`,
+      denom: `CLR`,
       amount: 10000000000
     },
     {
@@ -22,7 +22,7 @@ describe(`SendModal`, () => {
   const getters = {
     wallet: {
       loading: false,
-      denoms: [`fermion`, `gregcoin`, `mycoin`, `COLOR`],
+      denoms: [`fermion`, `gregcoin`, `mycoin`, `CLR`],
       balances
     },
     connected: true,
@@ -39,7 +39,7 @@ describe(`SendModal`, () => {
     wrapper = shallowMount(SendModal, {
       localVue,
       propsData: {
-        denom: `COLOR`
+        denom: `CLR`
       },
       mocks: {
         $store
@@ -80,7 +80,7 @@ describe(`SendModal`, () => {
   describe(`validation`, () => {
     it(`should show address required error`, async () => {
       wrapper.setData({
-        denom: `COLOR`,
+        denom: `CLR`,
         address: ``,
         amount: 2
       })
@@ -91,7 +91,7 @@ describe(`SendModal`, () => {
     })
     it(`should show bech32 error when address length is too short`, async () => {
       wrapper.setData({
-        denom: `COLOR`,
+        denom: `CLR`,
         address: `asdf`,
         amount: 2
       })
@@ -103,7 +103,7 @@ describe(`SendModal`, () => {
 
     it(`should show bech32 error when address length is too long`, async () => {
       wrapper.setData({
-        denom: `COLOR`,
+        denom: `CLR`,
         address: `asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf`,
         amount: 2
       })
@@ -149,27 +149,27 @@ describe(`SendModal`, () => {
 
   it("should return transaction data in correct form", () => {
     wrapper.setData({
-      denom: `COLOR`,
+      denom: `CLR`,
       address: `cosmos12345`,
       amount: 2
     })
     expect(wrapper.vm.transactionData).toEqual({
       type: "MsgSend",
       toAddress: "cosmos12345",
-      amounts: [{ amount: "2000000", denom: "COLOR" }],
+      amounts: [{ amount: "2000000", denom: "CLR" }],
       memo: "(Sent via Color Wallet)"
     })
   })
 
   it("should return notification message", () => {
     wrapper.setData({
-      denom: `COLOR`,
+      denom: `CLR`,
       address: `cosmos12345`,
       amount: 2
     })
     expect(wrapper.vm.notifyMessage).toEqual({
       title: `Successful Send`,
-      body: `Successfully sent 2 COLOR to cosmos12345`
+      body: `Successfully sent 2 CLR to cosmos12345`
     })
   })
 })

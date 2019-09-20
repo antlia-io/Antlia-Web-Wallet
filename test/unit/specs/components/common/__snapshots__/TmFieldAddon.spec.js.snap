@@ -7,7 +7,7 @@ exports[`TmFieldAddon has the expected html structure 1`] = `
   <div
     class="fake-addon"
   >
-    COLOR
+    CLR
   </div>
 </div>
 `;

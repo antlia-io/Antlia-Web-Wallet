@@ -90,7 +90,7 @@ export function uatoms(number = 0) {
     .toString()
 }
 
-// convert micro denoms like ucolor to display denoms like COLOR
+// convert micro denoms like uclr to display denoms like CLR
 export function viewDenom(denom) {
   if (denom.charAt(0) === `u`) {
     return denom.substr(1).toUpperCase()

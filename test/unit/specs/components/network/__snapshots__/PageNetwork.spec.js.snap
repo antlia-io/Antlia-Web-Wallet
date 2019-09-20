@@ -104,7 +104,7 @@ exports[`PageNetwork should display the network page with data and the blocks ta
             class="info_dl"
           >
             <dt>
-              Total Liquid COLOR
+              Total Liquid CLR
             </dt>
              
             <dd
@@ -124,7 +124,7 @@ exports[`PageNetwork should display the network page with data and the blocks ta
             class="info_dl"
           >
             <dt>
-              Total Delegated COLOR
+              Total Delegated CLR
             </dt>
              
             <dd
@@ -295,7 +295,7 @@ exports[`PageNetwork should display the network page with the blocks table in a 
             class="info_dl"
           >
             <dt>
-              Total Liquid COLOR
+              Total Liquid CLR
             </dt>
              
             <dd
@@ -315,7 +315,7 @@ exports[`PageNetwork should display the network page with the blocks table in a 
             class="info_dl"
           >
             <dt>
-              Total Delegated COLOR
+              Total Delegated CLR
             </dt>
              
             <dd

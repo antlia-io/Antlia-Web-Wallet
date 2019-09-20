@@ -42,12 +42,12 @@
         @keyup.enter.native="enterPressed"
       />
       <span v-if="maximum > 0" class="form-message">
-        Currently Delegated: {{ maximum }} {{ num.viewDenom(denom) }}s
+        Currently Delegated: {{ maximum }} {{ num.viewDenom(denom) }}
       </span>
       <TmFormMsg
         v-if="maximum === 0"
         :msg="
-          `don't have any ${num.viewDenom(denom)}s delegated to this validator`
+          `don't have any ${num.viewDenom(denom)} delegated to this validator`
         "
         name="You"
         type="custom"
@@ -129,7 +129,7 @@ export default {
         title: `Successful undelegation!`,
         body: `You have successfully undelegated ${this.amount} ${num.viewDenom(
           this.denom
-        )}s.`
+        )}.`
       }
     }
   },

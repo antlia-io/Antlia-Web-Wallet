@@ -13,7 +13,7 @@ describe(`ModalWithdrawRewards`, () => {
     propsData = {
       validatorAddress: "cosmos1234567",
       rewards: 0,
-      denom: "color"
+      denom: "clr"
     }
 
     wrapper = shallowMount(ModalWithdrawRewards, {

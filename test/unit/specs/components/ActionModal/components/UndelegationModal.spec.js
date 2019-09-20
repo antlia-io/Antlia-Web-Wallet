@@ -19,7 +19,7 @@ describe(`UndelegationModal`, () => {
   const stakingParameters = {
     unbonding_time: `259200000000000`,
     max_validators: 100,
-    bond_denom: `COLOR`
+    bond_denom: `CLR`
   }
   const validator = {
     operator_address: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctplpn3au`
@@ -34,7 +34,7 @@ describe(`UndelegationModal`, () => {
       commit: jest.fn(),
       dispatch: jest.fn(),
       getters: {
-        bondDenom: `color`,
+        bondDenom: `clr`,
         liquidAtoms: 1000042,
         modalContext: context
       }
@@ -84,7 +84,7 @@ describe(`UndelegationModal`, () => {
         expect(wrapper.vm.validateForm()).toBe(false)
       })
 
-      it(`to true if the amount is positive and the user has enough liquid color`, () => {
+      it(`to true if the amount is positive and the user has enough liquid CLR`, () => {
         wrapper.setData({ amount: 50 })
         expect(wrapper.vm.validateForm()).toBe(true)
       })
@@ -112,14 +112,14 @@ describe(`UndelegationModal`, () => {
         validatorAddress:
           "cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctplpn3au",
         amount: "10000000",
-        denom: "COLOR"
+        denom: "CLR"
       })
     })
 
     it("should return correct notification message", () => {
       expect(wrapper.vm.notifyMessage).toEqual({
         title: `Successful undelegation!`,
-        body: `You have successfully undelegated 10 COLORs.`
+        body: `You have successfully undelegated 10 CLR.`
       })
     })
   })

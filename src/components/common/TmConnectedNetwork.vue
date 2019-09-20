@@ -55,7 +55,7 @@ export default {
     ...mapGetters([`lastHeader`, `nodeUrl`, `connected`]),
     networkTooltip({ connected, nodeUrl, lastHeader } = this) {
       if (connected) {
-        return `You're connected to ${lastHeader.chain_id} via ${nodeUrl}.`
+        return `You're connected to ${lastHeader.chain_id}.`
       }
       return `Seeking connection`
     },

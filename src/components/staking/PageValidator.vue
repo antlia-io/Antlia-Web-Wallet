@@ -89,8 +89,8 @@
         <div class="row">
           <div class="row">
             <dl class="info_dl">
-              <dt>First Seen</dt>
-              <dd>Block #{{ validator.bond_height }}</dd>
+              <dt>Validator Since</dt>
+              <dd>Block # {{ validator.signing_info ? validator.signing_info.start_height : 0 }}</dd>
             </dl>
             <dl class="info_dl">
               <dt>Current Commission Rate</dt>

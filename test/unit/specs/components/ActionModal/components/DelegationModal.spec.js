@@ -133,14 +133,14 @@ describe(`DelegationModal`, () => {
         type: "MsgDelegate",
         validatorAddress: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctplpn3au`,
         amount: "10000000",
-        denom: "COLOR"
+        denom: "CLR"
       })
     })
 
     it("should return correct notification message for delegating", () => {
       expect(wrapper.vm.notifyMessage).toEqual({
         title: `Successful delegation!`,
-        body: `You have successfully delegated your COLORs`
+        body: `You have successfully delegated your CLR`
       })
     })
   })
@@ -163,7 +163,7 @@ describe(`DelegationModal`, () => {
           "cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctplpn3au",
         validatorDestinationAddress: "cosmosDstAddress1",
         amount: "10000000",
-        denom: "COLOR"
+        denom: "CLR"
       })
       // expect(wrapper.vm.transactionData).toEqual()
     })
@@ -171,7 +171,7 @@ describe(`DelegationModal`, () => {
     it("should return correct notification message for delegating", () => {
       expect(wrapper.vm.notifyMessage).toEqual({
         title: `Successful redelegation!`,
-        body: `You have successfully redelegated your COLORs`
+        body: `You have successfully redelegated your CLR`
       })
     })
   })

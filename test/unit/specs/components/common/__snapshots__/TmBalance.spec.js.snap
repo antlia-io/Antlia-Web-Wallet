@@ -11,7 +11,7 @@ exports[`TmBalance show the balance header 1`] = `
       class="total-atoms top-section"
     >
       <h3>
-        Total COLOR
+        Total CLR
       </h3>
        
       <h2
@@ -34,7 +34,7 @@ exports[`TmBalance show the balance header 1`] = `
         class="unbonded-atoms top-section"
       >
         <h3>
-          Liquid COLOR
+          Liquid CLR
         </h3>
          
         <h2>
@@ -66,7 +66,7 @@ exports[`TmBalance show the balance header 1`] = `
   </div>
     
   <modalwithdrawrewards-stub
-    denom="color"
+    denom="CLR"
     rewards="1000450000000"
   />
 </div>

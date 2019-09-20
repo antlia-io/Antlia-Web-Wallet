@@ -34,7 +34,7 @@
       </p>
       <p>
         <span
-          >This Privacy Policy does not apply to (i) any Color services that has
+          >This Privacy Policy does not apply to (i) any Color Platform services that has
           its own privacy policy or a different privacy policy, in which case
           that privacy policy, not this privacy policy will apply and (ii) to
           information that is collected offline or by any third-party website or
@@ -217,7 +217,7 @@
             >Device-specific settings and other hardware settings, including
             operating system and other software settings, browser type, browser
             language, time zones, and certain cookies or other technologies that
-            may associate your device information with your Color account;</span
+            may associate your device information with your Color Wallet account;</span
           >
         </li>
         <li class="c1">
@@ -440,7 +440,7 @@
           >Moreover, if you access third-party websites through the App or the
           Services you may encounter third-party advertising. &nbsp;If you
           click-through to a third-party website, you are no longer on a site
-          hosted by Color and activity on the third-party site will be governed
+          hosted by Color Platform and activity on the third-party site will be governed
           by the third-party&rsquo;s privacy policy. &nbsp;You should review
           this privacy policy to understand what information will be collected
           and what technology the third-party uses to collect this information.

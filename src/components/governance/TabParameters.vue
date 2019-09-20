@@ -156,7 +156,7 @@ export default {
       const coin = num.createDisplayCoin(
         this.governanceParameters.parameters.deposit.min_deposit[0]
       )
-      return `${coin.amount} ${coin.denom}s`
+      return `${coin.amount} ${coin.denom}`
     },
     depositPeriodInDays() {
       return (

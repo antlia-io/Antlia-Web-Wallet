@@ -6,11 +6,11 @@ describe(`LiBankTransaction`, () => {
   let wrapper
   const propsData = {
     tx: bankTxs[0].tx.value.msg[0].value,
-    bondingDenom: `ucolor`,
+    bondingDenom: `uclr`,
     address: ``,
     fees: {
       amount: `3421`,
-      denom: `ucolor`
+      denom: `uclr`
     },
     time: new Date(Date.now()).toISOString(),
     block: 500,

@@ -8,7 +8,7 @@ const mockRootState = {
   }
 }
 // const gas = `1234567`
-// const gas_prices = [{ denom: `ucolor`, amount: `123` }]
+// const gas_prices = [{ denom: `uclr`, amount: `123` }]
 // const password = ``
 // const submitType = `ledger`
 

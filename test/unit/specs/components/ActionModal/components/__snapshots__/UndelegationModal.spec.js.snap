@@ -47,7 +47,7 @@ exports[`UndelegationModal should display undelegation modal form 1`] = `
     <span
       class="input-suffix"
     >
-      COLOR
+      CLR
     </span>
      
     <tmfield-stub
@@ -60,7 +60,7 @@ exports[`UndelegationModal should display undelegation modal form 1`] = `
       class="form-message"
     >
       
-      Currently Delegated: 1000000000 COLORs
+      Currently Delegated: 1000000000 CLR
     
     </span>
      

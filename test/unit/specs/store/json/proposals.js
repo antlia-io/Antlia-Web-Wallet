@@ -12,13 +12,13 @@ export const proposals = {
     },
     initial_deposit: [
       {
-        denom: `COLOR`,
+        denom: `CLR`,
         amount: `1000000000`
       }
     ],
     total_deposit: [
       {
-        denom: `COLOR`,
+        denom: `CLR`,
         amount: `1000000000`
       }
     ],
@@ -45,13 +45,13 @@ export const proposals = {
     },
     initial_deposit: [
       {
-        denom: `COLOR`,
+        denom: `CLR`,
         amount: `2000000000`
       }
     ],
     total_deposit: [
       {
-        denom: `COLOR`,
+        denom: `CLR`,
         amount: `2000000000`
       }
     ],
@@ -78,13 +78,13 @@ export const proposals = {
     },
     initial_deposit: [
       {
-        denom: `COLOR`,
+        denom: `CLR`,
         amount: `200000000`
       }
     ],
     total_deposit: [
       {
-        denom: `COLOR`,
+        denom: `CLR`,
         amount: `1700000000`
       }
     ],
@@ -111,13 +111,13 @@ export const proposals = {
     },
     initial_deposit: [
       {
-        denom: `COLOR`,
+        denom: `CLR`,
         amount: `1000000000`
       }
     ],
     total_deposit: [
       {
-        denom: `COLOR`,
+        denom: `CLR`,
         amount: `1000000000`
       }
     ],

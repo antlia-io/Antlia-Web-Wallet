@@ -14,7 +14,7 @@
         No Active Delegations
       </div>
       <div slot="subtitle">
-        Looks like you haven't delegated any {{ num.viewDenom(bondDenom) }}s
+        Looks like you haven't delegated any {{ num.viewDenom(bondDenom) }}
         yet. Head over to the
         <router-link :to="{ name: 'Validators' }">
           validator list

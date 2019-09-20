@@ -47,16 +47,16 @@
       <span v-if="!isRedelegation()" class="form-message">
         Available to Delegate:
         {{ getFromBalance() }}
-        {{ denom | viewDenom }}s
+        {{ denom | viewDenom }}
       </span>
       <span v-else-if="isRedelegation()" class="form-message">
         Available to Redelegate:
         {{ getFromBalance() }}
-        {{ denom | viewDenom }}s
+        {{ denom | viewDenom }}
       </span>
       <TmFormMsg
         v-if="balance === 0"
-        :msg="`doesn't have any ${viewDenom(denom)}s`"
+        :msg="`doesn't have any ${viewDenom(denom)}`"
         name="Wallet"
         type="custom"
       />
@@ -161,14 +161,14 @@ export default {
       if (this.from === this.modalContext.userAddress) {
         return {
           title: `Successful delegation!`,
-          body: `You have successfully delegated your ${viewDenom(this.denom)}s`
+          body: `You have successfully delegated your ${viewDenom(this.denom)}`
         }
       } else {
         return {
           title: `Successful redelegation!`,
           body: `You have successfully redelegated your ${viewDenom(
             this.denom
-          )}s`
+          )}`
         }
       }
     }

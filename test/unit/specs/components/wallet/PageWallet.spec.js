@@ -39,7 +39,7 @@ describe(`PageWallet`, () => {
   })
 
   it(`should show the sending modal`, () => {
-    wrapper.vm.showModal(`COLOR`)
+    wrapper.vm.showModal(`CLR`)
     expect(wrapper.exists(`send-modal`)).toBe(true)
     expect(wrapper.vm.$el).toMatchSnapshot()
   })
@@ -60,7 +60,7 @@ describe(`PageWallet`, () => {
     expect(wrapper.vm.filteredBalances.map(x => x.denom)).toEqual([
       `fermion`,
       `mycoin`,
-      `COLOR`
+      `CLR`
     ])
   })
 

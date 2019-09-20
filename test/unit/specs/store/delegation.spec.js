@@ -23,12 +23,12 @@ describe(`Module: Delegations`, () => {
     staticDateNow = new Date(Date.now()).toUTCString()
   })
 
-  it(`sets committed COLORs for delegate`, () => {
+  it(`sets committed CLR for delegate`, () => {
     mutations.setCommittedDelegation(state, { candidateId: `foo`, value: 123 })
     expect(state.committedDelegates).toEqual({ foo: 123 })
   })
 
-  it(`sets committed COLORs for delegate to 0`, () => {
+  it(`sets committed CLR for delegate to 0`, () => {
     mutations.setCommittedDelegation(state, { candidateId: `foo`, value: 123 })
     mutations.setCommittedDelegation(state, { candidateId: `foo`, value: 0 })
     expect(state.committedDelegates).toEqual({})
@@ -144,7 +144,7 @@ describe(`Module: Delegations`, () => {
     })
   })
 
-  describe(`queries the delegated COLORs on reconnection`, () => {
+  describe(`queries the delegated CLR on reconnection`, () => {
     it(`when the user has logged in and is loading`, async () => {
       const dispatch = jest.fn()
       await actions.reconnected({

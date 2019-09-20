@@ -14,6 +14,7 @@
       </router-link>
       <router-link
         class="app-menu-item hide-xs"
+        :class="{active: (this.$route.fullPath === '/staking/my-delegations') || (this.$route.fullPath === '/staking/validators') || (this.$route.fullPath === '/staking/validators/'+$route.params.validator)}"
         to="/staking/validators/"
         title="Staking"
         @click.native="close"
@@ -24,6 +25,7 @@
       </router-link>
       <router-link
         class="app-menu-item hide-xs"
+        :class="{active: (this.$route.fullPath === '/governance/'+$route.params.proposalId)}"
         to="/governance/proposals"
         title="Governance"
         @click.native="close"
@@ -34,6 +36,7 @@
       </router-link>
       <router-link
         class="app-menu-item hide-xs"
+        :class="{active: (this.$route.fullPath === '/blocks/'+$route.params.height)}"
         to="/"
         exact="exact"
         title="Network"
@@ -133,6 +136,10 @@ export default {
 
 .app-menu .app-menu-item.router-link-active {
   background: #0a73b1;
+}
+
+.active {
+  background: #0a73b1
 }
 
 .app-menu .app-menu-item.router-link-active i {

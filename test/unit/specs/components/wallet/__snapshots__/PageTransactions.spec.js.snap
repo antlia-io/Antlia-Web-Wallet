@@ -14,7 +14,7 @@ exports[`PageTransactions displays the transaction page if user has signed in 1`
   <template>
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -23,7 +23,7 @@ exports[`PageTransactions displays the transaction page if user has signed in 1`
     />
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -32,7 +32,7 @@ exports[`PageTransactions displays the transaction page if user has signed in 1`
     />
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -41,7 +41,7 @@ exports[`PageTransactions displays the transaction page if user has signed in 1`
     />
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -50,7 +50,7 @@ exports[`PageTransactions displays the transaction page if user has signed in 1`
     />
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -59,7 +59,7 @@ exports[`PageTransactions displays the transaction page if user has signed in 1`
     />
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -86,7 +86,7 @@ exports[`PageTransactions displays the transaction page if user hasn't signed in
   <template>
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -95,7 +95,7 @@ exports[`PageTransactions displays the transaction page if user hasn't signed in
     />
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -104,7 +104,7 @@ exports[`PageTransactions displays the transaction page if user hasn't signed in
     />
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -113,7 +113,7 @@ exports[`PageTransactions displays the transaction page if user hasn't signed in
     />
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -122,7 +122,7 @@ exports[`PageTransactions displays the transaction page if user hasn't signed in
     />
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"
@@ -131,7 +131,7 @@ exports[`PageTransactions displays the transaction page if user hasn't signed in
     />
     <lianytransaction-stub
       address="cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9"
-      bondingdenom="COLOR"
+      bondingdenom="CLR"
       proposalsurl="/governance"
       transaction="[object Object]"
       unbondingtime="NaN"

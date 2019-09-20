@@ -5,7 +5,7 @@
       <span class="hide-on-mobile"
         >This site uses cookies to help improve the user experience.</span
       >
-      By using Color, you accept our
+      By using Color Wallet, you accept our
       <router-link to="/terms" class="link">Terms of Service</router-link> and
       <router-link to="/privacy" class="link">Privacy Policy</router-link>.
     </p>
@@ -44,6 +44,7 @@ export default {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
+  position: relative;
   text-align: center;
   display: flex;
   align-items: center;

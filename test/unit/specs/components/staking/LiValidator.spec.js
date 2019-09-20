@@ -47,7 +47,7 @@ describe(`LiValidator`, () => {
         session: {
           signedIn: true
         },
-        bondDenom: `color`,
+        bondDenom: `clr`,
         lastHeader: ``,
         pool: {
           pool: {
@@ -101,7 +101,7 @@ describe(`LiValidator`, () => {
     )
   })
 
-  it(`should show the validator status with color`, () => {
+  it(`should show the validator status with CLR`, () => {
     expect(wrapper.vm.statusColor).toBe(`green`)
     // Jailed
     wrapper.setProps({

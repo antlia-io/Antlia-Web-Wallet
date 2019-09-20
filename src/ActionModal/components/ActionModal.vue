@@ -48,7 +48,7 @@
           />
           <TmFormMsg
             v-if="balanceInAtoms === 0"
-            :msg="`doesn't have any ${bondDenom}s`"
+            :msg="`doesn't have any ${bondDenom}`"
             name="Wallet"
             type="custom"
           />
@@ -169,7 +169,7 @@
           <div slot="subtitle">
             The transaction
             <!--with the hash {{ txHash }}-->
-            was successfully signed and sent the network. Waiting for it to be
+            was successfully signed and sent to the network. Waiting for it to be
             confirmed.
           </div>
         </TmDataMsg>
@@ -378,7 +378,7 @@ export default {
       return atoms(this.liquidAtoms)
     },
     estimatedFee() {
-      return Number(this.gasPrice) * Number(this.gasEstimate) // already in color
+      return Number(this.gasPrice) * Number(this.gasEstimate) // already in clr
     },
     invoiceTotal() {
       return (
@@ -609,7 +609,7 @@ export default {
         required: requiredIf(
           () => this.step === feeStep && this.session.experimentalMode
         ),
-        // we don't use SMALLEST as min gas price because it can be a fraction of ucolor
+        // we don't use SMALLEST as min gas price because it can be a fraction of uclr
         // min is 0 because we support sending 0 fees
         between: between(0, this.balanceInAtoms)
       },

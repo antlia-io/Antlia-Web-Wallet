@@ -4,7 +4,7 @@ import PageValidator from "src/components/staking/PageValidator"
 const stakingParameters = {
   unbonding_time: `259200000000000`,
   max_validators: 100,
-  bond_denom: `COLOR`
+  bond_denom: `CLR`
 }
 
 const validator = {
@@ -262,17 +262,17 @@ describe(`PageValidator`, () => {
 
   describe(`myDelegation`, () => {
     it(`when user has delegations`, () => {
-      const bondDenom = `COLOR`
+      const bondDenom = `CLR`
       const myBond = 10
       const delegationString = PageValidator.computed.myDelegation.call({
         bondDenom,
         myBond
       })
-      expect(delegationString).toBe(`10 COLOR`)
+      expect(delegationString).toBe(`10 CLR`)
     })
 
     it(`when user doesn't have any delegations`, () => {
-      const bondDenom = `COLOR`
+      const bondDenom = `CLR`
       const myBond = 0
       const delegationString = PageValidator.computed.myDelegation.call({
         bondDenom,
@@ -286,7 +286,7 @@ describe(`PageValidator`, () => {
     let bondDenom, validator, session, lastHeader
 
     beforeEach(() => {
-      bondDenom = `COLOR`
+      bondDenom = `CLR`
       validator = { operator_address: `cosmos1address` }
       session = { signedIn: true }
       lastHeader = { height: `20` }

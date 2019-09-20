@@ -68,9 +68,33 @@ export default {
 .tm-form-group__label {
   display: block;
   line-height: 2rem;
-  color: #717073;
+  color: black;
   text-align: left;
   font-weight: 500;
+}
+
+#delegation-modal .tm-form-group__label  {
+  color: white
+}
+
+#undelegation-modal .tm-form-group__label  {
+  color: white
+}
+
+#send-modal .tm-form-group__label  {
+  color: white
+}
+
+#modal-withdraw-rewards .tm-form-group__label  {
+  color: white
+}
+
+#modal-propose .tm-form-group__label  {
+  color: white
+}
+
+#modal-deposit .tm-form-group__label  {
+  color: white
 }
 
 .tm-form-group__sub-label ~ .tm-form-group__label {

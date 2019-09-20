@@ -5,9 +5,9 @@
       <p>🎉 <router-link to="careers">We're Hiring!</router-link></p>
       <h2 class="c5">What is Color Wallet?</h2>
       <p>
-        Color Wallet is a user interface for sending and receiving Color tokens,
-        viewing your transaction history, delegating your COLORs, and
-        participating in governance on the Color.
+        Color Wallet is a user interface for sending and receiving clr tokens,
+        viewing your transaction history, delegating your clr, and
+        participating in governance on the Color Platform.
       </p>
       <p>
         Over the coming months we will be announcing a number of new products

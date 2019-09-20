@@ -96,7 +96,7 @@ export const stakingParameters = state => state.stakingParameters
 export const bondDenom = getters =>
   (getters.stakingParameters.parameters &&
     getters.stakingParameters.parameters.bond_denom) ||
-  `ucolor`
+  `uclr`
 
 // governance
 export const proposals = state => state.proposals
@@ -107,7 +107,7 @@ export const depositDenom = getters =>
   getters.governanceParameters.loaded &&
   getters.governanceParameters.parameters.deposit.min_deposit
     ? getters.governanceParameters.parameters.deposit.min_deposit[0].denom
-    : `ucolor`
+    : `uclr`
 
 // connection
 export const connected = state => state.connection.connected

@@ -18,10 +18,10 @@
       field-label="Amount"
     >
       <span class="input-suffix">{{ denom | viewDenom }}</span>
-      <TmField id="amount" v-model="amount" type="number" />
+      <TmField id="amount" v-model="amount" type="number" @keyup.enter.native="enterPressed" />
       <TmFormMsg
         v-if="balance === 0"
-        :msg="`doesn't have any ${viewDenom(denom)}s`"
+        :msg="`doesn't have any ${viewDenom(denom)}`"
         name="Wallet"
         type="custom"
       />
@@ -107,7 +107,7 @@ export default {
         title: `Successful deposit!`,
         body: `You have successfully deposited your ${viewDenom(
           this.denom
-        )}s on proposal #${this.proposalId}`
+        )} on proposal #${this.proposalId}`
       }
     }
   },
@@ -134,7 +134,10 @@ export default {
       this.$v.$reset()
 
       this.amount = 0
-    }
+    },
+    enterPressed() {
+      this.$refs.actionModal.validateChangeStep()
+    },
   }
 }
 </script>

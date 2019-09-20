@@ -15,7 +15,7 @@ describe(`calculateShares`, () => {
 describe(`coinsToObject`, () => {
   it(`transforms coins arrays to object`, () => {
     const coinArray = [
-      { denom: `color`, amount: `100` },
+      { denom: `CLR`, amount: `100` },
       { denom: `photino`, amount: `15` }
     ]
     const coins = coinsToObject(coinArray)

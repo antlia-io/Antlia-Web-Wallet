@@ -10,7 +10,7 @@ describe(`LiTransaction`, () => {
     memo: `TESTING (Sent via Color Wallet)`,
     fees: {
       amount: `3421`,
-      denom: `ucolor`
+      denom: `uclr`
     }
   }
   const day = 86400000
@@ -45,12 +45,12 @@ describe(`LiTransaction`, () => {
     wrapper.setProps({
       fees: {
         amount: "0",
-        denom: "ucolor"
+        denom: "uclr"
       }
     })
     // Non breaking space present before fee value
     // eslint-disable-next-line no-irregular-whitespace
-    expect(wrapper.text()).toContain(`Network Fee: 0 COLOR`)
+    expect(wrapper.text()).toContain(`Network Fee: 0 CLR`)
     expect(wrapper.vm.$el).toMatchSnapshot()
   })
 

@@ -32,7 +32,7 @@ module.exports = {
     await waitFor(() => {
       browser.expect
         .element(".li-tx__content__caption__title")
-        .text.to.contain(`Delegated ${value} COLOR`)
+        .text.to.contain(`Delegated ${value} CLR`)
     })
   },
   "Redelegate Action": async function(browser) {
@@ -70,7 +70,7 @@ module.exports = {
     await waitFor(() => {
       browser.expect
         .element(".li-tx__content__caption__title")
-        .text.to.contain(`Delegated ${value} COLOR`)
+        .text.to.contain(`Delegated ${value} CLR`)
     })
   },
   "Undelegate Action": async function(browser) {
@@ -106,7 +106,7 @@ module.exports = {
     await waitFor(() => {
       browser.expect
         .element(".li-tx__content__caption__title")
-        .text.to.contain(`Undelegated ${value} COLOR`)
+        .text.to.contain(`Undelegated ${value} CLR`)
     })
   }
 }

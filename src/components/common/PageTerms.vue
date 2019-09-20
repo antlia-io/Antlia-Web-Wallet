@@ -15,16 +15,16 @@
         as the &ldquo;Services&rdquo;.
       </p>
       <p class="c3">
-        These Terms are a legal contract between you and Color that governs your
+        These Terms are a legal contract between you and Color Platform that governs your
         use of Color Wallet and your rights and obligations relating to the Services.
       </p>
       <p class="c3">
         <span
-          >As used in these Terms Color, &ldquo;we&rdquo;, &ldquo;us&rdquo;,
+          >As used in these Terms Color Platform, &ldquo;we&rdquo;, &ldquo;us&rdquo;,
           &ldquo;ours&rdquo; and similar terms refers to Color Platform. The term &ldquo;Developers&rdquo; and
           &ldquo;Third-Party Developers&rdquo; in these Terms refer to
-          third-party developers who have (i) developed features for Color
-          and/or (ii) provide support and/or services in relation to Color (an
+          third-party developers who have (i) developed features for Color Platform
+          and/or (ii) provide support and/or services in relation to Color Platform (an
           example is analytics) or the Services and/or (iii) provide support
           and/or services to users of Color Wallet and/or Services (examples are
           customer support and features that allow you to value Digital Assets
@@ -136,7 +136,7 @@
           exchange Digital Assets. We do not recommend that you use the Services
           unless you are familiar with Digital Assets, Blockchain technology and
           can securely store your own private key. Color Wallet includes information
-          about various Digital Assets native to the Color System, however,
+          about various Digital Assets native to the Color Platform System, however,
           such inclusion or availability of information does not imply
           endorsement by us of such Digital Assets. Color Wallet is not associated with
           the operators of any Digital Assets and makes information related to
@@ -150,10 +150,10 @@
           through Color Wallet and the Services, including any artwork, graphics, text,
           video and audio clips, trademarks, logos and other content
           (collectively, &ldquo;Color Wallet Content&rdquo;), except in each case, as
-          provided in the next sentence. Color is releasing its source code in
-          fully open source format and all of Color&rsquo;s source code is
+          provided in the next sentence. Color Platform is releasing its source code in
+          fully open source format and all of Color Platform&rsquo;s source code is
           licensed under the Apache 2.0 License. For purposes of clarification,
-          Color Content is part of the Services. All trademarks are the property
+          Color Platform Content is part of the Services. All trademarks are the property
           of their respective owners.
         </p>
         <p class="c3">
@@ -167,22 +167,22 @@
           </li>
           <li class="c3 c6">
             Copy, modify, reproduce, adapt, reverse engineer, distribute, frame,
-            republish, upload, display, post, transmit or transfer Color, except
-            as permitted by the Apache 2.0 license with regard to the Color
+            republish, upload, display, post, transmit or transfer Color Platform, except
+            as permitted by the Apache 2.0 license with regard to the Color Platform
             source code;
           </li>
           <li class="c3 c6">
             <span
-              >License or sell Color or the Services in any form or by any
+              >License or sell Color Platform or the Services in any form or by any
               means;</span
             >
           </li>
           <li class="c3 c6">
             Change any of the notices about copyright, trademarks or other
-            intellectual property rights that may be part of Color or the
+            intellectual property rights that may be part of Color Platform or the
             Services; or
           </li>
-          <li class="c3 c6">Scrape data or code from Color or the Services.</li>
+          <li class="c3 c6">Scrape data or code from Color Platform or the Services.</li>
         </ul>
         <p class="c3">
           <span
@@ -681,7 +681,7 @@
           Terms (including the Privacy Policy and Rules of Conduct), your
           violation of any law or regulation, or your violation of any rights of
           a third-party, or any such violation by others you authorized to use
-          your Color Account.
+          your Color Wallet Account.
         </p>
         <li class="c2">Notice to California Residents</li>
         <p class="c3">
@@ -821,10 +821,10 @@
           Relief.
         </p>
         <p class="c3">
-          YOU AND COLOR BOTH AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER
+          YOU AND COLOR PLATFORM BOTH AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER
           ONLY ON AN INDIVIDUAL BASIS AND NOT AS A PLAINTIFF OR CLASS MEMBER IN
           ANY PURPORTED CLASS OR REPRESENTATIVE ACTION OR PROCEEDING. UNLESS
-          BOTH YOU AND COLOR AGREE OTHERWISE, THE ARBITRATOR MAY NOT CONSOLIDATE
+          BOTH YOU AND COLOR PLATFORM AGREE OTHERWISE, THE ARBITRATOR MAY NOT CONSOLIDATE
           OR JOIN MORE THAN ONE PERSON&#39;S OR PARTY&#39;S CLAIMS AND MAY NOT
           OTHERWISE PRESIDE OVER ANY FORM OF A CONSOLIDATED, REPRESENTATIVE, OR
           CLASS PROCEEDING. ALSO, THE ARBITRATOR MAY AWARD RELIEF (INCLUDING
@@ -888,16 +888,16 @@
           court only for very limited reasons.
         </p>
         <p class="c3">
-          For all such arbitration proceedings, you and Color each irrevocably
+          For all such arbitration proceedings, you and Color Platform each irrevocably
           submit to the exclusive jurisdiction of JAMS arbitration in Ontario,
           Canada and waive any jurisdictional, venue, or inconvenient forum
           objections to such arbitration. If the value of the relief sought is
-          $7,500 or less you or Color may elect to have the arbitration
+          $7,500 or less you or Color Platform may elect to have the arbitration
           conducted by telephone or based solely on written submissions, which
-          election shall be binding on you and Color subject to the
+          election shall be binding on you and Color Platform subject to the
           arbitrator&#39;s discretion to require an in-person hearing, if the
           circumstances warrant. Attendance at any in-person hearing may be made
-          by telephone by you and/or Color, unless the arbitrator requires
+          by telephone by you and/or Color Platform, unless the arbitrator requires
           otherwise.
         </p>
         <p class="c3">
@@ -1194,7 +1194,7 @@
         <p class="c3">
           Upon termination, (a) all rights granted to you under these Terms will
           also terminate; and (b) you must cease all use of the Services and
-          delete all copies of Color from your Device. Termination will not
+          delete all copies of Color Platform from your Device. Termination will not
           limit any of our other rights or remedies. Any provision that is by
           its terms intended to survive termination shall survive termination of
           these Terms.
@@ -1202,7 +1202,7 @@
         <li class="c2">General Terms</li>
         <ul class="lst-kix_list_17-0 start">
           <li class="c3 c6">
-            These Terms control the relationship between Color and you. They do
+            These Terms control the relationship between Color Platform and you. They do
             not create any third-party beneficiary rights;
           </li>
           <li class="c3 c6">
@@ -1213,7 +1213,7 @@
           </li>
           <li class="c3 c6">
             These Terms, together with our Privacy Policy, contain the entire
-            understanding by and between Color and you with respect to the
+            understanding by and between Color Platform and you with respect to the
             matters contained herein;
           </li>
           <li class="c3 c6">
@@ -1229,8 +1229,8 @@
             any other occasion;
           </li>
           <li class="c3 c6">
-            Nothing contained in these Terms will be deemed to constitute Color
-            or you as the agent or representative of the other or as joint
+            Nothing contained in these Terms will be deemed to constitute Color 
+            Platform or you as the agent or representative of the other or as joint
             venturers or partners;
           </li>
           <li class="c3 c6">
@@ -1251,7 +1251,7 @@
             computer software), the English language version controls.
           </li>
           <li class="c3 c6">
-            These Terms, and any dispute between you and Color, shall be
+            These Terms, and any dispute between you and Color Platform, shall be
             governed by the laws of the Province of Ontario, Canada, without
             regard to principles of conflicts of law, provided that the Federal
             Arbitration Act shall govern the interpretation and enforcement of
@@ -1260,9 +1260,9 @@
             to a particular claim or dispute (except for small-claims court
             actions), as a result of a decision by thearbitrator or a court
             order, you agree that any claim or dispute that has arisen or may
-            arise between you and Color must be resolved exclusively by a state
+            arise between you and Color Platform must be resolved exclusively by a state
             or federal court located in the Province of Ontario, Canada. You and
-            Color agree to submit to the personal jurisdiction of the courts
+            Color Platform agree to submit to the personal jurisdiction of the courts
             located within the Province of Ontario, Canadafor the purpose of
             litigating all such claims or disputes.
           </li>

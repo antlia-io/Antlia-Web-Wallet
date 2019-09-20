@@ -1,7 +1,7 @@
 <template>
   <menu>
     <router-link
-      class="mobile-menu-item"
+      :class="{active: (this.$route.fullPath === '/wallet')}"
       to="/wallet"
       exact="exact"
       title="Wallet"
@@ -11,20 +11,28 @@
         Wallet
       </h2>
     </router-link>
-    <router-link class="mobile-menu-item" to="/staking/my-delegations" title="Staking">
+    <router-link
+      :class="{active: (this.$route.fullPath === '/staking/my-delegations') || (this.$route.fullPath === '/staking/validators/') || (this.$route.fullPath === '/staking/validators') || (this.$route.fullPath === '/staking/validators/'+$route.params.validator)}"
+      to="/staking/my-delegations" 
+      title="Staking"
+    >
       <i class="material-icons">swap_horiz</i>
       <h2 class="app-menu-title">
         Staking
       </h2>
     </router-link>
-    <router-link class="mobile-menu-item" to="/governance/proposals" title="Governance">
+    <router-link
+      :class="{active: (this.$route.fullPath === '/governance/proposals') || (this.$route.fullPath === '/governance/'+$route.params.proposalId)}"
+      to="/governance/proposals" 
+      title="Governance"
+    >
       <i class="material-icons">transfer_within_a_station</i>
       <h2 class="app-menu-title">
         Governance
       </h2>
     </router-link>
     <router-link
-      class="mobile-menu-item"
+      :class="{active: (this.$route.fullPath === '/') || (this.$route.fullPath === '/blocks/'+$route.params.height)}"
       to="/"
       exact="exact"
       title="Network"
@@ -39,7 +47,12 @@
 
 <script>
 export default {
-  name: `mobile-menu`
+  name: `mobile-menu`,
+  data: function() {
+        return {
+            active: this.$route.fullPath
+        }
+    },
 }
 </script>
 
@@ -66,6 +79,11 @@ menu a {
 
 menu a i {
   font-size: 18px;
+}
+
+.active {
+  background: #0a73b1;
+  color: white !important
 }
 
 .mobile-menu-item.router-link-active {

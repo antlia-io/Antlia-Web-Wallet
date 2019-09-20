@@ -72,7 +72,7 @@
       />
       <TmFormMsg
         v-if="balance === 0"
-        :msg="`doesn't have any ${viewDenom(denom)}s`"
+        :msg="`doesn't have any ${viewDenom(denom)}`"
         name="Wallet"
         type="custom"
       />
@@ -181,7 +181,7 @@ export default {
     notifyMessage() {
       return {
         title: `Successful Send`,
-        body: `Successfully sent ${+this.amount} ${viewDenom(this.denom)}s to ${
+        body: `Successfully sent ${+this.amount} ${viewDenom(this.denom)} to ${
           this.address
         }`
       }

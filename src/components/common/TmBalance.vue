@@ -75,7 +75,7 @@ export default {
       return this.loaded ? this.num.atoms(this.liquidAtoms) : `--`
     },
     delegated(){
-      return this.loaded ? ((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) : `--`
+      return this.loaded ? (this.num.fullDecimals((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms) ))) : `--`
     },
     LiquidbarValue() {
       if (this.num.atoms(this.totalAtoms) === 0)

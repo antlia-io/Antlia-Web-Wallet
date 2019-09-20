@@ -6,10 +6,10 @@ describe(`LiGovTransaction`, () => {
   let wrapper
   const propsData = {
     url: `/proposals`,
-    bondingDenom: `color`,
+    bondingDenom: `clr`,
     fees: {
       amount: `3421`,
-      denom: `ucolor`
+      denom: `uclr`
     },
     tx: {},
     txType: ``,

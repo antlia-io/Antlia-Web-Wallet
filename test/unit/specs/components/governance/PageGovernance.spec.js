@@ -18,7 +18,7 @@ describe(`PageGovernance`, () => {
       dispatch: jest.fn(),
       getters: {
         proposals: {},
-        depositDenom: `color`,
+        depositDenom: `CLR`,
         connected: true,
         session: {}
       }
@@ -34,7 +34,7 @@ describe(`PageGovernance`, () => {
   })
 
   it(`has the expected html structure`, async () => {
-    // somehow we need to wait one tick for the total color to update
+    // somehow we need to wait one tick for the total CLR to update
     await wrapper.vm.$nextTick()
     expect(wrapper.vm.$el).toMatchSnapshot()
   })
@@ -48,7 +48,7 @@ describe(`PageGovernance`, () => {
       dispatch: jest.fn(),
       getters: {
         proposals: {},
-        depositDenom: `color`,
+        depositDenom: `CLR`,
         connected: false,
         session: {}
       }

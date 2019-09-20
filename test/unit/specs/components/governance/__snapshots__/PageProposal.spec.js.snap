@@ -114,7 +114,7 @@ exports[`PageProposal renders votes in HTML when voting is open 1`] = `
         <dd>
           
             2,000
-            COLOR
+            CLR
           
         </dd>
       </dl>
@@ -218,7 +218,7 @@ exports[`PageProposal renders votes in HTML when voting is open 1`] = `
   </div>
    
   <modaldeposit-stub
-    denom="COLOR"
+    denom="CLR"
     proposalid="2"
     proposaltitle="VotingPeriod proposal"
   />
@@ -344,7 +344,7 @@ exports[`PageProposal should display proposal page if user has signed in 1`] = `
         <dd>
           
             2,000
-            COLOR
+            CLR
           
         </dd>
       </dl>
@@ -448,7 +448,7 @@ exports[`PageProposal should display proposal page if user has signed in 1`] = `
   </div>
    
   <modaldeposit-stub
-    denom="COLOR"
+    denom="CLR"
     proposalid="2"
     proposaltitle="VotingPeriod proposal"
   />
@@ -574,7 +574,7 @@ exports[`PageProposal should display proposal page should default tally to 0 if 
         <dd>
           
             2,000
-            COLOR
+            CLR
           
         </dd>
       </dl>
@@ -678,7 +678,7 @@ exports[`PageProposal should display proposal page should default tally to 0 if 
   </div>
    
   <modaldeposit-stub
-    denom="COLOR"
+    denom="CLR"
     proposalid="2"
     proposaltitle="VotingPeriod proposal"
   />

@@ -129,6 +129,7 @@ export default {
     align-items: center; */
     justify-content: space-between;
     padding: 1rem;
+    position: relative;
     background: #232021;
     color: var(--link);
     cursor: pointer;

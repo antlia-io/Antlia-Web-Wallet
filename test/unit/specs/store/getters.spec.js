@@ -13,11 +13,11 @@ import validators from "./json/validators.js"
 describe(`Store: getters`, () => {
   it(`liquidAtoms`, () => {
     const result = liquidAtoms({
-      stakingParameters: { parameters: { bond_denom: `COLOR` } },
+      stakingParameters: { parameters: { bond_denom: `CLR` } },
       wallet: {
         balances: [
           {
-            denom: `COLOR`,
+            denom: `CLR`,
             amount: 42
           }
         ]
@@ -149,7 +149,7 @@ describe(`Store: getters`, () => {
           }
         },
         {
-          bondDenom: "COLOR"
+          bondDenom: "CLR"
         }
       )
     ).toEqual([
@@ -171,7 +171,7 @@ describe(`Store: getters`, () => {
   it("totalRewards", () => {
     expect(
       totalRewards(null, {
-        bondDenom: "COLOR",
+        bondDenom: "CLR",
         validatorsWithRewards: [
           [
             "validator1",
@@ -220,7 +220,7 @@ describe(`Store: getters`, () => {
     }
 
     const getters = {
-      bondDenom: "ucolor",
+      bondDenom: "uclr",
       totalRewards: 123
     }
 
@@ -236,7 +236,7 @@ describe(`Store: getters`, () => {
       },
       delegates: [],
       localKeyPairName: "localKeyPairName",
-      bondDenom: "ucolor",
+      bondDenom: "uclr",
       totalRewards: 123
     }
 

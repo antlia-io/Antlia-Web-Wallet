@@ -21,7 +21,7 @@ describe(`TableValidators`, () => {
         }
       }
     },
-    bondDenom: `color`,
+    bondDenom: `clr`,
     keybase: { [validators[0].description.identity]: `keybase` },
     pool: {
       pool: {

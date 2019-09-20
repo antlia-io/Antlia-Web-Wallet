@@ -18,7 +18,7 @@ describe(`ModalVote`, () => {
       getters: {
         session: { signedIn: true },
         connection: { connected: true },
-        bondDenom: `ucolor`,
+        bondDenom: `uclr`,
         liquidAtoms: 1000000
       }
     }

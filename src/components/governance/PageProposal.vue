@@ -17,7 +17,7 @@
               </h2>
             </div>
 
-            <div class="page-profile__header__actions">
+            <div class="page-profile__header__actions buttoncss">
               <TmBtn
                 v-if="proposal.proposal_status === 'VotingPeriod'"
                 id="vote-btn"
@@ -321,5 +321,9 @@ export default {
   margin: 1rem 2rem 1rem 1rem;
   padding: 1rem;
   font-style: italic;
+}
+
+.buttoncss {
+  display: block
 }
 </style>

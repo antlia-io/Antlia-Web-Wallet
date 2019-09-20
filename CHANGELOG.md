@@ -358,12 +358,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- [#2568](https://github.com/cosmos/lunie/pull/2568) Show amount of source color available to delegate or redelgate @colw
+- [#2568](https://github.com/cosmos/lunie/pull/2568) Show amount of source clr available to delegate or redelgate @colw
 
 ### Fixed
 
-- [#2614](https://github.com/cosmos/lunie/pull/2614) Display correct COLOR value for banking transactions @colw
-- [#2568](https://github.com/cosmos/lunie/pull/2568) Do not add color to total when redelegating @colw
+- [#2614](https://github.com/cosmos/lunie/pull/2614) Display correct CLR value for banking transactions @colw
+- [#2568](https://github.com/cosmos/lunie/pull/2568) Do not add clr to total when redelegating @colw
 - [#2621](https://github.com/cosmos/lunie/pull/2621) Bring back withdraw button on european browsers @faboweb
 - [#2570](https://github.com/cosmos/lunie/pull/2570) Load validators when linking to a validator directly @faboweb
 
@@ -433,11 +433,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- [#2568](https://github.com/cosmos/lunie/pull/2568) Show amount of source color available to delegate or redelgate @colw
+- [#2568](https://github.com/cosmos/lunie/pull/2568) Show amount of source clr available to delegate or redelgate @colw
 
 ### Fixed
 
-- [#2568](https://github.com/cosmos/lunie/pull/2568) Do not add color to total when redelegating @colw
+- [#2568](https://github.com/cosmos/lunie/pull/2568) Do not add clr to total when redelegating @colw
 - [#2570](https://github.com/cosmos/lunie/pull/2570) Load validators when linking to a validator directly @faboweb
 - [#1995](https://github.com/cosmos/lunie/issues/1995) Prevent users from signing in or creating a new account if their user agent is not Chrome @migueog
 
@@ -616,7 +616,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [#2431](https://github.com/cosmos/lunie/issues/2431) check for ledger on submit to avoid action modal failures @jbibla
 - [#2449](https://github.com/cosmos/lunie/issues/2449) explore mode should not ask for password in action modals @jbibla
 - [#0](https://github.com/cosmos/lunie/issues/0) tm connected network still included the word testnet in the language @jbibla
-- [#2445](https://github.com/cosmos/lunie/issues/2445) page validator label should be COLOR not ucolor @jbibla
+- [#2445](https://github.com/cosmos/lunie/issues/2445) page validator label should be CLR not uclr @jbibla
 - [#2448](https://github.com/cosmos/lunie/issues/2448) proposal description is awkward @jbibla
 
 ## [1.0.0-beta.42] - 2019-04-08
@@ -782,7 +782,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - [\#2301](https://github.com/cosmos/voyager/issues/2301) throttle requests for keybase identities @faboweb
-- [\#2272](https://github.com/cosmos/voyager/issues/2272) fixed showing ucolor instead of color @faboweb
+- [\#2272](https://github.com/cosmos/voyager/issues/2272) fixed showing uclr instead of clr @faboweb
 - [\#2289](https://github.com/cosmos/voyager/pull/2289) reduced amount of requests to full node @fedekunze
 
 ## [1.0.0-beta.24] - 2019-03-20
@@ -823,14 +823,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - [\#2269](https://github.com/cosmos/voyager/pull/2269) Persist session type if signed in with ledger @faboweb
-- [\#2273](https://github.com/cosmos/voyager/issues/2273) fixed color and ucolor conversion @fedekunze
+- [\#2273](https://github.com/cosmos/voyager/issues/2273) fixed clr and uclr conversion @fedekunze
 
 
 ## [1.0.0-beta.20] - 2019-03-15
 
 ### Fixed
 
-- [\#2273](https://github.com/cosmos/voyager/issues/2273) fixed color and ucolor conversion @fedekunze
+- [\#2273](https://github.com/cosmos/voyager/issues/2273) fixed clr and uclr conversion @fedekunze
 
 ## [1.0.0-beta.19] - 2019-03-15
 
@@ -936,7 +936,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [\#2128](https://github.com/cosmos/voyager/pull/2128) remove loading status on validator page when disconnected from the network @fedekunze
 - [\#2170](https://github.com/cosmos/voyager/pull/2170) bug with card-signed-in and explorer mode @jbibla
 - [\#2167](https://github.com/cosmos/voyager/pull/2167) fixed votes showing wrong tally @faboweb
-- [\#2167](https://github.com/cosmos/voyager/pull/2167) fixed not being able to deposit less then 1 color not possible @faboweb
+- [\#2167](https://github.com/cosmos/voyager/pull/2167) fixed not being able to deposit less then 1 clr not possible @faboweb
 - [\#2167](https://github.com/cosmos/voyager/pull/2167) fixed sorting of proposals @faboweb
 - [\#1897](https://github.com/cosmos/voyager/issues/1897) made action modals smaller @jbibla
 - [\#2179](https://github.com/cosmos/voyager/issues/2179) removed "to" field from undelegation action modal @jbibla
@@ -977,7 +977,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed 
 
-- [\#2044](https://github.com/cosmos/voyager/issues/2044) convert ucolor to color @faboweb
+- [\#2044](https://github.com/cosmos/voyager/issues/2044) convert uclr to clr @faboweb
 - Refactored tests: LiProposal @jbibla
 
 ## [1.0.0-beta.9] - 2019-02-28
@@ -1242,7 +1242,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * [\#1480](https://github.com/cosmos/voyager/issues/1480) Fixed false detection of node crash in e2e test start. @faboweb
 * [\#1451](https://github.com/cosmos/voyager/issues/1451) Provide better sourcemaps to make debugging easier. @faboweb
 * [\#1409](https://github.com/cosmos/voyager/issues/1409) Fixed disabled unbond and redelegation button when delegation amount was less than 1 @fedekunze
-* [\#1500](https://github.com/cosmos/voyager/issues/1500) Fixed wrong optimistic updates to the color balance after staking @faboweb @fedekunze
+* [\#1500](https://github.com/cosmos/voyager/issues/1500) Fixed wrong optimistic updates to the clr balance after staking @faboweb @fedekunze
 * [\#1517](https://github.com/cosmos/voyager/issues/1517) Fixed wrong account format used for querying selfBond @faboweb
 * [\#1503](https://github.com/cosmos/voyager/issues/1503) Added e2e test for balance updates after delegation @faboweb
 * [\#1131](https://github.com/cosmos/voyager/issues/1131) Display only error message on notifications @fedekunze
@@ -1257,7 +1257,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [\#1480](https://github.com/cosmos/voyager/issues/1480) Fixed false detection of node crash in e2e test start. @faboweb
 - [\#1451](https://github.com/cosmos/voyager/issues/1451) Provide better sourcemaps to make debugging easier. @faboweb
 - [\#1409](https://github.com/cosmos/voyager/issues/1409) Fixed disabled unbond and redelegation button when delegation amount was less than 1 @fedekunze
-- [\#1500](https://github.com/cosmos/voyager/issues/1500) Fixed wrong optimistic updates to the color balance after staking @faboweb @fedekunze
+- [\#1500](https://github.com/cosmos/voyager/issues/1500) Fixed wrong optimistic updates to the clr balance after staking @faboweb @fedekunze
 - [\#1517](https://github.com/cosmos/voyager/issues/1517) Fixed wrong account format used for querying selfBond @faboweb
 - [\#1503](https://github.com/cosmos/voyager/issues/1503) Added e2e test for balance updates after delegation @faboweb
 - [\#1131](https://github.com/cosmos/voyager/issues/1131) Display only error message on notifications @fedekunze
@@ -1279,11 +1279,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [\#1640](https://github.com/cosmos/voyager/issues/1640) Hide the table proposals when there are no available ones @fedekunze
 - [\#1640](https://github.com/cosmos/voyager/issues/1640) Fixed an error that prevented the search bar to be displayed using `Ctrl+F` @fedekunze
 - Fixed testnet config build script @faboweb
-- [\#1677](https://github.com/cosmos/voyager/issues/1677) Fixed inconsistent status color on proposals @faboweb
+- [\#1677](https://github.com/cosmos/voyager/issues/1677) Fixed inconsistent status clr on proposals @faboweb
 - [\#1687](https://github.com/cosmos/voyager/issues/1687) Removing cached state if decrypting fails. @faboweb
 - [\#1662](https://github.com/cosmos/voyager/issues/1662) Fixed wrong node version in readme @faboweb
   [\#1642](https://github.com/cosmos/voyager/issues/1642) Refactor table styles and fixed bad aligned headers @faboweb
-- [\#1677](https://github.com/cosmos/voyager/issues/1677) Fixed inconsistent status color on proposals @fedekunze
+- [\#1677](https://github.com/cosmos/voyager/issues/1677) Fixed inconsistent status clr on proposals @fedekunze
 - [\#1696](https://github.com/cosmos/voyager/issues/1696) Fixed broken css variables @jbibla
 - [\#1687](https://github.com/cosmos/voyager/issues/1687) Removing cached state if decrypting fails. @faboweb
 - [\#1662](https://github.com/cosmos/voyager/issues/1662) Fixed wrong node version in readme @faboweb
@@ -1436,9 +1436,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - validator page showed incorrect voting power @faboweb
 - improves poor performance at start by throttling the updates of the cached store @faboweb
 - Run lint test in CI. @NodeGuy
-- current color in PageBond still showed old color right after staking @ƒaboweb
+- current clr in PageBond still showed old clr right after staking @ƒaboweb
 - fix showing undefined for bonding denom in staking sucess message @faboweb
-- fix not showing a lock (I have color with this one) on a validator if color is less then 1 @faboweb
+- fix not showing a lock (I have clr with this one) on a validator if clr is less then 1 @faboweb
 - fix showing wrong error on pagebond validation @okwme
 
 ## [0.10.1] - 2018-08-29
@@ -1457,7 +1457,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - publish script on CI now requires all tests to pass, so we are sure that the published Version runs @ƒaboweb
 - disable interaction buttons if not connected to the network, so user do not expect working interaction @faboweb
 - using a variable for determining staking denomination @jbibla
-- changed COLOR to bondingDenom getter @okwme
+- changed CLR to bondingDenom getter @okwme
 - more bondingDenom and copy updates @jbibla
 - restored loading animation on start @faboweb
 - improved error message for gaia version imcompatibility in development @faboweb
@@ -1466,7 +1466,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - solved parsing error with decimals in delegators voting power @fedekunze
 - now resetting most store information on signing out to not have side effects between sessions @faboweb
-- fixed toggle bg color bug @okwme
+- fixed toggle bg clr bug @okwme
 - import seed focus bug @okwme
 - fixed trying to subscribe to transaction rpc events multiple times (prevent unexpected side effects doing so) @faboweb
 - Reduce CHANGELOG.md conflicts. @NodeGuy
@@ -1520,7 +1520,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - button styling @jbibla
 - Switched to Gaia-7004 @faboweb
-- showing warning about out of range of color in bonding UI only once on top and renaming it @faboweb
+- showing warning about out of range of clr in bonding UI only once on top and renaming it @faboweb
 - blocking login if not connected to a node to prevent errors @faboweb
 
 ### Fixed
@@ -1585,7 +1585,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Using vue-jest for transpiling in tests for better code coverage output @faboweb
 - Default to gaia-7001 @okwme
 - Changed `yarn testnet` to `yarn start` @okwme
-- Updated color throughout @jbibla
+- Updated clr throughout @jbibla
 - Update network @okwme
 
 ### Fixed
@@ -1642,7 +1642,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed critical dependency warning @okwme
 - Fixed theme bg bug @okwme
 - Fixed sorting bug on staking page @okwme
-- "About Color Voyager" menu item is now responsive on Windows and Linux @mappum
+- "About Color UI" menu item is now responsive on Windows and Linux @mappum
 - Fixed preference page style bug @okwme
 - Fixed missing node-ip in connection indicator @faboweb
 - Launch sequence for dev improved @okwme
@@ -1788,7 +1788,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- The primary staking token is now set in configuration - Fermion during development, color for launch.
+- The primary staking token is now set in configuration - Fermion during development, clr for launch.
 
 ## [0.4.3] - 2018-02-05
 
@@ -1830,7 +1830,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Improved primary button style. @nylira
 - Fixed the cut-off text bug in buttons. @nylira
-- Improves the `hover-bg` app variable color. @nylira
+- Improves the `hover-bg` app variable clr. @nylira
 - Updated release script to use `tar-fs` instead of `tar-stream` to support symlinks. @nylira
 
 ### Removed
@@ -1849,8 +1849,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Resolved notifications error on NiSessionLoading.vue. @nylira
 - Resolved old saved prevAccountKey being used in NiSessionSignIn.vue. @nylira
 - Improved performance of amountBonded in LiDelegate.vue./ @nylira
-- Prevented user from going to PageBond if they don't have any color. @nylira
-- Hid the bonding interface on PageDelegates if the user doesn't have any color. @nylira
+- Prevented user from going to PageBond if they don't have any clr. @nylira
+- Hid the bonding interface on PageDelegates if the user doesn't have any clr. @nylira
 - Improved error handling by shutting down the application when there are unhandled errors in the main thread. @faboweb
 
 ## [0.3.0] - 2018-01-15
