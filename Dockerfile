@@ -12,6 +12,6 @@ RUN yarn version
 
 COPY package.json ./
 
-CMD ["sh","start.sh"] 
+CMD ["yarn","serve:dist"] 
 
 
