@@ -591,9 +591,11 @@ export default {
     },
     gotostepone() {
       this.step = defaultStep
+      this.submissionError = null
     },
     gotosteptwo() {
       this.step = feeStep
+      this.submissionError = null
     }
   },
   validations() {

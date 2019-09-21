@@ -97,6 +97,10 @@ export default {
   color: white
 }
 
+#modal-vote .tm-form-group__label  {
+  color: white
+}
+
 .tm-form-group__sub-label ~ .tm-form-group__label {
   line-height: 1rem;
 }

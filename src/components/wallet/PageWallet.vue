@@ -55,9 +55,9 @@ export default {
   },
   data: () => ({ num, showSendModal: false }),
   computed: {
-    ...mapGetters([`wallet`, `connected`, `session`]),
+    ...mapGetters([`wallet`, `connected`, `session`, `allTransactions`]),
     dataEmpty() {
-      return this.wallet.balances.length === 0
+      return this.allTransactions.length===0?this.wallet.balances.length === 0:false
     },
     filteredBalances() {
       return orderBy(

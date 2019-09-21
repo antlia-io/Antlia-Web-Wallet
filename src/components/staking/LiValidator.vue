@@ -40,19 +40,19 @@
     <td class="li-validator__delegated-steak">
       {{
         validator.my_delegations
-          ? num.shortDecimals(num.atoms(validator.my_delegations))
+          ? num.fullDecimals(num.atoms(validator.my_delegations))
           : `--`
       }}
     </td>
     <td class="li-validator__rewards">
       {{
         validator.rewards
-          ? num.shortDecimals(num.atoms(validator.rewards))
+          ? num.fullDecimals(num.atoms(validator.rewards))
           : `--`
       }}
     </td>
     <td class="li-validator__voting-power">
-      {{num.shortDecimals(num.atoms(validator.tokens))}} ( {{ validator.tokens ? percentOfVotingPower : `--` }} )
+      {{num.fullDecimals(num.atoms(validator.tokens))}} ( {{ validator.tokens ? percentOfVotingPower : `--` }} )
     </td>
     <td class="li-validator__commission">
       {{ validator.commission ? num.percent(validator.commission) : `--` }}
