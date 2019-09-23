@@ -128,6 +128,7 @@ const config = {
         FAUCET: JSON.stringify(process.env.FAUCET),
         RPC: JSON.stringify(process.env.RPC),
         STARGATE: JSON.stringify(process.env.STARGATE),
+        CHAIN: JSON.stringify(process.env.CHAIN),
         RELEASE: JSON.stringify(commitHash),
         GOOGLE_ANALYTICS_UID: JSON.stringify(process.env.GOOGLE_ANALYTICS_UID),
         SENTRY_DSN: JSON.stringify(process.env.SENTRY_DSN)

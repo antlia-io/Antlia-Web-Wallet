@@ -115,7 +115,7 @@ export default function({ node }) {
           chain_id: status.node_info.network
         })
 
-        if (status.node_info.network === `colors-test-01`) {
+        if (status.node_info.network === config.chain) {
           commit(`setInsecureMode`)
         }
       })

@@ -1,13 +1,15 @@
 const dev = process.env.NODE_ENV === `development`
 const stargate =
   process.env.STARGATE ||
-  (dev ? `https://proxy.testnet.color-platform.org:9061` : `https://proxy.testnet.color-platform.org:9061`)
+  (dev ? `https://proxy.testnet.color-platform.rnssol.com:9071` : `https://proxy.testnet.color-platform.org:9061`)
 
 const rpc =
   process.env.RPC ||
   (dev
-    ? `https://rpc.testnet.color-platform.org`
+    ? `https://rpc.testnet.color-platform.rnssol.com`
     : `https://rpc.testnet.color-platform.org`)
+
+const chain = process.env.CHAIN || (dev ? `rns-test-01` : `colors-test-01`)
 
 export default {
   name: `colorwallet`,
@@ -15,6 +17,7 @@ export default {
   network: process.env.NETWORK || `local-testnet`,
   stargate,
   rpc,
+  chain: chain,
   google_analytics_uid: process.env.GOOGLE_ANALYTICS_UID || "",
   sentry_dsn: process.env.SENTRY_DSN || "",
   node_halted_timeout: 120000,
