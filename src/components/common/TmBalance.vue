@@ -8,8 +8,8 @@
         animated
       ></b-progress-bar>
       <b-progress-bar
-        :value="(totalAtomsDisplay - unbondedAtoms) * (100 / totalAtomsDisplay)"
-        :label="`${DelegatedbarValue.toFixed(2)}%`"
+        :value="delegated * (100/totalAtomsDisplay)"
+        :label="`${(delegated * (100/totalAtomsDisplay)).toFixed(2)}%`"
         variant="warning"
         animated
       ></b-progress-bar>
@@ -53,6 +53,7 @@ export default {
       `connected`,
       `session`,
       `wallet`,
+      `oldBondedAtoms`,
       `delegation`,
       `liquidAtoms`,
       `lastHeader`,
@@ -69,13 +70,16 @@ export default {
       return this.num.atoms(this.totalAtoms) || this.num.atoms(this.liquidAtoms) !== 0
     },
     totalAtomsDisplay() {
+      console.log(this.totalAtoms.toString())
       return this.loaded ? this.num.atoms(this.totalAtoms) : `--`
     },
     unbondedAtoms() {
+      console.log(this.liquidAtoms.toString())
       return this.loaded ? this.num.atoms(this.liquidAtoms) : `--`
     },
     delegated(){
-      return this.loaded ? (this.num.fullDecimals((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms) ))) : `--`
+      console.log(this.oldBondedAtoms.toString())
+      return this.loaded ? (this.num.atoms(this.oldBondedAtoms)) : `--`
     },
     LiquidbarValue() {
       if (this.num.atoms(this.totalAtoms) === 0)
