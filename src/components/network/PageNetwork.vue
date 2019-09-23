@@ -169,6 +169,7 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch(`getDelegates`)
     this.$store.dispatch(`getPool`)
   }
 }
