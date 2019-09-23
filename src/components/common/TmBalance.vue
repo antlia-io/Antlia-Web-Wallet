@@ -70,15 +70,12 @@ export default {
       return this.num.atoms(this.totalAtoms) || this.num.atoms(this.liquidAtoms) !== 0
     },
     totalAtomsDisplay() {
-      console.log(this.totalAtoms.toString())
       return this.loaded ? this.num.atoms(this.totalAtoms) : `--`
     },
     unbondedAtoms() {
-      console.log(this.liquidAtoms.toString())
       return this.loaded ? this.num.atoms(this.liquidAtoms) : `--`
     },
     delegated(){
-      console.log(this.oldBondedAtoms.toString())
       return this.loaded ? (this.num.atoms(this.oldBondedAtoms)) : `--`
     },
     LiquidbarValue() {
