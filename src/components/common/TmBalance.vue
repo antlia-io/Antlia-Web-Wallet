@@ -82,13 +82,7 @@ export default {
       if (this.num.atoms(this.totalAtoms) === 0)
         return 0
       else 
-        return (this.num.atoms(this.liquidAtoms)) * (100 / (this.num.atoms(this.totalAtoms)))
-    },
-    DelegatedbarValue(){
-      if (((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) === 0)
-        return 0
-      else 
-        return ((this.num.atoms(this.totalAtoms)) - (this.num.atoms(this.liquidAtoms))) * (100 / (this.num.atoms(this.totalAtoms)))
+        return (((this.num.atoms(this.liquidAtoms)) * 100) / (this.num.atoms(this.totalAtoms)))
     }
   },
   watch: {

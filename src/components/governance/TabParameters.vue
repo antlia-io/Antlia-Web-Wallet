@@ -136,8 +136,8 @@ export default {
     atoms,
     depositTooltips: {
       description: `Governance deposit parameters for the Color Platform`,
-      min_deposit: `Minimum deposit required before for a proposal can enter the voting period`,
-      max_deposit_period: `Deposits must reach the "minimum deposit" threshold in this period of time`
+      min_deposit: `Minimum deposit required before,for a proposal to enter in voting period`,
+      max_deposit_period: `Deposits must reach "minimum deposit" threshold in this period of time`
     },
     tallyingTooltips: {
       description: `Tally parameters for governance in the Color Platform`,
@@ -146,8 +146,8 @@ export default {
       quorum: `Percentage of tokens required to vote on a proposal to be considered valid`
     },
     votingTooltips: {
-      description: `Voting parameters for governance in the Color Platform`,
-      voting_period: `Length of the voting period for proposals on the Color Platform`
+      description: `Voting parameters for governance in Color Platform`,
+      voting_period: `Length of voting period for proposals on Color Platform`
     }
   }),
   computed: {

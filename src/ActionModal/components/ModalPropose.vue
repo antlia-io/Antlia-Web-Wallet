@@ -78,7 +78,7 @@
       />
       <TmFormMsg
         v-if="balance === 0"
-        :msg="`doesn't have any ${viewDenom(denom)}s`"
+        :msg="`doesn't have any ${viewDenom(denom)}`"
         name="Wallet"
         type="custom"
       />
