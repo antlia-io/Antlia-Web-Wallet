@@ -135,7 +135,7 @@ function subscribeToTxs(rpcClient, address, dispatch) {
       )
       .catch(err => {
         // TODO Output error like this to not trigger Sentry
-        console.error(err)
+        //console.error(err)
       })
   })
 }

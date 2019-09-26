@@ -2,14 +2,14 @@
   <div class="card">
     <b-progress v-if="hidebar" class="mt-2" :max="max" show-value>
       <b-progress-bar
-        :value="unbondedAtoms * (100 / totalAtomsDisplay)"
-        :label="`${LiquidbarValue.toFixed(2)}%`"
+        :value="((num.atoms(liquidAtoms)) *100 ) / (num.atoms(totalAtoms))"
+        :label="`${(((num.atoms(liquidAtoms)) *100 ) / (num.atoms(totalAtoms))).toFixed(2)}%`"
         variant="success"
         animated
       ></b-progress-bar>
       <b-progress-bar
-        :value="delegated * (100/totalAtomsDisplay)"
-        :label="`${(delegated * (100/totalAtomsDisplay)).toFixed(2)}%`"
+        :value="((num.atoms(oldBondedAtoms))*100) / (num.atoms(totalAtoms))"
+        :label="`${(((num.atoms(oldBondedAtoms))*100) / (num.atoms(totalAtoms))).toFixed(2)}%`"
         variant="warning"
         animated
       ></b-progress-bar>
@@ -61,7 +61,10 @@ export default {
       `bondDenom`,
       `distribution`,
       `validatorsWithRewards`,
-      `totalRewards`
+      `totalRewards`,
+      `oldUnbondingAtoms`,
+      `committedDelegates`,
+      `delegates`
     ]),
     loaded() {
       return this.wallet.loaded && this.delegation.loaded
@@ -78,12 +81,12 @@ export default {
     delegated(){
       return this.loaded ? (this.num.atoms(this.oldBondedAtoms)) : `--`
     },
-    LiquidbarValue() {
-      if (this.num.atoms(this.totalAtoms) === 0)
-        return 0
-      else 
-        return (((this.num.atoms(this.liquidAtoms)) * 100) / (this.num.atoms(this.totalAtoms)))
-    }
+    // LiquidbarValue() {
+    //   if (this.num.atoms(this.totalAtoms) === 0)
+    //     return 0
+    //   else 
+    //     return (((this.num.atoms(this.liquidAtoms)) * 100) / (this.num.atoms(this.totalAtoms)))
+    // }
   },
   watch: {
     lastHeader: {
@@ -107,6 +110,13 @@ export default {
       this.$store.dispatch(`getRewardsFromMyValidators`)
       this.$store.dispatch(`queryWalletBalances`)
     }
+  },
+  mounted() {
+    this.totalAtoms
+    this.oldBondedAtoms
+    this.oldUnbondingAtoms
+    this.committedDelegations
+    this.delegates
   }
 }
 </script>

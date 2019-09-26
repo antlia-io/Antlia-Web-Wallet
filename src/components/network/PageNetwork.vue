@@ -149,7 +149,7 @@ export default {
     },
     lastBlock() {
       moment.relativeTimeThreshold(`ss`, 1)
-      return moment(this.lastHeader.time).fromNow()
+      return moment.utc(this.lastHeader.time).format(`MMM Do YYYY, HH:mm:ssa z`)
     },
     properties() {
       return [

@@ -108,7 +108,7 @@ export default {
     },
     blockTime({ moment, block } = this) {
       if (!block.block) return `--`
-      return moment(block.block.header.time).format(`MMM Do YYYY, HH:mm:ss`)
+      return moment.utc(block.block.header.time).format(`MMM Do YYYY, HH:mm:ssa z`)
     }
   },
   watch: {

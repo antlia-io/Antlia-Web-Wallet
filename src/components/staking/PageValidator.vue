@@ -284,7 +284,7 @@ export default {
 
       return neverHappened || updateTime === `0001-01-01T00:00:00Z`
         ? `--`
-        : moment(dateTime).fromNow()
+        : moment.utc(dateTime).format(`MMM Do YYYY, HH:mm:ssa z`)
     },
     status() {
       // status: jailed

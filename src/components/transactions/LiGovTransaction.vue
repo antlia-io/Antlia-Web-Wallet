@@ -2,6 +2,7 @@
   <LiTransaction
     :color="`#15CFCC`"
     :time="time"
+    :txhash="txhash"
     :block="block"
     :memo="memo"
     :fees="fees"
@@ -78,6 +79,10 @@ export default {
       required: true
     },
     time: {
+      type: String,
+      default: null
+    },
+    txhash: {
       type: String,
       default: null
     },

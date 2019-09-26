@@ -130,7 +130,7 @@ export default ({ node }) => {
         return state.selfBond[validator.operator_address]
       else {
         const hexAddr = b32.decode(validator.operator_address)
-        const operatorCosmosAddr = b32.encode(hexAddr, `cosmos`)
+        const operatorCosmosAddr = b32.encode(hexAddr, `colors`)
         const delegations = await node.get.delegations(operatorCosmosAddr)
         const delegation = delegations.filter(
           ({ validator_address }) =>

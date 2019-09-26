@@ -3,6 +3,7 @@
     :color="`#F2B134`"
     :time="time"
     :block="block"
+    :txhash="txhash"
     :memo="memo"
     :fees="fees"
     :hide-meta-data="hideMetaData"
@@ -74,6 +75,10 @@ export default {
     block: {
       type: Number,
       required: true
+    },
+    txhash: {
+      type: String,
+      default: null
     },
     memo: {
       type: String,

@@ -17,6 +17,21 @@
           <slot name="details" />
           <span v-if="memo"> &nbsp;- {{ memo }} </span>
         </div>
+        <div class="tx-hash">
+          Tx Hash #&nbsp;
+          <div
+            id="address"
+            v-tooltip.top="txhash"
+            v-clipboard:copy="txhash"
+            v-clipboard:success="() => onCopy()"
+            class="address"
+          >
+          {{ txhash }}
+          </div>
+           <div :class="{ active: copySuccess }" class="copied">
+            <i class="material-icons">check</i><span>Copied</span>
+          </div>
+        </div>
       </div>
       <div v-if="!hideMetaData" class="li-tx__content__right">
         <div>
@@ -56,6 +71,10 @@ export default {
       type: Number,
       required: true
     },
+    txhash: {
+      type: String,
+      default: null
+    },
     memo: {
       type: String,
       default: null
@@ -67,6 +86,17 @@ export default {
     hideMetaData: {
       type: Boolean,
       default: false
+    }
+  },
+  data: () => ({
+    copySuccess: false
+  }),
+  methods: {
+    onCopy() {
+      this.copySuccess = true
+      setTimeout(() => {
+        this.copySuccess = false
+      }, 2500)
     }
   },
   computed: {
@@ -153,6 +183,58 @@ a:hover {
   line-height: 18px;
   font-size: 18px;
   color: black;
+}
+
+.tx-hash {
+  display: inline-flex;
+  padding: 0;
+  font-size: 14px;
+  color: #2d2c2c;
+  margin: 0;
+}
+
+.tx-hash .address {
+  color: #0a73b1;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  width: 20%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 572px) {
+  .tx-hash .address {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+}
+.tx-hash .address:hover {
+  color: #00d6e1;
+}
+
+.tx-hash .copied {
+  align-items: flex-end;
+  display: flex;
+  color: black;
+  font-size: var(--sm);
+  opacity: 0;
+  padding-left: 10px;
+  padding-top: 2px;
+  transition: opacity 500ms ease;
+}
+
+.tx-hash .copied.active {
+  opacity: 1;
+}
+
+.tx-hash .copied i {
+  color: var(--success);
+  font-size: var(--m);
+  padding-bottom: 2px;
+  padding-right: 0;
 }
 
 @media screen and (max-width: 767px) {

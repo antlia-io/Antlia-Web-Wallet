@@ -60,6 +60,7 @@ export const totalAtoms = (state, getters) => {
 }
 export const oldBondedAtoms = (state, getters) => {
   let totalOldBondedAtoms = new BN(0)
+  let x = getters.delegates.delegates
   Object.keys(getters.delegation.committedDelegates).forEach(
     delegatorAddress => {
       const shares = getters.delegation.committedDelegates[delegatorAddress]

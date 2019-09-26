@@ -78,7 +78,7 @@
         </div>
       </div>
 
-      <div v-if="proposal.proposal_status === 'VotingPeriod'" class="row">
+      <div v-if="proposal.proposal_status === 'VotingPeriod'" class="row marginbottom">
         <dl v-if="displayEndDate" class="info_dl colored_dl">
           <dt>Voting End Date</dt>
           <dd>{{ endDate }}</dd>
@@ -189,10 +189,10 @@ export default {
       return proposal.proposal_content.value.description
     },
     submittedAgo({ proposal } = this) {
-      return moment(new Date(proposal.submit_time)).fromNow()
+      return moment.utc(new Date(proposal.submit_time)).format(`MMM Do YYYY, HH:mm:ssa z`)
     },
     endDate({ proposal } = this) {
-      return moment(proposal.voting_end_time).format("MMMM Do YYYY, HH:mm")
+      return moment.utc(proposal.voting_end_time).format("MMM Do YYYY, HH:mm:ssa z")
     },
     displayEndDate({ proposal, governanceParameters } = this) {
       if (
@@ -206,13 +206,13 @@ export default {
       }
     },
     votingStartedAgo({ proposal } = this) {
-      return moment(new Date(proposal.voting_start_time)).fromNow()
+      return moment.utc(new Date(proposal.voting_start_time)).format(`MMM Do YYYY, HH:mm:ssa z`)
     },
     proposalStatus({ proposal, depositEndsIn, votingStartedAgo } = this) {
       if (proposal.proposal_status === "DepositPeriod") {
-        return `Deposit period ends ${depositEndsIn}`
+        return `Deposit period ends at ${depositEndsIn}`
       } else if (proposal.proposal_status === "VotingPeriod") {
-        return `Voting started ${votingStartedAgo}`
+        return `Voting started at ${votingStartedAgo}`
       } else if (proposal.proposal_status === "Rejected") {
         return "Rejected"
       } else if (proposal.proposal_status === "Passed") {
@@ -222,7 +222,7 @@ export default {
       }
     },
     depositEndsIn({ proposal } = this) {
-      return moment(new Date(proposal.deposit_end_time)).fromNow()
+      return moment.utc(new Date(proposal.deposit_end_time)).format(`MMM Do YYYY, HH:mm:ssa z`)
     },
     totalVotes({ tally: { yes, no, no_with_veto, abstain } } = this) {
       return BigNumber(yes)
@@ -326,4 +326,9 @@ export default {
 .buttoncss {
   display: block
 }
+
+.marginbottom {
+  margin-bottom: 3rem !important
+}
+
 </style>
