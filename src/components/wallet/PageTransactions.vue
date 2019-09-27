@@ -125,6 +125,14 @@ h1 {
   padding: 0
 }
 
+#transactionscss .hidesidebar{
+  display: none
+}
+
+#transactionscss .tm-page {
+  margin-left: 0 !important
+}
+
 @media screen and (max-width: 767px) {
   h1 {
     font-size: 2rem

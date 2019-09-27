@@ -181,6 +181,7 @@ h2 {
 
 p {
   margin-bottom: 0 !important;
+  margin-top: 2px
 }
 
 .total-atoms.top-section {

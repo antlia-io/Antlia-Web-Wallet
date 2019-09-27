@@ -1,5 +1,5 @@
 <template>
-    <ejs-sidebar id="dockSidebar" :enableDock='enableDock' :width='width' :dockSize='dockSize' ref="dockSidebar" :position = "position">
+    <ejs-sidebar id="dockSidebar" class="hidesidebar" :enableDock='enableDock' :width='width' :dockSize='dockSize' ref="dockSidebar" :position = "position">
     <div class="header-item">
       <router-link :class="buttonState" @click="toggleClick" to="/wallet">
         <img v-if="!buttonActive" rel=preload class="header-item-logo" src="~assets/images/color-logo.png" />
@@ -252,6 +252,9 @@ i.material-icons {
     padding: 1rem;
     color: var(--link);
     cursor: pointer;
+  }
+  .hidesidebar {
+    display: none
   }
 }
 </style>

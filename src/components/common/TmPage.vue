@@ -1,4 +1,6 @@
 <template>
+<div>
+  <FixedSideBar />
   <div class="tm-page">
     <TmPageHeader v-if="!hideHeader" :tabs="tabs">
       <h2 v-if="title" slot="title">
@@ -38,6 +40,7 @@
       <slot />
     </main>
   </div>
+</div>
 </template>
 
 <script>
@@ -49,6 +52,7 @@ import { mapGetters } from "vuex"
 import TmDataError from "common/TmDataError"
 import TmDataConnecting from "common/TmDataConnecting"
 import TmBalance from "common/TmBalance"
+import FixedSideBar from "common/FixedSideBar"
 import ToolBar from "common/ToolBar"
 import Bech32 from "common/Bech32"
 
@@ -63,7 +67,8 @@ export default {
     TmDataError,
     TmDataConnecting,
     CardSignInRequired,
-    Bech32
+    Bech32,
+    FixedSideBar
   },
   props: {
     hideHeader: {
@@ -129,7 +134,7 @@ export default {
 .tm-page {
   flex: 1;
   display: flex;
-  margin-left: 72px;
+  /* margin-left: 72px; */
   flex-flow: column nowrap;
   position: relative;
 }
@@ -344,7 +349,7 @@ export default {
     min-height: 100vh;
   }
   .tm-page {
-    margin: 0
+    margin: 0 !important
   }
 }
 </style>

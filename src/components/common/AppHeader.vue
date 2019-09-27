@@ -17,7 +17,6 @@
             <AppMenu v-if="open || desktop" @close="close" />
           </template>
         </div>
-        <FixedSideBar v-if="open || desktop" @close="close" />
       </div>
     </nav>
 </template>
@@ -26,11 +25,10 @@
 import { mapGetters } from "vuex"
 import noScroll from "no-scroll"
 import AppMenu from "common/AppMenu"
-import FixedSideBar from "common/FixedSideBar"
 
 export default {
   name: `app-header`,
-  components: { AppMenu , FixedSideBar},
+  components: { AppMenu},
   data: () => ({
     open: false,
     desktop: false

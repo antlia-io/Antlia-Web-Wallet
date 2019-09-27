@@ -65,7 +65,7 @@
             <dd>
               {{
                 totalDeposit
-                  ? `${totalDeposit.amount}
+                  ? `${num.fullDecimals(totalDeposit.amount)}
               ${totalDeposit.denom}`
                   : `--`
               }}
