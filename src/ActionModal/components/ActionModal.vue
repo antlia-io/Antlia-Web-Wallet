@@ -629,7 +629,7 @@ export default {
   display: flex;
   flex-direction: column;
   right: 1rem;
-  padding: 1.5rem 1.5rem 2rem 1.5rem;
+  padding: 1.5rem 1.5rem 3.5rem 1.5rem;
   position: absolute;
   bottom: 0;
   width: 100%;

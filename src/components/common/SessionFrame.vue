@@ -1,4 +1,6 @@
 <template>
+<div>
+  <FixedSideBar />
   <transition name="component-fade" mode="out-in">
     <div class="session-frame">
       <div class="session-outer-container">
@@ -11,11 +13,17 @@
       </div>
     </div>
   </transition>
+</div>
 </template>
 
 <script>
+import FixedSideBar from "common/FixedSideBar"
+
 export default {
   name: `session-frame`,
+  components: {
+    FixedSideBar
+  },
   methods: {
     goBack() {
       this.$router.go(`-1`)

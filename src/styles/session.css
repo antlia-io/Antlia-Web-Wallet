@@ -5,6 +5,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-left: 0 !important;
   align-items: center;
   min-height: 100vh;
   /* overflow: hidden; */

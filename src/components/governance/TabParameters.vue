@@ -136,7 +136,7 @@ export default {
     atoms,
     depositTooltips: {
       description: `Governance deposit parameters for the Color Platform`,
-      min_deposit: `Minimum deposit required before,for a proposal to enter in voting period`,
+      min_deposit: `Minimum deposit required for a proposal to enter in voting period`,
       max_deposit_period: `Deposits must reach "minimum deposit" threshold in this period of time`
     },
     tallyingTooltips: {

@@ -100,9 +100,9 @@ export default {
     properties() {
       return [
         {
-          title: `Moniker`,
+          title: `Node Name`,
           value: `small_moniker`,
-          tooltip: `The validator's moniker`
+          tooltip: `The validator's name`
         },
         {
           title: `My Delegations`,
@@ -124,7 +124,7 @@ export default {
         {
           title: `Commission`,
           value: `commission`,
-          tooltip: `The fee the validator will charge from your rewards`
+          tooltip: `Fee, that validator will charge from your rewards`
         },
         {
           title: `Uptime`,
