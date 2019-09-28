@@ -19,7 +19,6 @@
 
 <script>
 import { mapGetters } from "vuex"
-import PerfectScrollbar from "perfect-scrollbar"
 import ModalPropose from "src/ActionModal/components/ModalPropose"
 import TmBtn from "common/TmBtn"
 import TmPage from "common/TmPage"
@@ -46,9 +45,6 @@ export default {
   }),
   computed: {
     ...mapGetters([`proposals`, `depositDenom`, `connected`, `session`])
-  },
-  mounted() {
-    this.ps = new PerfectScrollbar(this.$el.querySelector(`.tm-page-main`))
   },
   methods: {
     onPropose() {
