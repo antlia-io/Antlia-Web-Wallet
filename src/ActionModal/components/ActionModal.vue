@@ -227,9 +227,9 @@
               <TmBtn
                 v-else
                 value="Send"
-                :disabled="!session.browserWithLedgerSupport"
                 @click.native="validateChangeStep"
               />
+              <!-- :disabled="!session.browserWithLedgerSupport" -->
             </div>
           </TmFormGroup>
         </slot>

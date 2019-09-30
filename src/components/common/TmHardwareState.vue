@@ -48,7 +48,7 @@ export default {
 .tm-hardware-state__icon {
   font-size: 1.5rem;
   padding-right: 1rem;
-  color: var(--dim);
+  color: black;
 }
 
 .tm-hardware-state__label {

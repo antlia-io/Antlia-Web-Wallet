@@ -205,6 +205,14 @@ input[type="checkbox"] {
   -webkit-appearance: none;
 }
 
+#sign-method .tm-field-select{
+  color: white !important
+}
+
+#sign-method .tm-field-select-addon{
+  color: white !important
+}
+
 .tm-field::placeholder {
   color: grey !important;
 }
@@ -338,7 +346,11 @@ textarea.tm-field {
   position: relative;
 }
 
-#delegation-modal .tm-select select,.tm-field-select-addon,.input-group-addon  {
+#delegation-modal .tm-select select,.input-group-addon  {
+  color: white
+}
+
+#delegation-modal .tm-field-select-addon  {
   color: white
 }
 
