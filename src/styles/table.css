@@ -136,8 +136,8 @@
   height: 3rem;
   width: 3rem;
   margin-right: 0.5rem;
-  display: block;
-  background: var(--app-nav-light);
+  /* display: block; */
+  background: #232021;
 }
 
 .data-table__row__info__image--no-img {
