@@ -3,7 +3,7 @@
     <div class="li-tx__icon">
       <img rel=preload 
         :style="{ borderColor: color }"
-        src="~assets/images/color-logo.png"
+        src="~assets/images/color.svg"
       />
     </div>
     <div class="li-tx__content">

@@ -1,7 +1,7 @@
 <template>
   <li :id="`li-coin--` + denomination.toLowerCase()" class="li-coin">
     <div class="li-coin__icon">
-      <img rel=preload src="~assets/images/color-logo.png" />
+      <img rel=preload src="~assets/images/color.svg" />
     </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">

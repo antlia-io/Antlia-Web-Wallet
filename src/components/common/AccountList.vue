@@ -51,17 +51,19 @@ export default {
   flex-flow: row;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-  background: var(--app-fg);
+  background: white;
   border-radius: 0.25rem;
-  border: 2px solid var(--bc-dim);
+  border: 2px solid rgb(176, 180, 207);
 }
 
 .account h3 {
-  color: var(--bright);
+  color: black;
+  word-wrap: break-word
 }
 
 .account-info {
   display: flex;
+  width: 50%;
   flex-direction: column;
 }
 </style>

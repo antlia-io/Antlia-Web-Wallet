@@ -6,7 +6,7 @@
             <a href="https://wallet.testnet.color-platform.rnssol.com">
             <img
               class="header-item-logo"
-              src="~assets/images/ColorWhiteplatform1.png"
+              src="~assets/images/color-platform_white.svg"
             /></a>
             <div v-if="open" class="close-menu" @click="close()">
               <i class="material-icons mobile-menu-action">close</i>

@@ -17,7 +17,7 @@
       <p>
         This software is developed by the team at RNS Solutions Pvt Ltd. We're
         <a
-          href="https://github.com/luniehq/lunie"
+          href="https://github.com/ColorPlatform/"
           target="_blank"
           rel="noopener norefferer"
         >

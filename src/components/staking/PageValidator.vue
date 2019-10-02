@@ -18,7 +18,7 @@
           /><img
             v-else
             class="avatar"
-            src="~assets/images/color-logo.png"
+            src="~assets/images/color.svg"
           />
           <div class="col-lg-6 validator-name-and-address">
             <div class="page-profile__status-and-title">

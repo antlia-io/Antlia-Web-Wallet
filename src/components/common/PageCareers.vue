@@ -14,7 +14,7 @@
       </p>
       <p>...And we need your help to make it happen!</p>
     </div>
-    <div class="card">
+    <!-- <div class="card">
       <h2 class="c5">Open Positions</h2>
       <p>
         The following are full-time roles based in Toronto or Berlin.
@@ -51,7 +51,7 @@
           <span>Product, Marketing</span>
         </li>
       </ul>
-    </div>
+    </div> -->
     <div class="card">
       <h2 class="c5">Why You Should Join Us</h2>
       <p>

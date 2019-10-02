@@ -2,8 +2,8 @@
     <ejs-sidebar id="dockSidebar" class="hidesidebar" :enableDock='enableDock' :width='width' :dockSize='dockSize' ref="dockSidebar" :position = "position">
     <div class="header-item">
       <router-link :class="buttonState" @click="toggleClick" to="/wallet">
-        <img v-if="!buttonActive" rel=preload class="header-item-logo" src="~assets/images/color-logo.png" />
-        <img v-else rel=preload class="header-item-logo2" src="~assets/images/ColorWhiteplatform1.png" />
+        <img v-if="!buttonActive" rel=preload class="header-item-logo" src="~assets/images/color.svg" />
+        <img v-else rel=preload class="header-item-logo2" src="~assets/images/color-platform_white.svg" />
       </router-link>
     </div>
     <div class="dock">

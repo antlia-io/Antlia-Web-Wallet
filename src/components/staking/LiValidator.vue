@@ -15,7 +15,7 @@
           data-table__row__info__image
           data-table__row__info__image--no-img
         "
-        src="~assets/images/color-logo.png"
+        src="~assets/images/color.svg"
       />
       <div class="data-table__row__info__container">
         <span

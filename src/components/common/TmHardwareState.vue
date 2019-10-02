@@ -40,6 +40,97 @@ export default {
   border-radius: 2px;
 }
 
+#delegation-modal .tm-hardware-state {
+  background: none;
+  border: none
+}
+
+#delegation-modal .tm-hardware-state__icon {
+  color: white
+}
+
+#delegation-modal .tm-hardware-state__label {
+  color: white
+}
+
+#send-modal .tm-hardware-state {
+  background: none;
+  border: none
+}
+
+#send-modal .tm-hardware-state__icon {
+  color: white
+}
+
+#send-modal .tm-hardware-state__label {
+  color: white
+}
+
+#undelegation-modal .tm-hardware-state {
+  background: none;
+  border: none
+}
+
+#undelegation-modal .tm-hardware-state__icon {
+  color: white
+}
+
+#undelegation-modal .tm-hardware-state__label {
+  color: white
+}
+
+#modal-withdraw-rewards .tm-hardware-state {
+  background: none;
+  border: none
+}
+
+#modal-withdraw-rewards .tm-hardware-state__icon {
+  color: white
+}
+
+#modal-withdraw-rewards .tm-hardware-state__label {
+  color: white
+}
+
+#modal-vote .tm-hardware-state {
+  background: none;
+  border: none
+}
+
+#modal-vote .tm-hardware-state__icon {
+  color: white
+}
+
+#modal-vote .tm-hardware-state__label {
+  color: white
+}
+
+#modal-propose .tm-hardware-state {
+  background: none;
+  border: none
+}
+
+#modal-propose .tm-hardware-state__icon {
+  color: white
+}
+
+#modal-propose .tm-hardware-state__label {
+  color: white
+}
+
+#modal-deposit .tm-hardware-state {
+  background: none;
+  border: none
+}
+
+#modal-deposit .tm-hardware-state__icon {
+  color: white
+}
+
+#modal-deposit .tm-hardware-state__label {
+  color: white
+}
+
 .tm-hardware-state-content {
   display: flex;
   align-items: center;
