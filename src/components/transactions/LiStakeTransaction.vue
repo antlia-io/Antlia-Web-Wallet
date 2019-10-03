@@ -15,7 +15,7 @@
         <span>{{ value | viewDenom }}</span>
       </div>
       <div slot="details">
-        Moniker:
+        Node Name:
         <router-link :to="`${url}/${tx.validator_address}`">
           {{ moniker(tx.validator_address) }}
         </router-link>
@@ -26,7 +26,7 @@
         Edit validator
       </div>
       <div slot="details">
-        Moniker:
+        Node Name:
         <router-link :to="`${url}/${tx.validator_address}`">
           {{ moniker(tx.validator_address) }}
         </router-link>
@@ -89,7 +89,7 @@
         Unjail
       </div>
       <div slot="details">
-        Moniker:
+        Node Name:
         <router-link :to="`${url}/${tx.address}`">
           {{ moniker(tx.address) }}
         </router-link>
