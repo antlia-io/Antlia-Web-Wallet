@@ -18,8 +18,8 @@
           title="Use Ledger Nano"
           route="ledger"
         />
+        <!-- v-if="session.experimentalMode" -->
         <LiSession
-          v-if="session.experimentalMode"
           id="use-extension"
           icon="laptop"
           title="Use Color Wallet Browser Extension"
