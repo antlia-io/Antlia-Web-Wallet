@@ -7,7 +7,7 @@ describe(`Connector`, () => {
     jest.mock(`src/connectors/rpcWrapper`, () => () => ({
       fooRpc: `rpcBar`
     }))
-    jest.mock(`@lunie/cosmos-api`, () => () => ({
+    jest.mock(`@rnssolution/color-api`, () => () => ({
       get: {}
     }))
 

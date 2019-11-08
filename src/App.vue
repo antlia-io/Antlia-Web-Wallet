@@ -10,7 +10,7 @@
         <router-view />
       </div>
       <MobileMenu />
-      <TmNotifications :notifications="notifications" />
+      <!-- <TmNotifications :notifications="notifications" /> -->
       <ConnectedNetwork />
     </div>
   </div>
@@ -24,14 +24,14 @@ import CookieBar from "common/CookieBar"
 import ConnectedNetwork from "common/TmConnectedNetwork"
 import MaintenanceBar from "common/MaintenanceBar"
 import DisconnectedBar from "common/DisconnectedBar"
-import TmNotifications from "common/TmNotifications"
+// import TmNotifications from "common/TmNotifications"
 import store from "./vuex/store"
 
 export default {
   name: `app`,
   components: {
     AppHeader,
-    TmNotifications,
+    // TmNotifications,
     CookieBar,
     MaintenanceBar,
     DisconnectedBar,

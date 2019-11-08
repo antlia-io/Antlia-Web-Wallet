@@ -9,7 +9,7 @@ const rpc =
     ? `https://rpc.testnet.color-platform.rnssol.com`
     : `https://rpc.testnet.color-platform.org`)
 
-const chain = process.env.CHAIN || (dev ? `rns-test-01` : `colors-test-01`)
+const chain = process.env.CHAIN || (dev ? `colors-test-01` : `colors-test-01`)
 
 export default {
   name: `colorwallet`,

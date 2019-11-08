@@ -816,13 +816,6 @@
   version "4.68.2"
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-4.68.2.tgz#3ba74680927807f83d9f0bfd7da45f192d2c0893"
 
-"@lunie/cosmos-api@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@lunie/cosmos-api/-/cosmos-api-0.1.1.tgz#ac53dd4dafe03397c86b0412bc97c04b2dcdf7ba"
-  dependencies:
-    "@babel/runtime" "^7.5.4"
-    axios "^0.19.0"
-
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -879,6 +872,14 @@
     once "^1.4.0"
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
+
+"@rnssolution/color-api@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@rnssolution/color-api/-/color-api-1.0.0.tgz#3ade016eb0b0776a551f49988322823431c36fde"
+  integrity sha512-93TWrLfGqkYLg9LDFrlbZt6IeuAe1hJA7bcQ4QZRg59t++q1HacHcPxA63gf0mAqboDjU8tv4afB3jfFM4F7bw==
+  dependencies:
+    "@babel/runtime" "^7.5.4"
+    axios "^0.19.0"
 
 "@rnssolution/color-keys@0.1.2", "@rnssolution/color-keys@^0.1.2":
   version "0.1.2"

@@ -63,6 +63,69 @@
       />
     </TmFormGroup>
     <TmFormGroup
+      :error="$v.requestedfund.$error && $v.requestedfund.$invalid"
+      class="action-modal-form-group"
+      field-id="requestedfund"
+      field-label="Requested Fund"
+    >
+      <span class="input-suffix">{{ denom | viewDenom }}</span>
+      <TmField
+        id="requestedfund"
+        v-model="requestedfund"
+        :value="Number(requestedfund)"
+        type="number"
+        @keyup.enter.native="enterPressed"
+      />
+      <TmFormMsg
+        v-if="$v.requestedfund.$error && (!$v.requestedfund.required || requestedfund === 0)"
+        name="Requested Fund"
+        type="required"
+      />
+      <TmFormMsg
+        v-else-if="$v.requestedfund.$error && !$v.requestedfund.decimal"
+        name="Requested Fund"
+        type="numberic"
+      />
+      <TmFormMsg
+        v-else-if="$v.requestedfund.$error && !$v.requestedfund.between"
+        :max="$v.requestedfund.$params.between.max"
+        :min="$v.requestedfund.$params.between.min"
+        name="Requested Fund"
+        type="between"
+      />
+    </TmFormGroup>
+    <TmFormGroup
+      :error="$v.fundcycle.$error && $v.fundcycle.$invalid"
+      class="action-modal-form-group"
+      field-id="fundcycle"
+      field-label="Funding Cycle"
+    >
+      <TmField
+        id="fundcycle"
+        v-model="fundcycle"
+        :value="Number(fundcycle)"
+        type="number"
+        @keyup.enter.native="enterPressed"
+      />
+      <TmFormMsg
+        v-if="$v.fundcycle.$error && (!$v.fundcycle.required || fundcycle === 0)"
+        name="Funding Cycle"
+        type="required"
+      />
+      <TmFormMsg
+        v-else-if="$v.fundcycle.$error && !$v.fundcycle.decimal"
+        name="Funding Cycle"
+        type="numberic"
+      />
+      <TmFormMsg
+        v-else-if="$v.fundcycle.$error && !$v.fundcycle.last"
+        :max="$v.fundcycle.$params.last.max"
+        :min="$v.fundcycle.$params.last.min"
+        name="Funding Cycle"
+        type="between"
+      />
+    </TmFormGroup>
+    <TmFormGroup
       :error="$v.amount.$error && $v.amount.$invalid"
       class="action-modal-form-group"
       field-id="amount"
@@ -83,6 +146,18 @@
         type="custom"
       />
       <TmFormMsg
+        v-else-if="balance > 0 && balance < 10000"
+        :msg="`doesn't have 10,000 ${viewDenom(denom)}`"
+        name="Wallet"
+        type="custom"
+      />
+      <TmFormMsg
+        v-else-if="amount > 0 && amount < 10000"
+        :msg="`must be greater than or equal to 10,000 ${viewDenom(denom)}`"
+        name="Deposit"
+        type="custom"
+      />
+      <TmFormMsg
         v-else-if="$v.amount.$error && (!$v.amount.required || amount === 0)"
         name="Deposit"
         type="required"
@@ -94,10 +169,11 @@
       />
       <TmFormMsg
         v-else-if="$v.amount.$error && !$v.amount.between"
-        :max="$v.amount.$params.between.max"
+        :max="$v.amount.$params.between.max < 10000 ? $v.amount.$params.between.min : $v.amount.$params.between.max"
         :min="$v.amount.$params.between.min"
-        name="Deposit"
-        type="between"
+        :msg="`doesn't have 10,000 ${viewDenom(denom)}`"
+        name="Wallet"
+        type="custom"
       />
     </TmFormGroup>
   </ActionModal>
@@ -110,6 +186,7 @@ import {
   maxLength,
   required,
   between,
+  last,
   decimal
 } from "vuelidate/lib/validators"
 import { uatoms, atoms, viewDenom, SMALLEST } from "src/scripts/num.js"
@@ -119,7 +196,8 @@ import TmField from "src/components/common/TmField"
 import TmFormGroup from "src/components/common/TmFormGroup"
 import TmFormMsg from "src/components/common/TmFormMsg"
 import ActionModal from "./ActionModal"
-
+import axios from "axios"
+import config from "../../config"
 import transaction from "../utils/transactionTypes"
 
 const isValid = type =>
@@ -149,9 +227,17 @@ export default {
     descriptionMaxLength: 200,
     title: ``,
     description: ``,
+    requestedfund: 0,
+    fundcycle: 0,
     type: `Text`,
+    minting: 0,
     amount: 0
   }),
+  watch: {
+    fundcycle (val) {
+      this.fundcycle = val.replace('.', '')
+    }
+  },
   computed: {
     ...mapGetters([`wallet`]),
     balance() {
@@ -170,9 +256,16 @@ export default {
         proposalType: this.type,
         title: this.title,
         description: this.description,
+        fundcycle: this.fundcycle,
         initialDeposits: [
           {
             amount: uatoms(this.amount),
+            denom: this.denom
+          }
+        ],
+        initialRequestedFunds: [
+          {
+            amount: uatoms(this.requestedfund),
             denom: this.denom
           }
         ]
@@ -205,10 +298,30 @@ export default {
       amount: {
         required: x => !!x && x !== `0`,
         decimal,
-        between: between(SMALLEST, atoms(this.balance))
-      }
+        between: between(10000, atoms(this.balance))
+      },
+      requestedfund: {
+        required: x => !!x && x !== `0`,
+        decimal,
+        between: between(0, this.minting)
+      },
+      fundcycle: {
+        required: x => !!x && x !== `0`,
+        decimal,
+        last: between(1, 6)
+      },
     }
   },
+  mounted() {
+       axios
+      .get(config.stargate+'/minting/minting-speed')
+      .then((response) => {
+        var time = response.data * (60*60*24*7*4)
+        var index = time * 0.20
+        var temp = index * 0.50
+        this.minting= temp/100000
+      })
+    },
   methods: {
     viewDenom,
     open() {
@@ -225,6 +338,8 @@ export default {
       this.title = ``
       this.description = ``
       this.amount = 0
+      this.fundcycle = 0
+      this.requestedfund = 0
     },
     refocusOn() {
       this.$refs.description.$el.focus()
@@ -237,6 +352,6 @@ export default {
 </script>
 <style>
 .textarea-large {
-  min-height: 200px;
+  min-height: 100px;
 }
 </style>

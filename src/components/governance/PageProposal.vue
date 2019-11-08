@@ -75,6 +75,24 @@
             <dt>Description</dt>
             <TextBlock :content="description" />
           </dl>
+          <dl class="info_dl colored_dl">
+            <dt>Requested Fund</dt>
+            <dd>
+              {{ requestedFund 
+                  ? `${num.fullDecimals(requestedFund.amount)}
+              ${requestedFund.denom}`
+                  : `--`
+                  }}
+            </dd>
+          </dl>
+          <dl class="info_dl colored_dl">
+            <dt>Funding Cycle</dt>
+            <dd>
+              {{ fundingCycle
+                ? fundingCycle
+                : `--` }}
+            </dd>
+          </dl>
         </div>
       </div>
 
@@ -104,13 +122,13 @@
             {{ noPercentage }}
           </dd>
         </dl>
-        <dl class="info_dl colored_dl">
+        <!-- <dl class="info_dl colored_dl">
           <dt>No with Veto</dt>
           <dd>
             {{ num.shortDecimals(num.atoms(tally.no_with_veto)) }} /
             {{ noWithVetoPercentage }}
           </dd>
-        </dl>
+        </dl> -->
         <dl class="info_dl colored_dl">
           <dt>Abstain</dt>
           <dd>
@@ -187,6 +205,9 @@ export default {
     },
     description({ proposal } = this) {
       return proposal.proposal_content.value.description
+    },
+    fundingCycle({proposal} =  this){
+      return proposal.funding_cycle
     },
     submittedAgo({ proposal } = this) {
       return moment.utc(new Date(proposal.submit_time)).format(`MMM Do YYYY, HH:mm:ssa z`)
@@ -285,7 +306,12 @@ export default {
       return this.proposal.total_deposit
         ? num.createDisplayCoin(this.proposal.total_deposit[0])
         : null
-    }
+    },
+    requestedFund() {
+        return this.proposal.requested_fund
+          ? num.createDisplayCoin(this.proposal.requested_fund[0])
+          : null
+      }
   },
   async mounted(
     { proposals, proposalId, governanceParameters, $store } = this

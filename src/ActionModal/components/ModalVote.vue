@@ -29,7 +29,7 @@
         size="md"
         @click.native="vote = 'No'"
       />
-      <TmBtn
+      <!-- <TmBtn
         id="vote-veto"
         :class="[vote === `NoWithVeto` ? 'active' : '']"
         :disabled="lastVoteOption === `NoWithVeto`"
@@ -37,7 +37,7 @@
         value="No With Veto"
         size="md"
         @click.native="vote = 'NoWithVeto'"
-      />
+      /> -->
       <TmBtn
         id="vote-abstain"
         :class="[vote === `Abstain` ? 'active' : '']"

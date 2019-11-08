@@ -83,17 +83,29 @@ export default {
           tooltip: `No votes`,
           class: `no_votes`
         },
-        {
-          title: `No with Veto`,
-          value: `tally_result.no_with_veto`,
-          tooltip: `No with veto votes`,
-          class: `no_veto_votes`
-        },
+        // {
+        //   title: `No with Veto`,
+        //   value: `tally_result.no_with_veto`,
+        //   tooltip: `No with veto votes`,
+        //   class: `no_veto_votes`
+        // },
         {
           title: `Abstain`,
           value: `tally_result.abstain`,
           tooltip: `Abstain votes`,
           class: `abstain_votes`
+        },
+        {
+          title: `Requested Fund`,
+          value: `requested_fund`,
+          tooltip: `Requested Fund`,
+          class: `requested_fund`
+        },
+        {
+          title: `Funding Cycle`,
+          value: `funding_cycle`,
+          tooltip: `Funding Cycle`,
+          class: `funding_cycle`
         }
       ]
     }

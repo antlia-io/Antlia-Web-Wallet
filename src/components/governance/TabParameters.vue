@@ -83,7 +83,7 @@
           </dl>
         </div>
         <div class="row">
-          <dl class="info_dl">
+          <!-- <dl class="info_dl">
             <dt>
               Veto
               <i
@@ -102,7 +102,7 @@
                   : `--`
               }}
             </dd>
-          </dl>
+          </dl> -->
           <dl class="info_dl">
             <dt>
               Voting Period

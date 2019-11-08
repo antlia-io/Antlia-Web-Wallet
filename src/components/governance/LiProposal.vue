@@ -37,11 +37,17 @@
     <td class="li-proposal__value no">
       {{ roundedPercentagesTally.no | prettyDecimals }}%
     </td>
-    <td class="li-proposal__value no_with_veto">
+    <!-- <td class="li-proposal__value no_with_veto">
       {{ roundedPercentagesTally.no_with_veto | prettyDecimals }}%
-    </td>
+    </td> -->
     <td class="li-proposal__value abstain">
       {{ roundedPercentagesTally.abstain | prettyDecimals }}%
+    </td>
+    <td class="requestedFund">
+      {{ num.fullDecimals(num.atoms(proposal.requested_fund[0].amount)) }}
+    </td>
+    <td class="fundingCycle">
+      {{ proposal.funding_cycle }}
     </td>
   </tr>
 </template>
@@ -51,6 +57,7 @@ import BigNumber from "bignumber.js"
 import { mapGetters } from "vuex"
 import { roundObjectPercentages } from "../../utils"
 import { prettyDecimals } from "../../scripts/num"
+import num from "scripts/num"
 export default {
   name: `li-proposal`,
   filters: {
@@ -62,6 +69,9 @@ export default {
       required: true
     }
   },
+  data: () => ({
+    num,
+  }),
   computed: {
     ...mapGetters([`proposals`]),
     tally() {

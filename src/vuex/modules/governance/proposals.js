@@ -81,7 +81,7 @@ export default ({ node }) => {
         commit
       },
       {
-        txProps: { initialDeposits, title, description }
+        txProps: { initialDeposits, title, description,fundcycle,initialRequestedFunds }
       }
     ) {
       // optimistic updates
@@ -97,6 +97,11 @@ export default ({ node }) => {
             .toNumber()
         })
       })
+      // initialRequestedFunds.forEach(({ amount, denom }) => {
+      //     denom,
+      //     amount= BigNumber(amount)
+      //       .toNumber()
+      // })
 
       const latestId = Object.keys(state.proposals).reduce((latest, id) => {
         return latest > Number(id) ? latest : Number(id)
@@ -107,6 +112,8 @@ export default ({ node }) => {
         proposal_content: {
           value: { title, description }
         },
+        funding_cycle: fundcycle,
+        requested_fund: initialRequestedFunds,
         initial_deposit: initialDeposits
       })
 
