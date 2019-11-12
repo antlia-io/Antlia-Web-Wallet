@@ -1,8 +1,9 @@
 import Cosmos from "@rnssolution/color-api"
 import config from "src/config"
-import { getSigner } from "./signer"
+import { getSigner , getSignSigner} from "./signer"
 import transaction from "./transactionTypes"
 import { uatoms } from "scripts/num.js"
+import { signWithPrivateKeywallet,getStoredWallet,verifySignature } from "@rnssolution/color-keys"
 
 export default class ActionManager {
   constructor() {
@@ -59,6 +60,17 @@ export default class ActionManager {
     )
   }
 
+  setSignMessage(transactionProperties) {
+    if (!this.context) {
+      throw Error("This modal has no context.")
+    }
+    function temp(a){
+      return a
+    }
+    this.message = temp(transactionProperties)
+    
+  }
+
   async simulate(memo) {
     this.readyCheck()
     const gasEstimate = await this.message.simulate({
@@ -88,9 +100,49 @@ export default class ActionManager {
       },
       signer
     )
-
+     
     return { included, hash }
   }
+
+  async sendSign(txMetaData) {
+
+    const { Message,submitType, password } = txMetaData
+    const wallet = getStoredWallet(this.context.userAddress, password)
+    const message = [
+      { 
+        signMessage: { 
+          message : Message
+        } 
+      }
+    ]
+    var  hash  = signWithPrivateKeywallet(
+      message[0].signMessage,
+      Buffer.from(wallet.privateKey, 'hex')
+    )
+    hash = hash.toString('base64')
+    return hash 
+  }
+
+  async verify(txMetaData) {
+    const { Message, PublicAddress,PrivateKey,password } = txMetaData
+    const wallet = getStoredWallet(this.context.userAddress,password)
+
+    const message = [
+      { 
+        signMessage: { 
+          message : Message
+        } 
+      }
+    ]
+    var  verify  = verifySignature(
+      message[0].signMessage,
+      Buffer.from(PrivateKey, 'base64'),
+      Buffer.from(wallet.publicKey, 'hex')
+    )
+    
+    return verify 
+  }
+
 
   createWithdrawTransaction() {
     const addresses = getTop5RewardsValidators(

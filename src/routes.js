@@ -67,6 +67,11 @@ export default [
     meta: { requiresAuth: true }
   },
   {
+    path: `/sign`,
+    name: `sign`,
+    component: require(`./components/sign/PageSign`).default
+  },
+  {
     path: `/transactions`,
     name: `transactions`,
     component: require(`./components/wallet/PageTransactions`).default,

@@ -46,6 +46,18 @@
           Network
         </h2>
       </router-link>
+      <router-link
+        class="app-menu-item hide-xs"
+        :class="{active: (this.$route.fullPath === '/sign')}"
+        to="/sign"
+        exact="exact"
+        title="Sign/Verify"
+        @click.native="close"
+      >
+        <h2 class="app-menu-title">
+          Sign/Verify
+        </h2>
+      </router-link>
     </div>
   </menu>
 </template>

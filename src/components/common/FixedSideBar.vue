@@ -28,6 +28,10 @@
           <i class="material-icons">my_location</i>
           <span class="e-text">Network</span>
         </li>
+        <li class="sidebar-item hover" @click="sign()" v-on:click="active = 'sign'" :class="{active:(this.$route.fullPath === '/sign')}" title="Sign/Verify">
+          <i class="material-icons">check_circle</i>
+          <span class="e-text">Sign/Verify</span>
+        </li>
       </ul>
     </div>
   </ejs-sidebar>
@@ -80,6 +84,9 @@ export default {
     },
     network() {
       this.$router.push(`/`)
+    },
+    sign() {
+      this.$router.push(`/sign`)
     }
   }
 }

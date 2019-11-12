@@ -73,6 +73,14 @@ export default {
   font-weight: 500;
 }
 
+#signModal .tm-form-group__label  {
+  color: white
+}
+
+#verifyModal .tm-form-group__label  {
+  color: white
+}
+
 #delegation-modal .tm-form-group__label  {
   color: white
 }

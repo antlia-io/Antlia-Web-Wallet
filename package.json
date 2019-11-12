@@ -121,7 +121,7 @@
   },
   "dependencies": {
     "@rnssolution/color-api": "1.0.0",
-    "@rnssolution/color-keys": "0.1.2",
+    "@rnssolution/color-keys": "1.0.0",
     "@rnssolution/color-ledger": "0.1.2",
     "@sentry/browser": "5.0.3",
     "@syncfusion/ej2-vue-navigations": "17.2.41",
