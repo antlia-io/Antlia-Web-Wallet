@@ -44,10 +44,10 @@
       {{ roundedPercentagesTally.abstain | prettyDecimals }}%
     </td>
     <td class="requestedFund">
-      {{ num.fullDecimals(num.atoms(proposal.requested_fund[0].amount)) }}
+      {{ num.fullDecimals(num.atoms(proposal.proposal_content.value.requested_fund[0].amount)) }}
     </td>
     <td class="fundingCycle">
-      {{ proposal.funding_cycle }}
+      {{ proposal.proposal_content.value.funding_cycle }}
     </td>
   </tr>
 </template>

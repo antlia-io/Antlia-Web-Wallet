@@ -28,12 +28,24 @@
           <i class="material-icons">my_location</i>
           <span class="e-text">Network</span>
         </li>
-        <li class="sidebar-item hover" @click="sign()" v-on:click="active = 'sign'" :class="{active:(this.$route.fullPath === '/sign')}" title="Sign/Verify">
-          <i class="material-icons">check_circle</i>
-          <span class="e-text">Sign/Verify</span>
+        <!-- <li class="sidebar-item hover button" @click="showModal()" title="Sign">
+          <i class="material-icons">vpn_key</i>
+          <span class="e-text"><TmBtn
+          value="Sign"
+          color="primary"
+        /></span>
         </li>
+        <li class="sidebar-item hover button" @click="showVerifyModal()" title="Verify">
+          <i class="material-icons">check_circle</i>
+          <span class="e-text"><TmBtn
+          value="Verify"
+          color="primary"
+        /></span>
+        </li> -->
       </ul>
     </div>
+    <SignModal ref="signModal" />
+    <VerifyModal ref="verifyModal" />
   </ejs-sidebar>
 </template>
 
@@ -41,6 +53,9 @@
 import { mapGetters } from "vuex"
 import noScroll from "no-scroll"
 import Vue from "vue";
+import TmBtn from "common/TmBtn"
+import SignModal from "src/ActionModal/components/SignModal"
+import VerifyModal from "src/ActionModal/components/VerifyModal"
 import { SidebarPlugin } from '@syncfusion/ej2-vue-navigations';
 import { ButtonPlugin,RadioButtonPlugin} from '@syncfusion/ej2-buttons';
 import { enableRipple } from '@syncfusion/ej2-base';
@@ -48,6 +63,11 @@ Vue.use(SidebarPlugin, ButtonPlugin, RadioButtonPlugin);
 
 export default {
   name: `app-menu`,
+  components: {
+    TmBtn,
+    VerifyModal,
+    SignModal
+  },
   data: function() {
         return {
             enableDock : true,
@@ -87,6 +107,12 @@ export default {
     },
     sign() {
       this.$router.push(`/sign`)
+    },
+    showModal() {
+      this.$refs.signModal.open()
+    },
+    showVerifyModal() {
+      this.$refs.verifyModal.open()
     }
   }
 }
@@ -117,6 +143,14 @@ div#dockSidebar:focus {
 #wrapper .column {
     display: inline-block;
     padding: 10px;
+}
+
+.button{
+  background: #0a73b1;
+  margin: .5rem;
+  border-radius: 5px;
+  display: flex;
+  padding: 13px .5rem .5rem 1rem !important;
 }
 
 .active {

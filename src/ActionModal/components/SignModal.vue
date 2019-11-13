@@ -253,12 +253,6 @@ export default {
     TmDataMsg,
     Steps
   },
-  props: {
-    txHash: {
-      type: String,
-      default: null
-    },
-  },
   data: () => ({
     address: ``,
     amount: null,

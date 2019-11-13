@@ -4,6 +4,7 @@ import { getSigner , getSignSigner} from "./signer"
 import transaction from "./transactionTypes"
 import { uatoms } from "scripts/num.js"
 import { signWithPrivateKeywallet,getStoredWallet,verifySignature } from "@rnssolution/color-keys"
+import b32 from "scripts/b32"
 
 export default class ActionManager {
   constructor() {
@@ -134,6 +135,28 @@ export default class ActionManager {
         } 
       }
     ]
+    
+    // const pub = wallet.publicKey
+    // console.log(Buffer.from(pub, 'base64'))
+    // console.log(wallet.publicKey,"=================")
+
+    // console.log(Buffer.from(pub, 'hex'),"55555555555555555")
+    // console.log(pub.length,"111111111111111111111111111111")
+    
+    // const hexAddr = b32.decode('colors1uqgl880nd4avks2rftes0y9x8wftqy8q3ndzqt')
+    // console.log(hexAddr,"+++++++++++++++++++")
+
+    // console.log(hexAddr.length,"22222222222222222222222222")
+    // console.log(Buffer.from(hexAddr, 'utf-8'),"utf-8")
+    // console.log(Buffer.from(hexAddr, 'hex'),"hex")
+    // console.log(Buffer.from(hexAddr, 'base64'),"base64")
+
+
+    // console.log(Buffer.from(pub.substr(26,pub.length), 'hex'),"substr")
+    // const pubdecode = b32.encode('02d807e18ad473b6b7fecd14e45b0c5a336f9c2fc7f2c0c48a04d9d2e57b54b67d')
+    // console.log(pubdecode,"33333333333333333")
+    // console.log(pubdecode.length,"4444444444444444444")
+
     var  verify  = verifySignature(
       message[0].signMessage,
       Buffer.from(PrivateKey, 'base64'),

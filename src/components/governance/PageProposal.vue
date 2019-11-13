@@ -64,8 +64,8 @@
             <dt>Deposit Count</dt>
             <dd>
               {{
-                totalDeposit
-                  ? `${num.fullDecimals(totalDeposit.amount)}
+                num.fullDecimals(num.atoms(proposal.total_deposit[0].amount))
+                  ? `${num.fullDecimals(num.atoms(proposal.total_deposit[0].amount))}
               ${totalDeposit.denom}`
                   : `--`
               }}
@@ -78,8 +78,8 @@
           <dl class="info_dl colored_dl">
             <dt>Requested Fund</dt>
             <dd>
-              {{ requestedFund 
-                  ? `${num.fullDecimals(requestedFund.amount)}
+              {{ num.fullDecimals(num.atoms(proposal.proposal_content.value.requested_fund[0].amount)) 
+                  ? `${num.fullDecimals(num.atoms(proposal.proposal_content.value.requested_fund[0].amount))}
               ${requestedFund.denom}`
                   : `--`
                   }}
@@ -207,7 +207,7 @@ export default {
       return proposal.proposal_content.value.description
     },
     fundingCycle({proposal} =  this){
-      return proposal.funding_cycle
+      return proposal.proposal_content.value.funding_cycle
     },
     submittedAgo({ proposal } = this) {
       return moment.utc(new Date(proposal.submit_time)).format(`MMM Do YYYY, HH:mm:ssa z`)
@@ -308,8 +308,8 @@ export default {
         : null
     },
     requestedFund() {
-        return this.proposal.requested_fund
-          ? num.createDisplayCoin(this.proposal.requested_fund[0])
+        return this.proposal.proposal_content.value.requested_fund
+          ? num.createDisplayCoin(this.proposal.proposal_content.value.requested_fund[0])
           : null
       }
   },

@@ -46,19 +46,21 @@
           Network
         </h2>
       </router-link>
-      <router-link
-        class="app-menu-item hide-xs"
-        :class="{active: (this.$route.fullPath === '/sign')}"
-        to="/sign"
-        exact="exact"
-        title="Sign/Verify"
-        @click.native="close"
-      >
-        <h2 class="app-menu-title">
-          Sign/Verify
-        </h2>
-      </router-link>
+      <div class="buttons">
+      <TmBtn
+          value="Sign"
+          color="primary"
+          @click.native="showModal()"
+        />
+         <TmBtn
+          value="Verify"
+          color="primary"
+          @click.native="showVerifyModal()"
+        />
+      </div>
     </div>
+    <SignModal ref="signModal" />
+    <VerifyModal ref="verifyModal" />
   </menu>
 </template>
 
@@ -66,8 +68,17 @@
 import noScroll from "no-scroll"
 import { mapState, mapGetters } from "vuex"
 import { atoms, viewDenom, shortDecimals } from "scripts/num.js"
+import TmBtn from "common/TmBtn"
+import SignModal from "src/ActionModal/components/SignModal"
+import VerifyModal from "src/ActionModal/components/VerifyModal"
+
 export default {
   name: `app-menu`,
+  components: {
+    TmBtn,
+    VerifyModal,
+    SignModal
+  },
   filters: {
     atoms,
     viewDenom,
@@ -81,6 +92,12 @@ export default {
     close() {
       this.$emit(`close`)
       noScroll.off()
+    },
+    showModal() {
+      this.$refs.signModal.open()
+    },
+    showVerifyModal() {
+      this.$refs.verifyModal.open()
     }
   }
 }
@@ -106,6 +123,10 @@ export default {
   color: var(--text);
   border-radius: 0.25rem;
   transition: all 0.5s ease;
+}
+
+.buttons {
+  padding: 1rem
 }
 
 .app-menu-item:hover {
