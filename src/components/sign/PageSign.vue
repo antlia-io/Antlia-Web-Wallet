@@ -1,40 +1,28 @@
 <template>
-  <TmPage
-    :managed="true"
-    :loading="wallet.loading"
-    :loaded="wallet.loaded"
-    :error="wallet.error"
-    :data-empty="dataEmpty"
-    data-title="Wallet"
-    :sign-in-required="true"
-  >
-    <TmDataMsg
-      id="account_empty_msg"
-      slot="no-data"
-      icon="account_balance_wallet"
-    >
-      <div slot="title">
-        Account empty
+  <li class="li-coin">
+    <div class="li-coin__content">
+      <div class="li-coin__content-left">
+        <p class="coin-denom">Sign A Message:</p>
       </div>
-      <div slot="subtitle">
-        This account doesn't have anything in it&nbsp;yet.
-      </div>
-    </TmDataMsg>
-    <TmBtn
+      <TmBtn
         value="Sign"
         color="primary"
         @click.native="showModal()"
-      />
+      /> 
+    </div>
+    <div class="li-coin__content">
+      <div class="li-coin__content-left">
+        <p class="coin-denom">Verify A Signed Message:</p>
+      </div>
       <TmBtn
         value="Verify"
         color="primary"
         @click.native="showVerifyModal()"
       />
-    <PageTransactions />
+    </div>
     <SignModal ref="signModal" />
     <VerifyModal ref="verifyModal" />
-    
-  </TmPage>
+  </li>
 </template>
 
 <script>
@@ -43,7 +31,6 @@ import { mapGetters, mapActions } from "vuex"
 import orderBy from "lodash.orderby"
 import SignModal from "src/ActionModal/components/SignModal"
 import VerifyModal from "src/ActionModal/components/VerifyModal"
-import PageTransactions from "../wallet/PageTransactions"
 import TmPage from "common/TmPage"
 import TmBtn from "common/TmBtn"
 import TmDataMsg from "common/TmDataMsg"
@@ -54,11 +41,10 @@ export default {
     TmDataMsg,
     TmPage,
     VerifyModal,
-    PageTransactions,
     TmBtn,
     SignModal
   },
-  data: () => ({ num, showSignModal: false }),
+  data: () => ({ num }),
   computed: {
     ...mapGetters([`wallet`, `connected`, `session`, `allTransactions`]),
     dataEmpty() {
@@ -87,3 +73,59 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .li-coin {
+  display: flex;
+  align-items: center;
+  font-size: var(--m);
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  border: 1px solid var(--bc-dim);
+  background: white;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.li-coin__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black !important;
+  /* justify-content: space-between; */
+  width: 100%;
+  padding-left: 1rem;
+  font-size: var(--m);
+}
+
+.li-coin__content__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.coin-denom {
+  color: black;
+  font-weight: 500;
+  margin-right: 1rem;
+  margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 470px) {
+  .li-coin__content-left {
+    padding-bottom: 0.5rem;
+  }
+}
+@media screen and (max-width: 587px) {
+  .li-coin__content {
+    display: block
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .li-coin {
+    padding: .5rem
+  }
+  .li-coin__content {
+    padding-left: .5rem
+  }
+}
+</style>

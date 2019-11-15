@@ -26,11 +26,11 @@
             v-focus
             type="text"
             placeholder="Message"
-            @keyup.enter.native="refocusOnAmount"
+            @keyup.enter.native="enterPressed"
         />
         <TmFormMsg
             v-if="$v.message.$error && !$v.message.required"
-            name="Address"
+            name="Message"
             type="required"
         />
         </TmFormGroup>
@@ -46,39 +46,39 @@
             v-model.number="$v.key.$model"
             type="text"
             placeholder="Signed Message"
-            @keyup.enter.native="refocusOnAmount"
+            @keyup.enter.native="enterPressed"
           />
           <TmFormMsg
             v-if="$v.key.$error && !$v.key.required"
-            name="Address"
+            name="Signed Message"
             type="required"
           />
         </TmFormGroup>
 
 
          <TmFormGroup
-          :error="$v.address.$error && $v.address.$invalid"
+          :error="$v.publicKey.$error && $v.publicKey.$invalid"
           class="action-modal-form-group"
-          field-id="address"
-          field-label="Public Address"
+          field-id="publicKey"
+          field-label="Public Key"
         >
           <TmField
-            id="address"
-            v-model.number="$v.address.$model"
+            id="publicKey"
             type="text"
-            placeholder="Address"
-            @keyup.enter.native="refocusOnAmount"
+            v-model="$v.publicKey.$model"
+            placeholder="Public Key"
+            @keyup.enter.native="enterPressed"
           />
           <TmFormMsg
-            v-if="$v.address.$error && !$v.address.required"
-            name="Address"
+            v-if="$v.publicKey.$error && !$v.publicKey.required"
+            name="Public Key"
             type="required"
           />
-          <TmFormMsg
-            v-else-if="$v.address.$error && !$v.address.bech32Validate"
+          <!-- <TmFormMsg
+            v-else-if="$v.publicKey.$error && !$v.publicKey.bech32Validate"
             name="Address"
             type="bech32"
-          />
+          /> -->
         </TmFormGroup>
        
       </div>
@@ -86,18 +86,20 @@
         v-else-if="step === successStep"
         class="action-modal-form success-step"
       >
-        <TmDataMsg icon="check">
+        <TmDataMsg v-if="txHash === true" icon="check">
           <div slot="title">
             Result:
-            <!-- {{ notifyMessage.title }} -->
           </div>
           <div slot="subtitle" class="hash">
-            {{txHash}}
-            <!-- {{ notifyMessage.body }} <br /><br />
-            Block -->
-            <!-- <router-link :to="`/blocks/${includedHeight}`"
-              >#{{ includedHeight }}</router-link
-            >. -->
+            Verified
+          </div>
+        </TmDataMsg>
+        <TmDataMsg v-else-if="txHash === false" icon="close">
+          <div slot="title">
+            Result:
+          </div>
+          <div slot="subtitle" class="hash">
+            Not Verified
           </div>
         </TmDataMsg>
       </div>
@@ -110,6 +112,7 @@
               <TmBtn
                 value="Verify"
                 @click.native="validateChangeStep"
+                @keyup.enter.native="enterPressed"
               />
             </div>
           </TmFormGroup>
@@ -139,7 +142,6 @@ import TmBtn from "src/components/common/TmBtn"
 import TmDataMsg from "common/TmDataMsg"
 import Steps from "../components/Steps"
 import ActionModal from "./ActionModal"
-// import transaction from "../utils/transactionTypes"
 import { track } from "scripts/google-analytics.js"
 import config from "src/config"
 
@@ -161,10 +163,9 @@ export default {
     Steps
   },
   data: () => ({
-    address: ``,
+    publicKey: ``,
     message: ``,
     key: ``,
-    password: `a29kz56789`,
     amount: null,
     denom: ``,
     max_memo_characters: 256,
@@ -200,18 +201,16 @@ export default {
     },
     transactionData() {
       return {
-        toAddress: this.address,
+        PublicKey: this.publicKey,
         Message: this.message,
-        Key: this.key,
-        password: this.password
-
+        Key: this.key
       }
     },
     notifyMessage() {
       return {
         title: `Successful Send`,
         body: `Successfully sent ${+this.amount} ${viewDenom(this.denom)} to ${
-          this.address
+          this.publicKey
         }`
       }
     }
@@ -241,7 +240,6 @@ export default {
       this.step = signStep
       this.show = false
       this.sending = false
-      // this.includedHeight = undefined
 
       // reset form
       this.$v.$reset()
@@ -266,9 +264,7 @@ export default {
       // An ActionModal is only the prototype of a parent modal
       switch (this.step) {
         case signStep:
-          // submit transaction
           this.sending = true
-          // await this.simulate()
           await this.submit()
           this.sending = false
           return
@@ -276,26 +272,21 @@ export default {
           return
       }
     },
-    // async simulate() {
-    //   // const { type, memo, ...properties } = this.transactionData
-    //   this.actionManager.setSignMessage(this.address)
-    // },
      async submit() {
       this.submissionError = null
 
       const { ...transactionProperties } = this.transactionData
-
       const feeProperties = {
         Message: this.message,
-        PublicAddress: this.address,
-        PrivateKey: this.key,
-        password: this.password
+        PublicKey: this.publicKey,
+        PrivateKey: this.key
       }
 
       try {
         const  hash  = await this.actionManager.verify(
           feeProperties
         )
+        console.log(hash)
         this.txHash = hash
         this.onTxIncluded(transactionProperties, feeProperties)
       } catch ({ message }) {
@@ -304,12 +295,6 @@ export default {
         // this.txHash = null
       }
     },
-    
-    // async waitForInclusion(includedFn) {
-    //   this.step = inclusionStep
-    //   const { height } = await includedFn()
-    //   this.includedHeight = height
-    // },
     onTxIncluded(transactionProperties, feeProperties) {
       this.step = successStep
       this.trackEvent(
@@ -318,10 +303,6 @@ export default {
         this.title,
         this.selectedSignMethod
       )
-      // this.$store.dispatch(`post${txType}`, {
-      //   txProps: transactionProperties,
-      //   txMeta: feeProperties
-      // })
     },
     onSendingFailed(message) {
       this.step = signStep
@@ -339,16 +320,16 @@ export default {
     clear() {
       this.$v.$reset()
 
-      this.address = undefined
+      this.publicKey = undefined
       this.sending = false
     },
-    refocusOnAmount() {
-      this.$refs.amount.$el.focus()
+    enterPressed() {
+      this.validateChangeStep()
     }
   },
   validations() {
     return {
-      address: {
+      publicKey: {
         required
       },
       message: {
@@ -375,10 +356,6 @@ export default {
     cursor: pointer;
     font-weight: 500;
     font-size: 14px;
-    width: 40%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .hash:hover {

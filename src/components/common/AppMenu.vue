@@ -46,7 +46,19 @@
           Network
         </h2>
       </router-link>
-      <div class="buttons">
+       <!-- <router-link
+        class="app-menu-item hide-xs"
+        :class="{active: (this.$route.fullPath === '/sign')}"
+        to="/sign"
+        exact="exact"
+        title="Sign/Verify"
+        @click.native="close"
+      >
+        <h2 class="app-menu-title">
+          Sign/Verify
+        </h2>
+      </router-link> -->
+      <!-- <div class="buttons">
       <TmBtn
           value="Sign"
           color="primary"
@@ -57,7 +69,7 @@
           color="primary"
           @click.native="showVerifyModal()"
         />
-      </div>
+      </div> -->
     </div>
     <SignModal ref="signModal" />
     <VerifyModal ref="verifyModal" />

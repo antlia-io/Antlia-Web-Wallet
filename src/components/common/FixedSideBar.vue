@@ -28,6 +28,10 @@
           <i class="material-icons">my_location</i>
           <span class="e-text">Network</span>
         </li>
+        <!-- <li class="sidebar-item hover" @click="sign()" v-on:click="active = 'sign'" :class="{active:(this.$route.fullPath === '/sign')}" title="Sign/Verify">
+          <i class="material-icons">offline_pin</i>
+          <span class="e-text">Sign/Verify</span>
+        </li> -->
         <!-- <li class="sidebar-item hover button" @click="showModal()" title="Sign">
           <i class="material-icons">vpn_key</i>
           <span class="e-text"><TmBtn

@@ -35,11 +35,11 @@
             v-focus
             type="text"
             placeholder="Message"
-            @keyup.enter.native="refocusOnAmount"
+            @keyup.enter.native="enterPressed"
         />
         <TmFormMsg
             v-if="$v.message.$error && !$v.message.required"
-            name="Address"
+            name="Message"
             type="required"
         />
         </TmFormGroup>
@@ -127,22 +127,31 @@
       >
         <TmDataMsg icon="check" id="successStep">
           <div slot="title">
-            Here is your Hash:
-            <!-- {{ notifyMessage.title }} -->
+            Signed Message:
           </div>
-          <div slot="subtitle" class="displayflex">
-            <div class="hash" id="address" v-tooltip.top="txHash"
+          <div slot="subtitle">
+            <div class="displayflex">
+            <div class="hash" v-tooltip.top="txHash"
             v-clipboard:copy="txHash"
             v-clipboard:success="() => onCopy()">
             {{txHash}}
-            <!-- {{ notifyMessage.body }} <br /><br />
-            Block -->
-            <!-- <router-link :to="`/blocks/${includedHeight}`"
-              >#{{ includedHeight }}</router-link
-            >. -->
             </div>
             <div :class="{ active: copySuccess }" class="copied">
             <i class="material-icons">check</i><span>Copied</span>
+          </div>
+            </div>
+          <h2 class="pubKey">
+            Public Key:
+          </h2>
+          <div class="displayflex">
+            <div class="hash" v-tooltip.top="publicKey"
+            v-clipboard:copy="publicKey"
+            v-clipboard:success="() => onCopyPublicKey()">
+            {{publicKey}}
+            </div>
+            <div :class="{ active: copySuccessPublicKey }" class="copied">
+            <i class="material-icons">check</i><span>Copied</span>
+          </div>
           </div>
           </div>
         </TmDataMsg>
@@ -174,6 +183,7 @@
                 v-else
                 value="Sign"
                 @click.native="validateChangeStep"
+                @keyup.enter.native="enterPressed"
               />
             </div>
           </TmFormGroup>
@@ -203,7 +213,6 @@ import TmBtn from "src/components/common/TmBtn"
 import TmDataMsg from "common/TmDataMsg"
 import Steps from "../components/Steps"
 import ActionModal from "./ActionModal"
-// import transaction from "../utils/transactionTypes"
 import { track } from "scripts/google-analytics.js"
 import config from "src/config"
 
@@ -268,7 +277,9 @@ export default {
     show: false,
     actionManager: new ActionManager(),
     txHash: ``,
+    publicKey: ``,
     copySuccess: false,
+    copySuccessPublicKey: false,
     signStep,
     inclusionStep,
     successStep,
@@ -368,13 +379,18 @@ export default {
         this.copySuccess = false
       }, 2500)
     },
+    onCopyPublicKey(){
+      this.copySuccessPublicKey = true
+      setTimeout(() => {
+        this.copySuccessPublicKey = false
+      }, 2500)
+    },
     close() {
       this.submissionError = null
       this.password = null
       this.step = signStep
       this.show = false
       this.sending = false
-      // this.includedHeight = undefined
 
       // reset form
       this.$v.$reset()
@@ -402,9 +418,7 @@ export default {
           if (!this.isValidInput(`password`)) {
             return
           }
-          // submit transaction
           this.sending = true
-          // await this.simulate()
           await this.submit()
           this.sending = false
           return
@@ -412,10 +426,6 @@ export default {
           return
       }
     },
-    // async simulate() {
-    //   // const { type, memo, ...properties } = this.transactionData
-    //   this.actionManager.setSignMessage(this.address)
-    // },
      async submit() {
       this.submissionError = null
       
@@ -442,10 +452,11 @@ export default {
       }
 
       try {
-        const  hash  = await this.actionManager.sendSign(
+        const { hash , wallet } = await this.actionManager.sendSign(
           feeProperties
         )
         this.txHash = hash
+        this.publicKey = wallet.publicKey
         this.onTxIncluded(transactionProperties, feeProperties)
       } catch ({ message }) {
         this.onSendingFailed(message)
@@ -491,8 +502,8 @@ export default {
       this.address = undefined
       this.sending = false
     },
-    refocusOnAmount() {
-      this.$refs.amount.$el.focus()
+    enterPressed() {
+      this.validateChangeStep()
     }
   },
   validations() {
@@ -555,12 +566,19 @@ a:hover {
 }
 
 .copied {
-  display: flex;
+  display: flex !important;
   color: black;
   font-size: var(--sm);
   opacity: 0;
   padding-left: 10px;
   transition: opacity 500ms ease;
+}
+
+.pubKey {
+  font-weight: 400;
+  margin-top: 1rem;
+  color: #000;
+  font-size: var(--h2);
 }
 
 .displayflex {

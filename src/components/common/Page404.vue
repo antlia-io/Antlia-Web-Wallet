@@ -1,5 +1,5 @@
 <template>
-  <TmPage data-title="404" class="four-oh-four" hide-header>
+  <TmPage id="page404" data-title="404" class="four-oh-four" hide-header>
     <TmPart class="four-oh-four-top">
       <h2>Oops! We can't find the page you're looking for.</h2>
       <h3>Error code: 404</h3>
@@ -64,6 +64,10 @@ export default {
   font-size: var(--h3);
   font-weight: 500;
   margin-top: 0;
+}
+
+#page404 #dockSidebar {
+  display: none
 }
 
 .para {
