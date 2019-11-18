@@ -131,16 +131,16 @@
           </div>
           <div slot="subtitle">
             <div class="displayflex">
-            <div class="hash" v-tooltip.top="txHash"
-            v-clipboard:copy="txHash"
-            v-clipboard:success="() => onCopy()">
-            {{txHash}}
+              <div class="hash" v-tooltip.top="txHash"
+              v-clipboard:copy="txHash"
+              v-clipboard:success="() => onCopy()">
+              {{txHash}}
+              </div>
+              <div :class="{ active: copySuccess }" class="copied">
+                <i class="material-icons">check</i><span>Copied</span>
+              </div>
             </div>
-            <div :class="{ active: copySuccess }" class="copied">
-            <i class="material-icons">check</i><span>Copied</span>
-          </div>
-            </div>
-          <h2 class="pubKey">
+          <!-- <h2 class="pubKey">
             Public Key:
           </h2>
           <div class="displayflex">
@@ -152,7 +152,7 @@
             <div :class="{ active: copySuccessPublicKey }" class="copied">
             <i class="material-icons">check</i><span>Copied</span>
           </div>
-          </div>
+          </div> -->
           </div>
         </TmDataMsg>
       </div>

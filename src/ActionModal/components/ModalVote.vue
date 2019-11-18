@@ -47,10 +47,17 @@
         size="md"
         @click.native="vote = 'Abstain'"
       />
+      
       <TmFormMsg
         v-if="$v.vote.$error && !$v.vote.required"
         name="Vote"
         type="required"
+      />
+      <TmFormMsg
+        v-if="delegated < 50000"
+        :msg="`You can't vote, Delegated CLR must be greater than or equal to 50,000 CLR`"
+        type="custom"
+        class="margintop"
       />
     </TmFormGroup>
   </ActionModal>
@@ -58,6 +65,7 @@
 
 <script>
 import { mapGetters } from "vuex"
+import num from "../../scripts/num"
 import { required } from "vuelidate/lib/validators"
 import ActionModal from "./ActionModal"
 import TmBtn from "src/components/common/TmBtn"
@@ -69,7 +77,7 @@ import transaction from "../utils/transactionTypes"
 const isValid = option =>
   option === `Yes` ||
   option === `No` ||
-  option === `NoWithVeto` ||
+  // option === `NoWithVeto` ||
   option === `Abstain`
 
 export default {
@@ -95,10 +103,11 @@ export default {
     }
   },
   data: () => ({
-    vote: null
+    vote: null,
+    num
   }),
   computed: {
-    ...mapGetters([`bondDenom`]),
+    ...mapGetters([`bondDenom`,`oldBondedAtoms`]),
     transactionData() {
       return {
         type: transaction.VOTE,
@@ -113,7 +122,10 @@ export default {
           this.proposalId
         }`
       }
-    }
+    },
+    delegated() {
+      return this.num.atoms(this.oldBondedAtoms)
+    },
   },
   validations() {
     return {
@@ -137,6 +149,9 @@ export default {
 
       this.vote = null
     }
+  },
+  mounted() {
+    this.oldBondedAtoms
   }
 }
 </script>
@@ -154,6 +169,10 @@ export default {
   display: flex;
   align-items: center;
   padding: 0.25rem 0;
+}
+
+.margintop {
+  margin-top: 1rem !important;
 }
 
 .radio-container label {

@@ -30,16 +30,24 @@
         <h2 class="color">{{ delegated }}</h2>
       </div>
     </div>
+    <TmBtn
+        v-if="totalAtomsDisplay === 0"
+        value="Get Faucet"
+        class="displayflex"
+        color="primary"
+        @click.native="getFaucet()"
+      />
   </div>
 </template>
 <script>
 import num from "scripts/num"
 import { mapGetters } from "vuex"
+import TmBtn from "./TmBtn"
 import "bootstrap/dist/css/bootstrap.css"
 
 export default {
   name: `tm-balance`,
-  components: {},
+  components: {TmBtn},
   data() {
     return {
       num,
@@ -105,6 +113,9 @@ export default {
     }
   },
   methods: {
+    getFaucet(){
+      
+    },
     update(height) {
       this.lastUpdate = height
       this.$store.dispatch(`getRewardsFromMyValidators`)
@@ -143,6 +154,12 @@ h3 {
 
 .progress {
   height: 1.5rem !important;
+}
+
+.displayflex {
+  display: flex !important;
+  padding: 1rem 0rem 0rem 1rem;
+  outline: 0;
 }
 
 h2 {

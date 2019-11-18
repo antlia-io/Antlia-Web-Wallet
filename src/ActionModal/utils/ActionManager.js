@@ -125,6 +125,7 @@ export default class ActionManager {
   }
 
   async verify(txMetaData) {
+    
     const { Message, PublicKey,PrivateKey } = txMetaData
 
     const message = [
@@ -138,9 +139,9 @@ export default class ActionManager {
     var  verify  = verifySignature(
       message[0].signMessage,
       Buffer.from(PrivateKey, 'base64'),
-      Buffer.from(PublicKey, 'hex')
+      Buffer.from(PublicKey, 'base64')
     )
-    
+    // console.log(verify)
     return verify 
   }
 

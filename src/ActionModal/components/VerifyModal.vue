@@ -43,7 +43,7 @@
         >
           <TmField
             id="key"
-            v-model.number="$v.key.$model"
+            v-model="$v.key.$model"
             type="text"
             placeholder="Signed Message"
             @keyup.enter.native="enterPressed"
@@ -65,7 +65,7 @@
           <TmField
             id="publicKey"
             type="text"
-            v-model="$v.publicKey.$model"
+            v-model.number="$v.publicKey.$model"
             placeholder="Public Key"
             @keyup.enter.native="enterPressed"
           />
@@ -74,11 +74,11 @@
             name="Public Key"
             type="required"
           />
-          <!-- <TmFormMsg
+          <TmFormMsg
             v-else-if="$v.publicKey.$error && !$v.publicKey.bech32Validate"
             name="Address"
             type="bech32"
-          /> -->
+          />
         </TmFormGroup>
        
       </div>
@@ -248,6 +248,14 @@ export default {
     trackEvent(...args) {
       track(...args)
     },
+    bech32Validate(param) {
+      try {
+        b32.decode(param)
+        return true
+      } catch (error) {
+        return false
+      }
+    },
     goToSession() {
       this.close()
 
@@ -330,7 +338,8 @@ export default {
   validations() {
     return {
       publicKey: {
-        required
+        required,
+        bech32Validate: this.bech32Validate
       },
       message: {
         required
