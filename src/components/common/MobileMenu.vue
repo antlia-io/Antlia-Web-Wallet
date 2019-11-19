@@ -42,28 +42,70 @@
         Network
       </h2>
     </router-link>
-    <!-- <router-link
-      :class="{active: (this.$route.fullPath === '/sign')}"
-      to="/sign"
-      exact="exact"
-      title="Sign/Verify"
+    <router-link
+      v-if="totalAtomsDisplay === 0"
+      @click.native="getFaucet"
+      title="Get Faucet"
+      to=""
     >
-      <i class="material-icons">offline_pin</i>
+      <i class="material-icons">local_atm</i>
       <h2 class="app-menu-title">
-        Sign/Verify
+        Get Faucet
       </h2>
-    </router-link> -->
+    </router-link>
   </menu>
 </template>
 
 <script>
+import { mapGetters } from "vuex"
+import Vue from "vue";
+import num from "scripts/num"
+import config from '../../config';
+import axios from "axios";
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/index.css';
+Vue.use(VueToast);
+
 export default {
   name: `mobile-menu`,
   data: function() {
         return {
-            active: this.$route.fullPath
+            active: this.$route.fullPath,
+            num
         }
     },
+  computed: {
+    ...mapGetters([`session`,`totalAtoms`,`wallet`]),
+    totalAtomsDisplay() {
+      return this.num.atoms(this.totalAtoms)
+    },
+  },
+  mounted() {
+    this.totalAtoms
+  },
+  methods: {
+    getFaucet() {
+      var address = JSON.stringify({
+        address: this.wallet.address
+      });
+      axios
+      .post(config.faucet,address)
+      .then(() => {
+        this.$toast.open({
+          message: `Tokens Successfully Sent to ${this.wallet.address}`,
+          type: 'success',
+          position: 'top-right'
+        })
+      })
+      .catch(err => {
+          this.$toast.open({
+          message: `Error occured while sending tokens to ${this.wallet.address}`,
+          type: 'error',
+          position: 'top-right'
+        })
+        });
+    },
+  },
 }
 </script>
 
@@ -86,6 +128,7 @@ menu a {
   text-align: center;
   padding: 0.4rem;
   width: 25%;
+  color: white !important
 }
 
 menu a i {

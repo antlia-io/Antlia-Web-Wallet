@@ -46,6 +46,16 @@
           Network
         </h2>
       </router-link>
+      <li
+        v-if="totalAtomsDisplay === 0"
+        class="app-menu-item hide-xs"
+        title="Get Faucet"
+        @click="close() & getFaucet()"
+      >
+        <h2 class="app-menu-title">
+          Get Faucet
+        </h2>
+      </li>
        <!-- <router-link
         class="app-menu-item hide-xs"
         :class="{active: (this.$route.fullPath === '/sign')}"
@@ -79,10 +89,16 @@
 <script>
 import noScroll from "no-scroll"
 import { mapState, mapGetters } from "vuex"
+import Vue from "vue";
 import { atoms, viewDenom, shortDecimals } from "scripts/num.js"
 import TmBtn from "common/TmBtn"
+import config from '../../config';
+import axios from "axios";
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/index.css';
 import SignModal from "src/ActionModal/components/SignModal"
 import VerifyModal from "src/ActionModal/components/VerifyModal"
+Vue.use(VueToast);
 
 export default {
   name: `app-menu`,
@@ -98,7 +114,13 @@ export default {
   },
   computed: {
     ...mapState([`session`]),
-    ...mapGetters([`liquidAtoms`, `totalAtoms`, `bondDenom`])
+    ...mapGetters([`liquidAtoms`,`wallet`, `totalAtoms`, `bondDenom`]),
+    totalAtomsDisplay() {
+      return atoms(this.totalAtoms)
+    },
+  },
+  mounted() {
+    this.totalAtoms
   },
   methods: {
     close() {
@@ -110,7 +132,28 @@ export default {
     },
     showVerifyModal() {
       this.$refs.verifyModal.open()
-    }
+    },
+    getFaucet() {
+      var address = JSON.stringify({
+        address: this.wallet.address
+      });
+      axios
+      .post(config.faucet,address)
+      .then(() => {
+        this.$toast.open({
+          message: `Tokens Successfully Sent to ${this.wallet.address}`,
+          type: 'success',
+          position: 'top-right'
+        })
+      })
+      .catch(err => {
+          this.$toast.open({
+          message: `Error occured while sending tokens to ${this.wallet.address}`,
+          type: 'error',
+          position: 'top-right'
+        })
+        });
+    },
   }
 }
 </script>

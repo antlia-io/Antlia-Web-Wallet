@@ -140,6 +140,9 @@ export default {
       this.$refs.actionModal.open()
     },
     validateForm() {
+      if (this.delegated < 50000) {
+        return 0
+      }
       this.$v.$touch()
 
       return !this.$v.$invalid
@@ -173,6 +176,12 @@ export default {
 
 .margintop {
   margin-top: 1rem !important;
+}
+
+#modal-vote .action-modal-footer .tm-btn:disabled{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
 
 .radio-container label {

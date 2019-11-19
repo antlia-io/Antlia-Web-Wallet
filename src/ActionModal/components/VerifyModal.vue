@@ -60,18 +60,18 @@
           :error="$v.publicKey.$error && $v.publicKey.$invalid"
           class="action-modal-form-group"
           field-id="publicKey"
-          field-label="Public Key"
+          field-label="Public Address"
         >
           <TmField
             id="publicKey"
             type="text"
             v-model.number="$v.publicKey.$model"
-            placeholder="Public Key"
+            placeholder="Public Address"
             @keyup.enter.native="enterPressed"
           />
           <TmFormMsg
             v-if="$v.publicKey.$error && !$v.publicKey.required"
-            name="Public Key"
+            name="Public Address"
             type="required"
           />
           <TmFormMsg

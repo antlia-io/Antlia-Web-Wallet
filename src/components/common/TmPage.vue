@@ -16,6 +16,7 @@
           <h3>Your Public Color Address</h3>
           <Bech32 :address="session.address || ''" long-form />
         </div>
+        <PageSign />
       </slot>
       <slot slot="header-buttons" name="header-buttons" />
     </TmPageHeader>
@@ -55,6 +56,7 @@ import TmBalance from "common/TmBalance"
 import FixedSideBar from "common/FixedSideBar"
 import ToolBar from "common/ToolBar"
 import Bech32 from "common/Bech32"
+import PageSign from "../sign/PageSign"
 
 export default {
   name: `tm-page`,
@@ -63,6 +65,7 @@ export default {
     ToolBar,
     TmPageHeader,
     TmDataEmpty,
+    PageSign,
     TmDataLoading,
     TmDataError,
     TmDataConnecting,

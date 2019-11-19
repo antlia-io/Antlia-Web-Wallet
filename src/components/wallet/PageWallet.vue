@@ -20,7 +20,6 @@
         This account doesn't have anything in it&nbsp;yet.
       </div>
     </TmDataMsg>
-    <PageSign />
     <template slot="managed-body">
       <LiCoin
         v-for="coin in filteredBalances"
@@ -44,14 +43,12 @@ import PageTransactions from "./PageTransactions"
 import SendModal from "src/ActionModal/components/SendModal"
 import TmPage from "common/TmPage"
 import TmDataMsg from "common/TmDataMsg"
-import PageSign from "../sign/PageSign"
 
 export default {
   name: `page-wallet`,
   components: {
     TmDataMsg,
     LiCoin,
-    PageSign,
     PageTransactions,
     TmPage,
     SendModal

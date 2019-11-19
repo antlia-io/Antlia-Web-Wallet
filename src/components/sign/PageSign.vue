@@ -1,11 +1,14 @@
 <template>
   <li class="li-coin">
+    <div class="space">
+    </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">
         <p class="coin-denom">Sign A Message:</p>
       </div>
       <TmBtn
         value="Sign"
+        class="paddingright"
         color="primary"
         @click.native="showModal()"
       /> 
@@ -16,6 +19,7 @@
       </div>
       <TmBtn
         value="Verify"
+        class="paddingright"
         color="primary"
         @click.native="showVerifyModal()"
       />
@@ -91,10 +95,18 @@ export default {
   flex-direction: row;
   align-items: center;
   color: black !important;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   width: 100%;
   padding-left: 1rem;
   font-size: var(--m);
+}
+
+.space {
+  padding-left: 3rem
+}
+
+.paddingright {
+  padding-right: 2rem
 }
 
 .li-coin__content__left {
@@ -117,6 +129,9 @@ export default {
 @media screen and (max-width: 587px) {
   .li-coin__content {
     display: block
+  }
+  .space {
+    padding: 0 !important
   }
 }
 

@@ -3,6 +3,12 @@ const stargate =
   process.env.STARGATE ||
   (dev ? `https://proxy.testnet.color-platform.rnssol.com:9071` : `https://proxy.testnet.color-platform.org:9061`)
 
+const faucet =
+  process.env.FAUCET ||
+  (dev
+    ? `https://proxy.testnet.color-platform.rnssol.com:8000/claim/wallet`
+    : `https://proxy.testnet.color-platform.rnssol.com:8000/claim/wallet`)
+
 const rpc =
   process.env.RPC ||
   (dev
@@ -17,6 +23,7 @@ export default {
   network: process.env.NETWORK || `local-testnet`,
   stargate,
   rpc,
+  faucet,
   chain: chain,
   google_analytics_uid: process.env.GOOGLE_ANALYTICS_UID || "",
   sentry_dsn: process.env.SENTRY_DSN || "",

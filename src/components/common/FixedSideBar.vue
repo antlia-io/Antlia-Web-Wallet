@@ -28,6 +28,11 @@
           <i class="material-icons">my_location</i>
           <span class="e-text">Network</span>
         </li>
+        <li v-if="totalAtomsDisplay === 0" class="sidebar-item hover" @click="getFaucet()" v-on:click="active = 'getFaucet'" title="Get Faucet">
+          <i class="material-icons">local_atm</i>
+          <span class="e-text"><Button class="faucet">Get Faucet</Button>
+          </span>
+        </li>
         <!-- <li class="sidebar-item hover" @click="sign()" v-on:click="active = 'sign'" :class="{active:(this.$route.fullPath === '/sign')}" title="Sign/Verify">
           <i class="material-icons">offline_pin</i>
           <span class="e-text">Sign/Verify</span>
@@ -57,13 +62,18 @@
 import { mapGetters } from "vuex"
 import noScroll from "no-scroll"
 import Vue from "vue";
+import num from "scripts/num"
 import TmBtn from "common/TmBtn"
 import SignModal from "src/ActionModal/components/SignModal"
 import VerifyModal from "src/ActionModal/components/VerifyModal"
 import { SidebarPlugin } from '@syncfusion/ej2-vue-navigations';
 import { ButtonPlugin,RadioButtonPlugin} from '@syncfusion/ej2-buttons';
+import config from '../../config';
+import axios from "axios";
 import { enableRipple } from '@syncfusion/ej2-base';
-Vue.use(SidebarPlugin, ButtonPlugin, RadioButtonPlugin);
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/index.css';
+Vue.use(SidebarPlugin, ButtonPlugin, VueToast, RadioButtonPlugin);
 
 export default {
   name: `app-menu`,
@@ -79,18 +89,23 @@ export default {
             width : '220px',
             position :'Left',
             buttonActive: false,
+            num,
             active: this.$route.fullPath
         }
     },
     computed: {
-    ...mapGetters([`session`]),
+    ...mapGetters([`session`,`totalAtoms`,`wallet`]),
     buttonState() {
       return this.buttonActive ? 'button--active' : 'button--inactive';
+    },
+    totalAtomsDisplay() {
+      return this.num.atoms(this.totalAtoms)
     },
   },
   mounted() {
     this.$refs.dockSidebar.hide();
     this.$refs.dockSidebar.classList.remove('e-active');
+    this.totalAtoms
   },
   methods: {
       toggleClick: function() {
@@ -108,6 +123,27 @@ export default {
     },
     network() {
       this.$router.push(`/`)
+    },
+    getFaucet() {
+      var address = JSON.stringify({
+        address: this.wallet.address
+      });
+      axios
+      .post(config.faucet,address)
+      .then(() => {
+        this.$toast.open({
+          message: `Tokens Successfully Sent to ${this.wallet.address}`,
+          type: 'success',
+          position: 'top-right'
+        })
+      })
+      .catch(err => {
+          this.$toast.open({
+          message: `Error occured while sending tokens to ${this.wallet.address}`,
+          type: 'error',
+          position: 'top-right'
+        })
+        });
     },
     sign() {
       this.$router.push(`/sign`)
@@ -138,6 +174,14 @@ export default {
 
 .dock {
   margin-top: 2rem
+}
+
+.faucet {
+    background: none;
+    color: white;
+    border: 0;
+    padding: 0;
+    outline: 0
 }
 
 div#dockSidebar:focus {

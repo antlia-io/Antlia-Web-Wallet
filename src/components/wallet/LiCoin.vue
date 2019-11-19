@@ -17,6 +17,7 @@
         v-if="!lastHeader || lastHeader.chain_id === 'cosmoshub-1'"
         v-tooltip.left="tooltip"
         value="Send"
+        class="paddingright"
         color="primary"
       />
       <!-- here we use the unconverted denom, as the SendModal
@@ -25,6 +26,7 @@
         v-else
         value="Send"
         color="primary"
+        class="paddingright"
         @click.native="$emit(`show-modal`, coin.denom)"
       />
       
@@ -164,6 +166,10 @@ export default {
   width: 100%;
   padding-left: 1rem;
   font-size: var(--m);
+}
+
+.paddingright {
+  padding-right: 2rem
 }
 
 .li-coin__content__left {
