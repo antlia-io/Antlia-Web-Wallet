@@ -178,12 +178,6 @@ export default {
   margin-top: 1rem !important;
 }
 
-#modal-vote .action-modal-footer .tm-btn:disabled{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-
 .radio-container label {
   padding-left: 0.5rem;
 }

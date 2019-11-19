@@ -139,7 +139,7 @@ export default class ActionManager {
     var  verify  = verifySignature(
       message[0].signMessage,
       Buffer.from(PrivateKey, 'base64'),
-      Buffer.from(PublicKey, 'base64')
+      Buffer.from(JSON.stringify(PublicKey), 'base64')
     )
     // console.log(verify)
     return verify 
