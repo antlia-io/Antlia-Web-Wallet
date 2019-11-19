@@ -43,7 +43,7 @@
       </h2>
     </router-link>
     <router-link
-      v-if="totalAtomsDisplay === 0"
+      v-if="totalAtomsDisplay === 0 && session.signedIn"
       @click.native="getFaucet"
       title="Get Faucet"
       to=""

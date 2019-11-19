@@ -47,7 +47,7 @@
         </h2>
       </router-link>
       <li
-        v-if="totalAtomsDisplay === 0"
+        v-if="totalAtomsDisplay === 0 && session.signedIn"
         class="app-menu-item hide-xs"
         title="Get Faucet"
         @click="close() & getFaucet()"
@@ -114,7 +114,7 @@ export default {
   },
   computed: {
     ...mapState([`session`]),
-    ...mapGetters([`liquidAtoms`,`wallet`, `totalAtoms`, `bondDenom`]),
+    ...mapGetters([`session`,`liquidAtoms`,`wallet`, `totalAtoms`, `bondDenom`]),
     totalAtomsDisplay() {
       return atoms(this.totalAtoms)
     },

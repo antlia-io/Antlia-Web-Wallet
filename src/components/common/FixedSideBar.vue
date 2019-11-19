@@ -28,7 +28,7 @@
           <i class="material-icons">my_location</i>
           <span class="e-text">Network</span>
         </li>
-        <li v-if="totalAtomsDisplay === 0" class="sidebar-item hover" @click="getFaucet()" v-on:click="active = 'getFaucet'" title="Get Faucet">
+        <li v-if="totalAtomsDisplay === 0 && session.signedIn" class="sidebar-item hover" @click="getFaucet()" v-on:click="active = 'getFaucet'" title="Get Faucet">
           <i class="material-icons">local_atm</i>
           <span class="e-text"><Button class="faucet">Get Faucet</Button>
           </span>
