@@ -92,14 +92,14 @@ export default {
       .post(config.faucet,address)
       .then(() => {
         this.$toast.open({
-          message: `Tokens Successfully Sent to ${this.wallet.address}`,
+          message: 'Tokens Successfully Received',
           type: 'success',
           position: 'top-right'
         })
       })
       .catch(err => {
           this.$toast.open({
-          message: `Error occured while sending tokens to ${this.wallet.address}`,
+          message: 'Error occured while receiving tokens',
           type: 'error',
           position: 'top-right'
         })

@@ -106,7 +106,8 @@ export default {
 }
 
 .paddingright {
-  padding-right: 2rem
+  padding-right: 2rem;
+  outline: 0
 }
 
 .li-coin__content__left {
