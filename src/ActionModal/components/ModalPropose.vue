@@ -138,6 +138,7 @@
         :value="Number(amount)"
         type="number"
         @keyup.enter.native="enterPressed"
+        readonly
       />
       <TmFormMsg
         v-if="balance === 0"
@@ -231,7 +232,7 @@ export default {
     fundcycle: 0,
     type: `Text`,
     minting: 0,
-    amount: 0
+    amount: 10000
   }),
   watch: {
     fundcycle (val) {
@@ -319,7 +320,7 @@ export default {
         var time = response.data * (60*60*24*7*4)
         var index = time * 0.20
         var temp = index * 0.50
-        this.minting= temp/100000
+        this.minting= temp/1000000
       })
     },
   methods: {
@@ -337,7 +338,7 @@ export default {
 
       this.title = ``
       this.description = ``
-      this.amount = 0
+      this.amount = 10000
       this.fundcycle = 0
       this.requestedfund = 0
     },

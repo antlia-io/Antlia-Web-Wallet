@@ -32,6 +32,46 @@
       
     </div>
     <div class="li-coin__content">
+      <div class="li-coin__content-left">
+          <TmFormGroup
+            :error="$v.receiveamount.$error && $v.receiveamount.$invalid"
+            class="action-modal-form-group"
+            field-id="receiveamount"
+          >
+            <TmField
+              id="receiveamount"
+              ref="receiveamount"
+              v-model="receiveamount"
+              class="tm-field"
+              placeholder="Amount"
+              type="number"
+              @keyup.enter.native="enterPressed"
+              readonly
+            />
+            <TmFormMsg
+              v-if="$v.receiveamount.$error && (!$v.receiveamount.required || receiveamount === 0)"
+              name="Amount"
+              type="required"
+            />
+            <TmFormMsg
+              v-else-if="$v.receiveamount.$error && !$v.receiveamount.decimal"
+              name="Amount"
+              type="numeric"
+            />
+          </TmFormGroup>
+      </div>
+      <TmBtn
+            id="receive-btn"
+            :value="'Receive'"
+            :to="''"
+            disabled
+            type="anchor"
+            color="primary"
+            class="paddingright1"
+            @click.native="receive()"
+          />
+    </div>
+    <!-- <div class="li-coin__content">
       <div v-if="rewards" class="li-coin__content-left">
           <p class="coin-denom">Available Rewards</p>
           <p class="coin-amount">{{ rewards }}</p>
@@ -45,11 +85,14 @@
             color="primary"
             @click.native="readyToWithdraw && onWithdrawal()"
           />
-    </div>
+    </div> -->
     <ModalWithdrawRewards
       ref="ModalWithdrawRewards"
       :rewards="totalRewards"
       :denom="bondDenom"
+    />
+    <Receive
+      ref="Receive"
     />
   </li>
 </template>
@@ -57,13 +100,23 @@
 <script>
 import num from "scripts/num"
 import TmBtn from "common/TmBtn"
+import { required, decimal } from "vuelidate/lib/validators"
 import ModalWithdrawRewards from "src/ActionModal/components/ModalWithdrawRewards"
+import Receive from "src/ActionModal/components/Receive"
 import { mapGetters } from "vuex"
+import TmFormGroup from "src/components/common/TmFormGroup"
+import TmField from "src/components/common/TmField"
+import TmFormMsg from "src/components/common/TmFormMsg"
+
 export default {
   name: `li-coin`,
   components: {
     TmBtn,
-    ModalWithdrawRewards
+    ModalWithdrawRewards,
+    Receive,
+    TmFormGroup,
+    TmField,
+    TmFormMsg
   },
   props: {
     coin: {
@@ -77,7 +130,8 @@ export default {
   data() {
     return {
       num,
-      lastUpdate: 0
+      lastUpdate: 0,
+      receiveamount: ``,
     }
   },
   computed: {
@@ -123,6 +177,14 @@ export default {
       )
     }
   },
+  validations() {
+    return {
+      receiveamount: {
+        required: x => !!x && x !== `0`,
+        decimal
+      }
+    }
+  },
   methods: {
     update(height) {
       this.lastUpdate = height
@@ -131,6 +193,9 @@ export default {
     },
     onWithdrawal() {
       this.$refs.ModalWithdrawRewards.open()
+    },
+    receive() {
+      this.$refs.Receive.open()
     }
   }
 }
@@ -173,9 +238,18 @@ export default {
   outline: 0
 }
 
+.paddingright1 {
+  padding-right: 1.5rem;
+  outline: 0
+}
+
 .li-coin__content__left {
   display: flex;
   flex-direction: column;
+}
+
+.tm-field {
+  color: black !important
 }
 
 .top-section {

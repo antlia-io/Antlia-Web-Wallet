@@ -342,10 +342,6 @@ export default {
     disabled: {
       type: Boolean,
       default: false
-    },
-    show: {
-      type: Boolean,
-      default: false
     }
   },
   data: () => ({
@@ -356,7 +352,7 @@ export default {
     gasEstimate: null,
     gasPrice: config.default_gas_price.toFixed(9),
     submissionError: null,
-    show: false,
+    show: true,
     actionManager: new ActionManager(),
     txHash: null,
     defaultStep,
@@ -445,7 +441,7 @@ export default {
     open() {
       this.trackEvent(`event`, `modal`, this.title)
       this.gasPrice = config.default_gas_price.toFixed(9)
-      this.show = true
+      // this.show = false
     },
     close() {
       this.submissionError = null
@@ -634,7 +630,7 @@ export default {
   flex-direction: column;
   right: 1rem;
   padding: 1.5rem 1.5rem 3.5rem 1.5rem;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   max-width: 630px;

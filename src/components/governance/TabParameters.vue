@@ -3,7 +3,7 @@
     <div class="parameters__details parameters__section">
       <div class="row">
         <div class="row">
-          <dl class="info_dl">
+          <dl class="info_dl col-lg-4">
             <dt>
               Minimum Deposit
               <i
@@ -21,27 +21,7 @@
               }}
             </dd>
           </dl>
-          <dl class="info_dl">
-            <dt>
-              Maximum Deposit Period
-              <i
-                v-tooltip.top="depositTooltips.max_deposit_period"
-                class="material-icons info-button"
-              >
-                info_outline
-              </i>
-            </dt>
-            <dd>
-              {{
-                governanceParameters.parameters.deposit.max_deposit_period
-                  ? depositPeriodInDays + ` days`
-                  : `--`
-              }}
-            </dd>
-          </dl>
-        </div>
-        <div class="row">
-          <dl class="info_dl">
+          <dl class="info_dl col-lg-4">
             <dt>
               Threshold
               <i
@@ -61,7 +41,7 @@
               }}
             </dd>
           </dl>
-          <dl class="info_dl">
+          <dl class="info_dl col-lg-4">
             <dt>
               Quorum
               <i
@@ -81,8 +61,29 @@
               }}
             </dd>
           </dl>
+          <!-- <dl class="info_dl">
+            <dt>
+              Maximum Deposit Period
+              <i
+                v-tooltip.top="depositTooltips.max_deposit_period"
+                class="material-icons info-button"
+              >
+                info_outline
+              </i>
+            </dt>
+            <dd>
+              {{
+                governanceParameters.parameters.deposit.max_deposit_period
+                  ? depositPeriodInDays + ` days`
+                  : `--`
+              }}
+            </dd>
+          </dl> -->
         </div>
-        <div class="row">
+        <!-- <div class="row">
+          
+        </div> -->
+        <!-- <div class="row"> -->
           <!-- <dl class="info_dl">
             <dt>
               Veto
@@ -103,7 +104,7 @@
               }}
             </dd>
           </dl> -->
-          <dl class="info_dl">
+          <!-- <dl class="info_dl">
             <dt>
               Voting Period
               <i
@@ -120,8 +121,8 @@
                   : `--`
               }}
             </dd>
-          </dl>
-        </div>
+          </dl> -->
+        <!-- </div> -->
       </div>
     </div>
   </div>

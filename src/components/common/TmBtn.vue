@@ -107,6 +107,7 @@ a {
   font-weight: 400;
   height: 2em;
   line-height: 1;
+  min-width: 115px;
   color: var(--bright, #333) !important;
   padding: 0.5rem 2rem;
   margin: 0;
@@ -117,6 +118,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#withdraw-btn .tm-btn__container {
+  padding: 0 !important;
+  display: unset !important
+}
+
+#withdraw-btn .material-icons {
+  width: 40%
 }
 
 .tm-btn .tm-btn--secondary {

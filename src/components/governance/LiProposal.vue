@@ -75,20 +75,20 @@ export default {
   computed: {
     ...mapGetters([`proposals`]),
     tally() {
-      const { yes, no, abstain, no_with_veto } =
+      const { yes, no, abstain } =
         this.proposals.tallies[this.proposal.proposal_id] || {}
 
       const totalVotes = BigNumber(yes)
         .plus(no)
-        .plus(no_with_veto)
         .plus(abstain)
         .toNumber()
+        // .plus(no_with_veto)
       const totalMult = totalVotes / 100
       return {
         yes: yes / totalMult || BigNumber(0),
         no: no / totalMult || BigNumber(0),
         abstain: abstain / totalMult || BigNumber(0),
-        no_with_veto: no_with_veto / totalMult || BigNumber(0)
+        // no_with_veto: no_with_veto / totalMult || BigNumber(0)
       }
     },
     roundedPercentagesTally() {

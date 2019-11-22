@@ -294,7 +294,6 @@ export default {
         const  hash  = await this.actionManager.verify(
           feeProperties
         )
-        console.log(hash)
         this.txHash = hash
         this.onTxIncluded(transactionProperties, feeProperties)
       } catch ({ message }) {

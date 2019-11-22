@@ -1,6 +1,87 @@
 <template>
-  <transition v-if="show" name="slide-fade">
-    <div v-focus-last class="action-modal" tabindex="0" @keyup.esc="close">
+  <TmPage
+    :managed="true"
+    :loading="wallet.loading"
+    :loaded="wallet.loaded"
+    :error="wallet.error"
+    :data-empty="dataEmpty"
+    data-title="Wallet"
+    :sign-in-required="true"
+  >
+    <TmDataMsg
+      id="account_empty_msg"
+      slot="no-data"
+      icon="account_balance_wallet"
+    >
+      <div slot="title">
+        Account empty
+      </div>
+      <div slot="subtitle">
+        This account doesn't have anything in it&nbsp;yet.
+      </div>
+    </TmDataMsg>
+    <template slot="managed-body">
+      <LiCoin
+        v-for="coin in filteredBalances"
+        :key="coin.denom"
+        :coin="coin"
+        class="tm-li-balance"
+        @show-modal="showModal"
+      />
+      <PageTransactions />
+    </template>
+    <SendModalQRCodeAmount ref="sendModalQRCodeAmount" />
+  </TmPage>
+</template>
+
+<script>
+import num from "scripts/num"
+import { mapGetters, mapActions } from "vuex"
+import orderBy from "lodash.orderby"
+import LiCoin from "../wallet/LiCoin"
+import PageTransactions from "../wallet/PageTransactions"
+import SendModalQRCodeAmount from "src/ActionModal/components/SendModalQRCodeAmount"
+import TmPage from "common/TmPage"
+import TmDataMsg from "common/TmDataMsg"
+
+export default {
+  name: `page-wallet`,
+  components: {
+    TmDataMsg,
+    LiCoin,
+    PageTransactions,
+    TmPage,
+    SendModalQRCodeAmount
+  },
+  data: () => ({ num, showSendModalQRCodeAmount: true }),
+  computed: {
+    ...mapGetters([`wallet`, `connected`, `session`, `allTransactions`]),
+    dataEmpty() {
+      return this.allTransactions.length===0?this.wallet.balances.length === 0:false
+    },
+    filteredBalances() {
+      return orderBy(
+        this.wallet.balances,
+        [`amount`, balance => num.viewDenom(balance.denom).toLowerCase()],
+        [`desc`, `asc`]
+      )
+    }
+  },
+  async mounted() {
+    this.updateDelegates()
+    await this.queryWalletBalances()
+  },
+  methods: {
+    ...mapActions([`updateDelegates`, `queryWalletBalances`]),
+    showModal(denomination) {
+      this.$refs.sendModalQRCodeAmount.open(denomination)
+    }
+  }
+}
+</script>
+
+
+  <!-- <template> <div v-focus-last class="action-modal" tabindex="0" @keyup.esc="close">
       
       <div
         id="closeBtn"
@@ -11,7 +92,7 @@
       </div>
       <div class="action-modal-header">
         <span class="action-modal-title">
-          {{ requiresSignIn ? `Sign in required` : title }}
+          {{ requiresSignIn ? `Sign in required` : 'Send' }}
         </span>
         <Steps
           v-if="[defaultStep, feeStep, signStep].includes(step)"
@@ -25,8 +106,119 @@
         </p>
       </div>
       <div v-else-if="step === defaultStep" class="action-modal-form">
-        <slot />
-      </div>
+    <TmFormGroup
+      :error="$v.denom.$dirty && $v.denom.$invalid"
+      class="action-modal-form-group"
+      field-id="send-denomination"
+      field-label="Denomination"
+    >
+      <TmField
+        id="send-denomination"
+        :value="bondDenom | viewDenom"
+        type="text"
+        readonly
+      />
+      <TmFormMsg
+        v-if="$v.denom.$error && !$v.denom.required"
+        name="Denomination"
+        type="required"
+        color="white"
+      />
+    </TmFormGroup>
+
+    <TmFormGroup
+      :error="$v.address.$error && $v.address.$invalid"
+      class="action-modal-form-group"
+      field-id="send-address"
+      field-label="Send To"
+    >
+      <TmField
+        id="send-address"
+        :value="getAddress"
+        type="text"
+      />
+      <TmFormMsg
+        v-if="$v.address.$error && !$v.address.required"
+        name="Address"
+        type="required"
+      />
+      <TmFormMsg
+        v-else-if="$v.address.$error && !$v.address.bech32Validate"
+        name="Address"
+        type="bech32"
+      />
+    </TmFormGroup>
+    <TmFormGroup
+      :error="$v.amount.$error && $v.amount.$invalid"
+      class="action-modal-form-group"
+      field-id="amount"
+      field-label="Amount"
+    >
+      <TmField
+        id="amount"
+        ref="amount"
+        v-model="amount"
+        class="tm-field"
+        placeholder="Amount"
+        type="number"
+        @keyup.enter.native="enterPressed"
+      />
+      <TmFormMsg
+        v-if="balance === 0"
+        :msg="`doesn't have any CLR`"
+        name="Wallet"
+        type="custom"
+      />
+      <TmFormMsg
+        v-else-if="$v.amount.$error && (!$v.amount.required || amount === 0)"
+        name="Amount"
+        type="required"
+      />
+      <TmFormMsg
+        v-else-if="$v.amount.$error && !$v.amount.decimal"
+        name="Amount"
+        type="numeric"
+      />
+      <TmFormMsg
+        v-else-if="$v.amount.$error && !$v.amount.between"
+        :max="$v.amount.$params.between.max"
+        :min="$v.amount.$params.between.min"
+        name="Amount"
+        type="between"
+      />
+    </TmFormGroup>
+    <TmBtn
+      v-if="editMemo === false"
+      id="edit-memo-btn"
+      value="Edit Memo"
+      :to="''"
+      type="link"
+      size="sm"
+      @click.native="editMemo = true"
+    />
+    <TmFormGroup
+      v-if="editMemo"
+      id="memo"
+      :error="$v.memo.$error && $v.memo.$invalid"
+      class="action-modal-group"
+      field-id="memo"
+      field-label="Memo"
+    >
+      <TmField
+        id="memo"
+        v-model="memo"
+        type="text"
+        placeholder="Add a description..."
+        @keyup.enter.native="enterPressed"
+      />
+      <TmFormMsg
+        v-if="$v.memo.$error && !$v.memo.maxLength"
+        name="Memo"
+        type="maxLength"
+        :max="max_memo_characters"
+      />
+    </TmFormGroup>
+    </div>
       <div v-else-if="step === feeStep" class="action-modal-form">
         <a @click="gotostepone">
           <i class="material-icons session-back">arrow_back</i>
@@ -167,9 +359,9 @@
             Sent and confirming
           </div>
           <div slot="subtitle">
-            The transaction
+            The transaction -->
             <!--with the hash {{ txHash }}-->
-            was successfully signed and sent to the network. Waiting for it to be
+            <!-- was successfully signed and sent to the network. Waiting for it to be
             confirmed.
           </div>
         </TmDataMsg>
@@ -228,9 +420,9 @@
                 v-else
                 value="Send"
                 @click.native="validateChangeStep"
-              />
+              /> -->
               <!-- :disabled="!session.browserWithLedgerSupport" -->
-            </div>
+            <!-- </div>
           </TmFormGroup>
         </slot>
         <p
@@ -240,27 +432,30 @@
           {{ submissionError }}
         </p>
       </div>
-    </div>
-  </transition>
+  </div>
 </template>
 
 <script>
-import HardwareState from "src/components/common/TmHardwareState"
-import TmBtn from "src/components/common/TmBtn"
-import TmField from "src/components/common/TmField"
-import TmFormGroup from "src/components/common/TmFormGroup"
-import TmFormMsg from "src/components/common/TmFormMsg"
-import TmDataMsg from "common/TmDataMsg"
-import TableInvoice from "./TableInvoice"
-import Steps from "./Steps"
+import b32 from "scripts/b32"
+import { required, between, decimal, maxLength ,requiredIf} from "vuelidate/lib/validators"
+import { uatoms, atoms, viewDenom, SMALLEST } from "src/scripts/num.js"
 import { mapGetters } from "vuex"
-import { atoms, viewDenom } from "src/scripts/num.js"
-import { between, requiredIf } from "vuelidate/lib/validators"
+import TmFormGroup from "src/components/common/TmFormGroup"
+import TmField from "src/components/common/TmField"
+import TmFormMsg from "src/components/common/TmFormMsg"
+import TmBtn from "src/components/common/TmBtn"
+import transaction from "../../ActionModal/utils/transactionTypes"
+
+import HardwareState from "src/components/common/TmHardwareState"
+import TmDataMsg from "common/TmDataMsg"
+import TableInvoice from "../../ActionModal/components/TableInvoice"
+import Steps from "../../ActionModal/components/Steps"
 import { track } from "scripts/google-analytics.js"
 import config from "src/config"
 
-import ActionManager from "../utils/ActionManager.js"
+import ActionManager from "../../ActionModal/utils/ActionManager.js"
 
+const defaultMemo = "(Sent via Color Wallet)"
 const defaultStep = `details`
 const feeStep = `fees`
 const signStep = `sign`
@@ -296,13 +491,13 @@ const sessionType = {
 }
 
 export default {
-  name: `action-modal`,
+  name: `send-modal`,
   components: {
-    HardwareState,
-    TmBtn,
     TmField,
     TmFormGroup,
     TmFormMsg,
+    TmBtn,
+    HardwareState,
     TmDataMsg,
     TableInvoice,
     Steps
@@ -311,10 +506,10 @@ export default {
     viewDenom
   },
   props: {
-    title: {
-      type: String,
-      required: true
-    },
+    // title: {
+    //   type: String,
+    //   required: true
+    // },
     validate: {
       type: Function,
       default: undefined
@@ -323,32 +518,34 @@ export default {
       type: String,
       default: `Transaction failed`
     },
-    amount: {
-      type: [String, Number],
-      default: `0`
-    },
-    transactionData: {
-      type: Object,
-      default: () => {}
-    },
-    notifyMessage: {
-      type: Object,
-      default: () => ({
-        title: `Successful transaction`,
-        body: `You have successfully completed a transaction.`
-      })
-    },
+    // amount: {
+    //   type: [String, Number],
+    //   default: `0`
+    // },
+    // transactionData: {
+    //   type: Object,
+    //   default: () => {}
+    // },
+    // notifyMessage: {
+    //   type: Object,
+    //   default: () => ({
+    //     title: `Successful transaction`,
+    //     body: `You have successfully completed a transaction.`
+    //   })
+    // },
     // disable proceeding from the first page
     disabled: {
-      type: Boolean,
-      default: false
-    },
-    show: {
       type: Boolean,
       default: false
     }
   },
   data: () => ({
+    address: ``,
+    amount: null,
+    denom: ``,
+    memo: defaultMemo,
+    max_memo_characters: 256,
+    editMemo: false,
     step: defaultStep,
     selectedSignMethod: null,
     password: null,
@@ -367,15 +564,15 @@ export default {
     SIGN_METHODS
   }),
   computed: {
-    ...mapGetters([
-      `connected`,
+    ...mapGetters([`wallet`,
+    `connected`,
       `session`,
       `bondDenom`,
       `liquidAtoms`,
       `modalContext`,
       `extension`
-    ]),
-    requiresSignIn() {
+      ]),
+      requiresSignIn() {
       return !this.session.signedIn
     },
     balanceInAtoms() {
@@ -419,9 +616,39 @@ export default {
         default:
           return "Sending..."
       }
+    },
+    balance() {
+      const denom = this.wallet.balances.find(b => b.denom === this.denom)
+      return (denom && denom.amount) || 0
+    },
+    getAddress(){
+        // this.$route.fullPath
+        var link = 'https://localhost:9080/#/send/colors1l37vu6ds87rx2gs5yxjx70v7uy5yewpwuyxsud'.split('/');
+        return link[5];
+    },
+    transactionData() {
+      return {
+        type: transaction.SEND,
+        toAddress: this.address,
+        amounts: [
+          {
+            amount: uatoms(+this.amount),
+            denom: this.denom
+          }
+        ],
+        memo: this.memo
+      }
+    },
+    notifyMessage() {
+      return {
+        title: `Successful Send`,
+        body: `Successfully sent ${+this.amount} ${viewDenom(this.denom)} to ${
+          this.address
+        }`
+      }
     }
   },
-  watch: {
+   watch: {
     // if there is only one sign method, preselect it
     signMethods: {
       immediate: true,
@@ -441,13 +668,23 @@ export default {
       this.$refs.next.$el.focus()
     }
   },
+  mounted() {
+    if (this.denom) {
+      this.denom = this.denom
+    }
+  },
   methods: {
+    viewDenom,
+    // open(denom) {
+    //   this.denom = denom
+    //   this.$refs.actionModal.open()
+    // },
     open() {
       this.trackEvent(`event`, `modal`, this.title)
       this.gasPrice = config.default_gas_price.toFixed(9)
       this.show = true
     },
-    close() {
+     close() {
       this.submissionError = null
       this.password = null
       this.step = defaultStep
@@ -472,7 +709,7 @@ export default {
 
       return !this.$v[property].$invalid
     },
-    async validateChangeStep() {
+     async validateChangeStep() {
       if (this.disabled) return
 
       // An ActionModal is only the prototype of a parent modal
@@ -600,10 +837,51 @@ export default {
     gotosteptwo() {
       this.step = feeStep
       this.submissionError = null
+    },
+    validateForm() {
+      this.$v.$touch()
+
+      return !this.$v.$invalid
+    },
+    clear() {
+      this.$v.$reset()
+
+      this.address = undefined
+      this.amount = undefined
+      this.editMemo = false
+      this.memo = defaultMemo
+      this.sending = false
+    },
+    bech32Validate(param) {
+      try {
+        b32.decode(param)
+        return true
+      } catch (error) {
+        return false
+      }
+    },
+    enterPressed() {
+      this.$refs.actionModal.validateChangeStep()
+    },
+    refocusOnAmount() {
+      this.$refs.amount.$el.focus()
     }
   },
   validations() {
     return {
+      address: {
+        required,
+        bech32Validate: this.bech32Validate
+      },
+      amount: {
+        required: x => !!x && x !== `0`,
+        decimal,
+        between: between(SMALLEST, atoms(this.balance))
+      },
+      denom: { required },
+      memo: {
+        maxLength: maxLength(this.max_memo_characters)
+      },
       password: {
         required: requiredIf(
           () =>
@@ -626,15 +904,22 @@ export default {
   }
 }
 </script>
+<style scoped>
+#edit-memo-btn {
+  display: inline-block;
+  height: 58px;
+  padding: 12px 0;
+  box-sizing: content-box;
+  font-size: var(--sm);
+}
 
-<style>
 .action-modal {
   background: #3a3046;
   display: flex;
   flex-direction: column;
   right: 1rem;
   padding: 1.5rem 1.5rem 3.5rem 1.5rem;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   max-width: 630px;
@@ -761,4 +1046,4 @@ export default {
     top: 0;
   }
 }
-</style>
+</style> -->

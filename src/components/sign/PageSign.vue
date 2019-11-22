@@ -4,7 +4,7 @@
     </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">
-        <p class="coin-denom">Sign A Message:</p>
+        <p class="coin-denom height">Sign A Message:</p>
       </div>
       <TmBtn
         value="Sign"
@@ -127,6 +127,13 @@ export default {
     padding-bottom: 0.5rem;
   }
 }
+
+@media screen and (max-width: 505px) {
+  .height {
+    height: 47px;
+  }
+}
+
 @media screen and (max-width: 587px) {
   .li-coin__content {
     display: block
@@ -141,7 +148,7 @@ export default {
     padding: .5rem
   }
   .li-coin__content {
-    padding-left: .5rem
+    padding-left: 0
   }
 }
 </style>

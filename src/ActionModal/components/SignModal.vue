@@ -31,11 +31,18 @@
         >
         <TmField
             id="message"
-            v-model.number="$v.message.$model"
+            ref="message"
+            v-model="$v.message.$model"
             v-focus
             type="text"
             placeholder="Message"
             @keyup.enter.native="enterPressed"
+        />
+        <TmFormMsg
+            v-if="$v.message.$error && !$v.message.maxLength"
+            :max="$v.message.$params.maxLength.max"
+            name="Message"
+            type="maxLength"
         />
         <TmFormMsg
             v-if="$v.message.$error && !$v.message.required"
@@ -202,7 +209,7 @@
 
 <script>
 import b32 from "scripts/b32"
-import { required, between, decimal, maxLength,requiredIf } from "vuelidate/lib/validators"
+import { required, between, decimal, maxLength,requiredIf,minLength } from "vuelidate/lib/validators"
 import { uatoms, atoms, viewDenom, SMALLEST } from "src/scripts/num.js"
 import { mapGetters } from "vuex"
 import TmFormGroup from "src/components/common/TmFormGroup"
@@ -215,6 +222,8 @@ import Steps from "../components/Steps"
 import ActionModal from "./ActionModal"
 import { track } from "scripts/google-analytics.js"
 import config from "src/config"
+import isEmpty from "lodash.isempty"
+import trim from "lodash.trim"
 
 import ActionManager from "../utils/ActionManager.js"
 
@@ -250,6 +259,8 @@ const sessionType = {
   EXTENSION: SIGN_METHODS.EXTENSION
 }
 
+const notBlank = text => !isEmpty(trim(text))
+
 export default {
   name: `send-modal`,
   components: {
@@ -262,7 +273,14 @@ export default {
     TmDataMsg,
     Steps
   },
+  props: {
+    validate: {
+      type: Function,
+      default: undefined
+    },
+  },
   data: () => ({
+    messageMaxLength: 64,
     address: ``,
     amount: null,
     message: ``,
@@ -342,7 +360,24 @@ export default {
       }
     }
   },
-   watch: {
+  validations() {
+    return {
+      message: {
+        required,
+        minLength: minLength(1),
+        maxLength: maxLength(this.messageMaxLength),
+        notBlank
+      },
+      password: {
+        required: requiredIf(
+          () =>
+            this.selectedSignMethod === SIGN_METHODS.LOCAL &&
+            this.step === signStep
+        )
+      },
+    }
+  },
+  watch: {
     // if there is only one sign method, preselect it
     signMethods: {
       immediate: true,
@@ -415,6 +450,9 @@ export default {
       // An ActionModal is only the prototype of a parent modal
       switch (this.step) {
         case signStep:
+          if (!this.isValidChildForm) {
+            return
+          }
           if (!this.isValidInput(`password`)) {
             return
           }
@@ -500,24 +538,11 @@ export default {
       this.$v.$reset()
 
       this.address = undefined
+      this.message = ``
       this.sending = false
     },
     enterPressed() {
       this.validateChangeStep()
-    }
-  },
-  validations() {
-    return {
-      message: {
-        required
-      },
-      password: {
-        required: requiredIf(
-          () =>
-            this.selectedSignMethod === SIGN_METHODS.LOCAL &&
-            this.step === signStep
-        )
-      },
     }
   }
 }

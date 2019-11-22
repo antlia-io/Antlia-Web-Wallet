@@ -41,6 +41,12 @@ export default {
   computed: {
     ...mapGetters([`notifications`, `session`])
   },
+  mounted(){
+    if (this.$route.fullPath === '/send/colors1l37vu6ds87rx2gs5yxjx70v7uy5yewpwuyxsud')
+      this.$router.push('/send') 
+    if (this.$route.fullPath === '/send/colors1l37vu6ds87rx2gs5yxjx70v7uy5yewpwuyxsud/1')
+      this.$router.push('/sendAmount') 
+  },
   store
 }
 </script>

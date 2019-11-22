@@ -66,11 +66,16 @@ export default [
     component: require(`./components/wallet/PageWallet`).default,
     meta: { requiresAuth: true }
   },
-  // {
-  //   path: `/sign`,
-  //   name: `sign`,
-  //   component: require(`./components/sign/PageSign`).default
-  // },
+  {
+    path: `/send`,
+    name: `send`,
+    component: require(`./components/send/PageSend`).default
+  },
+  {
+    path: `/sendAmount`,
+    name: `sendAmount`,
+    component: require(`./components/send/PageSendAmount`).default
+  },
   {
     path: `/transactions`,
     name: `transactions`,

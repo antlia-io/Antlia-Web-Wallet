@@ -14,33 +14,53 @@
         animated
       ></b-progress-bar>
     </b-progress>
-    <div>
-      <div class="col-md-4">
+    <div class="row textalign">
+      <div class="col-md-3">
         <h3>Total {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="total-atoms__value color">{{ totalAtomsDisplay }}</h2>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <p class="green"></p>
         <h3>Liquid {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="color">{{ unbondedAtoms }}</h2>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <p class="blue"></p>
         <h3>Delegated {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="color">{{ delegated }}</h2>
       </div>
+      <div v-if="rewards" class="col-md-3 display">
+        <h3 class="margintop">Available Rewards:</h3>
+        <h2 class="color topleft">{{ rewards }}</h2>
+        <TmBtn
+            id="withdraw-btn"
+            icon="vertical_align_bottom"
+            :disabled="!readyToWithdraw"
+            :to="''"
+            type="anchor"
+            color="primary"
+            class="withdrawbtn"
+            @click.native="readyToWithdraw && onWithdrawal()"
+          />
+      </div>
     </div>
+    <ModalWithdrawRewards
+      ref="ModalWithdrawRewards"
+      :rewards="totalRewards"
+      :denom="bondDenom"
+    />
   </div>
 </template>
 <script>
 import num from "scripts/num"
 import { mapGetters } from "vuex"
+import ModalWithdrawRewards from "src/ActionModal/components/ModalWithdrawRewards"
 import TmBtn from "./TmBtn"
 import "bootstrap/dist/css/bootstrap.css"
 
 export default {
   name: `tm-balance`,
-  components: {TmBtn},
+  components: {TmBtn,ModalWithdrawRewards},
   data() {
     return {
       num,
@@ -82,6 +102,18 @@ export default {
     delegated(){
       return this.loaded ? (this.num.atoms(this.oldBondedAtoms)) : `--`
     },
+    readyToWithdraw() {
+      return this.totalRewards > 0
+    },
+    rewards() {
+      if (!this.distribution.loaded) {
+        return `--`
+      }
+      const rewards = this.totalRewards
+      return this.num.fullDecimals(
+        this.num.atoms(rewards && rewards > 10 ? rewards : 0)
+      )
+    },
     // LiquidbarValue() {
     //   if (this.num.atoms(this.totalAtoms) === 0)
     //     return 0
@@ -110,7 +142,10 @@ export default {
       this.lastUpdate = height
       this.$store.dispatch(`getRewardsFromMyValidators`)
       this.$store.dispatch(`queryWalletBalances`)
-    }
+    },
+    onWithdrawal() {
+      this.$refs.ModalWithdrawRewards.open()
+    },
   },
   mounted() {
     this.totalAtoms
@@ -131,11 +166,33 @@ export default {
   padding: 1rem 0 2.5rem 1rem;
 }
 
+.display {
+  display: contents
+}
+
+.margintop {
+  margin-top: 0.2rem !important
+}
+
 h3 {
   color: black !important;
   font-size: 1rem !important;
   display: inline;
   /* line-height: 1.2; */
+}
+
+.topleft {
+  margin-top: 0.2rem;
+  margin-left: 0.3rem
+}
+
+.textalign {
+  text-align: left
+}
+
+.withdrawbtn {
+  margin-bottom: .5rem;
+  margin-left: .5rem
 }
 
 .col-md-4 {
@@ -230,6 +287,12 @@ p {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .display {
+    display: block
+  }
+}
+
 /* TODO fix scaling on medium sized screens and pick proper break point */
 @media screen and (max-width: 550px) {
   .header-balance {
@@ -248,6 +311,12 @@ p {
   .second-row {
     width: 100%;
     justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .withdrawbtn {
+    margin-left: 0rem !important
   }
 }
 </style>

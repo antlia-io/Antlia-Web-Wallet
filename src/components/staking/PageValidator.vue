@@ -39,6 +39,7 @@
               :disabled="!connected || !session.signedIn"
               :value="connected ? 'Delegate' : 'Connecting...'"
               color="secondary"
+              class="outline"
               @click.native="onDelegation"
             />
             <TmBtn
@@ -46,6 +47,7 @@
               :disabled="!connected || !session.signedIn"
               :value="connected ? 'Undelegate' : 'Connecting...'"
               color="secondary"
+              class="outline"
               @click.native="onUndelegation"
             />
           </div>
@@ -433,6 +435,10 @@ export default {
 
 .page-profile__status-and-title {
   display: flex
+}
+
+.outline {
+  outline: 0
 }
 
 .validator-name-and-address {

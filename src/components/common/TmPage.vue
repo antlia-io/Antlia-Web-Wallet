@@ -16,7 +16,9 @@
           <h3>Your Public Color Address</h3>
           <Bech32 :address="session.address || ''" long-form />
         </div>
-        <PageSign />
+        <div v-if="session.signedIn">
+          <PageSign v-if="signVerify" />
+        </div>
       </slot>
       <slot slot="header-buttons" name="header-buttons" />
     </TmPageHeader>
@@ -75,6 +77,10 @@ export default {
   },
   props: {
     hideHeader: {
+      type: Boolean,
+      default: false
+    },
+    signVerify: {
       type: Boolean,
       default: false
     },
