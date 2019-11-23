@@ -27,7 +27,6 @@
         value="Send"
         color="primary"
         class="paddingright"
-        @click.native="$emit(`show-modal`, coin.denom)"
       />
       
     </div>
@@ -147,6 +146,9 @@ export default {
         decimal
       }
     }
+  },
+  mounted(){
+    this.$emit(`show-modal`, this.coin.denom)
   },
   methods: {
     update(height) {

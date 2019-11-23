@@ -7,6 +7,7 @@
     :data-empty="dataEmpty"
     data-title="Wallet"
     :sign-in-required="true"
+    :signVerify="true"
   >
     <TmDataMsg
       id="account_empty_msg"
@@ -38,7 +39,7 @@
 import num from "scripts/num"
 import { mapGetters, mapActions } from "vuex"
 import orderBy from "lodash.orderby"
-import LiCoin from "../wallet/LiCoin"
+import LiCoin from "./LiCoin"
 import PageTransactions from "../wallet/PageTransactions"
 import SendModalQRCodeAmount from "src/ActionModal/components/SendModalQRCodeAmount"
 import TmPage from "common/TmPage"

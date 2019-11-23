@@ -1,7 +1,7 @@
 <template>
   <menu>
     <router-link
-      :class="{active: (this.$route.fullPath === '/wallet')}"
+      :class="{active: (this.$route.fullPath === '/wallet') || (this.$route.fullPath === '/send') || (this.$route.fullPath === '/sendAmount')}"
       to="/wallet"
       exact="exact"
       title="Wallet"

@@ -9,7 +9,7 @@
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
-    
+    :show="true"
   >
   <!-- :show="true" -->
     <TmFormGroup
@@ -165,9 +165,9 @@ export default {
       return (denom && denom.amount) || 0
     },
     getAddress(){
-        // this.$route.fullPath
-        var link = 'https://localhost:9080/#/send/colors1l37vu6ds87rx2gs5yxjx70v7uy5yewpwuyxsud'.split('/');
-        return link[5];
+      var qraddress = localStorage.getItem('qraddress')
+      localStorage.setItem('qraddress','');
+      return qraddress
     },
     transactionData() {
       return {
@@ -208,6 +208,7 @@ export default {
       return !this.$v.$invalid
     },
     clear() {
+      this.$router.push('/wallet')
       this.$v.$reset()
 
       this.getAddress = undefined

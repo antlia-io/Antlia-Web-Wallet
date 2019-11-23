@@ -2,7 +2,7 @@
   <li class="li-coin">
     <div class="space">
     </div>
-    <div class="li-coin__content">
+    <div class="li-coin__content br">
       <div class="li-coin__content-left">
         <p class="coin-denom height">Sign A Message:</p>
       </div>
@@ -86,7 +86,7 @@ export default {
   margin-top: 1rem;
   border: 1px solid var(--bc-dim);
   background: white;
-  padding: 1rem;
+  /* padding: 1rem; */
   border-radius: 0.25rem;
 }
 
@@ -97,8 +97,12 @@ export default {
   color: black !important;
   justify-content: space-between;
   width: 100%;
-  padding-left: 1rem;
+  padding: 1rem;
   font-size: var(--m);
+}
+
+.li-coin .br{
+  border-right: 1px #cccccc solid;
 }
 
 .space {

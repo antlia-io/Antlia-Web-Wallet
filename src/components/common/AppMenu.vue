@@ -3,6 +3,7 @@
     <div class="app-menu-main">
       <router-link
         class="app-menu-item hide-xs"
+        :class="{active: (this.$route.fullPath === '/wallet') || (this.$route.fullPath === '/send') || (this.$route.fullPath === '/sendAmount')}"
         to="/wallet"
         exact="exact"
         title="Wallet"

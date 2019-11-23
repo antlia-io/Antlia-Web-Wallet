@@ -12,7 +12,7 @@
           <i v-if="!buttonActive" class="material-icons">menu</i>
           <i v-else class="material-icons">close</i>
         </li>
-        <li class="sidebar-item hover" @click="home()" v-on:click="active = 'home'" :class="{active:this.$route.fullPath === '/wallet'}" title="Wallet">
+        <li class="sidebar-item hover" @click="home()" v-on:click="active = 'home'" :class="{active:(this.$route.fullPath === '/wallet') || (this.$route.fullPath === '/send') || (this.$route.fullPath === '/sendAmount')}" title="Wallet">
           <i class="material-icons">home</i>
           <span class="e-text">Wallet</span>
         </li>
