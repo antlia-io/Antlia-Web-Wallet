@@ -31,22 +31,23 @@
         >
         <TmField
             id="message"
-            v-model.trim="message"
+            ref="message"
+            v-model="$v.message.$model"
             v-focus
             type="text"
             placeholder="Message"
             @keyup.enter.native="enterPressed"
         />
         <TmFormMsg
-            v-if="$v.message.$error && !$v.message.required"
-            name="Message"
-            type="required"
-        />
-        <TmFormMsg
             v-if="$v.message.$error && !$v.message.maxLength"
             :max="$v.message.$params.maxLength.max"
             name="Message"
             type="maxLength"
+        />
+        <TmFormMsg
+            v-if="$v.message.$error && !$v.message.required"
+            name="Message"
+            type="required"
         />
         </TmFormGroup>
         <TmFormGroup
@@ -452,10 +453,12 @@ export default {
           if (!this.isValidChildForm) {
             return
           }
-          if (!this.isValidInput(`password`)) {
+          if (!this.isValidInput(`password`) && !this.isValidInput(`message`) ){
             return
           }
-          this.validateForm()
+          if(this.message === '' && !this.isValidInput(`message`)){
+            return
+          }
           this.sending = true
           await this.submit()
           this.sending = false

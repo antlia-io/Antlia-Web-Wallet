@@ -272,6 +272,13 @@ export default {
       // An ActionModal is only the prototype of a parent modal
       switch (this.step) {
         case signStep:
+          if (!this.isValidInput(`message`) && !this.isValidInput(`key`) && !this.isValidInput(`publicKey`) ){
+            return
+          }
+          if (this.message === '' || this.key === '' || this.publicKey === '')
+          {
+            return
+          }
           this.sending = true
           await this.submit()
           this.sending = false
