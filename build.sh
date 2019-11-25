@@ -5,7 +5,7 @@ if [ "$1" = "staging" ]
 then
   echo Building wallet with staging Enviorment
 
-  CHAIN=rns-test-01 STARGATE=https://proxy.testnet.color-platform.rnssol.com:9071 RPC=https://rpc.testnet.color-platform.rnssol.com yarn build
+  CHAIN=colors-test-01 STARGATE=https://proxy.testnet.color-platform.rnssol.com:9071 RPC=https://rpc.testnet.color-platform.rnssol.com yarn build
 
 elif [ "$1" = "production" ]
 then
