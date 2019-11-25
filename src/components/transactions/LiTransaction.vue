@@ -209,6 +209,10 @@ a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.li-tx__content__information,
+.li-tx__content__information > * {
+  flex-direction: column;
+}
 
 }
 .tx-hash .address:hover {

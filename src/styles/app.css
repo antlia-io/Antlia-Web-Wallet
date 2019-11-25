@@ -127,3 +127,20 @@ input.tm-field {
     min-width: 0;
   }
 }
+
+/* Styles */
+.tm-data-msg__subtitle {
+  word-break: break-all;
+}
+.card{
+  margin: 0 0 1.5rem;
+}
+.textclr{
+  color: #0a73b1;
+}
+
+/* @media(max-width:667px){
+  .action-modal{
+    bottom:50px !important;
+  }
+} */

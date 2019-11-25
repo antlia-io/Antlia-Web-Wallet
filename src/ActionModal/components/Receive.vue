@@ -79,33 +79,16 @@ export default {
 </script>
 <style scoped>
     .qrcode {
-        width: 30%;
-        margin: 0 auto;
+        width: 100%;
+        max-width:170px;
+        margin: 2rem auto 0;
         background: #fff;
         text-align: center;
         padding: .5rem;
-        margin-top: 2rem
     }
 
     .publicaddress {
         text-align: center
     }
 
-    @media screen and (max-width: 425px) {
-        .qrcode {
-            width: 45%;
-        }
-    }
-
-    @media screen and (max-width: 375px) {
-        .qrcode {
-            width: 51%;
-        }
-    }
-
-    @media screen and (max-width: 320px) {
-        .qrcode {
-            width: 62%;
-        }
-    }
 </style>

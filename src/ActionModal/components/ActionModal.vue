@@ -633,7 +633,7 @@ export default {
   display: flex;
   flex-direction: column;
   right: 1rem;
-  padding: 1.5rem 1.5rem 3.5rem 1.5rem;
+  padding: 1.5rem 1.5rem 2.5rem 1.5rem;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -661,7 +661,7 @@ export default {
   font-size: var(--h2);
   font-weight: 400;
   color: var(--bright);
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .action-modal-icon {
@@ -691,7 +691,7 @@ export default {
 
 .action-modal-form .tm-form-group {
   display: block;
-  padding: 0.75rem 0;
+  padding: 0.25rem 0;
 }
 
 .action-modal-footer {
@@ -700,6 +700,7 @@ export default {
   flex-grow: 1;
   align-self: flex-end;
   flex-direction: column;
+  margin: 15px 0 0;
 }
 
 .action-modal-footer .tm-form-group {
@@ -751,14 +752,14 @@ export default {
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 667px) {
   .row {
     flex-direction: column;
   }
 
   .action-modal {
     right: 0;
-    top: 0;
+    bottom:50px;
   }
 }
 </style>

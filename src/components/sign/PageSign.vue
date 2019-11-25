@@ -89,7 +89,6 @@ export default {
   /* padding: 1rem; */
   border-radius: 0.25rem;
 }
-
 .li-coin__content {
   display: flex;
   flex-direction: row;
@@ -100,32 +99,28 @@ export default {
   padding: 1rem;
   font-size: var(--m);
 }
-
 .li-coin .br{
   border-right: 1px #cccccc solid;
 }
-
 .space {
   padding-left: 3rem
 }
-
-.paddingright {
-  padding-right: 2rem;
-  outline: 0
-}
-
 .li-coin__content__left {
   display: flex;
   flex-direction: column;
 }
-
 .coin-denom {
   color: black;
   font-weight: 500;
   margin-right: 1rem;
   margin-bottom: 0 !important;
 }
-
+@media screen and (min-width: 421px) {
+.paddingright {
+  padding-right: 2rem;
+  outline: 0
+}
+}
 @media screen and (max-width: 470px) {
   .li-coin__content-left {
     padding-bottom: 0.5rem;
@@ -149,10 +144,24 @@ export default {
 
 @media screen and (max-width: 420px) {
   .li-coin {
-    padding: .5rem
+    padding: .5rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
+  .li-coin .br{
+  border-right: none;
+    border-bottom: 1px #cccccc solid;
+}
   .li-coin__content {
-    padding-left: 0
+    padding-left: 1rem;
+    text-align: center;
   }
+    .height {
+    height: auto !important;
+  }
+.coin-denom {
+  margin-right: 0;
+
+}
 }
 </style>

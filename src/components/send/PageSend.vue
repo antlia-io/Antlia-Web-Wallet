@@ -947,7 +947,7 @@ export default {
   font-size: var(--h2);
   font-weight: 400;
   color: var(--bright);
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .action-modal-icon {
@@ -986,6 +986,7 @@ export default {
   flex-grow: 1;
   align-self: flex-end;
   flex-direction: column;
+  margin: 15px 0 0;
 }
 
 .action-modal-footer .tm-form-group {
@@ -1044,7 +1045,7 @@ export default {
 
   .action-modal {
     right: 0;
-    top: 0;
+    bottom: 50px;
   }
 }
 </style> -->
