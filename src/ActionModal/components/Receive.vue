@@ -30,6 +30,7 @@ import Bech32 from "common/Bech32"
 import TmField from "src/components/common/TmField"
 import TmFormGroup from "src/components/common/TmFormGroup"
 import QrcodeVue from 'qrcode.vue'
+import config from "src/config"
 
 export default {
   name: `send-modal`,
@@ -43,14 +44,15 @@ export default {
     ...mapGetters([`wallet`,`session`]),
     link(){
         if(this.amount > 0)
-            return 'https://localhost:9080/#/send/'+this.wallet.address+'/'+this.amount
+            return this.url+'/#/send/'+this.wallet.address+'/'+this.amount
         else 
-            return 'https://localhost:9080/#/send/'+this.wallet.address
+            return this.url+'/#/send/'+this.wallet.address
     }
   },
   data: () => ({
         size: 150,
-        show: false
+        show: false,
+        url: config.qrcode
   }),
   props: {
     amount: {
