@@ -7,7 +7,7 @@
     <div>
       <div class="parameters__details parameters__section">
         <div class="row">
-          <div class="col-lg-4 info_dl">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 info_dl">
             <dt>
               Duration of Undelegation Period
               <i
@@ -25,13 +25,13 @@
               }}
             </dd>
           </div>
-          <div class="col-lg-4 info_dl">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 info_dl">
             <dt>Current Staking Token</dt>
             <dd id="bond_denom">
               {{ bondDenom ? num.viewDenom(bondDenom) : `--` }}
             </dd>
           </div>
-          <div class="col-lg-4 info_dl width">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 info_dl width">
             <dt>Maximum Number of Validators</dt>
             <dd id="max_validators">
               {{

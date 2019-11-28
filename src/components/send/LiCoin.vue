@@ -213,6 +213,7 @@ export default {
   font-weight: 500;
   margin-bottom: 0 !important;
   width: 100%;
+  text-align: left;
 }
 .clralign {
   display: flex;
@@ -239,17 +240,24 @@ p.coin-amount {
   .li-coin__icon {
     display: none;
   }
-
+.clralign{
+  display: block;
+}
   .li-coin__content-left {
     padding-bottom: 0.5rem;
+    justify-content: center;
+    flex-direction: column;
   }
 }
-@media screen and (max-width: 587px) {
+@media screen and (max-width: 425px) {
   .li-coin__content {
     display: block;
   }
+  .coin-denom {
+ text-align: center !important;
 }
-@media screen and (max-width: 420px) {
+}
+@media screen and (max-width: 667px) {
   .li-coin {
     padding: 0.5rem;
     justify-content: center;
@@ -262,6 +270,7 @@ p.coin-amount {
   .li-coin__content {
     padding-left: 1rem;
     text-align: center;
+    width: 100%;
   }
   .height {
     height: auto !important;

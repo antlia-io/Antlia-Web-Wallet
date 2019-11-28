@@ -2,8 +2,7 @@
   <div>
     <div class="parameters__details parameters__section">
       <div class="row">
-        <div class="row">
-          <dl class="info_dl col-lg-4">
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <dt>
               Minimum Deposit
               <i
@@ -21,7 +20,7 @@
               }}
             </dd>
           </dl>
-          <dl class="info_dl col-lg-4">
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>
               Threshold
               <i
@@ -41,7 +40,7 @@
               }}
             </dd>
           </dl>
-          <dl class="info_dl col-lg-4">
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>
               Quorum
               <i
@@ -125,7 +124,6 @@
         <!-- </div> -->
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -185,7 +183,7 @@ export default {
 }
 
 .parameters__section {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 

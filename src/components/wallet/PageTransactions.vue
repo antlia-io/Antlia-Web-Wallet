@@ -153,9 +153,4 @@ h1 {
   }
 }
 
-@media screen and (max-width: 360px) {
-  h1 {
-    font-size: 1rem
-  }
-}
 </style>
