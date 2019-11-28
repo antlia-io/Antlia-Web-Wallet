@@ -102,9 +102,10 @@ export default {
   computed: {
     date({ time } = this) {
       const momentTime = moment(time)
-      return momentTime.format(
-        `${moment().isSame(momentTime, `day`) ? `` : `MMM Do YYYY `}HH:mm:ss`
-      )
+      return moment.utc(momentTime).format(`MMM Do YYYY, HH:mm:ssa z`) 
+      // momentTime.format(
+      //   `${moment().isSame(momentTime, `day`) ? `` : `MMM Do YYYY `}HH:mm:ss`
+      // )
     }
   }
 }

@@ -50,11 +50,11 @@
       <li
         v-if="totalAtomsDisplay === 0 && session.signedIn"
         class="app-menu-item hide-xs"
-        title="Get Faucet"
+        title="Get Coins"
         @click="close() & getFaucet()"
       >
         <h2 class="app-menu-title">
-          Get Faucet
+          Get Coins
         </h2>
       </li>
        <!-- <router-link

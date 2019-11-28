@@ -85,6 +85,10 @@ export default {
   color: white
 }
 
+#receivemodal .tm-form-group__label  {
+  color: white
+}
+
 #undelegation-modal .tm-form-group__label  {
   color: white
 }

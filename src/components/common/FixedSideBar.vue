@@ -28,9 +28,9 @@
           <i class="material-icons">my_location</i>
           <span class="e-text">Network</span>
         </li>
-        <li v-if="totalAtomsDisplay === 0 && session.signedIn" class="sidebar-item hover" @click="getFaucet()" v-on:click="active = 'getFaucet'" title="Get Faucet">
+        <li v-if="totalAtomsDisplay === 0 && session.signedIn" class="sidebar-item hover" @click="getFaucet()" v-on:click="active = 'getFaucet'" title="Get Coins">
           <i class="material-icons">local_atm</i>
-          <span class="e-text"><Button class="faucet">Get Faucet</Button>
+          <span class="e-text"><Button class="faucet">Get Coins</Button>
           </span>
         </li>
         <!-- <li class="sidebar-item hover" @click="sign()" v-on:click="active = 'sign'" :class="{active:(this.$route.fullPath === '/sign')}" title="Sign/Verify">

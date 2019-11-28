@@ -1,6 +1,6 @@
 <template>
 <transition v-if="show" name="slide-fade">
-    <div v-focus-last class="action-modal" tabindex="0" @keyup.esc="close">
+    <div v-focus-last class="action-modal" id="receivemodal" tabindex="0" @keyup.esc="close">
       <div
         id="closeBtn"
         class="action-modal-icon action-modal-close"
@@ -17,9 +17,14 @@
           <h6>Your Public Color Address</h6>
           <Bech32 :address="session.address || ''" long-form />
       </div>
+      <div class="publicaddress">
+        <div>Amount: </div>
+        <div class="amount">{{amount}}</div>
+      </div>
       <div class="qrcode">
         <qrcode-vue :value="link" :size="size" level="H"></qrcode-vue>
       </div>
+      <p>Scan the QR Code to transfer funds</p>
     </div>
   </transition>
 </template>
@@ -90,7 +95,34 @@ export default {
     }
 
     .publicaddress {
-        text-align: center
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        flex-wrap: wrap;
     }
 
+    .display {
+      display: flex
+    }
+
+    .margin {
+      border: none;
+      background: #3a3046 !important;
+      height: 2rem !important;
+    }
+
+    #receivemodal p {
+      margin-top: 1rem !important;
+      font-weight: 300;
+      font-size: 14px;
+      text-align: center;
+      word-break: break-word;
+    }
+
+    .amount {
+      min-width: 100px;
+      max-width: 200px;
+      word-break: break-all
+    }
 </style>

@@ -700,7 +700,7 @@ export default {
   flex-grow: 1;
   align-self: flex-end;
   flex-direction: column;
-  margin: 15px 0 0;
+  margin: 15px 0;
 }
 
 .action-modal-footer .tm-form-group {
@@ -759,7 +759,8 @@ export default {
 
   .action-modal {
     right: 0;
-    bottom:50px;
+    bottom: unset;
+    top: 0;
   }
 }
 </style>

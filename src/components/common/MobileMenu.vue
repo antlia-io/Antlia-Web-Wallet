@@ -45,12 +45,12 @@
     <router-link
       v-if="totalAtomsDisplay === 0 && session.signedIn"
       @click.native="getFaucet"
-      title="Get Faucet"
+      title="Get Coins"
       to=""
     >
       <i class="material-icons">local_atm</i>
       <h2 class="app-menu-title">
-        Get Faucet
+        Get Coins
       </h2>
     </router-link>
   </menu>
