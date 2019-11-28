@@ -14,10 +14,12 @@
   >
     <DataEmptyTx slot="no-data" />
     <template slot="managed-body">
-      <div class="row">
+      <div class="row ptb">
         <h1>TRANSACTIONS</h1>
       </div>
-      <LiAnyTransaction
+      <div class="row">
+        <div class="col-lg-12">
+     <LiAnyTransaction
         v-for="tx in orderedTransactions"
         :key="tx.txhash"
         :validators="delegates.delegates"
@@ -30,6 +32,9 @@
           time.getUnbondingTime(tx, delegation.unbondingDelegations)
         "
       />
+        </div>
+      </div>
+ 
       <br />
     </template>
   </TmPage>
@@ -111,7 +116,9 @@ h1 {
   font-family: sans-serif;
   font-size: 2.5rem;
 }
-
+.ptb{
+  padding: 1rem 0;
+}
 .row {
   background: white;
   text-align: center;
@@ -122,7 +129,8 @@ h1 {
 }
 
 #transactionscss .padding0 {
-  padding: 0
+  padding: 0;
+  background: #fff;
 }
 
 #transactionscss .hidesidebar{
