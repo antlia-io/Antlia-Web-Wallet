@@ -131,6 +131,7 @@ h1 {
 #transactionscss .padding0 {
   padding: 0;
   background: #fff;
+  margin-bottom: 3rem
 }
 
 #transactionscss .hidesidebar{
