@@ -1,13 +1,11 @@
 <template>
   <div class="li-tx">
-    <div class="li-tx__icon">
-      <img rel=preload 
-        :style="{ borderColor: color }"
-        src="~assets/images/color.svg"
-      />
-    </div>
     <div class="li-tx__content">
       <div class="li-tx__content__left">
+        <div class="li-tx__icon">
+          <img rel="preload" :style="{ borderColor: color }" src="~assets/images/color.svg" />
+        </div>
+        <div class="li-tx-desc">
         <div class="li-tx__content__caption">
           <p class="li-tx__content__caption__title">
             <slot name="caption" />
@@ -15,7 +13,7 @@
         </div>
         <div class="li-tx__content__information">
           <slot name="details" />
-          <span v-if="memo"> &nbsp;- {{ memo }} </span>
+          <span v-if="memo">&nbsp;- {{ memo }}</span>
         </div>
         <div class="tx-hash">
           Tx Hash #&nbsp;
@@ -25,23 +23,23 @@
             v-clipboard:copy="txhash"
             v-clipboard:success="() => onCopy()"
             class="address"
-          >
-          {{ txhash }}
+          >{{ txhash }}</div>
+          <div :class="{ active: copySuccess }" class="copied">
+            <i class="material-icons">check</i>
+            <span>Copied</span>
           </div>
-           <div :class="{ active: copySuccess }" class="copied">
-            <i class="material-icons">check</i><span>Copied</span>
-          </div>
+        </div>
         </div>
       </div>
       <div v-if="!hideMetaData" class="li-tx__content__right">
         <div>
-          Network Fee:&nbsp;<b>{{ fees.amount | toAtoms }}</b>
+          Network Fee:&nbsp;
+          <b>{{ fees.amount | toAtoms }}</b>
           <span>{{ fees.denom | viewDenom }}</span>
         </div>
         <div class="li-tx__content__block">
-          <router-link :to="{ name: `block`, params: { height: block } }">
-            Block #{{ block }}&nbsp; </router-link
-          >@&nbsp;{{ date }}
+          <router-link :to="{ name: `block`, params: { height: block } }">Block #{{ block }}&nbsp;</router-link>
+          @&nbsp;{{ date }}
         </div>
       </div>
     </div>
@@ -118,6 +116,8 @@ export default {
   width: 100%;
   font-weight: 300;
   position: relative;
+  border: 1px solid #ccc;
+  margin: 1rem 0;
 }
 
 .li-tx .copied {
@@ -137,7 +137,7 @@ a:hover {
 }
 
 .li-tx__icon {
-  padding: 12px 0 12px 1rem;
+  padding: 1rem;
 }
 
 .li-tx__icon img {
@@ -156,15 +156,18 @@ a:hover {
   padding: 1rem;
 }
 
-.li-tx__content__left,
-.li-tx__content__right {
+.li-tx__content__left {
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  width: 40%;
 }
 
 .li-tx__content__right {
+  display: flex;
+  flex-direction: column;
   text-align: right;
+  width: 50%;
 }
 
 .li-tx__content__information,
@@ -183,6 +186,10 @@ a:hover {
   line-height: 18px;
   font-size: 18px;
   color: black;
+  text-align: left;
+}
+.li-tx__content__caption p {
+  margin: 0;
 }
 
 .tx-hash {
@@ -208,12 +215,11 @@ a:hover {
   .tx-hash .address {
     overflow: hidden;
     text-overflow: ellipsis;
-}
-.li-tx__content__information,
-.li-tx__content__information > * {
-  flex-direction: column;
-}
-
+  }
+  .li-tx__content__information,
+  .li-tx__content__information > * {
+    flex-direction: column;
+  }
 }
 .tx-hash .address:hover {
   color: #00d6e1;
@@ -241,15 +247,36 @@ a:hover {
   padding-right: 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 740px) {
   .li-tx__content {
     flex-direction: column;
     text-align: left;
   }
-
+.li-tx__content__left {
+  width: 100%;
+}
   .li-tx__content__right {
     text-align: left;
-    padding-top: 0.5rem;
+    padding: .5rem 1rem;
+    width: 100%;
   }
 }
+
+
+@media screen and (max-width: 425px) {
+  .li-tx__content {
+    flex-direction: column;
+    text-align: left;
+  }
+.li-tx__content__left {
+  width: 100%;
+  flex-wrap: wrap;
+}
+  .li-tx__content__right {
+    text-align: left;
+    padding: .5rem 1rem;
+    width: 100%;
+  }
+}
+
 </style>

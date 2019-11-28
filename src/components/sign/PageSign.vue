@@ -1,9 +1,9 @@
 <template>
   <li class="li-coin">
-    <div class="space">
-    </div>
+    <!-- <div class="space">
+    </div> -->
     <div class="li-coin__content br">
-      <div class="li-coin__content-left">
+      <div class="li-coin__content-left pl">
         <p class="coin-denom height">Sign A Message:</p>
       </div>
       <TmBtn
@@ -82,8 +82,8 @@ export default {
   display: flex;
   align-items: center;
   font-size: var(--m);
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  /* margin-top: 1rem; */
   border: 1px solid var(--bc-dim);
   background: white;
   /* padding: 1rem; */
@@ -95,7 +95,7 @@ export default {
   align-items: center;
   color: black !important;
   justify-content: space-between;
-  width: 100%;
+  width: 50%;
   padding: 1rem;
   font-size: var(--m);
 }
@@ -105,15 +105,19 @@ export default {
 .space {
   padding-left: 3rem
 }
-.li-coin__content__left {
+.li-coin__content-left {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .coin-denom {
   color: black;
   font-weight: 500;
   margin-right: 1rem;
   margin-bottom: 0 !important;
+}
+.pl{
+  padding: 0 0 0 50px;
 }
 @media screen and (min-width: 421px) {
 .paddingright {

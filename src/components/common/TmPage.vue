@@ -151,7 +151,7 @@ export default {
 .tm-page-main {
   flex: 1;
   /* position: relative; */
-  padding: 1rem;
+  padding: 0 1rem 1rem;
 }
 
 .tm-page-title {
@@ -202,7 +202,7 @@ export default {
 }
 
 .page-profile__section {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .page-profile__section-title {

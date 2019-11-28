@@ -133,12 +133,15 @@ input.tm-field {
   word-break: break-all;
 }
 .card{
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.5rem !important;
 }
 .textclr{
   color: #0a73b1;
 }
-
+.alignment {
+  display: flex;
+  align-items: center;
+}
 /* @media(max-width:667px){
   .action-modal{
     bottom:50px !important;

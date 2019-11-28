@@ -168,9 +168,9 @@ export default {
   padding: 1rem 0 2.5rem 1rem;
 }
 
-.display {
+/* .display {
   display: contents
-}
+} */
 
 .margintop {
   margin-top: 0.2rem !important
@@ -193,7 +193,7 @@ h3 {
 }
 
 .withdrawbtn {
-  margin-bottom: .5rem;
+  /* margin-bottom: .5rem; */
   margin-left: .5rem
 }
 
@@ -226,6 +226,7 @@ h2 {
   width: 15px;
   height: 15px;
   display: -webkit-inline-box;
+  margin: 0 5px 0 0;
 }
 
 .blue {
@@ -233,6 +234,7 @@ h2 {
   width: 15px;
   height: 15px;
   display: -webkit-inline-box;
+  margin: 0 5px 0 0;
 }
 
 .color {
