@@ -1,6 +1,7 @@
 <template>
   <div class="table-proposal">
-    <table class="data-table table-responsive">
+    <div class=" table-responsive">
+    <table class="data-table">
       <thead>
         <PanelSort :sort="sort" :properties="properties" />
       </thead>
@@ -12,6 +13,7 @@
         />
       </tbody>
     </table>
+    </div>
   </div>
 </template>
 
