@@ -72,6 +72,11 @@ export default [
     component: require(`./components/send/PageSend`).default
   },
   {
+    path: `/sign`,
+    name: `sign`,
+    component: require(`./components/sign/PageSign`).default
+  },
+  {
     path: `/sendAmount`,
     name: `sendAmount`,
     component: require(`./components/send/PageSendAmount`).default
