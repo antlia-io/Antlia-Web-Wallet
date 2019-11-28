@@ -17,7 +17,7 @@
           <h6>Your Public Color Address</h6>
           <Bech32 :address="session.address || ''" long-form />
       </div>
-      <div class="publicaddress">
+      <div class="publicaddress" v-show="amount > 0">
         <div>Amount: </div>
         <div class="amount">{{amount}}</div>
       </div>
