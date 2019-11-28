@@ -39,7 +39,9 @@
         </div>
         <div class="li-tx__content__block">
           <router-link :to="{ name: `block`, params: { height: block } }">Block #{{ block }}&nbsp;</router-link>
-          @&nbsp;{{ date }}
+        </div>
+           <div class="li-tx__content__block">
+         {{ date }}
         </div>
       </div>
     </div>
@@ -211,16 +213,18 @@ a:hover {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
+.tooltip-content{
+word-break: break-all;
+}
 @media screen and (max-width: 572px) {
   .tx-hash .address {
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .li-tx__content__information,
+  /* .li-tx__content__information,
   .li-tx__content__information > * {
     flex-direction: column;
-  }
+  } */
 }
 .tx-hash .address:hover {
   color: #00d6e1;
@@ -248,7 +252,7 @@ a:hover {
   padding-right: 0;
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 667px) {
   .li-tx__content {
     flex-direction: column;
     text-align: left;
@@ -264,7 +268,10 @@ a:hover {
 }
 
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 414px) {
+  .li-tx__icon {
+    padding: 1rem 0;
+}
   .li-tx__content {
     flex-direction: column;
     text-align: left;
@@ -275,7 +282,7 @@ a:hover {
 }
   .li-tx__content__right {
     text-align: left;
-    padding: .5rem 1rem;
+    padding: 1rem 0;
     width: 100%;
   }
 }

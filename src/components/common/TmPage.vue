@@ -301,7 +301,7 @@ export default {
   border: 1px solid rgba(84, 85, 93, 0.15);
   background-color: white;
   text-align: center;
-  width: 50%;
+  /* width: 50%; */
   margin-bottom: 0 !important;
 }
 

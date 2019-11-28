@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="row">
-          <dl class="col-lg-4 info_dl">
+          <dl class="col-lg-4 col-md-4 col-sm-6 col-xs-12 info_dl">
             <dt>BLOCK HEIGHT</dt>
             <dd>
               {{
@@ -33,11 +33,11 @@
               }}
             </dd>
           </dl>
-          <dl class="col-lg-4 info_dl">
+          <dl class="col-lg-4 col-md-4 col-sm-6 col-xs-12 info_dl">
             <dt>LAST BLOCK</dt>
             <dd>{{ connected ? lastBlock : `--` }}</dd>
           </dl>
-          <dl class="col-lg-4 info_dl">
+          <dl class="col-lg-4 col-md-4 col-sm-6 col-xs-12 info_dl">
             <dt>TOTAL LIQUID {{ num.viewDenom(bondDenom) }}</dt>
             <dd id="loose_tokens">
               {{
@@ -47,7 +47,7 @@
               }}
             </dd>
           </dl>
-          <dl class="col-lg-4 info_dl">
+          <dl class="col-lg-4 col-md-4 col-sm-6 col-xs-12 info_dl">
             <dt>TRANSACTIONS</dt>
             <dd>
               {{
@@ -57,7 +57,7 @@
               }}
             </dd>
           </dl>
-          <dl class="col-lg-4 info_dl">
+          <dl class="col-lg-4 col-md-4 col-sm-6 col-xs-12 info_dl">
             <dt>NUMBER OF VALIDATORS</dt>
             <dd>
               {{
@@ -68,7 +68,7 @@
             </dd>
           </dl>
           
-          <dl class="col-lg-4 info_dl">
+          <dl class="col-lg-4 col-md-4 col-sm-6 col-xs-12 info_dl">
             <dt>TOTAL DELEGATED {{ num.viewDenom(bondDenom) }}</dt>
             <dd id="bonded_tokens">
               {{
