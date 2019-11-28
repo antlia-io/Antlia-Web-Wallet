@@ -9,6 +9,12 @@ const faucet =
     ? `https://proxy.testnet.color-platform.rnssol.com:8000/claim/wallet`
     : `https://proxy.testnet.color-platform.rnssol.com:8000/claim/wallet`)
 
+const qrcode =
+  process.env.QRCODE ||
+  (dev
+    ? `https://192.168.100.29:9080`
+    : `https://wallet.testnet.color-platform.org`)
+
 const rpc =
   process.env.RPC ||
   (dev
@@ -23,6 +29,7 @@ export default {
   network: process.env.NETWORK || `local-testnet`,
   stargate,
   rpc,
+  qrcode,
   faucet,
   chain: chain,
   google_analytics_uid: process.env.GOOGLE_ANALYTICS_UID || "",
