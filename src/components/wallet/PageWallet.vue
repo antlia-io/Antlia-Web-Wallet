@@ -7,7 +7,7 @@
     :data-empty="dataEmpty"
     data-title="Wallet"
     :sign-in-required="true"
-    :signVerify="true"
+    :sendReceive="true"
   >
     <TmDataMsg
       id="account_empty_msg"
@@ -22,26 +22,14 @@
       </div>
     </TmDataMsg>
     <template slot="managed-body">
-      <LiCoin
-        v-for="coin in filteredBalances"
-        :key="coin.denom"
-        :coin="coin"
-        class="tm-li-balance"
-        @show-modal="showModal"
-      />
       <PageTransactions />
     </template>
-    <SendModal ref="sendModal" />
   </TmPage>
 </template>
 
 <script>
-import num from "scripts/num"
 import { mapGetters, mapActions } from "vuex"
-import orderBy from "lodash.orderby"
-import LiCoin from "./LiCoin"
 import PageTransactions from "./PageTransactions"
-import SendModal from "src/ActionModal/components/SendModal"
 import TmPage from "common/TmPage"
 import TmDataMsg from "common/TmDataMsg"
 
@@ -49,23 +37,13 @@ export default {
   name: `page-wallet`,
   components: {
     TmDataMsg,
-    LiCoin,
     PageTransactions,
-    TmPage,
-    SendModal
+    TmPage
   },
-  data: () => ({ num, showSendModal: false }),
   computed: {
     ...mapGetters([`wallet`, `connected`, `session`, `allTransactions`]),
     dataEmpty() {
       return this.allTransactions.length===0?this.wallet.balances.length === 0:false
-    },
-    filteredBalances() {
-      return orderBy(
-        this.wallet.balances,
-        [`amount`, balance => num.viewDenom(balance.denom).toLowerCase()],
-        [`desc`, `asc`]
-      )
     }
   },
   async mounted() {
@@ -73,10 +51,7 @@ export default {
     await this.queryWalletBalances()
   },
   methods: {
-    ...mapActions([`updateDelegates`, `queryWalletBalances`]),
-    showModal(denomination) {
-      this.$refs.sendModal.open(denomination)
-    }
+    ...mapActions([`updateDelegates`, `queryWalletBalances`])
   }
 }
 </script>

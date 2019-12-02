@@ -7,7 +7,7 @@
         </div>
         <span class="clralign">
           <p class="coin-denom">{{ denomination }}</p>
-          <p class="coin-amount">{{ amount }}</p>
+          <p class="coin-amount">{{ unbondedAtoms }}</p>
         </span>
       </div>
       <!-- disable send on the hub until send is enabled -->
@@ -21,6 +21,7 @@
       <!-- here we use the unconverted denom, as the SendModal
       checks for balances based on the actual denom-->
       <TmBtn
+        :disabled="unbondedAtoms <= 0"
         v-else
         value="Send"
         color="primary"
@@ -102,7 +103,7 @@ export default {
     return {
       num,
       lastUpdate: 0,
-      receiveamount: 0
+      receiveamount: ``
     }
   },
   computed: {
@@ -129,6 +130,9 @@ export default {
     },
     denomination() {
       return this.viewCoin.denom
+    },
+    unbondedAtoms() {
+      return this.loaded ? num.atoms(this.liquidAtoms) : `--`
     },
     loaded() {
       return this.wallet.loaded && this.delegation.loaded
@@ -218,7 +222,7 @@ export default {
   font-weight: 500;
   margin-bottom: 0 !important;
   width: 100%;
-    text-align: left;
+  text-align: left;
 }
 .clralign {
   display: flex;

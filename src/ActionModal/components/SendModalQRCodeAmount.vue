@@ -167,12 +167,10 @@ export default {
     },
     getAddress(){
       var qraddress = localStorage.getItem('qraddress')
-      localStorage.setItem('qraddress','');
       return qraddress
     },
     getAmount(){
       var qramount = localStorage.getItem('qramount')
-      localStorage.setItem('qramount','');
       return qramount
     },
     transactionData() {

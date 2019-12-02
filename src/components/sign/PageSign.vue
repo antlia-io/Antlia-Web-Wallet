@@ -1,48 +1,52 @@
 <template>
-  <li class="li-coin">
-    <!-- <div class="space">
-    </div> -->
-    <div class="li-coin__content br">
-      <div class="li-coin__content-left pl">
-        <p class="coin-denom height">Sign A Message:</p>
+  <TmPage
+    data-title="Sign/Verify"
+    :sign-in-required="true"
+  >
+    <li class="li-coin" v-if="session.signedIn">
+      <div class="li-coin__content">
+        <div class="li-coin__content-left">
+          <h5 class="coin-denom height">Sign A Message:</h5>
+          <p class="desc height">You can easily sign any message. Just input a message to generate a signed message signature.</p>
+        </div>
+        <TmBtn
+          value="Sign"
+          class="paddingright"
+          color="primary"
+          @click.native="showModal()"
+        /> 
       </div>
-      <TmBtn
-        value="Sign"
-        class="paddingright"
-        color="primary"
-        @click.native="showModal()"
-      /> 
-    </div>
-    <div class="li-coin__content">
-      <div class="li-coin__content-left">
-        <p class="coin-denom">Verify A Signed Message:</p>
+    </li>
+    <li class="li-coin margin" v-if="session.signedIn">
+      <div class="li-coin__content">
+        <div class="li-coin__content-left">
+          <h5 class="coin-denom">Verify A Signed Message:</h5>
+          <p class="desc height">You can easily verify any Color signed message signature. You just have to provide the Color Public address, generated signature and the message that has to be verified.</p>
+        </div>
+        <TmBtn
+          value="Verify"
+          class="paddingright"
+          color="primary"
+          @click.native="showVerifyModal()"
+        />
       </div>
-      <TmBtn
-        value="Verify"
-        class="paddingright"
-        color="primary"
-        @click.native="showVerifyModal()"
-      />
-    </div>
     <SignModal ref="signModal" />
     <VerifyModal ref="verifyModal" />
   </li>
+</TmPage>
 </template>
 
 <script>
 import num from "scripts/num"
+import TmPage from "common/TmPage"
 import { mapGetters, mapActions } from "vuex"
-import orderBy from "lodash.orderby"
 import SignModal from "src/ActionModal/components/SignModal"
 import VerifyModal from "src/ActionModal/components/VerifyModal"
-import TmPage from "common/TmPage"
 import TmBtn from "common/TmBtn"
-import TmDataMsg from "common/TmDataMsg"
 
 export default {
   name: `page-wallet`,
   components: {
-    TmDataMsg,
     TmPage,
     VerifyModal,
     TmBtn,
@@ -50,24 +54,9 @@ export default {
   },
   data: () => ({ num }),
   computed: {
-    ...mapGetters([`wallet`, `connected`, `session`, `allTransactions`]),
-    dataEmpty() {
-      return this.allTransactions.length===0?this.wallet.balances.length === 0:false
-    },
-    filteredBalances() {
-      return orderBy(
-        this.wallet.balances,
-        [`amount`, balance => num.viewDenom(balance.denom).toLowerCase()],
-        [`desc`, `asc`]
-      )
-    }
-  },
-  async mounted() {
-    this.updateDelegates()
-    await this.queryWalletBalances()
+    ...mapGetters([`wallet`, `connected`, `session`]),
   },
   methods: {
-    ...mapActions([`updateDelegates`, `queryWalletBalances`]),
     showModal() {
       this.$refs.signModal.open()
     },
@@ -95,7 +84,7 @@ export default {
   align-items: center;
   color: black !important;
   justify-content: space-between;
-  width: 50%;
+  width: 100%;
   padding: 1rem;
   font-size: var(--m);
 }
@@ -106,19 +95,22 @@ export default {
   padding-left: 3rem
 }
 .li-coin__content-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: left;
 }
 .coin-denom {
   color: black;
   font-weight: 500;
-  margin-right: 1rem;
-  margin-bottom: 0 !important;
-    text-align: left;
+  margin: 1rem;
+  text-align: left;
 }
-.pl{
-  padding: 0 0 0 50px;
+.margin {
+  margin-bottom: 3rem
+}
+.desc {
+  color: black;
+  font-weight: 300;
+  margin: 1rem;
+  text-align: left;
 }
 @media screen and (max-width: 768px) {
 .pl{

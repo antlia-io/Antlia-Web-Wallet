@@ -7,7 +7,7 @@
         </div>
         <span class="clralign">
           <p class="coin-denom">{{ denomination }}</p>
-          <p class="coin-amount">{{ amount }}</p>
+          <p class="coin-amount">{{ unbondedAtoms }}</p>
         </span>
       </div>
       <!-- disable send on the hub until send is enabled -->
@@ -20,7 +20,7 @@
       />
       <!-- here we use the unconverted denom, as the SendModal
       checks for balances based on the actual denom-->
-      <TmBtn v-else value="Send" color="primary" class="paddingright" />
+      <TmBtn :disabled="unbondedAtoms <= 0" v-else value="Send" color="primary" class="paddingright" />
     </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">
@@ -96,7 +96,7 @@ export default {
     return {
       num,
       lastUpdate: 0,
-      receiveamount: 0
+      receiveamount: ``
     }
   },
   computed: {
@@ -120,6 +120,9 @@ export default {
     },
     amount() {
       return this.viewCoin.amount
+    },
+    unbondedAtoms() {
+      return this.loaded ? num.atoms(this.liquidAtoms) : `--`
     },
     denomination() {
       return this.viewCoin.denom
@@ -191,7 +194,9 @@ export default {
 .li-coin .br {
   border-right: 1px #cccccc solid;
 }
-
+.clralign{
+  display: block;
+}
 .li-coin__content-left {
   display: flex;
   flex-direction: row;
@@ -218,7 +223,7 @@ export default {
 .clralign {
   display: flex;
   flex-wrap: wrap;
-    align-items: center;
+  align-items: center;
 
 }
 p.coin-amount {
@@ -274,6 +279,17 @@ p.coin-amount {
   }
   .height {
     height: auto !important;
+  }
+  .paddingright {
+    padding-right: 0 !important;
+  }
+  .paddingright1 {
+    padding-right: 0 !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .icon {
+    display: none;
   }
 }
 </style>

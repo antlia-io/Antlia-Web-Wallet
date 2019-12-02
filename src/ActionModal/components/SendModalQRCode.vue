@@ -166,7 +166,6 @@ export default {
     },
     getAddress(){
       var qraddress = localStorage.getItem('qraddress')
-      localStorage.setItem('qraddress','');
       return qraddress
     },
     transactionData() {

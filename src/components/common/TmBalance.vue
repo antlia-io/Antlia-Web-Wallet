@@ -193,7 +193,7 @@ h3 {
 }
 
 .withdrawbtn {
-  /* margin-bottom: .5rem; */
+  margin-bottom: .5rem;
   margin-left: .5rem
 }
 

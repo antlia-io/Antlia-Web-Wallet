@@ -43,6 +43,17 @@
       </h2>
     </router-link>
     <router-link
+      :class="{active: (this.$route.fullPath === '/sign')}"
+      to="/sign"
+      exact="exact"
+      title="Sign/Verify"
+    >
+      <i class="material-icons">offline_pin</i>
+      <h2 class="app-menu-title">
+        Sign/Verify
+      </h2>
+    </router-link>
+    <router-link
       v-if="totalAtomsDisplay === 0 && session.signedIn"
       @click.native="getFaucet"
       title="Get Coins"

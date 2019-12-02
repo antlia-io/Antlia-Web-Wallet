@@ -231,7 +231,18 @@ export default {
           password: this.fields.signUpPassword,
           name: this.fields.signUpName
         })
-        this.$router.push(`/wallet`)
+        if(localStorage.getItem(`qraddress`) !== "undefined" && localStorage.getItem(`qramount`)==="undefined")
+        {
+          this.$router.push(`/send`)
+        }
+        else if (localStorage.getItem(`qramount`) !== "undefined")
+        {
+          localStorage.getItem(`qraddress`) && this.$router.push(`/sendAmount`)
+        }
+        else if (localStorage.getItem(`qramount`)==="undefined" && localStorage.getItem(`qraddress`)==="undefined")
+        {  
+          this.$router.push(`/wallet`)
+        }
       } catch (error) {
         this.$toast.open({
           message: `Couldn't create account, ${error.message}`,

@@ -47,17 +47,7 @@
           Network
         </h2>
       </router-link>
-      <li
-        v-if="totalAtomsDisplay === 0 && session.signedIn"
-        class="app-menu-item hide-xs"
-        title="Get Coins"
-        @click="close() & getFaucet()"
-      >
-        <h2 class="app-menu-title">
-          Get Coins
-        </h2>
-      </li>
-       <!-- <router-link
+      <router-link
         class="app-menu-item hide-xs"
         :class="{active: (this.$route.fullPath === '/sign')}"
         to="/sign"
@@ -68,7 +58,17 @@
         <h2 class="app-menu-title">
           Sign/Verify
         </h2>
-      </router-link> -->
+      </router-link>
+      <li
+        v-if="totalAtomsDisplay === 0 && session.signedIn"
+        class="app-menu-item hide-xs"
+        title="Get Coins"
+        @click="close() & getFaucet()"
+      >
+        <h2 class="app-menu-title">
+          Get Coins
+        </h2>
+      </li>
       <!-- <div class="buttons">
       <TmBtn
           value="Sign"

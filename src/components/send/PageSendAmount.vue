@@ -7,7 +7,7 @@
     :data-empty="dataEmpty"
     data-title="Wallet"
     :sign-in-required="true"
-    :signVerify="true"
+    :sendReceive="true"
   >
     <TmDataMsg
       id="account_empty_msg"
@@ -61,11 +61,20 @@ export default {
       return this.allTransactions.length===0?this.wallet.balances.length === 0:false
     },
     filteredBalances() {
+      var obj = [{
+        amount: '0',
+        denom: 'uclr'
+      }]
+      if(this.wallet.balances){
+        return obj
+      }
+      else {
       return orderBy(
         this.wallet.balances,
         [`amount`, balance => num.viewDenom(balance.denom).toLowerCase()],
         [`desc`, `asc`]
       )
+      }
     }
   },
   async mounted() {

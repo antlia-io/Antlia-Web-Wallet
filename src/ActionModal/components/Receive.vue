@@ -22,7 +22,8 @@
         <div class="amount">{{amount}}</div>
       </div>
       <div class="qrcode">
-        <qrcode-vue :value="link" :size="size" level="H"></qrcode-vue>
+        <qrcode-vue v-if="amount > 0" :value="this.qrwithamount" :size="size" level="H"></qrcode-vue>
+        <qrcode-vue v-else :value="this.onlyqr" :size="size" level="H"></qrcode-vue>
       </div>
       <p>Scan the QR Code to transfer funds</p>
     </div>
@@ -35,6 +36,7 @@ import Bech32 from "common/Bech32"
 import TmField from "src/components/common/TmField"
 import TmFormGroup from "src/components/common/TmFormGroup"
 import QrcodeVue from 'qrcode.vue'
+import axios from "axios";
 import config from "src/config"
 
 export default {
@@ -45,27 +47,68 @@ export default {
     TmFormGroup,
     TmField
   },
+  async updated(){
+      if(this.getQRCode < 2 && this.amount > 0)
+      {
+        this.getQRCode = this.getQRCode + 1;
+        
+            var addressamount = this.url+'/#/send/'+this.wallet.address+'/'+this.amount;
+            await axios
+              .post(config.shorturl,{
+                url: addressamount
+                },{ headers: {
+                  'Content-Type': 'application/json'
+                }} )
+              .then((response) => {
+                this.qrwithamount = response.data.response
+               
+              })
+              .catch(err => {
+                  console.log(err)
+                })
+       
+      }else {
+          if(this.getQRCode2 < 2 && this.amount <= 0) {
+          this.getQRCode2 = this.getQRCode2 + 1;
+            var onlyaddress = this.url+'/#/send/'+this.wallet.address;
+            await axios
+              .post(config.shorturl,{
+                url: onlyaddress
+                },{ headers: {
+                  'Content-Type': 'application/json'
+                }})
+              .then((response) => {
+                this.onlyqr = response.data.response
+               
+              })
+              .catch(err => {
+                  console.log(err)
+                })
+          }
+          
+        }
+  },
   computed: {
-    ...mapGetters([`wallet`,`session`]),
-    link(){
-        if(this.amount > 0)
-            return this.url+'/#/send/'+this.wallet.address+'/'+this.amount
-        else 
-            return this.url+'/#/send/'+this.wallet.address
-    }
+    ...mapGetters([`wallet`,`session`])
   },
   data: () => ({
         size: 150,
         show: false,
-        url: config.qrcode
+        url: config.qrcode,
+        onlyqr: ``,
+        qrwithamount: ``,
+        getQRCode: 1,
+        getQRCode2: 1
   }),
   props: {
     amount: {
       type: String,
       default: 0
     },
-  },
-  mounted() {
+    bilal: {
+      type: Number,
+      default: 1
+    },
   },
   methods: {
     open() {
@@ -73,14 +116,10 @@ export default {
     },
     close() {
       this.show = false
-
-      // reset form
-      this.$v.$reset()
-      this.$emit(`close`)
     },
     clear() {
       this.$v.$reset()
-    },
+    }
   },
 }
 </script>
@@ -92,6 +131,11 @@ export default {
         background: #fff;
         text-align: center;
         padding: .5rem;
+    }
+    .loading {
+      text-align: center;
+      margin: 2rem auto;
+      padding: .5rem;
     }
 
     .publicaddress {

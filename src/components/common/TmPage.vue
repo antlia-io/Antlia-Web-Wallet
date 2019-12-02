@@ -16,9 +16,16 @@
           <h3>Your Public Color Address</h3>
           <Bech32 :address="session.address || ''" long-form />
         </div>
-        <div v-if="session.signedIn">
-          <PageSign v-if="signVerify" />
+        <div v-if="session.signedIn && sendReceive">
+          <LiCoin
+            v-for="coin in filteredBalances"
+            :key="coin.denom"
+            :coin="coin"
+            class="tm-li-balance"
+            @show-modal="showModal"
+          />
         </div>
+        <SendModal ref="sendModal" />
       </slot>
       <slot slot="header-buttons" name="header-buttons" />
     </TmPageHeader>
@@ -47,27 +54,31 @@
 </template>
 
 <script>
+import num from "scripts/num"
 import TmPageHeader from "./TmPageHeader.vue"
 import TmDataLoading from "common/TmDataLoading"
 import TmDataEmpty from "common/TmDataEmpty"
+import LiCoin from "../wallet/LiCoin"
 import CardSignInRequired from "common/CardSignInRequired"
 import { mapGetters } from "vuex"
+import orderBy from "lodash.orderby"
 import TmDataError from "common/TmDataError"
+import SendModal from "src/ActionModal/components/SendModal"
 import TmDataConnecting from "common/TmDataConnecting"
 import TmBalance from "common/TmBalance"
 import FixedSideBar from "common/FixedSideBar"
 import ToolBar from "common/ToolBar"
 import Bech32 from "common/Bech32"
-import PageSign from "../sign/PageSign"
 
 export default {
   name: `tm-page`,
   components: {
     TmBalance,
     ToolBar,
+    LiCoin,
+    SendModal,
     TmPageHeader,
     TmDataEmpty,
-    PageSign,
     TmDataLoading,
     TmDataError,
     TmDataConnecting,
@@ -75,12 +86,9 @@ export default {
     Bech32,
     FixedSideBar
   },
+  data: () => ({ num, showSendModal: false }),
   props: {
     hideHeader: {
-      type: Boolean,
-      default: false
-    },
-    signVerify: {
       type: Boolean,
       default: false
     },
@@ -116,6 +124,10 @@ export default {
       type: Boolean,
       default: undefined
     },
+    sendReceive: {
+      type: Boolean,
+      default: false
+    },
     signInRequired: {
       type: Boolean,
       default: false
@@ -126,11 +138,32 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([`session`, `connected`])
+    ...mapGetters([`session`, `connected`,`wallet`]),
+    filteredBalances() {
+      var obj = [{
+        amount: '0',
+        denom: 'uclr'
+      }]
+      if(this.wallet.balances){
+        return obj
+      }
+      else {
+      return orderBy(
+        this.wallet.balances,
+        [`amount`, balance => num.viewDenom(balance.denom).toLowerCase()],
+        [`desc`, `asc`]
+      )
+      }
+    }
   },
   watch: {
     $route() {
       this.scrollContainer.scrollTop = 0
+    }
+  },
+  methods: {
+    showModal(denomination) {
+      this.$refs.sendModal.open(denomination)
     }
   },
   mounted() {
