@@ -190,6 +190,7 @@ a:hover {
   font-size: 18px;
   color: black;
   text-align: left;
+  margin: 0 0 0.4rem;
 }
 .li-tx__content__caption p {
   margin: 0;

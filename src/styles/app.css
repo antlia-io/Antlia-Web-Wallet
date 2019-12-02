@@ -147,3 +147,16 @@ input.tm-field {
     bottom:50px !important;
   }
 } */
+
+tr{
+  border-top:1px solid #dee2e6;
+  border-bottom:1px solid #dee2e6;
+}
+
+tbody tr:nth-child(2n){
+  background-color: rgba(0,0,0,.05);
+}
+tbody p{
+  margin: 0;
+}
+

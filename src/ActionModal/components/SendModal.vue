@@ -16,12 +16,7 @@
       field-id="send-denomination"
       field-label="Denomination"
     >
-      <TmField
-        id="send-denomination"
-        :value="viewDenom($v.denom.$model)"
-        type="text"
-        readonly
-      />
+      <TmField id="send-denomination" :value="viewDenom($v.denom.$model)" type="text" readonly />
       <TmFormMsg
         v-if="$v.denom.$error && !$v.denom.required"
         name="Denomination"
@@ -44,11 +39,7 @@
         placeholder="Address"
         @keyup.enter.native="refocusOnAmount"
       />
-      <TmFormMsg
-        v-if="$v.address.$error && !$v.address.required"
-        name="Address"
-        type="required"
-      />
+      <TmFormMsg v-if="$v.address.$error && !$v.address.required" name="Address" type="required" />
       <TmFormMsg
         v-else-if="$v.address.$error && !$v.address.bech32Validate"
         name="Address"
@@ -81,11 +72,7 @@
         name="Amount"
         type="required"
       />
-      <TmFormMsg
-        v-else-if="$v.amount.$error && !$v.amount.decimal"
-        name="Amount"
-        type="numeric"
-      />
+      <TmFormMsg v-else-if="$v.amount.$error && !$v.amount.decimal" name="Amount" type="numeric" />
       <TmFormMsg
         v-else-if="$v.amount.$error && !$v.amount.between"
         :max="$v.amount.$params.between.max"

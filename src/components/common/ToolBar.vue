@@ -45,7 +45,7 @@ export default {
 .tool-bar {
   display: flex;
   align-items: center;
-  max-height: 2rem;
+  /* max-height: 2rem; */
   justify-content: flex-end;
   width: 100%;
 }
