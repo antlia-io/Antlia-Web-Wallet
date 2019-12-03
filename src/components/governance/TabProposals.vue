@@ -6,7 +6,7 @@
     title="No Governance Proposals"
     subtitle="There are currently no governance proposals to display.
     Click the 'Create Proposal' button to submit a proposal."
-    icon="gavel"
+    icon="account_balance_wallet"
   />
   <TableProposals
     v-else

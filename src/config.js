@@ -7,7 +7,21 @@ const faucet =
   process.env.FAUCET ||
   (dev
     ? `https://proxy.testnet.color-platform.rnssol.com:8000/claim/wallet`
-    : `https://proxy.testnet.color-platform.rnssol.com:8000/claim/wallet`)
+    : `https://proxy.testnet.color-platform.org:8010/claim/wallet`)
+
+
+const shorturl =
+  process.env.SHORTURL ||
+  (dev
+    ? `https://s.testnet.color-platform.rnssol.com/encode/`
+    : `https://s.testnet.color-platform.org/encode/`)
+
+      
+const qrcode =
+  process.env.QRCODE ||
+  (dev
+    ? `https://wallet.testnet.color-platform.rnssol.com`
+    : `https://wallet.testnet.color-platform.org`)
 
 const rpc =
   process.env.RPC ||
@@ -23,7 +37,9 @@ export default {
   network: process.env.NETWORK || `local-testnet`,
   stargate,
   rpc,
+  qrcode,
   faucet,
+  shorturl,
   chain: chain,
   google_analytics_uid: process.env.GOOGLE_ANALYTICS_UID || "",
   sentry_dsn: process.env.SENTRY_DSN || "",

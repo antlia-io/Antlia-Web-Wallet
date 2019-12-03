@@ -1,7 +1,7 @@
 <template>
   <menu>
     <router-link
-      :class="{active: (this.$route.fullPath === '/wallet')}"
+      :class="{active: (this.$route.fullPath === '/wallet') || (this.$route.fullPath === '/send') || (this.$route.fullPath === '/sendAmount')}"
       to="/wallet"
       exact="exact"
       title="Wallet"
@@ -43,14 +43,25 @@
       </h2>
     </router-link>
     <router-link
+      :class="{active: (this.$route.fullPath === '/sign')}"
+      to="/sign"
+      exact="exact"
+      title="Sign/Verify"
+    >
+      <i class="material-icons">offline_pin</i>
+      <h2 class="app-menu-title">
+        Sign/Verify
+      </h2>
+    </router-link>
+    <router-link
       v-if="totalAtomsDisplay === 0 && session.signedIn"
       @click.native="getFaucet"
-      title="Get Faucet"
+      title="Get Coins"
       to=""
     >
       <i class="material-icons">local_atm</i>
       <h2 class="app-menu-title">
-        Get Faucet
+        Get Coins
       </h2>
     </router-link>
   </menu>

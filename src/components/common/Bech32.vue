@@ -55,6 +55,14 @@ export default {
   margin: 0;
 }
 
+.publicaddress .bech32-address {
+  margin-left: 4rem
+}
+
+.publicaddress .address {
+  color: #48C0B6 !important
+}
+
 .bech32-address .address {
   color: #0a73b1;
   cursor: pointer;
@@ -67,11 +75,22 @@ export default {
   .bech32-address .address {
     overflow: hidden;
     text-overflow: ellipsis;
-}
+  }
+  .publicaddress .bech32-address {
+    width: 70%;
+  }
 
 }
 .bech32-address .address:hover {
   color: #00d6e1;
+}
+
+.publicaddress .address:hover {
+  color: #3C9E92 !important;
+}
+
+.publicaddress .copied {
+  color: white !important
 }
 
 .bech32-address .copied {

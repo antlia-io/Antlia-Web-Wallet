@@ -20,14 +20,7 @@
       />
       <!-- here we use the unconverted denom, as the SendModal
       checks for balances based on the actual denom-->
-      <TmBtn
-        :disabled="unbondedAtoms <= 0"
-        v-else
-        value="Send"
-        color="primary"
-        class="paddingright"
-        @click.native="$emit(`show-modal`, coin.denom)"
-      />
+      <TmBtn :disabled="unbondedAtoms <= 0" v-else value="Send" color="primary" class="paddingright" />
     </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">
@@ -128,11 +121,11 @@ export default {
     amount() {
       return this.viewCoin.amount
     },
-    denomination() {
-      return this.viewCoin.denom
-    },
     unbondedAtoms() {
       return this.loaded ? num.atoms(this.liquidAtoms) : `--`
+    },
+    denomination() {
+      return this.viewCoin.denom
     },
     loaded() {
       return this.wallet.loaded && this.delegation.loaded
@@ -145,6 +138,9 @@ export default {
         decimal
       }
     }
+  },
+  mounted() {
+    this.$emit(`show-modal`, this.coin.denom)
   },
   methods: {
     update(height) {
@@ -228,6 +224,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+
 }
 p.coin-amount {
   margin-bottom: 0 !important;
@@ -243,6 +240,7 @@ p.coin-amount {
     outline: 0;
   }
 }
+
 @media screen and (max-width: 470px) {
   .li-coin__icon {
     display: none;
@@ -264,7 +262,6 @@ p.coin-amount {
  text-align: center !important;
 }
 }
-
 @media screen and (max-width: 667px) {
   .li-coin {
     padding: 0.5rem;

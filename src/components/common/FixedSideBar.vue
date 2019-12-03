@@ -12,7 +12,7 @@
           <i v-if="!buttonActive" class="material-icons">menu</i>
           <i v-else class="material-icons">close</i>
         </li>
-        <li class="sidebar-item hover" @click="home()" v-on:click="active = 'home'" :class="{active:this.$route.fullPath === '/wallet'}" title="Wallet">
+        <li class="sidebar-item hover" @click="home()" v-on:click="active = 'home'" :class="{active:(this.$route.fullPath === '/wallet') || (this.$route.fullPath === '/send') || (this.$route.fullPath === '/sendAmount')}" title="Wallet">
           <i class="material-icons">home</i>
           <span class="e-text">Wallet</span>
         </li>
@@ -28,15 +28,15 @@
           <i class="material-icons">my_location</i>
           <span class="e-text">Network</span>
         </li>
-        <li v-if="totalAtomsDisplay === 0 && session.signedIn" class="sidebar-item hover" @click="getFaucet()" v-on:click="active = 'getFaucet'" title="Get Faucet">
-          <i class="material-icons">local_atm</i>
-          <span class="e-text"><Button class="faucet">Get Faucet</Button>
-          </span>
-        </li>
-        <!-- <li class="sidebar-item hover" @click="sign()" v-on:click="active = 'sign'" :class="{active:(this.$route.fullPath === '/sign')}" title="Sign/Verify">
+        <li class="sidebar-item hover" @click="sign()" v-on:click="active = 'sign'" :class="{active:(this.$route.fullPath === '/sign')}" title="Sign/Verify">
           <i class="material-icons">offline_pin</i>
           <span class="e-text">Sign/Verify</span>
-        </li> -->
+        </li>
+        <li v-if="totalAtomsDisplay === 0 && session.signedIn" class="sidebar-item hover" @click="getFaucet()" v-on:click="active = 'getFaucet'" title="Get Coins">
+          <i class="material-icons">local_atm</i>
+          <span class="e-text"><Button class="faucet">Get Coins</Button>
+          </span>
+        </li>
         <!-- <li class="sidebar-item hover button" @click="showModal()" title="Sign">
           <i class="material-icons">vpn_key</i>
           <span class="e-text"><TmBtn

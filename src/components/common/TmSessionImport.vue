@@ -135,6 +135,7 @@
 
 <script>
 import { required, minLength, sameAs } from "vuelidate/lib/validators"
+import Vue from "vue";
 import TmBtn from "common/TmBtn"
 import TmFormGroup from "common/TmFormGroup"
 import TmFormStruct from "common/TmFormStruct"
@@ -143,6 +144,10 @@ import TmFormMsg from "common/TmFormMsg"
 import FieldSeed from "common/TmFieldSeed"
 import SessionFrame from "common/SessionFrame"
 import { mapGetters } from "vuex"
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/index.css';
+Vue.use(VueToast);
+
 export default {
   name: `session-import`,
   components: {
@@ -175,11 +180,26 @@ export default {
           password: this.fields.importPassword,
           name: this.fields.importName
         })
-        this.$router.push(`/wallet`)
+        if(localStorage.getItem(`qraddress`) !== "undefined" && localStorage.getItem(`qramount`)==="undefined")
+        {
+          this.$router.push(`/send`)
+        }
+        else if (localStorage.getItem(`qramount`) !== "undefined")
+        {
+          localStorage.getItem(`qraddress`) && this.$router.push(`/sendAmount`)
+        }
+        else if (localStorage.getItem(`qramount`)==="undefined" && localStorage.getItem(`qraddress`)==="undefined")
+        {  
+          this.$router.push(`/wallet`)
+        }
       } catch (error) {
-        this.$store.commit(`notifyError`, {
-          title: `Couldn't create account`,
-          body: error.message
+        this.$toast.open({
+          message: `Couldn't create account, ${error.message}`,
+          type: 'error',
+          position: 'top-right'
+        // this.$store.commit(`notifyError`, {
+        //   title: `Couldn't create account`,
+        //   body: error.message
         })
       }
     }

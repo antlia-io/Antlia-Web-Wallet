@@ -83,3 +83,10 @@
   margin-left: 0;
   margin-right: 0;
 }
+
+
+@media(max-width: 1600px){
+  .vue-tooltip {
+    width:190px;
+  }
+}

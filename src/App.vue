@@ -42,10 +42,19 @@ export default {
     ...mapGetters([`notifications`, `session`])
   },
   mounted(){
-    if (this.$route.fullPath === '/send/colors1l37vu6ds87rx2gs5yxjx70v7uy5yewpwuyxsud')
-      this.$router.push('/send') 
-    if (this.$route.fullPath === '/send/colors1l37vu6ds87rx2gs5yxjx70v7uy5yewpwuyxsud/1')
+    var fullpath = this.$route.fullPath
+    var fullPatharray = this.$route.fullPath.split('/')
+    var address = fullPatharray[2];
+    var amount = fullPatharray[3];
+    if (this.$route.fullPath.includes('send/colors') && amount === undefined)
+      {
+        this.$router.push('/send') 
+      }
+    else if (this.$route.fullPath.includes('send/colors') && amount !== undefined)
       this.$router.push('/sendAmount') 
+    
+    localStorage.setItem('qraddress',address),
+    localStorage.setItem('qramount',amount)
   },
   store
 }

@@ -45,13 +45,13 @@ export default {
 .tool-bar {
   display: flex;
   align-items: center;
-  max-height: 2rem;
+  /* max-height: 2rem; */
   justify-content: flex-end;
   width: 100%;
 }
 
 .sign-in-button {
-  margin-left: 1rem;
+  margin: 1rem 0 1rem 1rem;
 }
 
 .tool-bar i {

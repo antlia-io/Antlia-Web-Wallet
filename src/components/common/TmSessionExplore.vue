@@ -68,7 +68,18 @@ export default {
         address: this.address
       })
       localStorage.setItem(`prevAddress`, this.address)
-      this.$router.push(`/wallet`)
+        if(localStorage.getItem(`qraddress`) !== "undefined" && localStorage.getItem(`qramount`)==="undefined")
+        {
+          this.$router.push(`/send`)
+        }
+        else if (localStorage.getItem(`qramount`) !== "undefined")
+        {
+          localStorage.getItem(`qraddress`) && this.$router.push(`/sendAmount`)
+        }
+        else if (localStorage.getItem(`qramount`)==="undefined" && localStorage.getItem(`qraddress`)==="undefined")
+        {  
+          this.$router.push(`/wallet`)
+        }
     },
     bech32Validate(param) {
       try {

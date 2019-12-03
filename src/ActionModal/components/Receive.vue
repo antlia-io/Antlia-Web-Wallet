@@ -1,257 +1,172 @@
 <template>
-  <ActionModal
-    id="send-modal"
-    ref="actionModal"
-    :validate="validateForm"
-    :amount="amount"
-    title="Send"
-    submission-error-prefix="Sending tokens failed"
-    :transaction-data="transactionData"
-    :notify-message="notifyMessage"
-    @close="clear"
-  >
-    <TmFormGroup
-      :error="$v.denom.$dirty && $v.denom.$invalid"
-      class="action-modal-form-group"
-      field-id="send-denomination"
-      field-label="Denomination"
-    >
-      <TmField
-        id="send-denomination"
-        :value="viewDenom($v.denom.$model)"
-        type="text"
-        readonly
-      />
-      <TmFormMsg
-        v-if="$v.denom.$error && !$v.denom.required"
-        name="Denomination"
-        type="required"
-        color="white"
-      />
-    </TmFormGroup>
-
-    <TmFormGroup
-      :error="$v.address.$error && $v.address.$invalid"
-      class="action-modal-form-group"
-      field-id="send-address"
-      field-label="Send To"
-    >
-      <TmField
-        id="send-address"
-        v-model.number="$v.address.$model"
-        v-focus
-        type="text"
-        placeholder="Address"
-        @keyup.enter.native="refocusOnAmount"
-      />
-      <TmFormMsg
-        v-if="$v.address.$error && !$v.address.required"
-        name="Address"
-        type="required"
-      />
-      <TmFormMsg
-        v-else-if="$v.address.$error && !$v.address.bech32Validate"
-        name="Address"
-        type="bech32"
-      />
-    </TmFormGroup>
-    <TmFormGroup
-      :error="$v.amount.$error && $v.amount.$invalid"
-      class="action-modal-form-group"
-      field-id="amount"
-      field-label="Amount"
-    >
-      <TmField
-        id="amount"
-        ref="amount"
-        v-model="amount"
-        class="tm-field"
-        placeholder="Amount"
-        type="number"
-        @keyup.enter.native="enterPressed"
-      />
-      <TmFormMsg
-        v-if="balance === 0"
-        :msg="`doesn't have any ${viewDenom(denom)}`"
-        name="Wallet"
-        type="custom"
-      />
-      <TmFormMsg
-        v-else-if="$v.amount.$error && (!$v.amount.required || amount === 0)"
-        name="Amount"
-        type="required"
-      />
-      <TmFormMsg
-        v-else-if="$v.amount.$error && !$v.amount.decimal"
-        name="Amount"
-        type="numeric"
-      />
-      <TmFormMsg
-        v-else-if="$v.amount.$error && !$v.amount.between"
-        :max="$v.amount.$params.between.max"
-        :min="$v.amount.$params.between.min"
-        name="Amount"
-        type="between"
-      />
-    </TmFormGroup>
-    <TmBtn
-      v-if="editMemo === false"
-      id="edit-memo-btn"
-      value="Edit Memo"
-      :to="''"
-      type="link"
-      size="sm"
-      @click.native="editMemo = true"
-    />
-    <TmFormGroup
-      v-if="editMemo"
-      id="memo"
-      :error="$v.memo.$error && $v.memo.$invalid"
-      class="action-modal-group"
-      field-id="memo"
-      field-label="Memo"
-    >
-      <TmField
-        id="memo"
-        v-model="memo"
-        type="text"
-        placeholder="Add a description..."
-        @keyup.enter.native="enterPressed"
-      />
-      <TmFormMsg
-        v-if="$v.memo.$error && !$v.memo.maxLength"
-        name="Memo"
-        type="maxLength"
-        :max="max_memo_characters"
-      />
-    </TmFormGroup>
-  </ActionModal>
+<transition v-if="show" name="slide-fade">
+    <div v-focus-last class="action-modal" id="receivemodal" tabindex="0" @keyup.esc="close">
+      <div
+        id="closeBtn"
+        class="action-modal-icon action-modal-close"
+        @click="close"
+      >
+        <i class="material-icons">close</i>
+      </div>
+      <div class="action-modal-header">
+        <span class="action-modal-title">
+          QR Code
+        </span>
+      </div>
+      <div class="publicaddress">
+          <h6>Your Public Color Address</h6>
+          <Bech32 :address="session.address || ''" long-form />
+      </div>
+      <div class="publicaddress" v-show="amount > 0">
+        <div>Amount: </div>
+        <div class="amount">{{amount}}</div>
+      </div>
+      <div class="qrcode">
+        <qrcode-vue v-if="amount > 0" :value="this.qrwithamount" :size="size" level="H"></qrcode-vue>
+        <qrcode-vue v-else :value="this.onlyqr" :size="size" level="H"></qrcode-vue>
+      </div>
+      <p>Scan the QR Code to transfer funds</p>
+    </div>
+  </transition>
 </template>
 
 <script>
-import b32 from "scripts/b32"
-import { required, between, decimal, maxLength } from "vuelidate/lib/validators"
-import { uatoms, atoms, viewDenom, SMALLEST } from "src/scripts/num.js"
 import { mapGetters } from "vuex"
-import TmFormGroup from "src/components/common/TmFormGroup"
+import Bech32 from "common/Bech32"
 import TmField from "src/components/common/TmField"
-import TmFormMsg from "src/components/common/TmFormMsg"
-import TmBtn from "src/components/common/TmBtn"
-import ActionModal from "./ActionModal"
-import transaction from "../utils/transactionTypes"
-
-const defaultMemo = "(Sent via Color Wallet)"
+import TmFormGroup from "src/components/common/TmFormGroup"
+import QrcodeVue from 'qrcode.vue'
+import axios from "axios";
+import config from "src/config"
 
 export default {
   name: `send-modal`,
   components: {
-    TmField,
+    QrcodeVue,
+    Bech32,
     TmFormGroup,
-    TmFormMsg,
-    ActionModal,
-    TmBtn
+    TmField
+  },
+  async updated(){
+      if(this.getQRCode < 2 && this.amount > 0)
+      {
+        this.getQRCode = this.getQRCode + 1;
+        
+            var addressamount = this.url+'/#/send/'+this.wallet.address+'/'+this.amount;
+            await axios
+              .post(config.shorturl,{
+                url: addressamount
+                },{ headers: {
+                  'Content-Type': 'application/json'
+                }} )
+              .then((response) => {
+                this.qrwithamount = response.data.response
+               
+              })
+              .catch(err => {
+                  console.log(err)
+                })
+       
+      }else {
+          if(this.getQRCode2 < 2 && this.amount <= 0) {
+          this.getQRCode2 = this.getQRCode2 + 1;
+            var onlyaddress = this.url+'/#/send/'+this.wallet.address;
+            await axios
+              .post(config.shorturl,{
+                url: onlyaddress
+                },{ headers: {
+                  'Content-Type': 'application/json'
+                }})
+              .then((response) => {
+                this.onlyqr = response.data.response
+               
+              })
+              .catch(err => {
+                  console.log(err)
+                })
+          }
+          
+        }
+  },
+  computed: {
+    ...mapGetters([`wallet`,`session`])
   },
   data: () => ({
-    address: ``,
-    amount: null,
-    denom: ``,
-    memo: defaultMemo,
-    max_memo_characters: 256,
-    editMemo: false
+        size: 150,
+        show: false,
+        url: config.qrcode,
+        onlyqr: ``,
+        qrwithamount: ``,
+        getQRCode: 1,
+        getQRCode2: 1
   }),
-  computed: {
-    ...mapGetters([`wallet`]),
-    balance() {
-      const denom = this.wallet.balances.find(b => b.denom === this.denom)
-      return (denom && denom.amount) || 0
+  props: {
+    amount: {
+      type: String,
+      default: 0
     },
-    transactionData() {
-      return {
-        type: transaction.SEND,
-        toAddress: this.address,
-        amounts: [
-          {
-            amount: uatoms(+this.amount),
-            denom: this.denom
-          }
-        ],
-        memo: this.memo
-      }
+    bilal: {
+      type: Number,
+      default: 1
     },
-    notifyMessage() {
-      return {
-        title: `Successful Send`,
-        body: `Successfully sent ${+this.amount} ${viewDenom(this.denom)} to ${
-          this.address
-        }`
-      }
-    }
-  },
-  mounted() {
-    if (this.denom) {
-      this.denom = this.denom
-    }
   },
   methods: {
-    viewDenom,
-    open(denom) {
-      this.denom = denom
-      this.$refs.actionModal.open()
+    open() {
+      this.show = true
     },
-    validateForm() {
-      this.$v.$touch()
-
-      return !this.$v.$invalid
+    close() {
+      this.show = false
     },
     clear() {
       this.$v.$reset()
-
-      this.address = undefined
-      this.amount = undefined
-      this.editMemo = false
-      this.memo = defaultMemo
-      this.sending = false
-    },
-    bech32Validate(param) {
-      try {
-        b32.decode(param)
-        return true
-      } catch (error) {
-        return false
-      }
-    },
-    enterPressed() {
-      this.$refs.actionModal.validateChangeStep()
-    },
-    refocusOnAmount() {
-      this.$refs.amount.$el.focus()
     }
   },
-  validations() {
-    return {
-      address: {
-        required,
-        bech32Validate: this.bech32Validate
-      },
-      amount: {
-        required: x => !!x && x !== `0`,
-        decimal,
-        between: between(SMALLEST, atoms(this.balance))
-      },
-      denom: { required },
-      memo: {
-        maxLength: maxLength(this.max_memo_characters)
-      }
-    }
-  }
 }
 </script>
 <style scoped>
-#edit-memo-btn {
-  display: inline-block;
-  height: 58px;
-  padding: 12px 0;
-  box-sizing: content-box;
-  font-size: var(--sm);
-}
+    .qrcode {
+        width: 100%;
+        max-width:170px;
+        margin: 2rem auto 0;
+        background: #fff;
+        text-align: center;
+        padding: .5rem;
+    }
+    .loading {
+      text-align: center;
+      margin: 2rem auto;
+      padding: .5rem;
+    }
+
+    .publicaddress {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .display {
+      display: flex
+    }
+
+    .margin {
+      border: none;
+      background: #3a3046 !important;
+      height: 2rem !important;
+    }
+
+    #receivemodal p {
+      margin-top: 1rem !important;
+      font-weight: 300;
+      font-size: 14px;
+      text-align: center;
+      word-break: break-word;
+    }
+
+    .amount {
+      min-width: 100px;
+      max-width: 200px;
+      word-break: break-all
+    }
 </style>

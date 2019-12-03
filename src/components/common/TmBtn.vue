@@ -121,7 +121,7 @@ a {
 }
 
 #withdraw-btn .tm-btn__container {
-  padding: 0 !important;
+  padding: .3rem .5rem !important;
   display: unset !important
 }
 

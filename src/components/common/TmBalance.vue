@@ -15,26 +15,26 @@
       ></b-progress-bar>
     </b-progress>
     <div class="row textalign">
-      <div class="col-md-3">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
         <h3>Total {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="total-atoms__value color">{{ totalAtomsDisplay }}</h2>
       </div>
-      <div class="col-md-3">
-        <p class="green"></p>
-        <h3>Liquid {{ num.viewDenom(bondDenom) }}:</h3>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
+        
+        <h3><p class="green"></p>Liquid {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="color">{{ unbondedAtoms }}</h2>
       </div>
-      <div class="col-md-3">
-        <p class="blue"></p>
-        <h3>Delegated {{ num.viewDenom(bondDenom) }}:</h3>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
+        
+        <h3><p class="blue"></p>Delegated {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="color">{{ delegated }}</h2>
       </div>
-      <div v-if="rewards" class="col-md-3 display">
+      <div v-if="rewards" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment display">
         <h3 class="margintop">Available Rewards:</h3>
-        <h2 class="color topleft">{{ rewards }}</h2>
-        <TmBtn
+        <!-- <h2 class="color topleft">{{ rewards }}  -->
+          <TmBtn
             id="withdraw-btn"
-            icon="vertical_align_bottom"
+            :value="rewards"
             :disabled="!readyToWithdraw"
             :to="''"
             type="anchor"
@@ -42,6 +42,8 @@
             class="withdrawbtn"
             @click.native="readyToWithdraw && onWithdrawal()"
           />
+          <!-- </h2> -->
+       
       </div>
     </div>
     <ModalWithdrawRewards
@@ -166,9 +168,9 @@ export default {
   padding: 1rem 0 2.5rem 1rem;
 }
 
-.display {
+/* .display {
   display: contents
-}
+} */
 
 .margintop {
   margin-top: 0.2rem !important
@@ -207,6 +209,7 @@ h2 {
   color: black !important;
   font-size: 1rem !important;
   display: inline;
+  margin-bottom: 0.5rem;
   overflow: hidden;
   font-weight: 500
 }
@@ -224,6 +227,7 @@ h2 {
   width: 15px;
   height: 15px;
   display: -webkit-inline-box;
+  margin: 0 5px 0 0;
 }
 
 .blue {
@@ -231,6 +235,7 @@ h2 {
   width: 15px;
   height: 15px;
   display: -webkit-inline-box;
+  margin: 0 5px 0 0;
 }
 
 .color {
@@ -293,6 +298,12 @@ p {
   }
 }
 
+@media screen and (max-width: 575px) {
+  .alignment{
+    display: flex;
+    justify-content: space-between
+  }
+}
 /* TODO fix scaling on medium sized screens and pick proper break point */
 @media screen and (max-width: 550px) {
   .header-balance {

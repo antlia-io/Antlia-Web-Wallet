@@ -143,10 +143,13 @@
               v-clipboard:success="() => onCopy()">
               {{txHash}}
               </div>
+              <i v-clipboard:copy="txHash"
+              v-clipboard:success="() => onCopy()" class="material-icons cursor">collections</i>
               <div :class="{ active: copySuccess }" class="copied">
-                <i class="material-icons">check</i><span>Copied</span>
+                <span>Copied</span>
               </div>
             </div>
+            <p>Copy above signed message to verify signature</p>
           <!-- <h2 class="pubKey">
             Public Key:
           </h2>
@@ -453,7 +456,10 @@ export default {
           if (!this.isValidChildForm) {
             return
           }
-          if (!this.isValidInput(`password`)) {
+          if (!this.isValidInput(`password`) && !this.isValidInput(`message`) ){
+            return
+          }
+          if(this.message === '' && !this.isValidInput(`message`)){
             return
           }
           this.sending = true
@@ -556,6 +562,13 @@ export default {
   font-size: var(--sm);
 }
 
+#successStep p {
+  margin-top: 1rem !important;
+  font-weight: 300;
+  font-size: 14px;
+  word-break: break-word;
+}
+
 .hash{
     color: #0a73b1;
     cursor: pointer;
@@ -573,6 +586,10 @@ a {
 
 a:hover {
   color: #00d6e1;
+}
+
+.cursor {
+  cursor: pointer;
 }
 
 .hash:hover {

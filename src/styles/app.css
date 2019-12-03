@@ -127,3 +127,36 @@ input.tm-field {
     min-width: 0;
   }
 }
+
+/* Styles */
+.tm-data-msg__subtitle {
+  word-break: break-all;
+}
+.card{
+  margin: 0 0 1.5rem !important;
+}
+.textclr{
+  color: #0a73b1;
+}
+.alignment {
+  display: flex;
+  align-items: center;
+}
+/* @media(max-width:667px){
+  .action-modal{
+    bottom:50px !important;
+  }
+} */
+
+tr{
+  border-top:1px solid #dee2e6;
+  border-bottom:1px solid #dee2e6;
+}
+
+tbody tr:nth-child(2n){
+  background-color: rgba(0,0,0,.05);
+}
+tbody p{
+  margin: 0;
+}
+

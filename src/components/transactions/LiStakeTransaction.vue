@@ -11,7 +11,7 @@
     <template v-if="txType === `cosmos-sdk/MsgCreateValidator`">
       <div slot="caption">
         Create validator
-        <b>{{ tx.amount.amount | toAtoms }}</b>
+        <b>{{ tx.amount.amount | toAtoms | prettyLong}}</b>
         <span>{{ value | viewDenom }}</span>
       </div>
       <div slot="details">
@@ -35,7 +35,7 @@
     <template v-else-if="txType === `cosmos-sdk/MsgDelegate`">
       <div slot="caption">
         Delegated
-        <b>{{ tx.amount.amount | toAtoms }}</b>
+        <b>{{ tx.amount.amount | toAtoms | prettyLong }}</b>
         <span>{{ tx.amount.denom | viewDenom }}</span>
       </div>
       <div slot="details">
@@ -49,7 +49,7 @@
       <div slot="caption">
         Undelegated
         <b>
-          {{ tx.amount.amount | toAtoms }}
+          {{ tx.amount.amount | toAtoms | prettyLong}}
         </b>
         <span>{{ bondingDenom | viewDenom }}</span>
         <template v-if="timeDiff">
@@ -69,7 +69,7 @@
       <div slot="caption">
         Redelegated
         <b>
-          {{ tx.amount.amount | toAtoms }}
+          {{ tx.amount.amount | toAtoms | prettyLong}}
         </b>
         <span>{{ bondingDenom | viewDenom }}</span>
       </div>
@@ -100,7 +100,7 @@
 
 <script>
 import LiTransaction from "./LiTransaction"
-import { atoms as toAtoms, viewDenom } from "../../scripts/num.js"
+import { atoms as toAtoms, viewDenom , prettyLong} from "../../scripts/num.js"
 import { formatBech32 } from "src/filters"
 import moment from "moment"
 
@@ -115,7 +115,8 @@ export default {
   },
   filters: {
     toAtoms,
-    viewDenom
+    viewDenom,
+    prettyLong
   },
   props: {
     tx: {
