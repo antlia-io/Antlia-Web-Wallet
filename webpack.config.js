@@ -126,6 +126,7 @@ const config = {
       "process.env": {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         FAUCET: JSON.stringify(process.env.FAUCET),
+        SHORTURL: JSON.stringify(process.env.SHORTURL),
         QRCODE: JSON.stringify(process.env.QRCODE),
         RPC: JSON.stringify(process.env.RPC),
         STARGATE: JSON.stringify(process.env.STARGATE),

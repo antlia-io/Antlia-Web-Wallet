@@ -50,17 +50,17 @@
           </div>
         </div>
         <div class="row">
-          <dl class="info_dl colored_dl">
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>Submitted</dt>
             <dd>{{ submittedAgo }}</dd>
           </dl>
-          <dl class="info_dl colored_dl">
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>Proposal Status</dt>
             <dd>
               {{ proposalStatus }}
             </dd>
           </dl>
-          <dl class="info_dl colored_dl">
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>Deposit Count</dt>
             <dd>
               {{
@@ -71,11 +71,11 @@
               }}
             </dd>
           </dl>
-          <dl class="info_dl colored_dl">
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>Description</dt>
             <TextBlock :content="description" />
           </dl>
-          <dl class="info_dl colored_dl">
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>Requested Fund</dt>
             <dd>
               {{ num.fullDecimals(num.atoms(proposal.proposal_content.value.requested_fund[0].amount)) 
@@ -85,7 +85,7 @@
                   }}
             </dd>
           </dl>
-          <dl class="info_dl colored_dl">
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>Funding Cycle</dt>
             <dd>
               {{ fundingCycle
@@ -97,39 +97,39 @@
       </div>
 
       <div v-if="proposal.proposal_status === 'VotingPeriod'" class="row marginbottom">
-        <dl v-if="displayEndDate" class="info_dl colored_dl">
+        <dl v-if="displayEndDate" class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
           <dt>Voting End Date</dt>
           <dd>{{ endDate }}</dd>
         </dl>
         <dl
           v-if="proposal.proposal_status === 'VotingPeriod'"
-          class="info_dl colored_dl"
+          class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12"
         >
           <dt>Total Vote Count</dt>
           <dd>{{ num.shortDecimals(num.atoms(totalVotes)) }}</dd>
         </dl>
-        <dl class="info_dl colored_dl">
+        <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
           <dt>Yes</dt>
           <dd>
             {{ num.shortDecimals(num.atoms(tally.yes)) }} /
             {{ yesPercentage }}
           </dd>
         </dl>
-        <dl class="info_dl colored_dl">
+        <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
           <dt>No</dt>
           <dd>
             {{ num.shortDecimals(num.atoms(tally.no)) }} /
             {{ noPercentage }}
           </dd>
         </dl>
-        <!-- <dl class="info_dl colored_dl">
+        <!-- <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
           <dt>No with Veto</dt>
           <dd>
             {{ num.shortDecimals(num.atoms(tally.no_with_veto)) }} /
             {{ noWithVetoPercentage }}
           </dd>
         </dl> -->
-        <dl class="info_dl colored_dl">
+        <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
           <dt>Abstain</dt>
           <dd>
             {{ num.shortDecimals(num.atoms(tally.abstain)) }} /

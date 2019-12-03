@@ -110,7 +110,7 @@ export default {
   color: black;
   font-weight: 300;
   margin: 1rem;
-  text-align: left;
+  text-align: justify;
 }
 @media screen and (max-width: 768px) {
 .pl{

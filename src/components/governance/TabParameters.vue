@@ -60,7 +60,7 @@
               }}
             </dd>
           </dl>
-          <!-- <dl class="info_dl">
+          <!-- <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>
               Maximum Deposit Period
               <i
@@ -83,7 +83,7 @@
           
         </div> -->
         <!-- <div class="row"> -->
-          <!-- <dl class="info_dl">
+          <!-- <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>
               Veto
               <i
@@ -103,7 +103,7 @@
               }}
             </dd>
           </dl> -->
-          <!-- <dl class="info_dl">
+          <!-- <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>
               Voting Period
               <i

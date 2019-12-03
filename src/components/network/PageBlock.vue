@@ -104,7 +104,8 @@ export default {
     },
     blockTitle({ num, block } = this) {
       if (!block.block) return `--`
-      return `#` + num.prettyInt(block.block.header.height)
+      return `#` + this.$route.fullPath.split('/')[2]
+      // return `#` + num.prettyInt(block.block.header.height)
     },
     blockTime({ moment, block } = this) {
       if (!block.block) return `--`

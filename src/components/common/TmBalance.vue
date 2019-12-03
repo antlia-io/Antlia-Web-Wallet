@@ -209,6 +209,7 @@ h2 {
   color: black !important;
   font-size: 1rem !important;
   display: inline;
+  margin-bottom: 0.5rem;
   overflow: hidden;
   font-weight: 500
 }

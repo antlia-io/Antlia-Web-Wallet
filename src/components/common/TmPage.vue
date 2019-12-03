@@ -235,7 +235,7 @@ export default {
 }
 
 .page-profile__section {
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .page-profile__section-title {

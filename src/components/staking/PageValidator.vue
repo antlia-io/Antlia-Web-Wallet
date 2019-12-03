@@ -90,33 +90,33 @@
       <div class="page-profile__section">
         <div class="row">
           <div class="row">
-            <dl class="info_dl">
+            <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Validator Since</dt>
               <dd>Block # {{ validator.signing_info ? validator.signing_info.start_height : 0 }}</dd>
             </dl>
-            <dl class="info_dl">
+            <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Current Commission Rate</dt>
               <dd>{{ num.percent(validator.commission.rate) }}</dd>
             </dl>
-            <dl class="info_dl">
+            <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Full Operator Address</dt>
               <dd class="address">{{ validator.operator_address }}</dd>
             </dl>
-            <dl class="info_dl">
+            <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Max Commission Rate</dt>
               <dd>{{ num.percent(validator.commission.max_rate) }}</dd>
             </dl>
-            <dl class="info_dl">
+            <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Keybase ID</dt>
               <dd>
                 {{ translateEmptyDescription(validator.description.identity) }}
               </dd>
             </dl>
-            <dl class="info_dl">
+            <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Max Daily Commission Change</dt>
               <dd>{{ num.percent(validator.commission.max_change_rate) }}</dd>
             </dl>
-            <dl class="info_dl">
+            <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Website</dt>
               <dd v-if="website !== `--`">
                 <a
@@ -132,17 +132,17 @@
                 {{ website }}
               </dd>
             </dl>
-            <dl class="info_dl">
+            <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Last Commission Change</dt>
               <dd>{{ lastCommissionChange }}</dd>
             </dl>
-            <dl class="info_dl">
+            <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Description</dt>
               <dd class="info_dl__text-box">
                 {{ translateEmptyDescription(validator.description.details) }}
               </dd>
             </dl>
-            <dl class="info_dl">
+            <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Self Delegation</dt>
               <dd id="page-profile__self-bond">
                 {{ selfBond }}
