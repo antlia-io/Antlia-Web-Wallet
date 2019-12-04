@@ -37,6 +37,8 @@ export default {
     },
     signOut() {
       this.$store.dispatch(`signOut`)
+      localStorage.setItem(`qraddress`,undefined)
+      localStorage.setItem(`qramount`,undefined)
     }
   }
 }

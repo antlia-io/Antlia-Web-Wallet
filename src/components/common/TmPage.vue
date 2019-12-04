@@ -387,9 +387,9 @@ export default {
 }
 
 @media screen and (max-width: 1023px) {
-  .tm-page-main {
+  /* .tm-page-main {
     min-height: 100vh;
-  }
+  } */
   .tm-page {
     margin: 0 !important
   }

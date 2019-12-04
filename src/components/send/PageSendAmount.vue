@@ -7,7 +7,6 @@
     :data-empty="dataEmpty"
     data-title="Wallet"
     :sign-in-required="true"
-    :sendReceive="true"
   >
     <TmDataMsg
       id="account_empty_msg"

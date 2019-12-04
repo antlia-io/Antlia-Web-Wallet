@@ -5,11 +5,11 @@
         Explore with any address
       </h2>
       <div class="session-main">
-        <TmFormGroup field-id="sign-in-name" field-label="Your Color Address"> 
+        <TmFormGroup field-id="sign-in-name" field-label="Color Public Address"> 
           <TmField
             v-model="address"
             type="text"
-            placeholder=""
+            placeholder="Enter Color Public Address"
             vue-focus="vue-focus"
             style="color: black"
           />

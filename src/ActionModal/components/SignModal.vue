@@ -429,7 +429,7 @@ export default {
       this.step = signStep
       this.show = false
       this.sending = false
-
+      this.message = ''
       // reset form
       this.$v.$reset()
       this.$emit(`close`)

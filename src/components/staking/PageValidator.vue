@@ -31,7 +31,7 @@
                 {{ validator.description.moniker }}
               </div>
             </div>
-            <Bech32 :address="validator.operator_address" />
+            <Bech32 :address="validator.operator_address" class="validatoraddress"/>
           </div>
           <div class="col-lg-2 page-profile__header__actions">
             <TmBtn
@@ -462,8 +462,15 @@ export default {
   }
 
   .page-profile__header .avatar {
-    padding: 0;
+    /* padding: 0; */
     margin: 1rem auto;
+  }
+  .page-profile__status-and-title{
+    justify-content: center;
+  }
+  .validatoraddress {
+    margin-left: 3.5rem;
+    justify-content: center;
   }
 }
 </style>

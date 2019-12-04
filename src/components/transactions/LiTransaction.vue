@@ -214,9 +214,9 @@ a:hover {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.tooltip-content{
+/* .tooltip-content{
 word-break: break-all;
-}
+} */
 @media screen and (max-width: 572px) {
   .tx-hash .address {
     overflow: hidden;

@@ -21,6 +21,7 @@
           <TmField
             id="sign-up-name"
             v-model.trim="fields.signUpName"
+            ref="signUpName"
             type="text"
             placeholder="Must be at least 5 characters"
             vue-focus="vue-focus"
@@ -49,6 +50,7 @@
             id="sign-up-password"
             v-model="fields.signUpPassword"
             type="password"
+            ref="signUpPassword"
             placeholder="Must be at least 10 characters"
             style="color: black"
           />
@@ -79,6 +81,7 @@
             id="sign-up-password-confirm"
             v-model="fields.signUpPasswordConfirm"
             type="password"
+            ref="signUpPasswordConfirm"
             placeholder="Enter password again"
             style="color: black"
           />
@@ -224,7 +227,7 @@ export default {
   methods: {
     async onSubmit() {
       this.$v.$touch()
-      if (this.$v.$error) return
+      if (this.$v.$error) return this.$refs.signUpName.$el.focus()
       try {
         await this.$store.dispatch(`createKey`, {
           seedPhrase: this.fields.signUpSeed,
@@ -278,6 +281,7 @@ export default {
 .danger-zone p {
   font-size: var(--sm);
   color: var(--danger);
+  text-align: justify;
   margin: 0;
 }
 

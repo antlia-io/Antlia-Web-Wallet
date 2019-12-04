@@ -182,7 +182,7 @@
           <div slot="title">
             {{ notifyMessage.title }}
           </div>
-          <div slot="subtitle">
+          <div slot="subtitle" class="addressbreak">
             {{ notifyMessage.body }} <br /><br />
             Block
             <router-link :to="`/blocks/${includedHeight}`"
@@ -719,6 +719,10 @@ export default {
   font-style: italic;
   color: white;
   display: inline-block;
+}
+
+.addressbreak {
+  word-break: break-all;
 }
 
 .form-message.notice {

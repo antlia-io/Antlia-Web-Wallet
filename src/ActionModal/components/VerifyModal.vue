@@ -45,6 +45,7 @@
             id="key"
             v-model="$v.key.$model"
             type="text"
+            ref="key"
             placeholder="Signed Message"
             @keyup.enter.native="enterPressed"
           />
@@ -121,7 +122,8 @@
           v-if="submissionError"
           class="tm-form-msg sm tm-form-msg--error submission-error"
         >
-          {{ submissionError }}
+          Invalid Signed Message
+          <!-- {{ submissionError }} -->
         </p>
       </div>
 
@@ -240,7 +242,9 @@ export default {
       this.step = signStep
       this.show = false
       this.sending = false
-
+      this.publicKey= ''
+      this.message= ''
+      this.key= ''
       // reset form
       this.$v.$reset()
       this.$emit(`close`)
@@ -282,7 +286,7 @@ export default {
           this.sending = true
           await this.submit()
           this.sending = false
-          return
+          return this.$refs.key.$el.focus()
         default:
           return
       }

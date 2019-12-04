@@ -14,6 +14,7 @@
             id="import-name"
             v-model.trim="fields.importName"
             type="text"
+            ref="importName"
             placeholder="Must have at least 5 characters"
             vue-focus="vue-focus"
             style="color: black"
@@ -173,7 +174,7 @@ export default {
   methods: {
     async onSubmit() {
       this.$v.$touch()
-      if (this.$v.$error) return
+      if (this.$v.$error) return this.$refs.importName.$el.focus()
       try {
         await this.$store.dispatch(`createKey`, {
           seedPhrase: this.fields.importSeed,
