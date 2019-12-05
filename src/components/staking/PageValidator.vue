@@ -23,10 +23,13 @@
           <div class="col-lg-6 validator-name-and-address">
             <div class="page-profile__status-and-title">
               <span
-                v-tooltip.top="status"
+                id="tooltip-target-6"
                 :class="statusColor"
                 class="page-profile__status"
               />
+              <b-tooltip target="tooltip-target-6" triggers="hover">
+                {{status}}
+              </b-tooltip>
               <div class="page-profile__title">
                 {{ validator.description.moniker }}
               </div>

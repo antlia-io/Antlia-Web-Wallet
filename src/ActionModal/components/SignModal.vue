@@ -1,8 +1,7 @@
 <template>
   <transition v-if="show" name="slide-fade">
     <div id="signModal" class="action-modal" tabindex="0" @keyup.esc="close">
-
-        <div
+      <div
         id="closeBtn"
         class="action-modal-icon action-modal-close"
         @click="close"
@@ -20,9 +19,6 @@
         </p>
       </div>
       <div v-else-if="step === signStep" class="action-modal-form">
-        <!-- <a @click="gotosteptwo">
-          <i class="material-icons session-back">arrow_back</i>
-        </a> -->
         <TmFormGroup
         :error="$v.message.$error && $v.message.$invalid"
         class="action-modal-form-group"
@@ -150,19 +146,6 @@
               </div>
             </div>
             <p>Copy above signed message to verify signature</p>
-          <!-- <h2 class="pubKey">
-            Public Key:
-          </h2>
-          <div class="displayflex">
-            <div class="hash" v-tooltip.top="publicKey"
-            v-clipboard:copy="publicKey"
-            v-clipboard:success="() => onCopyPublicKey()">
-            {{publicKey}}
-            </div>
-            <div :class="{ active: copySuccessPublicKey }" class="copied">
-            <i class="material-icons">check</i><span>Copied</span>
-          </div>
-          </div> -->
           </div>
         </TmDataMsg>
       </div>

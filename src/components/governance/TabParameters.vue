@@ -6,11 +6,14 @@
             <dt>
               Minimum Deposit
               <i
-                v-tooltip.top="depositTooltips.min_deposit"
+                id="tooltip-target-1"
                 class="material-icons info-button"
               >
                 info_outline
               </i>
+              <b-tooltip target="tooltip-target-1" triggers="hover">
+                {{depositTooltips.min_deposit}}
+              </b-tooltip>
             </dt>
             <dd>
               {{
@@ -24,11 +27,14 @@
             <dt>
               Threshold
               <i
-                v-tooltip.top="tallyingTooltips.threshold"
+                id="tooltip-target-2"
                 class="material-icons info-button"
               >
                 info_outline
               </i>
+              <b-tooltip target="tooltip-target-2" triggers="hover">
+                {{tallyingTooltips.threshold}}
+              </b-tooltip>
             </dt>
             <dd>
               {{
@@ -44,11 +50,14 @@
             <dt>
               Quorum
               <i
-                v-tooltip.top="tallyingTooltips.quorum"
+                id="tooltip-target-3"
                 class="material-icons info-button"
               >
                 info_outline
               </i>
+              <b-tooltip target="tooltip-target-3" triggers="hover">
+                {{tallyingTooltips.quorum}}
+              </b-tooltip>
             </dt>
             <dd>
               {{

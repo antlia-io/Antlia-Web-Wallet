@@ -8,10 +8,13 @@
           <div class="page-profile__header__info">
             <div class="page-profile__status-and-title">
               <span
-                v-tooltip.top="status.message"
+                id="tooltip-target-5"
                 :class="status.color"
                 class="page-profile__status"
               />
+              <b-tooltip target="tooltip-target-5" triggers="hover">
+                {{status.message}}
+              </b-tooltip>
               <h2 class="page-profile__title">
                 {{ title }}
               </h2>

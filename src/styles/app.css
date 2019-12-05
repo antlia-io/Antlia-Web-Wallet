@@ -129,9 +129,10 @@ input.tm-field {
 }
 
 /* Styles */
-/* .tm-data-msg__subtitle {
-  word-break: break-all;
-} */
+.tm-data-msg__subtitle {
+  /* word-break: break-all; */
+  text-align: justify;
+}
 .card{
   margin: 0 0 1.5rem !important;
 }

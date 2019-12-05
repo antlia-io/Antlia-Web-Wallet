@@ -10,8 +10,8 @@
     :notify-message="notifyMessage"
     @close="clear"
     :show="true"
+    v-if="session.signedIn"
   >
-  <!-- :show="true" -->
     <TmFormGroup
       :error="$v.denom.$dirty && $v.denom.$invalid"
       class="action-modal-form-group"
@@ -43,16 +43,6 @@
         :value="getAddress"
         readonly
       />
-      <!-- <TmFormMsg
-        v-if="$v.address.$error && !$v.address.required"
-        name="Address"
-        type="required"
-      />
-      <TmFormMsg
-        v-else-if="$v.address.$error && !$v.address.bech32Validate"
-        name="Address"
-        type="bech32"
-      /> -->
     </TmFormGroup>
     <TmFormGroup
       :error="$v.amount.$error && $v.amount.$invalid"
@@ -151,7 +141,6 @@ export default {
     TmBtn
   },
   data: () => ({
-    // address: ``,
     amount: null,
     denom: ``,
     memo: defaultMemo,
@@ -159,7 +148,7 @@ export default {
     editMemo: false
   }),
   computed: {
-    ...mapGetters([`wallet`]),
+    ...mapGetters([`wallet`,`session`]),
     balance() {
       const denom = this.wallet.balances.find(b => b.denom === this.denom)
       return (denom && denom.amount) || 0
@@ -233,10 +222,6 @@ export default {
   },
   validations() {
     return {
-      // address: {
-      //   required,
-      //   bech32Validate: this.bech32Validate
-      // },
       amount: {
         required: x => !!x && x !== `0`,
         decimal,

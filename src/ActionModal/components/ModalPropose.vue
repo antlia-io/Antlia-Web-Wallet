@@ -9,6 +9,7 @@
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
+    v-if="session.signedIn"
   >
     <TmFormGroup
       :error="$v.title.$error && $v.title.$invalid"
@@ -240,7 +241,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([`wallet`]),
+    ...mapGetters([`wallet`,`session`]),
     balance() {
       // TODO: refactor to get the selected coin when multicoin deposit is enabled
       if ( !!this.wallet.balances.length) {

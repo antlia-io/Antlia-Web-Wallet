@@ -10,17 +10,7 @@
           <p class="coin-amount">{{ unbondedAtoms }}</p>
         </span>
       </div>
-      <!-- disable send on the hub until send is enabled -->
-      <TmBtn
-        v-if="!lastHeader || lastHeader.chain_id === 'cosmoshub-1'"
-        v-tooltip.left="tooltip"
-        value="Send"
-        class="paddingright"
-        color="primary"
-      />
-      <!-- here we use the unconverted denom, as the SendModal
-      checks for balances based on the actual denom-->
-      <TmBtn :disabled="unbondedAtoms <= 0" v-else value="Send" color="primary" class="paddingright" />
+      <TmBtn :disabled="unbondedAtoms <= 0" value="Send" color="primary" class="paddingright" />
     </div>
     <div class="li-coin__content">
       <div class="li-coin__content-left">

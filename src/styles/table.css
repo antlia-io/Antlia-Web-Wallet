@@ -17,6 +17,10 @@
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
+.table-proposal,.table-validator,.blocks {
+  margin: 0 0 3rem;
+}
+
 .table-proposal table th,
 .table-proposal table td{
     width: 13%;
@@ -48,7 +52,7 @@
   border-spacing: 0 0.25rem;
   width: 100%;
   padding: 0 1rem;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   background: white;
   table-layout: auto;
 }

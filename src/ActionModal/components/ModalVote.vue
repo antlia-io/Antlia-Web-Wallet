@@ -9,6 +9,7 @@
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
+    v-if="session.signedIn"
   >
     <TmFormGroup class="action-modal-group vote-options">
       <TmBtn
@@ -107,7 +108,7 @@ export default {
     num
   }),
   computed: {
-    ...mapGetters([`bondDenom`,`oldBondedAtoms`]),
+    ...mapGetters([`bondDenom`,`oldBondedAtoms`,`session`]),
     transactionData() {
       return {
         type: transaction.VOTE,

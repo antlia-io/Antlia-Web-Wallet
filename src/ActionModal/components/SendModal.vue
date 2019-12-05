@@ -9,6 +9,7 @@
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
+    v-if="session.signedIn"
   >
     <TmFormGroup
       :error="$v.denom.$dirty && $v.denom.$invalid"
@@ -147,7 +148,7 @@ export default {
     editMemo: false
   }),
   computed: {
-    ...mapGetters([`wallet`]),
+    ...mapGetters([`wallet`,`session`]),
     balance() {
       const denom = this.wallet.balances.find(b => b.denom === this.denom)
       return (denom && denom.amount) || 0

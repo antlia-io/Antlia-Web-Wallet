@@ -11,11 +11,14 @@
             <dt>
               Duration of Undelegation Period
               <i
-                v-tooltip.top="paramsTooltips.unbonding_time"
+                id="tooltip-target-4"
                 class="material-icons info-button"
               >
                 info_outline
               </i>
+              <b-tooltip target="tooltip-target-4" triggers="hover">
+                {{paramsTooltips.unbonding_time}}
+              </b-tooltip>
             </dt>
             <dd id="unbonding_time">
               {{

@@ -3,7 +3,7 @@
     <div class="tm-connected-network__connection">
       <div id="tm-connected-network__icon" class="tm-connected-network__icon">
         <span
-          v-tooltip.left="`Network is up and running`"
+          v-tooltip.top="`Network is up and running`"
           class="page-profile__status green"
         />
       </div>
@@ -11,7 +11,7 @@
         id="tm-connected-network__string"
         class="tm-connected-network__string"
       >
-        <span v-tooltip.left="networkTooltip" class="chain-id">
+        <span v-tooltip.top="networkTooltip" class="chain-id">
           {{ lastHeader.chain_id }}
         </span>
       </div>

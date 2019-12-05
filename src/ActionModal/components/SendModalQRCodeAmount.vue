@@ -9,9 +9,9 @@
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
+    v-if="session.signedIn"
     :show="true"
   >
-  <!-- :show="true" -->
     <TmFormGroup
       :error="$v.denom.$dirty && $v.denom.$invalid"
       class="action-modal-form-group"
@@ -43,16 +43,6 @@
         :value="getAddress"
         readonly
       />
-      <!-- <TmFormMsg
-        v-if="$v.address.$error && !$v.address.required"
-        name="Address"
-        type="required"
-      />
-      <TmFormMsg
-        v-else-if="$v.address.$error && !$v.address.bech32Validate"
-        name="Address"
-        type="bech32"
-      /> -->
     </TmFormGroup>
     <TmFormGroup
       :error="$v.amount.$error && $v.amount.$invalid"
@@ -76,22 +66,11 @@
         name="Wallet"
         type="custom"
       />
-      <!-- <TmFormMsg
-        v-else-if="$v.amount.$error && (!$v.amount.required || amount === 0)"
-        name="Amount"
-        type="required"
-      /> -->
       <TmFormMsg
-        v-else-if="$v.amount.$error && !$v.amount.decimal"
-        name="Amount"
-        type="numeric"
-      />
-      <TmFormMsg
-        v-else-if="$v.amount.$error && !$v.amount.between"
-        :max="$v.amount.$params.between.max"
-        :min="$v.amount.$params.between.min"
-        name="Amount"
-        type="between"
+        v-else-if="$v.amount.$error && (!$v.amount.required || getAmount > balance)"
+        :msg="`doesn't have sufficient ${viewDenom(denom)}`"
+        name="Wallet"
+        type="custom"
       />
     </TmFormGroup>
     <TmBtn
@@ -152,15 +131,14 @@ export default {
     TmBtn
   },
   data: () => ({
-    // address: ``,
-    // amount: null,
+    amount: null,
     denom: ``,
     memo: defaultMemo,
     max_memo_characters: 256,
     editMemo: false
   }),
   computed: {
-    ...mapGetters([`wallet`]),
+    ...mapGetters([`wallet`,`session`]),
     balance() {
       const denom = this.wallet.balances.find(b => b.denom === this.denom)
       return (denom && denom.amount) || 0
@@ -238,14 +216,8 @@ export default {
   },
   validations() {
     return {
-      // address: {
-      //   required,
-      //   bech32Validate: this.bech32Validate
-      // },
       amount: {
-        // required: x => !!x && x !== `0`,
-        // decimal,
-        between: between(SMALLEST, atoms(this.balance))
+        required: x => !!x && x !== `0`,
       },
       denom: { required },
       memo: {

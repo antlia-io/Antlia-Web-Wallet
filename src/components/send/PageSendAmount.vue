@@ -7,6 +7,7 @@
     :data-empty="dataEmpty"
     data-title="Wallet"
     :sign-in-required="true"
+    :sendReceive="sendReceive"
   >
     <TmDataMsg
       id="account_empty_msg"
@@ -58,6 +59,10 @@ export default {
     ...mapGetters([`wallet`, `connected`, `session`, `allTransactions`]),
     dataEmpty() {
       return this.allTransactions.length===0?this.wallet.balances.length === 0:false
+    },
+    sendReceive() {
+      if(this.dataEmpty == true)
+        return true
     },
     filteredBalances() {
       var obj = [{

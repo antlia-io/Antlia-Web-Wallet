@@ -10,6 +10,7 @@
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
+    v-if="session.signedIn"
   >
     <TmFormGroup class="action-modal-form-group">
       <div class="form-message notice">
@@ -115,7 +116,7 @@ export default {
     num
   }),
   computed: {
-    ...mapGetters([`liquidAtoms`]),
+    ...mapGetters([`liquidAtoms`,`session`]),
     transactionData() {
       return {
         type: transaction.UNDELEGATE,
