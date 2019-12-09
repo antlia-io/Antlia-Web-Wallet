@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="row">
-      <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
+      <div class="col-lg-12">
         <h3>Total {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="total-atoms__value color">{{ totalAtomsDisplay }}</h2>
       </div>
@@ -326,10 +326,12 @@ p {
 }
 
 @media screen and (max-width: 575px) {
-  .alignment{
+  .alignment {
+    text-align: left;
     display: flex;
-    justify-content: space-between
-  }
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 }
 /* TODO fix scaling on medium sized screens and pick proper break point */
 @media screen and (max-width: 550px) {
