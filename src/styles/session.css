@@ -17,7 +17,7 @@
 
 .session-outer-container {
   position: relative;
-  padding: 8rem 1rem;
+  padding: 3rem 0rem;
 }
 
 .session-logo {
@@ -54,10 +54,11 @@
 }
 
 .session-title {
-  font-size: 38px;
+  font-size: var(--h1);
   line-height: 44px;
   color: black;
   font-weight: 600;
+  text-align: center;
   padding: 1rem 1rem 1.5rem;
 }
 
@@ -135,7 +136,7 @@
 @media screen and (max-width: 667px) {
   .session {
     height: 100vh;
-    /* padding: 4rem 0 0 5rem; */
+    padding: 1.5rem 1rem 1rem
   }
 
   .session-outer-container {

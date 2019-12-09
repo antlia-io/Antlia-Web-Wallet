@@ -22,7 +22,7 @@
         <LiSession
           id="use-extension"
           icon="laptop"
-          title="Use Color Wallet Browser Extension"
+          title="Use Color Browser Extension"
           route="extension"
         >
         </LiSession>
@@ -41,7 +41,7 @@
           route="login"
         />
       </div>
-      <router-link to="create">Want to create a new address?</router-link>
+      <router-link to="create" class="footnote">Want to create a new address?</router-link>
     </div>
   </SessionFrame>
 </template>

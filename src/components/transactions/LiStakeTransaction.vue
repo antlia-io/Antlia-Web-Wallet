@@ -46,12 +46,13 @@
       </div>
     </template>
     <template v-else-if="txType === `cosmos-sdk/MsgUndelegate`">
-      <div slot="caption">
+      <div slot="caption" class="alignment-res">
         Undelegated
+        <span>
         <b>
           {{ tx.amount.amount | toAtoms | prettyLong}}
         </b>
-        <span>{{ bondingDenom | viewDenom }}</span>
+        {{ bondingDenom | viewDenom }}</span>
         <template v-if="timeDiff">
           <span class="tx-unbonding__time-diff">
             {{ timeDiff }}
@@ -197,3 +198,16 @@ export default {
   }
 }
 </script>
+<style scoped>
+@media (max-width: 767px){
+  .alignment-res {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start
+  }
+  .alignment-res span {
+    width: 100%;
+    margin: 0.2rem 0;
+  }
+}
+</style>

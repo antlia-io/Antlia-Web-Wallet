@@ -255,6 +255,7 @@ div#dockSidebar:focus {
 
 #dockSidebar.e-dock.e-open span.e-text {
     display: inline-block;
+    margin-left: 8px
 }
 
 #dockSidebar li {

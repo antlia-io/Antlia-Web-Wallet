@@ -1,5 +1,11 @@
 <template>
   <div class="card">
+    <div class="row">
+      <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
+        <h3>Total {{ num.viewDenom(bondDenom) }}:</h3>
+        <h2 class="total-atoms__value color">{{ totalAtomsDisplay }}</h2>
+      </div>
+    </div>
     <b-progress v-if="hidebar" class="mt-2" :max="max" show-value>
       <b-progress-bar
         :value="((num.atoms(liquidAtoms)) *100 ) / (num.atoms(totalAtoms))"
@@ -13,12 +19,14 @@
         variant="warning"
         animated
       ></b-progress-bar>
+      <b-progress-bar
+        :value="((num.atoms(oldUnbondingAtoms))*100) / (num.atoms(totalAtoms))"
+        :label="`${(((num.atoms(oldUnbondingAtoms))*100) / (num.atoms(totalAtoms))).toFixed(2)}%`"
+        variant="danger"
+        animated
+      ></b-progress-bar>
     </b-progress>
     <div class="row textalign">
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
-        <h3>Total {{ num.viewDenom(bondDenom) }}:</h3>
-        <h2 class="total-atoms__value color">{{ totalAtomsDisplay }}</h2>
-      </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
         
         <h3><p class="green"></p>Liquid {{ num.viewDenom(bondDenom) }}:</h3>
@@ -28,6 +36,10 @@
         
         <h3><p class="blue"></p>Delegated {{ num.viewDenom(bondDenom) }}:</h3>
         <h2 class="color">{{ delegated }}</h2>
+      </div>
+       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
+        <h3><p class="purple"></p>Pending {{ num.viewDenom(bondDenom) }}:</h3>
+        <h2 class="color">{{ unbondingAtoms }}</h2>
       </div>
       <div v-if="rewards" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment display">
         <h3 class="margintop">Available Rewards:</h3>
@@ -100,6 +112,9 @@ export default {
     },
     unbondedAtoms() {
       return this.loaded ? this.num.atoms(this.liquidAtoms) : `--`
+    },
+    unbondingAtoms() {
+      return this.loaded ? this.num.atoms(this.oldUnbondingAtoms) : `--`
     },
     delegated(){
       return this.loaded ? (this.num.atoms(this.oldBondedAtoms)) : `--`
@@ -222,6 +237,10 @@ h2 {
   background-color: #0974b1 !important;
 }
 
+.bg-danger {
+  background-color: #9569ec !important;
+}
+
 .green {
   background-color: #28a745;
   width: 15px;
@@ -232,6 +251,14 @@ h2 {
 
 .blue {
   background-color: #0974b1;
+  width: 15px;
+  height: 15px;
+  display: -webkit-inline-box;
+  margin: 0 5px 0 0;
+}
+
+.purple {
+  background-color: #9569ec;
   width: 15px;
   height: 15px;
   display: -webkit-inline-box;

@@ -22,7 +22,7 @@
         to make your first delegation!
       </div>
     </TmDataMsg>
-    <div v-if="delegation.loaded && unbondingTransactions.length > 0">
+    <div v-if="delegation.loaded && unbondingTransactions.length > 0" class="undelegations">
       <h3 class="tab-header transactions">
         Pending Undelegations
       </h3>
@@ -154,6 +154,12 @@ export default {
 
 .info-button {
   color: #0a73b1;
+}
+
+.undelegations {
+  background: white;
+  padding: 1rem;
+  margin: 0 0 3rem;
 }
 
 .unbonding-transactions .tm-li-tx::before {
