@@ -110,7 +110,7 @@ export default {
   color: black;
   font-weight: 300;
   margin: 1rem;
-  text-align: justify;
+  text-align: left;
 }
 @media screen and (max-width: 768px) {
 .pl{
@@ -138,6 +138,9 @@ export default {
 @media screen and (max-width: 425px) {
   .li-coin__content {
     display: block
+  }
+  .desc {
+    text-align: center;
   }
   .space {
     padding: 0 !important;

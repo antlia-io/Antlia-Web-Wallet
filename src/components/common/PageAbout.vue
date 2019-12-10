@@ -55,25 +55,60 @@
       </p>
     </div>
 
-    <!-- <div class="card">
+    <div class="card">
       <h2 class="c5">Team</h2>
       <div class="flex-row">
         <div class="profile">
-          <img src="~assets/images/team/fabo.jpg" />
+          <!-- <img src="~assets/images/team/ckpark.jpg" /> -->
           <div class="profile-info">
-            <span>Bilal Asif</span>
-            <span class="flag">🇩🇪</span>
+            <span>CK Park (CEO)</span>
+            <span class="flag">🇰🇷</span>
           </div>
         </div>
         <div class="profile">
-          <img src="~assets/images/team/jordan.jpg" />
+          <!-- <img src="~assets/images/team/nikolay.jpg" /> -->
           <div class="profile-info">
-            <span>Faisal Naveed</span>
-            <span class="flag">🇨🇦</span>
+            <span>Nikolay Pakulin (CTO)</span>
+            <span class="flag">🇷🇺</span>
+          </div>
+        </div>
+        <div class="profile">
+          <!-- <img src="~assets/images/team/shakil.jpg" /> -->
+          <div class="profile-info">
+            <span>Shakil Muhammad (Technical Advisor)</span>
+            <span class="flag">🇵🇰</span>
+          </div>
+        </div>
+        <div class="profile">
+          <!-- <img src="~assets/images/team/faisal.jpg" /> -->
+          <div class="profile-info">
+            <span>Faisal Naveed (Team Lead)</span>
+            <span class="flag">🇵🇰</span>
+          </div>
+        </div>
+        <div class="profile">
+          <!-- <img src="~assets/images/team/bilal.jpg" /> -->
+          <div class="profile-info">
+            <span>Bilal Asif (Frontend Developer)</span>
+            <span class="flag">🇵🇰</span>
+          </div>
+        </div>
+        <div class="profile">
+          <!-- <img src="~assets/images/team/usman.jpg" /> -->
+          <div class="profile-info">
+            <span>Usman Fazil (Blockchain Developer)</span>
+            <span class="flag">🇵🇰</span>
+          </div>
+        </div>
+        <div class="profile">
+          <!-- <img src="~assets/images/team/saad.jpg" /> -->
+          <div class="profile-info">
+            <span>Saad Rasool Butt (Backend Developer)</span>
+            <span class="flag">🇵🇰</span>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="card">
       <h2 class="c5">Contact</h2>
       <p>

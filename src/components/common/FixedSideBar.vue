@@ -104,7 +104,7 @@ export default {
   },
   mounted() {
     this.$refs.dockSidebar.hide();
-    this.$refs.dockSidebar.classList.remove('e-active');
+    // this.$refs.dockSidebar.classList.remove('e-active');
     this.totalAtoms
   },
   methods: {

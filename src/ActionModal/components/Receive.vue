@@ -104,11 +104,7 @@ export default {
     amount: {
       type: String,
       default: 0
-    },
-    bilal: {
-      type: Number,
-      default: 1
-    },
+    }
   },
   methods: {
     open() {
