@@ -60,7 +60,7 @@ import TmDataLoading from "common/TmDataLoading"
 import TmDataEmpty from "common/TmDataEmpty"
 import LiCoin from "../wallet/LiCoin"
 import CardSignInRequired from "common/CardSignInRequired"
-import { mapGetters } from "vuex"
+import { mapGetters,mapActions } from "vuex"
 import orderBy from "lodash.orderby"
 import TmDataError from "common/TmDataError"
 import SendModal from "src/ActionModal/components/SendModal"
@@ -162,11 +162,14 @@ export default {
     }
   },
   methods: {
+    ...mapActions([`updateDelegates`, `queryWalletBalances`]),
     showModal(denomination) {
       this.$refs.sendModal.open(denomination)
     }
   },
-  mounted() {
+  async mounted() {
+    this.updateDelegates()
+    await this.queryWalletBalances()
     this.scrollContainer = this.$el.querySelector(`.tm-page-main`)
   }
 }

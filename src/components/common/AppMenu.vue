@@ -37,18 +37,6 @@
       </router-link>
       <router-link
         class="app-menu-item hide-xs"
-        :class="{active: (this.$route.fullPath === '/blocks/'+$route.params.height)}"
-        to="/"
-        exact="exact"
-        title="Network"
-        @click.native="close"
-      >
-        <h2 class="app-menu-title">
-          Network
-        </h2>
-      </router-link>
-      <router-link
-        class="app-menu-item hide-xs"
         :class="{active: (this.$route.fullPath === '/sign')}"
         to="/sign"
         exact="exact"
@@ -69,6 +57,18 @@
           Get Coins
         </h2>
       </li>
+       <router-link
+        class="app-menu-item hide-xs"
+        :class="{active: (this.$route.fullPath === '/blocks/'+$route.params.height)}"
+        to="/"
+        exact="exact"
+        title="Network"
+        @click.native="close"
+      >
+        <h2 class="app-menu-title">
+          Network
+        </h2>
+      </router-link>
       <!-- <div class="buttons">
       <TmBtn
           value="Sign"

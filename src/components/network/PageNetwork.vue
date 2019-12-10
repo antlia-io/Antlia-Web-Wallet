@@ -168,6 +168,9 @@ export default {
       ]
     }
   },
+  updated(){
+    this.$store.dispatch(`getBlockTxs`)
+  },
   mounted() {
     this.$store.dispatch(`getDelegates`)
     this.$store.dispatch(`getPool`)

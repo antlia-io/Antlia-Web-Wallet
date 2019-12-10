@@ -33,13 +33,13 @@
 
 .table-proposal table th,
 .table-proposal table td{
-    width: 13%;
+    width: 14%;
 }
 
-.table-proposal table th:first-child,
+/* .table-proposal table th:first-child,
 .table-proposal table td:first-child{
     width: 20%;
-}
+} */
 
 .table-proposal .data-table__row__info {
   display: table-cell
@@ -145,14 +145,18 @@
 
 .data-table__row__info__container {
   position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .data-table__row__info__container__name {
   padding-left: 1rem;
   max-width: 200px;
-  overflow: hidden;
+  width: 100%
+  /* overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }
 
 .data-table__row__info__image {

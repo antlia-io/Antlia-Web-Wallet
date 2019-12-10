@@ -154,6 +154,14 @@ export default {
       }
     }
   },
+  updated(){
+    this.$store.dispatch(`updateDelegates`)
+    this.totalAtoms
+    this.oldBondedAtoms
+    this.oldUnbondingAtoms
+    this.committedDelegations
+    this.delegates
+  },
   methods: {
     update(height) {
       this.lastUpdate = height
@@ -164,7 +172,7 @@ export default {
       this.$refs.ModalWithdrawRewards.open()
     },
   },
-  mounted() {
+  mounted(){
     this.totalAtoms
     this.oldBondedAtoms
     this.oldUnbondingAtoms

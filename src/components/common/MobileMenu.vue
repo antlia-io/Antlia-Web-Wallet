@@ -32,17 +32,6 @@
       </h2>
     </router-link>
     <router-link
-      :class="{active: (this.$route.fullPath === '/') || (this.$route.fullPath === '/blocks/'+$route.params.height)}"
-      to="/"
-      exact="exact"
-      title="Network"
-    >
-      <i class="material-icons">my_location</i>
-      <h2 class="app-menu-title">
-        Network
-      </h2>
-    </router-link>
-    <router-link
       :class="{active: (this.$route.fullPath === '/sign')}"
       to="/sign"
       exact="exact"
@@ -62,6 +51,17 @@
       <i class="material-icons">local_atm</i>
       <h2 class="app-menu-title">
         Get Coins
+      </h2>
+    </router-link>
+    <router-link
+      :class="{active: (this.$route.fullPath === '/') || (this.$route.fullPath === '/blocks/'+$route.params.height)}"
+      to="/"
+      exact="exact"
+      title="Network"
+    >
+      <i class="material-icons">my_location</i>
+      <h2 class="app-menu-title">
+        Network
       </h2>
     </router-link>
   </menu>

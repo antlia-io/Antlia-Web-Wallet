@@ -24,10 +24,6 @@
           <i class="material-icons">transfer_within_a_station</i>
           <span class="e-text">Governance</span>
         </li>
-        <li class="sidebar-item hover" @click="network()" v-on:click="active = 'network'" :class="{active:(this.$route.fullPath === '/') || (this.$route.fullPath === '/blocks/'+$route.params.height)}" title="Network">
-          <i class="material-icons">my_location</i>
-          <span class="e-text">Network</span>
-        </li>
         <li class="sidebar-item hover" @click="sign()" v-on:click="active = 'sign'" :class="{active:(this.$route.fullPath === '/sign')}" title="Sign/Verify">
           <i class="material-icons">offline_pin</i>
           <span class="e-text">Sign/Verify</span>
@@ -36,6 +32,10 @@
           <i class="material-icons">local_atm</i>
           <span class="e-text"><Button class="faucet">Get Coins</Button>
           </span>
+        </li>
+        <li class="sidebar-item hover" @click="network()" v-on:click="active = 'network'" :class="{active:(this.$route.fullPath === '/') || (this.$route.fullPath === '/blocks/'+$route.params.height)}" title="Network">
+          <i class="material-icons">my_location</i>
+          <span class="e-text">Network</span>
         </li>
         <!-- <li class="sidebar-item hover button" @click="showModal()" title="Sign">
           <i class="material-icons">vpn_key</i>
