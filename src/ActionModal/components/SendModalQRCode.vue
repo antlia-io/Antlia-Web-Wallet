@@ -20,7 +20,7 @@
     >
       <TmField
         id="send-denomination"
-        :value="viewDenom($v.denom.$model)"
+        :value="viewDenom(bondDenom)"
         type="text"
         readonly
       />
@@ -61,7 +61,7 @@
       />
       <TmFormMsg
         v-if="balance === 0"
-        :msg="`doesn't have any ${viewDenom(denom)}`"
+        :msg="`doesn't have any ${viewDenom(bondDenom)}`"
         name="Wallet"
         type="custom"
       />
@@ -140,6 +140,9 @@ export default {
     ActionModal,
     TmBtn
   },
+  filters: {
+    viewDenom
+  },
   data: () => ({
     amount: null,
     denom: ``,
@@ -148,7 +151,7 @@ export default {
     editMemo: false
   }),
   computed: {
-    ...mapGetters([`wallet`,`session`]),
+    ...mapGetters([`wallet`,`session`,`bondDenom`]),
     balance() {
       const denom = this.wallet.balances.find(b => b.denom === this.denom)
       return (denom && denom.amount) || 0

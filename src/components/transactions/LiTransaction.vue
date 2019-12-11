@@ -222,10 +222,10 @@ word-break: break-all;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  /* .li-tx__content__information,
+  .li-tx__content__information,
   .li-tx__content__information > * {
     flex-direction: column;
-  } */
+  }
 }
 .tx-hash .address:hover {
   color: #00d6e1;

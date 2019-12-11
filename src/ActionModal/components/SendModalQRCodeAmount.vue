@@ -3,7 +3,7 @@
     id="send-modal"
     ref="actionModal"
     :validate="validateForm"
-    :amount="amount"
+    :amount="getAmount"
     title="Send"
     submission-error-prefix="Sending tokens failed"
     :transaction-data="transactionData"
@@ -20,7 +20,7 @@
     >
       <TmField
         id="send-denomination"
-        :value="viewDenom($v.denom.$model)"
+        :value="viewDenom(bondDenom)"
         type="text"
         readonly
       />
@@ -45,14 +45,14 @@
       />
     </TmFormGroup>
     <TmFormGroup
-      :error="$v.amount.$error && $v.amount.$invalid"
+      :error="$v.getAmount.$error && $v.getAmount.$invalid"
       class="action-modal-form-group"
-      field-id="amount"
+      field-id="getAmount"
       field-label="Amount"
     >
       <TmField
-        id="amount"
-        ref="amount"
+        id="getAmount"
+        ref="getAmount"
         :value="getAmount"
         class="tm-field"
         placeholder="Amount"
@@ -62,13 +62,13 @@
       />
       <TmFormMsg
         v-if="balance === 0"
-        :msg="`doesn't have any ${viewDenom(denom)}`"
+        :msg="`doesn't have any ${viewDenom(bondDenom)}`"
         name="Wallet"
         type="custom"
       />
       <TmFormMsg
-        v-else-if="$v.amount.$error && (!$v.amount.required || getAmount > balance)"
-        :msg="`doesn't have sufficient ${viewDenom(denom)}`"
+        v-if="getAmount > unbondedAtoms"
+        :msg="`doesn't have sufficient ${viewDenom(bondDenom)}`"
         name="Wallet"
         type="custom"
       />
@@ -130,6 +130,9 @@ export default {
     ActionModal,
     TmBtn
   },
+  filters: {
+    viewDenom
+  },
   data: () => ({
     amount: null,
     denom: ``,
@@ -138,10 +141,13 @@ export default {
     editMemo: false
   }),
   computed: {
-    ...mapGetters([`wallet`,`session`]),
+    ...mapGetters([`wallet`,`session`,`bondDenom`,`liquidAtoms`]),
     balance() {
       const denom = this.wallet.balances.find(b => b.denom === this.denom)
       return (denom && denom.amount) || 0
+    },
+    unbondedAtoms() {
+      return atoms(this.liquidAtoms)
     },
     getAddress(){
       var qraddress = localStorage.getItem('qraddress')
@@ -210,13 +216,10 @@ export default {
     enterPressed() {
       this.$refs.actionModal.validateChangeStep()
     },
-    refocusOnAmount() {
-      this.$refs.amount.$el.focus()
-    }
   },
   validations() {
     return {
-      amount: {
+      getAmount: {
         required: x => !!x && x !== `0`,
       },
       denom: { required },

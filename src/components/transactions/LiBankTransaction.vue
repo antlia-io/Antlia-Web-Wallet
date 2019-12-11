@@ -31,7 +31,7 @@
           To yourself!
         </template>
         <template v-else>
-          To
+          To &nbsp;
           <Bech32 :address="receiver" />
         </template>
       </span>
