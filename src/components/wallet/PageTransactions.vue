@@ -89,9 +89,6 @@ export default {
       return this.orderedTransactions.length === 0
     }
   },
-  updated(){
-    this.refreshTransactions()
-  },
   watch: {
     "session.signedIn": {
       immediate: true,
