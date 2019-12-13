@@ -86,7 +86,7 @@ export default ({ node }) => {
     ) {
       // optimistic updates
       initialDeposits.forEach(({ amount, denom }) => {
-        console.log(amount, denom, wallet)
+        // console.log(amount, denom, wallet)
         const oldBalance = wallet.balances.find(
           balance => balance.denom === denom
         )

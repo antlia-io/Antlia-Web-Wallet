@@ -7,8 +7,8 @@
         </div>
         <div class="li-tx-desc">
         <div class="li-tx__content__caption">
-          <p class="li-tx__content__caption__title">
-            <slot name="caption" />
+          <p class="li-tx__content__caption__title alignment-res">
+            <slot name="caption"/>
           </p>
         </div>
         <div class="li-tx__content__information">
@@ -284,6 +284,22 @@ word-break: break-all;
   .li-tx__content__right {
     text-align: left;
     padding: 1rem 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px){
+  .alignment-res div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .alignment-res div span {
+    width: 100%;
+    margin: 0.2rem 0;
+  }
+  .alignment-res div b {
     width: 100%;
   }
 }

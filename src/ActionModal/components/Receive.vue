@@ -21,9 +21,21 @@
         <div>Amount: </div>
         <div class="amount">{{amount}}</div>
       </div>
-      <div class="qrcode">
-        <qrcode-vue v-if="amount > 0" :value="this.qrwithamount" :size="size" level="H"></qrcode-vue>
-        <qrcode-vue v-else :value="this.onlyqr" :size="size" level="H"></qrcode-vue>
+      <div v-if="amount > 0">
+        <div v-if="loading == true" class="qrcodeloading">
+          <img class="loading-icon" src="~assets/images/loader.svg" />
+        </div>
+        <div v-else class="qrcode">
+          <qrcode-vue :value="this.qrwithamount" :size="size" level="H"></qrcode-vue>
+        </div>
+      </div>
+      <div v-else>
+        <div v-if="loading1 == true" class="qrcodeloading">
+          <img class="loading-icon" src="~assets/images/loader.svg" />
+        </div>
+        <div v-else class="qrcode">
+          <qrcode-vue :value="this.onlyqr" :size="size" level="H"></qrcode-vue>
+        </div>
       </div>
       <p>Scan the QR Code to transfer funds</p>
     </div>
@@ -61,6 +73,7 @@ export default {
                 }} )
               .then((response) => {
                 this.qrwithamount = response.data.response
+                this.loading = false
                
               })
               .catch(err => {
@@ -79,6 +92,7 @@ export default {
                 }})
               .then((response) => {
                 this.onlyqr = response.data.response
+                this.loading1 = false
                
               })
               .catch(err => {
@@ -98,7 +112,9 @@ export default {
         onlyqr: ``,
         qrwithamount: ``,
         getQRCode: 1,
-        getQRCode2: 1
+        getQRCode2: 1,
+        loading: true,
+        loading1: true
   }),
   props: {
     amount: {
@@ -128,12 +144,11 @@ export default {
         text-align: center;
         padding: .5rem;
     }
-    .loading {
+    .qrcodeloading {
       text-align: center;
       margin: 2rem auto;
       padding: .5rem;
     }
-
     .publicaddress {
         text-align: center;
         display: flex;

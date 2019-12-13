@@ -154,19 +154,17 @@ export default {
       }
     }
   },
-  updated(){
-    this.$store.dispatch(`updateDelegates`)
-    this.totalAtoms
-    this.oldBondedAtoms
-    this.oldUnbondingAtoms
-    this.committedDelegations
-    this.delegates
-  },
   methods: {
     update(height) {
       this.lastUpdate = height
       this.$store.dispatch(`getRewardsFromMyValidators`)
       this.$store.dispatch(`queryWalletBalances`)
+      this.$store.dispatch(`updateDelegates`)
+      this.totalAtoms
+      this.oldBondedAtoms
+      this.oldUnbondingAtoms
+      this.committedDelegations
+      this.delegates
     },
     onWithdrawal() {
       this.$refs.ModalWithdrawRewards.open()
