@@ -90,9 +90,9 @@ export default {
     }
   },
   data: () => ({
-    MsgWithdrawValidatorCommission: `cosmos-sdk/MsgWithdrawValidatorCommission`,
-    MsgSetWithdrawAddress: `cosmos-sdk/MsgSetWithdrawAddress`,
-    MsgWithdrawDelegationReward: `cosmos-sdk/MsgWithdrawDelegationReward`
+    MsgWithdrawValidatorCommission: `color/MsgWithdrawValidatorCommission`,
+    MsgSetWithdrawAddress: `color/MsgSetWithdrawAddress`,
+    MsgWithdrawDelegationReward: `color/MsgWithdrawDelegationReward`
   }),
   methods: {
     moniker(validatorAddr) {

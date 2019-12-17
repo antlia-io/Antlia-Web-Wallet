@@ -85,7 +85,8 @@
       </div>
       <div
         v-else-if="step === successStep"
-        class="action-modal-form success-step"
+        class="action-modal-form success-step divcenter"
+        id="signverify"
       >
         <TmDataMsg v-if="txHash === true" icon="check">
           <div slot="title">
@@ -95,7 +96,7 @@
             Verified
           </div>
         </TmDataMsg>
-        <TmDataMsg v-else-if="txHash === false" icon="close">
+        <TmDataMsg v-else-if="txHash === false" icon="close" >
           <div slot="title">
             Result:
           </div>
@@ -375,6 +376,14 @@ export default {
     cursor: pointer;
     font-weight: 500;
     font-size: 14px;
+}
+@media screen and (max-width: 1023px) {
+  .hash{
+    text-align: center;
+  }
+  .divcenter{
+  text-align: center
+}
 }
 
 .hash:hover {

@@ -8,7 +8,7 @@
     :fees="fees"
     :hide-meta-data="hideMetaData"
   >
-    <template v-if="txType === `cosmos-sdk/MsgSubmitProposal`">
+    <template v-if="txType === `color/MsgSubmitProposal`">
       <div slot="caption">
         Submitted {{ tx.proposal_type.toLowerCase() }} proposal
         <b>{{ initialDeposit.amount | toAtoms | prettyLong }}</b>
@@ -18,7 +18,7 @@
         Title:&nbsp;<i>{{ tx.title }}</i>
       </div>
     </template>
-    <template v-else-if="txType === `cosmos-sdk/MsgDeposit`">
+    <template v-else-if="txType === `color/MsgDeposit`">
       <div slot="caption">
         Deposited
         <template>
@@ -33,7 +33,7 @@
         </router-link>
       </div>
     </template>
-    <template v-else-if="txType === `cosmos-sdk/MsgVote`">
+    <template v-else-if="txType === `color/MsgVote`">
       <div slot="caption">Voted&nbsp;{{ tx.option }}</div>
       <div slot="details">
         On&nbsp;

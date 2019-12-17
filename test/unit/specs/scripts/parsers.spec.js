@@ -5,7 +5,7 @@ const signedMessage = {
   value: {
     msg: [
       {
-        type: "cosmos-sdk/MsgSend",
+        type: "color/MsgSend",
         value: {
           amount: [
             {
@@ -36,7 +36,7 @@ const signedActionMessage = {
   value: {
     msg: [
       {
-        type: "cosmos-sdk/MsgDelegate",
+        type: "color/MsgDelegate",
         value: {
           amount: [
             {

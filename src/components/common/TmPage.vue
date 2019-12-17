@@ -34,7 +34,7 @@
       <template v-else-if="managed">
         <TmDataConnecting v-if="!loaded && !connected" />
         <TmDataLoading v-else-if="!loaded && loading" />
-        <TmDataError v-else-if="error" />
+        <!-- <TmDataError v-else-if="error" /> -->
         <slot v-else-if="dataEmpty" name="no-data">
           <TmDataEmpty>
             <template slot="title">

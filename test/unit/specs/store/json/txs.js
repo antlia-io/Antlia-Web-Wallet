@@ -8,7 +8,7 @@ export const bankTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgSend`,
+            type: `color/MsgSend`,
             value: {
               from_address: `A`,
               amount: [{ denom: `uclr`, amount: `12340000000` }],
@@ -46,7 +46,7 @@ export const bankTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgSend`,
+            type: `color/MsgSend`,
             value: {
               from_address: `B`,
               amount: [{ denom: `uclr`, amount: `12340000000` }],
@@ -86,7 +86,7 @@ export const bankTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgSend`,
+            type: `color/MsgSend`,
             value: {
               amount: [
                 { denom: `uclr`, amount: `12340000000` },
@@ -142,7 +142,7 @@ export const stakingTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgCreateValidator`,
+            type: `color/MsgCreateValidator`,
             value: {
               description: {
                 moniker: `propelmind`,
@@ -195,7 +195,7 @@ export const stakingTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgEditValidator`,
+            type: `color/MsgEditValidator`,
             value: {
               validator_address: `cosmosvaloper1qecshyc40kshszkwrtscgmsdd8tz3n4hrj9yf2`,
               amount: {
@@ -222,7 +222,7 @@ export const stakingTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgDelegate`,
+            type: `color/MsgDelegate`,
             value: {
               validator_address: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctqzh8yqw`,
               amount: {
@@ -262,7 +262,7 @@ export const stakingTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgUndelegate`,
+            type: `color/MsgUndelegate`,
             value: {
               validator_address: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctqzh8yqw`,
               shares_amount: `323.000000000000000000`,
@@ -304,7 +304,7 @@ export const stakingTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgBeginRedelegate`,
+            type: `color/MsgBeginRedelegate`,
             value: {
               validator_src_address: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctqzh8yqw`,
               validator_dst_address: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctplpn3au`,
@@ -358,7 +358,7 @@ export const stakingTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgUnjail`,
+            type: `color/MsgUnjail`,
             value: {
               address: `cosmosvaloper1qecshyc40kshszkwrtscgmsdd8tz3n4hrj9yf2`,
               amount: {
@@ -387,7 +387,7 @@ export const governanceTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgSubmitProposal`,
+            type: `color/MsgSubmitProposal`,
             value: {
               proposer: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctqzh8yqw`,
               proposal_type: `Text`,
@@ -432,7 +432,7 @@ export const governanceTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgDeposit`,
+            type: `color/MsgDeposit`,
             value: {
               depositer: `cosmosvaladdr15ky9du8a2wlstz6fpx3p4mqpjyrm5ctqzh8yqw`,
               proposal_id: `1`,
@@ -475,7 +475,7 @@ export const governanceTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgVote`,
+            type: `color/MsgVote`,
             value: {
               voter: `cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctqzh8yqw`,
               proposal_id: `1`,
@@ -532,14 +532,14 @@ export const distributionTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgWithdrawDelegationReward`,
+            type: `color/MsgWithdrawDelegationReward`,
             value: {
               delegator_address: `cosmos18ymm350peujvq2xy9ymyqj4v34ekvnk3wydrs3`,
               validator_address: `cosmosvaloper18ymm350peujvq2xy9ymyqj4v34ekvnk3tsekuz`
             }
           },
           {
-            type: `cosmos-sdk/MsgWithdrawDelegationReward`,
+            type: `color/MsgWithdrawDelegationReward`,
             value: {
               delegator_address: `cosmos18ymm350peujvq2xy9ymyqj4v34ekvnk3wydrs3`,
               validator_address: `cosmosvaloper137eu59pl4r40f3qkcwu5pgav7usn0af0lpt5rx`
@@ -589,7 +589,7 @@ export const distributionTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgSetWithdrawAddress`,
+            type: `color/MsgSetWithdrawAddress`,
             value: {
               withdraw_address: `cosmos18ymm350peujvq2xy9ymyqj4v34ekvnk3wydrs3`
             }
@@ -638,7 +638,7 @@ export const distributionTxs = [
       value: {
         msg: [
           {
-            type: `cosmos-sdk/MsgWithdrawValidatorCommission`,
+            type: `color/MsgWithdrawValidatorCommission`,
             value: {
               validator_address: `cosmos18ymm350peujvq2xy9ymyqj4v34ekvnk3wydrs3`
             }

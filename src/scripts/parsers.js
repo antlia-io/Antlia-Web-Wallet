@@ -26,7 +26,7 @@ export const parseValueObj = stdTx => {
   const {
     value: { msg }
   } = stdTx
-  if (msg[0].type === "cosmos-sdk/MsgSend") {
+  if (msg[0].type === "color/MsgSend") {
     return msg[0].value.amount[0]
   } else {
     return msg[0].value.amount
