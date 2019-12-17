@@ -6,7 +6,7 @@
       </h2>
 
       <p class="session-paragraph">
-        The easiest way to send, CLR and vote on the Color Platform.
+        The easiest way to send CLR and vote on the Color Platform.
       </p>
 
       <div class="session-list">

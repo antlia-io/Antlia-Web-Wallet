@@ -873,10 +873,10 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@rnssolution/color-api@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@rnssolution/color-api/-/color-api-1.0.0.tgz#3ade016eb0b0776a551f49988322823431c36fde"
-  integrity sha512-93TWrLfGqkYLg9LDFrlbZt6IeuAe1hJA7bcQ4QZRg59t++q1HacHcPxA63gf0mAqboDjU8tv4afB3jfFM4F7bw==
+"@rnssolution/color-api@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@rnssolution/color-api/-/color-api-2.0.0.tgz#8545b5062d46243ee92d6f24e05beb335c9028c4"
+  integrity sha512-k5wkkvwbUuEN+Louhh1txfQvKjdSB1g0mQiizop3LoWRCgKDtN0kX2+INMOoEKVZolRvP6oXYUJ6s98GqFYxbg==
   dependencies:
     "@babel/runtime" "^7.5.4"
     axios "^0.19.0"

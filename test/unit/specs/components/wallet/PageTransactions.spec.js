@@ -20,7 +20,7 @@ describe(`PageTransactions`, () => {
         value: {
           msg: [
             {
-              type: `cosmos-sdk/MsgSend`,
+              type: `color/MsgSend`,
               value: {
                 from_address: addresses[1],
                 to_address: addresses[0],
@@ -38,7 +38,7 @@ describe(`PageTransactions`, () => {
         value: {
           msg: [
             {
-              type: `cosmos-sdk/MsgSend`,
+              type: `color/MsgSend`,
               value: {
                 from_address: addresses[0],
                 to_address: addresses[1],
@@ -59,7 +59,7 @@ describe(`PageTransactions`, () => {
         value: {
           msg: [
             {
-              type: `cosmos-sdk/MsgSubmitProposal`,
+              type: `color/MsgSubmitProposal`,
               value: {
                 proposer: `cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9`,
                 proposal_type: `Text`,
@@ -85,7 +85,7 @@ describe(`PageTransactions`, () => {
         value: {
           msg: [
             {
-              type: `cosmos-sdk/MsgDeposit`,
+              type: `color/MsgDeposit`,
               value: {
                 depositor: `cosmos15ky9du8a2wlstz6fpx3p4mqpjyrm5ctpesxxn9`,
                 proposal_id: `1`,
@@ -106,7 +106,7 @@ describe(`PageTransactions`, () => {
         value: {
           msg: [
             {
-              type: `cosmos-sdk/MsgDelegate`,
+              type: `color/MsgDelegate`,
               value: {
                 validator_address: validatorAddresses[0],
                 delegator_address: addresses[0],
@@ -127,7 +127,7 @@ describe(`PageTransactions`, () => {
         value: {
           msg: [
             {
-              type: `cosmos-sdk/BeginUnbonding`,
+              type: `color/BeginUnbonding`,
               value: {
                 validator_address: validatorAddresses[0],
                 delegator_address: addresses[0],

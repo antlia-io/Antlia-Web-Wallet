@@ -39,13 +39,13 @@
               />
               <TmBtn
                 v-if="proposal.proposal_status === 'Passed'"
-                value="Vote Passed"
+                value="Proposal Passed"
                 disabled="disabled"
                 color="primary"
               />
               <TmBtn
                 v-if="proposal.proposal_status === 'Rejected'"
-                value="Vote Rejected"
+                value="Proposal Rejected"
                 disabled="disabled"
                 color="primary"
               />
@@ -64,6 +64,14 @@
             </dd>
           </dl>
           <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <dt>Funding Cycle</dt>
+            <dd>
+              {{ fundingCycle
+                ? fundingCycle
+                : `--` }}
+            </dd>
+          </dl>
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>Deposit Count</dt>
             <dd>
               {{
@@ -74,11 +82,7 @@
               }}
             </dd>
           </dl>
-          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
-            <dt>Description</dt>
-            <TextBlock :content="description" />
-          </dl>
-          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <dt>Requested Fund</dt>
             <dd>
               {{ num.fullDecimals(num.atoms(proposal.proposal_content.value.requested_fund[0].amount)) 
@@ -88,13 +92,11 @@
                   }}
             </dd>
           </dl>
-          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
-            <dt>Funding Cycle</dt>
-            <dd>
-              {{ fundingCycle
-                ? fundingCycle
-                : `--` }}
-            </dd>
+          <dl class="info_dl col-lg-4 col-md-4 col-sm-6 d-sm-none d-none">
+          </dl>
+          <dl class="info_dl col-lg-12 description">
+            <dt class="descriptionheading">Description</dt>
+            <TextBlock :content="description" class="descriptionalignment" />
           </dl>
         </div>
       </div>
@@ -350,6 +352,22 @@ export default {
   margin: 1rem 2rem 1rem 1rem;
   padding: 1rem;
   font-style: italic;
+}
+
+.description {
+  text-align: left;
+  padding-left: 3rem
+}
+
+.descriptionalignment {
+  white-space: pre-wrap;
+  color: black !important;
+  font-weight: 300 !important;
+  font-size: 14px !important
+}
+
+.descriptionheading {
+  margin-left: .5rem
 }
 
 .buttoncss {

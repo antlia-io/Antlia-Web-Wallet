@@ -33,7 +33,7 @@ describe(`LiDistributionTransaction`, () => {
   it(`withdraw delegation rewards`, () => {
     wrapper.setProps({
       tx: distributionTxs[0].tx.value.msg[0].value,
-      txType: `cosmos-sdk/MsgWithdrawDelegationReward`
+      txType: `color/MsgWithdrawDelegationReward`
     })
     expect(wrapper.vm.$el).toMatchSnapshot()
   })
@@ -41,7 +41,7 @@ describe(`LiDistributionTransaction`, () => {
   it(`set withdraw address`, () => {
     wrapper.setProps({
       tx: distributionTxs[1].tx.value.msg[0].value,
-      txType: `cosmos-sdk/MsgSetWithdrawAddress`
+      txType: `color/MsgSetWithdrawAddress`
     })
     expect(wrapper.vm.$el).toMatchSnapshot()
   })
@@ -49,7 +49,7 @@ describe(`LiDistributionTransaction`, () => {
   it(`withdraw validator commission`, () => {
     wrapper.setProps({
       tx: distributionTxs[2].tx.value.msg[0].value,
-      txType: `cosmos-sdk/MsgWithdrawValidatorCommission`
+      txType: `color/MsgWithdrawValidatorCommission`
     })
     expect(wrapper.vm.$el).toMatchSnapshot()
   })
@@ -57,7 +57,7 @@ describe(`LiDistributionTransaction`, () => {
   it(`transaction without fees`, () => {
     wrapper.setProps({
       tx: distributionTxs[0].tx.value.msg[0].value,
-      txType: `cosmos-sdk/MsgWithdrawDelegationReward`,
+      txType: `color/MsgWithdrawDelegationReward`,
       fees: {
         amount: "0",
         denom: ""

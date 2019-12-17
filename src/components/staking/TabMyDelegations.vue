@@ -106,7 +106,7 @@ export default {
       transactions.staking
         .filter(transaction => {
           // Checking the type of transaction
-          if (transaction.tx.value.msg[0].type !== `cosmos-sdk/MsgUndelegate`)
+          if (transaction.tx.value.msg[0].type !== `color/MsgUndelegate`)
             return false
 
           // getting the unbonding time and checking if it has passed already

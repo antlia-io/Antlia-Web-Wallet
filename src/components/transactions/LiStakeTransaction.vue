@@ -8,7 +8,7 @@
     :fees="fees"
     :hide-meta-data="hideMetaData"
   >
-    <template v-if="txType === `cosmos-sdk/MsgCreateValidator`">
+    <template v-if="txType === `color/MsgCreateValidator`">
       <div slot="caption">
         Create validator
         <b>{{ tx.amount.amount | toAtoms | prettyLong}}</b>
@@ -21,7 +21,7 @@
         </router-link>
       </div>
     </template>
-    <template v-else-if="txType === `cosmos-sdk/MsgEditValidator`">
+    <template v-else-if="txType === `color/MsgEditValidator`">
       <div slot="caption">
         Edit validator
       </div>
@@ -32,7 +32,7 @@
         </router-link>
       </div>
     </template>
-    <template v-else-if="txType === `cosmos-sdk/MsgDelegate`">
+    <template v-else-if="txType === `color/MsgDelegate`">
       <div slot="caption">
         Delegated
         <b>{{ tx.amount.amount | toAtoms | prettyLong }}</b>
@@ -45,7 +45,7 @@
         </router-link>
       </div>
     </template>
-    <template v-else-if="txType === `cosmos-sdk/MsgUndelegate`">
+    <template v-else-if="txType === `color/MsgUndelegate`">
       <div slot="caption">
         Undelegated
         <b>
@@ -65,7 +65,7 @@
         </router-link>
       </div>
     </template>
-    <template v-else-if="txType === `cosmos-sdk/MsgBeginRedelegate`">
+    <template v-else-if="txType === `color/MsgBeginRedelegate`">
       <div slot="caption">
         Redelegated
         <b>
@@ -84,7 +84,7 @@
         </router-link>
       </div>
     </template>
-    <template v-else-if="txType === `cosmos-sdk/MsgUnjail`">
+    <template v-else-if="txType === `color/MsgUnjail`">
       <div slot="caption">
         Unjail
       </div>

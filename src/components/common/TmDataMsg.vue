@@ -95,5 +95,9 @@ export default {
   .tm-data-msg__icon {
     margin-bottom: 1rem;
   }
+
+  #signverify .tm-data-msg__icon {
+    margin-left: 1.5rem;
+  }
 }
 </style>

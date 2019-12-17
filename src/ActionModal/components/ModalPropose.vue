@@ -226,7 +226,7 @@ export default {
   },
   data: () => ({
     titleMaxLength: 64,
-    descriptionMaxLength: 200,
+    descriptionMaxLength: 5000,
     title: ``,
     description: ``,
     requestedfund: 0,

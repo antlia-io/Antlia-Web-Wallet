@@ -8,7 +8,7 @@ describe(`LiStakeTransaction`, () => {
   const validators = state.candidates
   const propsData = {
     tx: stakingTxs[0].tx.value.msg[0].value,
-    txType: `cosmos-sdk/MsgCreateValidator`,
+    txType: `color/MsgCreateValidator`,
     validators,
     url: `/validator`,
     bondingDenom: `uclr`,
@@ -45,7 +45,7 @@ describe(`LiStakeTransaction`, () => {
     beforeEach(() => {
       wrapper.setProps({
         tx: stakingTxs[1].tx.value.msg[0].value,
-        txType: `cosmos-sdk/MsgEditValidator`,
+        txType: `color/MsgEditValidator`,
         fees: {
           amount: `3421`,
           denom: `uclr`
@@ -69,7 +69,7 @@ describe(`LiStakeTransaction`, () => {
     beforeEach(() => {
       wrapper.setProps({
         tx: stakingTxs[2].tx.value.msg[0].value,
-        txType: `cosmos-sdk/MsgDelegate`,
+        txType: `color/MsgDelegate`,
         fees: {
           amount: `3421`,
           denom: `uclr`
@@ -106,7 +106,7 @@ describe(`LiStakeTransaction`, () => {
     beforeEach(() => {
       wrapper.setProps({
         tx: stakingTxs[3].tx.value.msg[0].value,
-        txType: `cosmos-sdk/MsgUndelegate`,
+        txType: `color/MsgUndelegate`,
         fees: {
           amount: `3421`,
           denom: `uclr`
@@ -147,7 +147,7 @@ describe(`LiStakeTransaction`, () => {
     beforeEach(() => {
       wrapper.setProps({
         tx: stakingTxs[4].tx.value.msg[0].value,
-        txType: `cosmos-sdk/MsgBeginRedelegate`,
+        txType: `color/MsgBeginRedelegate`,
         fees: {
           amount: `3421`,
           denom: `uclr`
@@ -175,7 +175,7 @@ describe(`LiStakeTransaction`, () => {
     beforeEach(() => {
       wrapper.setProps({
         tx: stakingTxs[5].tx.value.msg[0].value,
-        txType: `cosmos-sdk/MsgUnjail`,
+        txType: `color/MsgUnjail`,
         fees: {
           amount: `3421`,
           denom: `uclr`

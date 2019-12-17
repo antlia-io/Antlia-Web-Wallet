@@ -28,7 +28,7 @@ describe(`LiGovTransaction`, () => {
   it(`proposals`, () => {
     wrapper.setProps({
       tx: governanceTxs[0].tx.value.msg[0].value,
-      txType: `cosmos-sdk/MsgSubmitProposal`
+      txType: `color/MsgSubmitProposal`
     })
     expect(wrapper.vm.$el).toMatchSnapshot()
   })
@@ -36,7 +36,7 @@ describe(`LiGovTransaction`, () => {
   it(`deposits`, () => {
     wrapper.setProps({
       tx: governanceTxs[1].tx.value.msg[0].value,
-      txType: `cosmos-sdk/MsgDeposit`
+      txType: `color/MsgDeposit`
     })
     expect(wrapper.vm.$el).toMatchSnapshot()
   })
@@ -44,7 +44,7 @@ describe(`LiGovTransaction`, () => {
   it(`votes`, () => {
     wrapper.setProps({
       tx: governanceTxs[2].tx.value.msg[0].value,
-      txType: `cosmos-sdk/MsgVote`
+      txType: `color/MsgVote`
     })
     expect(wrapper.vm.$el).toMatchSnapshot()
   })

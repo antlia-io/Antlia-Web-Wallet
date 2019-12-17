@@ -135,30 +135,30 @@ export default {
   },
   methods: {
     bankTx(type) {
-      return [`cosmos-sdk/MsgSend`].includes(type)
+      return [`color/MsgSend`].includes(type)
     },
     stakingTx(type) {
       return [
-        `cosmos-sdk/MsgCreateValidator`,
-        `cosmos-sdk/MsgEditValidator`,
-        `cosmos-sdk/MsgDelegate`,
-        `cosmos-sdk/MsgUndelegate`,
-        `cosmos-sdk/MsgBeginRedelegate`,
-        `cosmos-sdk/MsgUnjail`
+        `color/MsgCreateValidator`,
+        `color/MsgEditValidator`,
+        `color/MsgDelegate`,
+        `color/MsgUndelegate`,
+        `color/MsgBeginRedelegate`,
+        `color/MsgUnjail`
       ].includes(type)
     },
     governanceTx(type) {
       return [
-        `cosmos-sdk/MsgSubmitProposal`,
-        `cosmos-sdk/MsgDeposit`,
-        `cosmos-sdk/MsgVote`
+        `color/MsgSubmitProposal`,
+        `color/MsgDeposit`,
+        `color/MsgVote`
       ].includes(type)
     },
     distributionTx(type) {
       return [
-        `cosmos-sdk/MsgSetWithdrawAddress`,
-        `cosmos-sdk/MsgWithdrawDelegationReward`,
-        `cosmos-sdk/MsgWithdrawValidatorCommission`
+        `color/MsgSetWithdrawAddress`,
+        `color/MsgWithdrawDelegationReward`,
+        `color/MsgWithdrawValidatorCommission`
       ].includes(type)
     }
   }
