@@ -1,5 +1,5 @@
 import Ledger from "@rnssolution/color-ledger"
-import { signWithPrivateKey, getStoredWallet } from "@rnssolution/color-keys"
+import { signWithPrivateKey, getStoredWallet,signWithPrivateKeywallet } from "@rnssolution/color-keys"
 import { signWithExtension } from "src/scripts/extension-utils"
 
 export function getSigner(config, submitType = "", { address, password }) {
@@ -32,4 +32,67 @@ export function getSigner(config, submitType = "", { address, password }) {
       return signWithExtension(signMessage, address)
     }
   }
+}
+
+export function getSignSigner(config, submitType = "",Message, { address, password }) {
+  if (submitType === `local`) {
+    const wallet = getStoredWallet(address, password)
+    const message = [
+      { 
+        signMessage: { 
+          message : Message
+        } 
+      }
+    ]
+    var hash = signWithPrivateKeywallet(
+        message[0].signMessage,
+        Buffer.from(wallet.privateKey, "hex")
+      )
+      hash = hash.toString('base64')
+      return {hash, wallet}
+  } 
+  else if (submitType === `ledger`) {
+    const message = [
+      { 
+        signMessage: { 
+          message : Message
+        } 
+      }
+    ]
+    const ledger = new Ledger(config)
+    const publicKey = ledger.getPubKey()
+    var hash = signWithPrivateKeywallet(
+        message[0].signMessage,
+        Buffer.from(wallet.privateKey, "hex")
+      )
+    hash = hash.toString('base64')
+
+    const Ledgerhash = ledger.sign(hash)
+    // return async signMessage => {
+    //   const ledger = new Ledger(config)
+    //   const publicKey = await ledger.getPubKey()
+    //   const hash = await ledger.sign(signMessage)
+
+      return {
+        Ledgerhash,
+        publicKey
+      }
+    // }
+  } 
+  else if (submitType === `extension`) {
+    const message = [
+      { 
+        signMessage: { 
+          message : Message
+        } 
+      }
+    ]
+    var hash = signWithPrivateKeywallet(
+        message[0].signMessage,
+        Buffer.from(wallet.privateKey, "hex")
+      )
+      hash = hash.toString('base64')
+      return signWithExtension(hash, address)
+    
+  }  
 }

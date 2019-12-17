@@ -106,22 +106,12 @@ export default class ActionManager {
   }
 
   async sendSign(txMetaData) {
-
     const { Message,submitType, password } = txMetaData
-    const wallet = getStoredWallet(this.context.userAddress, password)
-    const message = [
-      { 
-        signMessage: { 
-          message : Message
-        } 
-      }
-    ]
-    var  hash  = signWithPrivateKeywallet(
-      message[0].signMessage,
-      Buffer.from(wallet.privateKey, 'hex')
-    )
-    hash = hash.toString('base64')
-    return { hash , wallet }
+    const hash = getSignSigner(config, submitType, Message, {
+      address: this.context.userAddress,
+      password
+    })
+    return { hash }
   }
 
   async verify(txMetaData) {
@@ -141,7 +131,6 @@ export default class ActionManager {
       Buffer.from(PrivateKey, 'base64'),
       Buffer.from(JSON.stringify(PublicKey), 'base64')
     )
-    // console.log(verify)
     return verify 
   }
 

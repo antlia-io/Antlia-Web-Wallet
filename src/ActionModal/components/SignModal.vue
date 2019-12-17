@@ -210,7 +210,7 @@ import { track } from "scripts/google-analytics.js"
 import config from "src/config"
 import isEmpty from "lodash.isempty"
 import trim from "lodash.trim"
-
+import transaction from "../utils/transactionTypes"
 import ActionManager from "../utils/ActionManager.js"
 
 const signStep = `sign`
@@ -222,7 +222,6 @@ const SIGN_METHODS = {
   LEDGER: `ledger`,
   EXTENSION: `extension`
 }
-
 const signMethodOptions = {
   LEDGER: {
     key: `Ledger Nano`,
@@ -334,7 +333,8 @@ export default {
     },
     transactionData() {
       return {
-        Message: this.message,
+        type: transaction.SIGN,
+        Message: this.message
       }
     },
     notifyMessage() {
@@ -446,12 +446,17 @@ export default {
             return
           }
           this.sending = true
+          await this.simulate()
           await this.submit()
           this.sending = false
           return
         default:
           return
       }
+    },
+    async simulate() {
+      const { type, ...properties } = this.transactionData
+      this.actionManager.setMessage(type, properties)
     },
      async submit() {
       this.submissionError = null
@@ -470,7 +475,7 @@ export default {
         }
       }
 
-     const { ...transactionProperties } = this.transactionData
+     const { type, ...transactionProperties } = this.transactionData
 
       const feeProperties = {
         submitType: this.selectedSignMethod,
@@ -479,12 +484,11 @@ export default {
       }
 
       try {
-        const { hash , wallet } = await this.actionManager.sendSign(
+        const { hash } = await this.actionManager.sendSign(
           feeProperties
         )
-        this.txHash = hash
-        this.publicKey = wallet.publicKey
-        this.onTxIncluded(transactionProperties, feeProperties)
+        this.txHash = hash.hash
+        this.onTxIncluded(type,transactionProperties, feeProperties)
       } catch ({ message }) {
         this.onSendingFailed(message)
       } finally {
@@ -497,7 +501,7 @@ export default {
     //   const { height } = await includedFn()
     //   this.includedHeight = height
     // },
-    onTxIncluded(address=this.address, feeProperties) {
+    onTxIncluded(txType,address=this.address, feeProperties) {
       this.step = successStep
       this.trackEvent(
         `event`,

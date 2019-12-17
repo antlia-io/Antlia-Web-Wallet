@@ -120,7 +120,7 @@
     "webpack-dev-server": "3.2.1"
   },
   "dependencies": {
-    "@rnssolution/color-api": "1.0.0",
+    "@rnssolution/color-api": "2.1.0",
     "@rnssolution/color-keys": "2.0.2",
     "@rnssolution/color-ledger": "0.1.2",
     "@sentry/browser": "5.0.3",

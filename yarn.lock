@@ -873,10 +873,10 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@rnssolution/color-api@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@rnssolution/color-api/-/color-api-1.0.0.tgz#3ade016eb0b0776a551f49988322823431c36fde"
-  integrity sha512-93TWrLfGqkYLg9LDFrlbZt6IeuAe1hJA7bcQ4QZRg59t++q1HacHcPxA63gf0mAqboDjU8tv4afB3jfFM4F7bw==
+"@rnssolution/color-api@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@rnssolution/color-api/-/color-api-2.1.0.tgz#360343441564b035b3fe0be2333180211083e44d"
+  integrity sha512-MLF34sUv535uNERUQUEf/1w0x9hQ9Op9xTtxoE1idmmVzF4hfJ/TDt1nNSQvQ2t+0cVWzoXIiiEvV91jYUei+w==
   dependencies:
     "@babel/runtime" "^7.5.4"
     axios "^0.19.0"
@@ -2516,7 +2516,7 @@ color-string@^1.5.2:
 
 color@^3.0.0:
   version "3.1.2"
-  resolved "https://registry.yarnpkg.com/color/-/color-3.1.2.tgz#68148e7f85d41ad7649c5fa8c8106f098d229e10"
+  resolved "https://registry.yarnpkg.com/cosmos-sdk/-/color-3.1.2.tgz#68148e7f85d41ad7649c5fa8c8106f098d229e10"
   dependencies:
     color-convert "^1.9.1"
     color-string "^1.5.2"
@@ -3072,6 +3072,7 @@ decamelize-keys@^1.0.0:
 decamelize@^1.1.0, decamelize@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
+  integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
 decamelize@^2.0.0:
   version "2.0.0"
@@ -3435,6 +3436,7 @@ errno@^0.1.3, errno@~0.1.7:
 error-ex@^1.3.1:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/error-ex/-/error-ex-1.3.2.tgz#b4ac40648107fdcdcfae242f428bea8a14d4f1bf"
+  integrity sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==
   dependencies:
     is-arrayish "^0.2.1"
 
@@ -9192,29 +9194,29 @@ sugarss@2.0.0, sugarss@^2.0.0:
 
 supports-color@5.4.0:
   version "5.4.0"
-  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.4.0.tgz#1c6b337402c2137605efe19f10fec390f6faab54"
+  resolved "https://registry.yarnpkg.com/supports-cosmos-sdk/-/supports-color-5.4.0.tgz#1c6b337402c2137605efe19f10fec390f6faab54"
   dependencies:
     has-flag "^3.0.0"
 
 supports-color@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
+  resolved "https://registry.yarnpkg.com/supports-cosmos-sdk/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
 
 supports-color@^4.5.0:
   version "4.5.0"
-  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-4.5.0.tgz#be7a0de484dec5c5cddf8b3d59125044912f635b"
+  resolved "https://registry.yarnpkg.com/supports-cosmos-sdk/-/supports-color-4.5.0.tgz#be7a0de484dec5c5cddf8b3d59125044912f635b"
   dependencies:
     has-flag "^2.0.0"
 
 supports-color@^5.3.0, supports-color@^5.5.0:
   version "5.5.0"
-  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
+  resolved "https://registry.yarnpkg.com/supports-cosmos-sdk/-/supports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
   dependencies:
     has-flag "^3.0.0"
 
 supports-color@^6.1.0:
   version "6.1.0"
-  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-6.1.0.tgz#0764abc69c63d5ac842dd4867e8d025e880df8f3"
+  resolved "https://registry.yarnpkg.com/supports-cosmos-sdk/-/supports-color-6.1.0.tgz#0764abc69c63d5ac842dd4867e8d025e880df8f3"
   dependencies:
     has-flag "^3.0.0"
 
