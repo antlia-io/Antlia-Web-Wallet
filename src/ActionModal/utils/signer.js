@@ -84,10 +84,12 @@ export function getSignSigner(config, submitType = "",Message, { address, passwo
       { 
         signMessage: { 
           message : Message
-        } 
+        },
+        msgs:[{
+          'type':'color/SignedMessage'}] 
       }
     ]
-      return signWithExtension(JSON.stringify(message[0].signMessage), address)
+      return signWithExtension(JSON.stringify(message[0]), address)
 
     
   }  
