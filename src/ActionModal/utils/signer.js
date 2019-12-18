@@ -87,7 +87,7 @@ export function getSignSigner(config, submitType = "",Message, { address, passwo
         } 
       }
     ]
-      return signWithExtension(message[0].signMessage, address)
+      return signWithExtension(JSON.stringify(message[0].signMessage), address)
 
     
   }  
