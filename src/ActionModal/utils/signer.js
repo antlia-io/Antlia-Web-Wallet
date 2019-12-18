@@ -87,12 +87,8 @@ export function getSignSigner(config, submitType = "",Message, { address, passwo
         } 
       }
     ]
-    var hash = signWithPrivateKeywallet(
-        message[0].signMessage,
-        Buffer.from(wallet.privateKey, "hex")
-      )
-      hash = hash.toString('base64')
-      return signWithExtension(hash, address)
+      return signWithExtension(message[0].signMessage, address)
+
     
   }  
 }
