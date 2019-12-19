@@ -64,7 +64,7 @@
           <dl class="col-lg-2 info_dl colored_dl">
             <dt>MY REWARDS</dt>
             <dd v-if="rewards > 0">
-              {{ rewards | atoms | shortDecimals }}
+              {{ rewards | atoms | fullDecimals }}
               {{ bondDenom | viewDenom }}
             </dd>
             <dd v-else>--</dd>
@@ -191,7 +191,7 @@
 import moment from "moment"
 import { calculateTokens } from "scripts/common"
 import { mapGetters } from "vuex"
-import num, { atoms, viewDenom, shortDecimals } from "scripts/num"
+import num, { atoms, viewDenom, fullDecimals } from "scripts/num"
 import { formatBech32 } from "src/filters"
 import TmBtn from "common/TmBtn"
 import { ratToBigNumber } from "scripts/common"
@@ -212,7 +212,8 @@ export default {
   filters: {
     atoms,
     viewDenom,
-    shortDecimals,
+    // shortDecimals,
+    fullDecimals,
     formatBech32
   },
   data: () => ({
@@ -273,7 +274,7 @@ export default {
     },
     myDelegation() {
       const { bondDenom, myBond } = this
-      const myDelegation = num.shortDecimals(myBond)
+      const myDelegation = num.fullDecimals(myBond)
       const myDelegationString = `${myDelegation} ${num.viewDenom(bondDenom)}`
       return Number(myBond) === 0 ? `--` : myDelegationString
     },
