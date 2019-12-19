@@ -464,7 +464,7 @@ export default {
       }
 
       try {
-        const { temp } = await this.actionManager.sendSign(feeProperties)
+        const temp  = await this.actionManager.sendSign(feeProperties)
         this.txHash = temp
         this.onTxIncluded(type, transactionProperties, feeProperties)
       } catch ({ message }) {

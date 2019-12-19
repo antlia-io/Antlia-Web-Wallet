@@ -58,7 +58,7 @@ export function getSignSigner(
       Buffer.from(wallet.privateKey, "hex")
     )
     hash = hash.toString("base64")
-    return { hash, wallet }
+    return hash
   } else if (submitType === `ledger`) {
     const message = [
       {
@@ -99,6 +99,6 @@ export function getSignSigner(
         }
       }
     ]
-    return signWithExtension(JSON.stringify(message[0].signMessage), address)
+    return signWithExtension(JSON.stringify(message[0].signMessage), address,message[0].signMessage.msgs[0].type)
   }
 }

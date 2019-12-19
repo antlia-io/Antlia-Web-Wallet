@@ -2,7 +2,7 @@ const dev = process.env.NODE_ENV === `development`
 const stargate =
   process.env.STARGATE ||
   (dev
-    ? `https://proxy.testnet.color-platform.org:9061`
+    ? `https://proxy.testnet.color-platform.rnssol.com:9071`
     : `https://proxy.testnet.color-platform.org:9061`)
 
 const faucet =
@@ -26,7 +26,7 @@ const qrcode =
 const rpc =
   process.env.RPC ||
   (dev
-    ? `https://rpc.testnet.color-platform.org`
+    ? `https://rpc.testnet.color-platform.rnssol.com`
     : `https://rpc.testnet.color-platform.org`)
 
 const chain = process.env.CHAIN || (dev ? `local-testnet` : `color-testnet-02`)

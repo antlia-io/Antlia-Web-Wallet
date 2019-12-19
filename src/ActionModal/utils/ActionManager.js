@@ -114,8 +114,7 @@ export default class ActionManager {
       address: this.context.userAddress,
       password
     })
-    var temp = hash.signature.toString("base64")
-    return { temp }
+    return hash
   }
 
   async verify(txMetaData) {
