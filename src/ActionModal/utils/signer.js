@@ -1,5 +1,9 @@
 import Ledger from "@rnssolution/color-ledger"
-import { signWithPrivateKey, getStoredWallet,signWithPrivateKeywallet } from "@rnssolution/color-keys"
+import {
+  signWithPrivateKey,
+  getStoredWallet,
+  signWithPrivateKeywallet
+} from "@rnssolution/color-keys"
 import { signWithExtension } from "src/scripts/extension-utils"
 
 export function getSigner(config, submitType = "", { address, password }) {
@@ -34,38 +38,42 @@ export function getSigner(config, submitType = "", { address, password }) {
   }
 }
 
-export function getSignSigner(config, submitType = "",Message, { address, password }) {
+export function getSignSigner(
+  config,
+  submitType = "",
+  Message,
+  { address, password }
+) {
   if (submitType === `local`) {
     const wallet = getStoredWallet(address, password)
     const message = [
-      { 
-        signMessage: { 
-          message : Message
-        } 
+      {
+        signMessage: {
+          message: Message
+        }
       }
     ]
     var hash = signWithPrivateKeywallet(
-        message[0].signMessage,
-        Buffer.from(wallet.privateKey, "hex")
-      )
-      hash = hash.toString('base64')
-      return {hash, wallet}
-  } 
-  else if (submitType === `ledger`) {
+      message[0].signMessage,
+      Buffer.from(wallet.privateKey, "hex")
+    )
+    hash = hash.toString("base64")
+    return { hash, wallet }
+  } else if (submitType === `ledger`) {
     const message = [
-      { 
-        signMessage: { 
-          message : Message
-        } 
+      {
+        signMessage: {
+          message: Message
+        }
       }
     ]
     const ledger = new Ledger(config)
     const publicKey = ledger.getPubKey()
     var hash = signWithPrivateKeywallet(
-        message[0].signMessage,
-        Buffer.from(wallet.privateKey, "hex")
-      )
-    hash = hash.toString('base64')
+      message[0].signMessage,
+      Buffer.from(wallet.privateKey, "hex")
+    )
+    hash = hash.toString("base64")
 
     const Ledgerhash = ledger.sign(hash)
     // return async signMessage => {
@@ -73,26 +81,24 @@ export function getSignSigner(config, submitType = "",Message, { address, passwo
     //   const publicKey = await ledger.getPubKey()
     //   const hash = await ledger.sign(signMessage)
 
-      return {
-        Ledgerhash,
-        publicKey
-      }
+    return {
+      Ledgerhash,
+      publicKey
+    }
     // }
-  } 
-  else if (submitType === `extension`) {
+  } else if (submitType === `extension`) {
     const message = [
-      { 
-        signMessage: { 
-          message : Message
-        } 
+      {
+        signMessage: {
+          message: Message,
+          msgs: [
+            {
+              type: "color/MsgSignMessage"
+            }
+          ]
+        }
       }
     ]
-    var hash = signWithPrivateKeywallet(
-        message[0].signMessage,
-        Buffer.from(wallet.privateKey, "hex")
-      )
-      hash = hash.toString('base64')
-      return signWithExtension(hash, address)
-    
-  }  
+    return signWithExtension(JSON.stringify(message[0].signMessage), address)
+  }
 }
