@@ -1,31 +1,23 @@
 <template>
   <transition v-if="show" name="slide-fade">
     <div id="signModal" class="action-modal" tabindex="0" @keyup.esc="close">
-      <div
-        id="closeBtn"
-        class="action-modal-icon action-modal-close"
-        @click="close"
-      >
+      <div id="closeBtn" class="action-modal-icon action-modal-close" @click="close">
         <i class="material-icons">close</i>
       </div>
-       <div class="action-modal-header">
-        <span class="action-modal-title">
-          {{ requiresSignIn ? `Sign in required` : 'Sign' }}
-        </span>
+      <div class="action-modal-header">
+        <span class="action-modal-title">{{ requiresSignIn ? `Sign in required` : 'Sign' }}</span>
       </div>
       <div v-if="requiresSignIn" class="action-modal-form">
-        <p class="form-message notice">
-          You need to sign in to submit a transaction.
-        </p>
+        <p class="form-message notice">You need to sign in to submit a transaction.</p>
       </div>
       <div v-else-if="step === signStep" class="action-modal-form">
         <TmFormGroup
-        :error="$v.message.$error && $v.message.$invalid"
-        class="action-modal-form-group"
-        field-id="message"
-        field-label="Message"
+          :error="$v.message.$error && $v.message.$invalid"
+          class="action-modal-form-group"
+          field-id="message"
+          field-label="Message"
         >
-        <TmField
+          <TmField
             id="message"
             ref="message"
             v-model="$v.message.$model"
@@ -33,18 +25,18 @@
             type="text"
             placeholder="Message"
             @keyup.enter.native="enterPressed"
-        />
-        <TmFormMsg
+          />
+          <TmFormMsg
             v-if="$v.message.$error && !$v.message.maxLength"
             :max="$v.message.$params.maxLength.max"
             name="Message"
             type="maxLength"
-        />
-        <TmFormMsg
+          />
+          <TmFormMsg
             v-if="$v.message.$error && !$v.message.required"
             name="Message"
             type="required"
-        />
+          />
         </TmFormGroup>
         <TmFormGroup
           v-if="signMethods.length > 1"
@@ -66,9 +58,9 @@
         >
           <div v-if="session.browserWithLedgerSupport">
             {{
-              sending
-                ? `Please verify and sign the transaction on your Ledger`
-                : `Please plug in your Ledger&nbsp;Nano and open
+            sending
+            ? `Please verify and sign the transaction on your Ledger`
+            : `Please plug in your Ledger&nbsp;Nano and open
             the Color app`
             }}
           </div>
@@ -96,8 +88,7 @@
               href="https://chrome.google.com/webstore/category/extensions"
               target="_blank"
               rel="noopener norefferer"
-              >Chrome Web Store</a
-            >.
+            >Chrome Web Store</a>.
           </div>
         </HardwareState>
         <form
@@ -110,12 +101,7 @@
             field-id="password"
             field-label="Password"
           >
-            <TmField
-              id="password"
-              v-model="password"
-              type="password"
-              placeholder="Password"
-            />
+            <TmField id="password" v-model="password" type="password" placeholder="Password" />
             <TmFormMsg
               v-if="$v.password.$error && !$v.password.required"
               name="Password"
@@ -124,23 +110,22 @@
           </TmFormGroup>
         </form>
       </div>
-      <div
-        v-else-if="step === successStep"
-        class="action-modal-form success-step"
-      >
+      <div v-else-if="step === successStep" class="action-modal-form success-step">
         <TmDataMsg icon="check" id="successStep">
-          <div slot="title">
-            Signed Message:
-          </div>
+          <div slot="title">Signed Message:</div>
           <div slot="subtitle">
             <div class="displayflex">
-              <div class="hash" v-tooltip.top="txHash"
-              v-clipboard:copy="txHash"
-              v-clipboard:success="() => onCopy()">
-              {{txHash}}
-              </div>
-              <i v-clipboard:copy="txHash"
-              v-clipboard:success="() => onCopy()" class="material-icons cursor">collections</i>
+              <div
+                class="hash"
+                v-tooltip.top="txHash"
+                v-clipboard:copy="txHash"
+                v-clipboard:success="() => onCopy()"
+              >{{txHash}}</div>
+              <i
+                v-clipboard:copy="txHash"
+                v-clipboard:success="() => onCopy()"
+                class="material-icons cursor"
+              >collections</i>
               <div :class="{ active: copySuccess }" class="copied">
                 <span>Copied</span>
               </div>
@@ -151,9 +136,7 @@
       </div>
       <div v-show="step === signStep" class="action-modal-footer">
         <slot name="action-modal-footer">
-          <TmFormGroup
-            class="action-modal-group"
-          >
+          <TmFormGroup class="action-modal-group">
             <div>
               <TmBtn
                 v-if="requiresSignIn"
@@ -162,16 +145,8 @@
                 @click.native="goToSession"
                 @click.enter.native="goToSession"
               />
-              <TmBtn
-                v-else-if="sending"
-                :value="submitButtonCaption"
-                disabled="disabled"
-              />
-              <TmBtn
-                v-else-if="!connected"
-                value="Connecting..."
-                disabled="disabled"
-              />
+              <TmBtn v-else-if="sending" :value="submitButtonCaption" disabled="disabled" />
+              <TmBtn v-else-if="!connected" value="Connecting..." disabled="disabled" />
               <TmBtn
                 v-else
                 value="Sign"
@@ -184,18 +159,22 @@
         <p
           v-if="submissionError"
           class="tm-form-msg sm tm-form-msg--error submission-error"
-        >
-          {{ submissionError }}
-        </p>
+        >{{ submissionError }}</p>
       </div>
-
     </div>
   </transition>
 </template>
 
 <script>
 import b32 from "scripts/b32"
-import { required, between, decimal, maxLength,requiredIf,minLength } from "vuelidate/lib/validators"
+import {
+  required,
+  between,
+  decimal,
+  maxLength,
+  requiredIf,
+  minLength
+} from "vuelidate/lib/validators"
 import { uatoms, atoms, viewDenom, SMALLEST } from "src/scripts/num.js"
 import { mapGetters } from "vuex"
 import TmFormGroup from "src/components/common/TmFormGroup"
@@ -262,7 +241,7 @@ export default {
     validate: {
       type: Function,
       default: undefined
-    },
+    }
   },
   data: () => ({
     messageMaxLength: 64,
@@ -289,25 +268,26 @@ export default {
     SIGN_METHODS
   }),
   computed: {
-    ...mapGetters([`wallet`,
-     `connected`,
+    ...mapGetters([
+      `wallet`,
+      `connected`,
       `session`,
       `bondDenom`,
       `liquidAtoms`,
       `modalContext`,
       `extension`
-      ]),
-      requiresSignIn() {
+    ]),
+    requiresSignIn() {
       return !this.session.signedIn
     },
-     isValidChildForm() {
+    isValidChildForm() {
       // here we trigger the validation of the child form
       if (this.validate) {
         return this.validate()
       }
       return true
     },
-     signMethods() {
+    signMethods() {
       let signMethods = []
       if (this.session.sessionType === sessionType.EXPLORE) {
         signMethods.push(signMethodOptions.LEDGER)
@@ -360,7 +340,7 @@ export default {
             this.selectedSignMethod === SIGN_METHODS.LOCAL &&
             this.step === signStep
         )
-      },
+      }
     }
   },
   watch: {
@@ -400,7 +380,7 @@ export default {
         this.copySuccess = false
       }, 2500)
     },
-    onCopyPublicKey(){
+    onCopyPublicKey() {
       this.copySuccessPublicKey = true
       setTimeout(() => {
         this.copySuccessPublicKey = false
@@ -412,7 +392,7 @@ export default {
       this.step = signStep
       this.show = false
       this.sending = false
-      this.message = ''
+      this.message = ""
       // reset form
       this.$v.$reset()
       this.$emit(`close`)
@@ -439,10 +419,10 @@ export default {
           if (!this.isValidChildForm) {
             return
           }
-          if (!this.isValidInput(`password`) && !this.isValidInput(`message`) ){
+          if (!this.isValidInput(`password`) && !this.isValidInput(`message`)) {
             return
           }
-          if(this.message === '' && !this.isValidInput(`message`)){
+          if (this.message === "" && !this.isValidInput(`message`)) {
             return
           }
           this.sending = true
@@ -458,9 +438,9 @@ export default {
       const { type, ...properties } = this.transactionData
       this.actionManager.setMessage(type, properties)
     },
-     async submit() {
+    async submit() {
       this.submissionError = null
-      
+
       this.trackEvent(`event`, `submit`, this.title, this.selectedSignMethod)
 
       if (this.selectedSignMethod === SIGN_METHODS.LEDGER) {
@@ -475,7 +455,7 @@ export default {
         }
       }
 
-     const { type, ...transactionProperties } = this.transactionData
+      const { type, ...transactionProperties } = this.transactionData
 
       const feeProperties = {
         submitType: this.selectedSignMethod,
@@ -484,24 +464,22 @@ export default {
       }
 
       try {
-        const { hash } = await this.actionManager.sendSign(
-          feeProperties
-        )
-        this.txHash = hash.hash
-        this.onTxIncluded(type,transactionProperties, feeProperties)
+        const { temp } = await this.actionManager.sendSign(feeProperties)
+        this.txHash = temp
+        this.onTxIncluded(type, transactionProperties, feeProperties)
       } catch ({ message }) {
         this.onSendingFailed(message)
       } finally {
         // this.txHash = null
       }
     },
-    
+
     // async waitForInclusion(includedFn) {
     //   this.step = inclusionStep
     //   const { height } = await includedFn()
     //   this.includedHeight = height
     // },
-    onTxIncluded(txType,address=this.address, feeProperties) {
+    onTxIncluded(txType, address = this.address, feeProperties) {
       this.step = successStep
       this.trackEvent(
         `event`,
@@ -556,15 +534,15 @@ export default {
   word-break: break-word;
 }
 
-.hash{
-    color: #0a73b1;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 14px;
-    width: 40%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.hash {
+  color: #0a73b1;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 a {
@@ -580,15 +558,14 @@ a:hover {
 }
 
 .hash:hover {
-    color: #00d6e1;}
-
+  color: #00d6e1;
+}
 
 @media screen and (max-width: 572px) {
   .hash {
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
+  }
 }
 .hash:hover {
   color: #00d6e1;
@@ -611,7 +588,7 @@ a:hover {
 }
 
 .displayflex {
-  display: flex
+  display: flex;
 }
 
 .copied.active {

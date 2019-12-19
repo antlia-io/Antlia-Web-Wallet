@@ -1,9 +1,13 @@
 import Cosmos from "@rnssolution/color-api"
 import config from "src/config"
-import { getSigner , getSignSigner} from "./signer"
+import { getSigner, getSignSigner } from "./signer"
 import transaction from "./transactionTypes"
 import { uatoms } from "scripts/num.js"
-import { signWithPrivateKeywallet,getStoredWallet,verifySignature } from "@rnssolution/color-keys"
+import {
+  signWithPrivateKeywallet,
+  getStoredWallet,
+  verifySignature
+} from "@rnssolution/color-keys"
 import b32 from "scripts/b32"
 
 export default class ActionManager {
@@ -65,11 +69,10 @@ export default class ActionManager {
     if (!this.context) {
       throw Error("This modal has no context.")
     }
-    function temp(a){
+    function temp(a) {
       return a
     }
     this.message = temp(transactionProperties)
-    
   }
 
   async simulate(memo) {
@@ -101,39 +104,38 @@ export default class ActionManager {
       },
       signer
     )
-     
+
     return { included, hash }
   }
 
   async sendSign(txMetaData) {
-    const { Message,submitType, password } = txMetaData
-    const hash = getSignSigner(config, submitType, Message, {
+    const { Message, submitType, password } = txMetaData
+    const hash = await getSignSigner(config, submitType, Message, {
       address: this.context.userAddress,
       password
     })
-    return { hash }
+    var temp = hash.signature.toString("base64")
+    return { temp }
   }
 
   async verify(txMetaData) {
-    
-    const { Message, PublicKey,PrivateKey } = txMetaData
+    const { Message, PublicKey, PrivateKey } = txMetaData
 
     const message = [
       {
         signMessage: {
-          message : Message
+          message: Message
         }
       }
     ]
-    
-    var  verify  = verifySignature(
-      message[0].signMessage,
-      Buffer.from(PrivateKey, 'base64'),
-      Buffer.from(JSON.stringify(PublicKey), 'base64')
-    )
-    return verify 
-  }
 
+    var verify = verifySignature(
+      message[0].signMessage,
+      Buffer.from(PrivateKey, "base64"),
+      Buffer.from(JSON.stringify(PublicKey), "base64")
+    )
+    return verify
+  }
 
   createWithdrawTransaction() {
     const addresses = getTop5RewardsValidators(
