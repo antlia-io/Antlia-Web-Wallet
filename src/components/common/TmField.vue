@@ -72,6 +72,7 @@
     @change="onChange"
     @keyup="onKeyup"
     @keydown="onKeydown"
+    @keypress="onlyForAmount"
     @input="updateValue($event.target.value)"
   />
 </template>
@@ -163,6 +164,21 @@ export default {
         this.onChange(this.currentToggleState)
       }
     },
+    onlyForAmount ($event) {
+      if (this.type === `number`) {
+       let keyCode = ($event.keyCode ? $event.keyCode : $event.which);
+
+       // only allow number and one dot
+       if ((keyCode < 48 || keyCode > 57) && (keyCode !== 46 || this.value.indexOf('.') != -1)) { // 46 is dot
+        $event.preventDefault();
+       }
+
+       // restrict to 6 decimal places
+       if(this.value!=null && this.value.indexOf(".")>-1 && (this.value.split('.')[1].length > 5)){
+       $event.preventDefault();
+       }
+      }
+     },
     updateValue(value) {
       let formattedValue = value
 

@@ -5,12 +5,13 @@
     :validate="validateForm"
     :amount="amount"
     title="Proposal"
-    submission-error-prefix="Submitting proposal failed"
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
     v-if="session.signedIn"
+    v-focus-last
   >
+  <!-- submission-error-prefix="Submitting proposal failed" -->
     <TmFormGroup
       :error="$v.title.$error && $v.title.$invalid"
       class="action-modal-form-group"
@@ -237,7 +238,7 @@ export default {
   }),
   watch: {
     fundcycle (val) {
-      this.fundcycle = val.replace('.', '')
+      this.fundcycle = val.replace('.', '').replace('0','')
     }
   },
   computed: {

@@ -5,12 +5,12 @@
     :validate="validateForm"
     title="Vote"
     class="modal-vote"
-    submission-error-prefix="Voting failed"
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
     v-if="session.signedIn"
   >
+  <!-- submission-error-prefix="Voting failed" -->
     <TmFormGroup class="action-modal-group vote-options">
       <TmBtn
         id="vote-yes"

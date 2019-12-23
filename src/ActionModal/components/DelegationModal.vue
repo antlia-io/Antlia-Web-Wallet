@@ -6,12 +6,13 @@
     :amount="isRedelegation() ? 0 : amount"
     :title="isRedelegation() ? 'Redelegate' : 'Delegate'"
     class="delegation-modal"
-    submission-error-prefix="Delegating failed"
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
     v-if="session.signedIn"
+    v-focus-last
   >
+  <!-- submission-error-prefix="Delegating failed" -->
     <TmFormGroup class="action-modal-form-group" field-id="to" field-label="To">
       <TmField id="to" v-model="to" type="text" readonly />
     </TmFormGroup>
@@ -55,7 +56,7 @@
         {{ getFromBalance() }}
         {{ denom | viewDenom }}
       </span>
-      <TmFormMsg
+     <TmFormMsg
         v-if="balance === 0"
         :msg="`doesn't have any ${viewDenom(denom)}`"
         name="Wallet"
@@ -77,6 +78,12 @@
         :min="$v.amount.$params.between.min"
         name="Amount"
         type="between"
+      />
+      <TmFormMsg
+        v-else-if="amount == getFromBalance()"
+        msg="You are about to use all your tokens for this transaction. Consider leaving a little bit left over to cover the network fees."
+        class="tm-form-msg--desc"
+        type="custom"
       />
     </TmFormGroup>
   </ActionModal>

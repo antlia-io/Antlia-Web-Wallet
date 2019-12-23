@@ -6,11 +6,11 @@
     :amount="amount"
     title="Deposit"
     class="modal-deposit"
-    submission-error-prefix="Depositing failed"
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
   >
+  <!-- submission-error-prefix="Depositing failed" -->
     <TmFormGroup
       :error="$v.amount.$error && $v.amount.$invalid"
       class="action-modal-form-group"

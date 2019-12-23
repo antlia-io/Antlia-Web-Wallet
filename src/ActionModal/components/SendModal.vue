@@ -5,12 +5,12 @@
     :validate="validateForm"
     :amount="amount"
     title="Send"
-    submission-error-prefix="Sending tokens failed"
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
     v-if="session.signedIn"
   >
+  <!-- submission-error-prefix="Sending tokens failed" -->
     <TmFormGroup
       :error="$v.denom.$dirty && $v.denom.$invalid"
       class="action-modal-form-group"
@@ -81,6 +81,12 @@
         name="Amount"
         type="between"
       />
+      <TmFormMsg
+        v-else-if="amount == num.atoms(balance)"
+        msg="You are about to use all your tokens for this transaction. Consider leaving a little bit left over to cover the network fees."
+        class="tm-form-msg--desc max-message"
+        type="custom"
+      />
     </TmFormGroup>
     <TmBtn
       v-if="editMemo === false"
@@ -95,7 +101,7 @@
       v-if="editMemo"
       id="memo"
       :error="$v.memo.$error && $v.memo.$invalid"
-      class="action-modal-group"
+      class="action-modal-group memo"
       field-id="memo"
       field-label="Memo"
     >
@@ -117,6 +123,7 @@
 </template>
 
 <script>
+import num from "scripts/num"
 import b32 from "scripts/b32"
 import { required, between, decimal, maxLength } from "vuelidate/lib/validators"
 import { uatoms, atoms, viewDenom, SMALLEST } from "src/scripts/num.js"
@@ -140,6 +147,7 @@ export default {
     TmBtn
   },
   data: () => ({
+    num,
     address: ``,
     amount: null,
     denom: ``,
@@ -238,8 +246,19 @@ export default {
 #edit-memo-btn {
   display: inline-block;
   height: 58px;
-  padding: 12px 0;
+  padding: 2rem 0 0 0;
   box-sizing: content-box;
   font-size: var(--sm);
+}
+.memo {
+  padding: 1.5rem 0 0 0;
+}
+@media screen and (max-width: 390px) {
+  #edit-memo-btn {
+    padding: 3rem 0 0 0;
+  }
+  .memo {
+    padding: 2.5rem 0 0 0;
+  }
 }
 </style>

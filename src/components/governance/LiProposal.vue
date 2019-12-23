@@ -32,16 +32,19 @@
     </td>
     <td>{{ `#` + proposal.proposal_id }}</td>
     <td class="li-proposal__value yes">
-      {{ roundedPercentagesTally.yes | prettyDecimals }}%
+      <span v-if="roundedPercentagesTally.yes == 0.01">{{ 0 }}%</span>
+      <span v-else>{{ roundedPercentagesTally.yes | prettyDecimals }}%</span>
     </td>
     <td class="li-proposal__value no">
-      {{ roundedPercentagesTally.no | prettyDecimals }}%
+      <span v-if="roundedPercentagesTally.no == 0.01">{{ 0 }}%</span>
+      <span v-else>{{ roundedPercentagesTally.no | prettyDecimals }}%</span>
     </td>
     <!-- <td class="li-proposal__value no_with_veto">
       {{ roundedPercentagesTally.no_with_veto | prettyDecimals }}%
     </td> -->
     <td class="li-proposal__value abstain">
-      {{ roundedPercentagesTally.abstain | prettyDecimals }}%
+      <span v-if="roundedPercentagesTally.abstain == 0.01">{{ 0 }}%</span>
+      <span v-else>{{ roundedPercentagesTally.abstain | prettyDecimals }}%</span>
     </td>
     <td class="requestedFund">
       {{ num.fullDecimals(num.atoms(proposal.proposal_content.value.requested_fund[0].amount)) }}

@@ -7,7 +7,7 @@
         </div>
         <span class="clralign">
           <p class="coin-denom">{{ denomination }}</p>
-          <p class="coin-amount">{{ unbondedAtoms }}</p>
+          <p class="coin-amount">{{ unbondedAtoms | prettyLong }}</p>
         </span>
       </div>
       <TmBtn
@@ -66,6 +66,7 @@ import TmBtn from "common/TmBtn"
 import { required, decimal } from "vuelidate/lib/validators"
 import Receive from "src/ActionModal/components/Receive"
 import { mapGetters } from "vuex"
+import { atoms as toAtoms , prettyLong} from "../../scripts/num.js"
 import TmFormGroup from "src/components/common/TmFormGroup"
 import TmField from "src/components/common/TmField"
 import TmFormMsg from "src/components/common/TmFormMsg"
@@ -78,6 +79,10 @@ export default {
     TmFormGroup,
     TmField,
     TmFormMsg
+  },
+  filters: {
+    toAtoms,
+    prettyLong
   },
   props: {
     coin: {

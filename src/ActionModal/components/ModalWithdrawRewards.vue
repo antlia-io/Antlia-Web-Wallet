@@ -6,9 +6,9 @@
     :notify-message="notifyMessage"
     title="Withdraw"
     class="modal-withdraw-rewards"
-    submission-error-prefix="Withdrawal failed"
     :disable="validatorsWithRewards"
   >
+  <!-- submission-error-prefix="Withdrawal failed" -->
     <span class="form-message notice withdraw-limit">
       Color Wallet will only withdraw rewards from 5 validators at a time because of a
       limitation with the Ledger Nano S.

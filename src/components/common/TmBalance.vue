@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-12">
         <h3>Total {{ num.viewDenom(bondDenom) }}:</h3>
-        <h2 class="total-atoms__value color">{{ totalAtomsDisplay }}</h2>
+        <h2 class="total-atoms__value color">{{ totalAtomsDisplay | prettyLong }}</h2>
       </div>
     </div>
     <b-progress v-if="hidebar" class="mt-2" :max="max" show-value>
@@ -30,16 +30,16 @@
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
         
         <h3><p class="green"></p>Liquid {{ num.viewDenom(bondDenom) }}:</h3>
-        <h2 class="color">{{ unbondedAtoms }}</h2>
+        <h2 class="color">{{ unbondedAtoms | prettyLong }}</h2>
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
         
         <h3><p class="blue"></p>Delegated {{ num.viewDenom(bondDenom) }}:</h3>
-        <h2 class="color">{{ delegated }}</h2>
+        <h2 class="color">{{ delegated | prettyLong }}</h2>
       </div>
        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
         <h3><p class="purple"></p>Pending {{ num.viewDenom(bondDenom) }}:</h3>
-        <h2 class="color">{{ unbondingAtoms }}</h2>
+        <h2 class="color">{{ unbondingAtoms | prettyLong }}</h2>
       </div>
       <div v-if="rewards" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment display">
         <h3 class="margintop">Available Rewards:</h3>
@@ -68,6 +68,7 @@
 <script>
 import num from "scripts/num"
 import { mapGetters } from "vuex"
+import { atoms as toAtoms , prettyLong} from "../../scripts/num.js"
 import ModalWithdrawRewards from "src/ActionModal/components/ModalWithdrawRewards"
 import TmBtn from "./TmBtn"
 import "bootstrap/dist/css/bootstrap.css"
@@ -82,6 +83,10 @@ export default {
       value: 0,
       max: 100
     }
+  },
+  filters: {
+    toAtoms,
+    prettyLong
   },
   computed: {
     ...mapGetters([

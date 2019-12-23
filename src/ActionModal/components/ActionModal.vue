@@ -45,6 +45,7 @@
             step="0.000000001"
             type="number"
             min="0"
+            readonly
           />
           <TmFormMsg
             v-if="balanceInAtoms === 0"
@@ -514,7 +515,13 @@ export default {
         this.gasEstimate = await this.actionManager.simulate(memo)
         this.step = feeStep
       } catch ({ message }) {
-        this.submissionError = `${this.submissionErrorPrefix}: ${message}.`
+        if(message.includes("insufficient")){
+        // ${this.submissionErrorPrefix}:
+        this.submissionError = `Insufficient Fees`
+        }
+        else {
+          this.submissionError = `${message}`
+        }
       }
 
       // limit fees to the maximum the user has
@@ -531,9 +538,8 @@ export default {
         try {
           await this.connectLedger()
         } catch (error) {
-          this.submissionError = `${this.submissionErrorPrefix}: ${
-            error.message
-          }.`
+          // ${this.submissionErrorPrefix}:
+          this.submissionError = `${error.message}.`
           this.sending = false
           return
         }
@@ -587,7 +593,8 @@ export default {
     },
     onSendingFailed(message) {
       this.step = signStep
-      this.submissionError = `${this.submissionErrorPrefix}: ${message}.`
+      // ${this.submissionErrorPrefix}:
+      this.submissionError = `${message}.`
       this.trackEvent(`event`, `failed-submit`, this.title, message)
     },
     async connectLedger() {
@@ -595,6 +602,7 @@ export default {
     },
     gotostepone() {
       this.step = defaultStep
+      this.gasPrice = config.default_gas_price.toFixed(9)
       this.submissionError = null
     },
     gotosteptwo() {
@@ -703,8 +711,10 @@ export default {
   margin: 15px 0;
 }
 
-.action-modal-footer .tm-form-group {
-  padding: 0;
+@media screen and (max-width: 480px) {
+  #delegation-modal .action-modal-footer {
+    margin: 2.5rem 0 0 0
+  }
 }
 
 .submission-error {
@@ -719,6 +729,14 @@ export default {
   font-style: italic;
   color: white;
   display: inline-block;
+}
+
+#modal-propose .addressbreak {
+  word-break: break-word;
+}
+
+#modal-vote .addressbreak {
+  word-break: break-word;
 }
 
 .addressbreak {

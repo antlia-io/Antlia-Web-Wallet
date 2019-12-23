@@ -6,12 +6,12 @@
     :amount="0"
     title="Undelegate"
     class="undelegation-modal"
-    submission-error-prefix="Undelegating failed"
     :transaction-data="transactionData"
     :notify-message="notifyMessage"
     @close="clear"
     v-if="session.signedIn"
   >
+  <!-- submission-error-prefix="Undelegating failed" -->
     <TmFormGroup class="action-modal-form-group">
       <div class="form-message notice">
         <span>

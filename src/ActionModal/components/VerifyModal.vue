@@ -325,7 +325,8 @@ export default {
     },
     onSendingFailed(message) {
       this.step = signStep
-      this.submissionError = `${this.submissionErrorPrefix}: ${message}.`
+      // ${this.submissionErrorPrefix}: 
+      this.submissionError = `${message}.`
       this.trackEvent(`event`, `failed-submit`, this.title, message)
     },
     async connectLedger() {

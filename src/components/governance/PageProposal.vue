@@ -53,6 +53,10 @@
           </div>
         </div>
         <div class="row">
+          <dl class="info_dl col-lg-12 description">
+            <!-- <dt class="descriptionheading">Description</dt> -->
+            <TextBlock :content="description" class="descriptionalignment" />
+          </dl>
           <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <dt>Submitted</dt>
             <dd>{{ submittedAgo }}</dd>
@@ -93,10 +97,6 @@
             </dd>
           </dl>
           <dl class="info_dl col-lg-4 col-md-4 col-sm-6 d-sm-none d-none">
-          </dl>
-          <dl class="info_dl col-lg-12 description">
-            <dt class="descriptionheading">Description</dt>
-            <TextBlock :content="description" class="descriptionalignment" />
           </dl>
         </div>
       </div>
@@ -355,8 +355,7 @@ export default {
 }
 
 .description {
-  text-align: left;
-  padding-left: 3rem
+  text-align: left
 }
 
 .descriptionalignment {
