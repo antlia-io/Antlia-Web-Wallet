@@ -1,20 +1,20 @@
-![Color-Wallet logo — spaceship blasting off](/src/assets/images/Colorblackplatform.png)
+![Antlia-Wallet logo — spaceship blasting off](/src/assets/images/antlia.png)
 
-# Welcome to Color Wallet!
+# Welcome to Antlia Wallet!
 
 ![CircleCI](https://circleci.com/gh/luniehq/lunie/tree/develop.svg?style=svg)
 
-👋 Welcome to Color Wallet, the official wallet and UI for the Color Platform.
+👋 Welcome to Antlia Wallet, the official wallet and UI for the Antlia.
 
-⚠️ This is beta software. **DO NOT** enter your Color fundraiser seed into Color Wallet. We will not ask for it and this is considered highly unsafe.
+⚠️ This is beta software. **DO NOT** enter your Antlia fundraiser seed into Antlia Wallet. We will not ask for it and this is considered highly unsafe.
 
 ## Development Dependencies
 
-Install the following dependencies if you wish to run Color Wallet on developer mode or contribute.
+Install the following dependencies if you wish to run Antlia Wallet on developer mode or contribute.
 
 ### Node
 
-Color Wallet requires Node.js `>=10.13.0`. If you have a different version of Node.js installed, you can use `n` to install the correct version. The following command will use `n` to install it alongside your current version of Node.js.
+Antlia Wallet requires Node.js `>=10.13.0`. If you have a different version of Node.js installed, you can use `n` to install the correct version. The following command will use `n` to install it alongside your current version of Node.js.
 
 ```bash
 npm i -g n && n 10.13.0
@@ -22,36 +22,36 @@ npm i -g n && n 10.13.0
 
 ### Yarn
 
-Yarn is a JS package manager we use to manage Color Wallet's dependencies. Download it [here](https://yarnpkg.com/lang/en/docs/install).
+Yarn is a JS package manager we use to manage Antlia Wallet's dependencies. Download it [here](https://yarnpkg.com/lang/en/docs/install).
 
 ### Docker
 
-To run a local tesnet for Color Wallet you will need [Docker](https://www.docker.com/) installed. You can download it [here](https://www.docker.com/get-docker).
+To run a local tesnet for Antlia Wallet you will need [Docker](https://www.docker.com/) installed. You can download it [here](https://www.docker.com/get-docker).
 
-### Ledger Color App
+### Ledger Antlia App
 
 > **IMPORTANT:** Only use Ledger devices that you **bought factory new** or **trust fully**.
 
-Color Wallet supports sending transactions through the `Color` app for [Ledger Nano](https://www.ledger.com/products/ledger-nano-s) hardware wallet. To install the `Cølor` app on your device you'll have to:
+Antlia Wallet supports sending transactions through the `Antlia` app for [Ledger Nano](https://www.ledger.com/products/ledger-nano-s) hardware wallet. To install the `Antlia` app on your device you'll have to:
 
 1. Download the Ledger Live app [here](https://www.ledger.com/pages/ledger-live)
 2. Connect your Ledger via USB and update to the latest firmware
-3. Go to the Ledger Live App Store, and download the `Cølor` application (this can take a while). **Note:** You may have to enable `Dev Mode` in the Ledger Live Settings to be able to download the `Cølor` application
-4. Navigate to the `Cølor` app on your Ledger device
+3. Go to the Ledger Live App Store, and download the `Antlia` application (this can take a while). **Note:** You may have to enable `Dev Mode` in the Ledger Live Settings to be able to download the `Antlia` application
+4. Navigate to the `Antlia` app on your Ledger device
 
-### Check out Color Wallet
+### Check out Antlia Wallet
 
 With Node, Yarn and Docker installed, you're ready to check out the source code:
 
 ```bash
-git clone https://github.com/RNSSolution/color-wallet.git
-cd color-wallet
+git clone https://github.com/RNSSolution/Antlia-Web-Wallet.git
+cd Antlia-Web-Wallet
 yarn install
 ```
 
 ---
 
-## Color Wallet Development
+## Antlia Wallet Development
 
 ### Generate SSL certificates
 
@@ -69,24 +69,24 @@ You can simply start a docker based testnet and the frontend.
 yarn start
 ```
 
-This will create a rich account. You need to import that account into Color Wallet:
+This will create a rich account. You need to import that account into Antlia Wallet:
 - Sign In
 - Use an existing address
 - Recover with backup code
 - Write Account Name & Password on your own wish 
 - Use mnemonic (Seed Phrase): `release endorse scale across absurd trouble climb unaware actor elite fantasy chair license word rare length business kiss smoke tackle report february bid ginger`
 
-You should now have a bunch of color to play with.
+You should now have a bunch of Antlia to play with.
 
 ### Deploy
 
-Create the bundle to deploy Color Wallet you can run:
+Create the bundle to deploy Antlia Wallet you can run:
 
 ```bash
 yarn build:ui
 ```
 
-If you want to set a particular `Stargate` (Color SDK REST API) or Tendermint's `RPC` endpoints:
+If you want to set a particular `Stargate` (Antlia SDK REST API) or Tendermint's `RPC` endpoints:
 
 ```bash
 STARGATE=<https://StargateAddress:port> RPC=<https://RPCAddress:port> yarn build:ui
@@ -94,7 +94,7 @@ STARGATE=<https://StargateAddress:port> RPC=<https://RPCAddress:port> yarn build
 
 ## Release
 
-Color Wallet has a automated release process. Every night the CI creates a new release PR. To release manually, run
+Antlia Wallet has a automated release process. Every night the CI creates a new release PR. To release manually, run
 
 ```bash
 yarn release
@@ -110,7 +110,7 @@ yarn test
 
 ### Unit tests
 
-Color Wallet uses Jest to run unit tests. You can run _all_ the unit tests with the following command:
+Antlia Wallet uses Jest to run unit tests. You can run _all_ the unit tests with the following command:
 
 ```bash
 yarn test:unit
