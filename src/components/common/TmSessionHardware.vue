@@ -77,7 +77,7 @@ export default {
         }
         else if (localStorage.getItem(`qramount`)==="undefined" && localStorage.getItem(`qraddress`)==="undefined")
         {  
-          this.$router.push(`/wallet`)
+          this.$router.push(`/`)
         }
       } catch ({ message }) {
         this.status = `connect`

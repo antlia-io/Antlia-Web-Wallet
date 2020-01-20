@@ -88,8 +88,22 @@ export default {
   border: none;
   background: transparent;
   text-decoration: none !important;
-  display: inline-block;
-  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  outline: none !important;
+}
+.btnContainer .tm-btn {
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-decoration: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem 0 0;
+  width: auto;
 }
 
 a {
@@ -104,31 +118,62 @@ a {
 .tm-btn .tm-btn__container {
   font-family: var(--sans);
   font-size: 1rem !important;
-  font-weight: 400;
-  height: 2em;
+  font-weight: 600;
+  border: 50px;
   line-height: 1;
   min-width: 115px;
   color: var(--bright, #333) !important;
   padding: 0.5rem 2rem;
   margin: 0;
-  background: #0a73b1;
+  /* background: #0a73b1; */
+  background: #004bff;
   border-radius: 0.25rem;
   cursor: pointer;
   user-select: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 
 #withdraw-btn .tm-btn__container {
   padding: .3rem .5rem !important;
-  display: unset !important
+  display: unset !important;
+  background: #151934;
+  font-size: 10px !important;
+  min-width: 70px;
+  border-radius: 50px;
+}
+#withdraw-btn .tm-btn__container .tm-btn__value{
+    text-transform: capitalize !important;
 }
 
 #withdraw-btn .material-icons {
   width: 40%
 }
-
+.send-rcv .tm-btn__container {
+  padding: 0.5rem !important;
+  display: unset !important;
+  background: #fff;
+  font-size: 14px !important;
+  color: #660099 !important;
+  border-radius: 50px;
+  width: 100%;
+}
+.wc-wallet .tm-btn__container {
+  padding: 0.5rem !important;
+  display: block !important;
+  background: #fff;
+  font-size: 14px !important;
+  color: #660099 !important;
+  border-radius: 5px;
+  width: 150px;
+}
+.create-proposal .tm-btn__container {
+  padding: 0.5rem 0.7rem;
+  background: #fff;
+  font-size: 14px !important;
+  color: #23b861 !important;
+  border-radius: 50px;
+  width: 100%;
+}
 .tm-btn .tm-btn--secondary {
   background: #0a73b1;
 }
@@ -184,6 +229,86 @@ a {
   padding: 0 1rem;
 }
 
+.default-theme .tm-btn__container {
+  padding: 0.5rem 1.3rem !important;
+  display: unset !important;
+  background: #2c3255;
+  font-size: 12px !important;
+  color: #848688 !important;
+  border-radius: 50px;
+
+}
+.default-theme .tm-btn__value{
+  text-transform: capitalize;
+}
+
+/* Themes Colors Change Buttons Styles */
+.select-colors .tm-btn__container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px !important;
+  color: white !important;
+  border-radius: 50px;
+  background: transparent;
+  padding: 0 !important;
+}
+.select-colors .tm-btn__value{
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+.moonlight .tm-btn__value{
+  color: #848688;
+}
+.qr-code .tm-btn__container {
+  padding: 0.5rem 1.3rem !important;
+  display: unset !important;
+  background: #2c3255;
+  font-size: 12px !important;
+  color: #848688 !important;
+  border-radius: 50px;
+
+}
+.qr-code .tm-btn__value{
+  text-transform: capitalize;
+}
+.action-modal .tm-btn__container,
+.session-footer .tm-btn__container {
+  padding: 0.5rem 1.3rem !important;
+  display: block !important;
+  background: #004bff;
+  font-size: 12px !important;
+  color: #fff !important;
+  border-radius: 5px;
+  width: 100%;
+
+}
+.session-footer .tm-btn__value{
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.table-validator .delegate-btn .tm-btn__container,
+.table-validator .undelegate-btn .tm-btn__container {
+  padding: 2rem 0.3rem !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  font-size: 12px !important;
+  color: #848688 !important;
+  border-radius: 0;
+}
+.table-validator .undelegate-btn .tm-btn__container {
+  min-width: 95px !important;
+}
+.table-validator .delegate-btn .tm-btn__container {
+  min-width: 70px !important;
+}
+.table-validator .tm-btn__value{
+  text-transform: uppercase;
+  color: white;
+  font-size: 12px;
+}
 @media screen and (max-width: 1023px) {
   .tm-btn .tm-btn__container {
     width: 100%;

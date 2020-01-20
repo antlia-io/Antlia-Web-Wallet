@@ -30,6 +30,8 @@ export default {
 
 <style scoped>
 .disconnected-bar {
+  /* position: fixed; */
+  /* z-index: 9999; */
   left: 0;
   right: 0;
   top: 0;

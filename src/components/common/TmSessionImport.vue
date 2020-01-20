@@ -33,6 +33,7 @@
             min="5"
           />
         </TmFormGroup>
+        <div class="ps-field">
         <TmFormGroup
           :error="$v.$error && $v.fields.importPassword.$invalid"
           field-id="import-password"
@@ -84,6 +85,7 @@
             type="match"
           />
         </TmFormGroup>
+        </div>
         <TmFormGroup
           :error="$v.$error && $v.fields.importSeed.$invalid"
           field-id="import-seed"
@@ -122,7 +124,7 @@
                 type="checkbox"
               />
               I'd like to opt in for remote error tracking to help improve
-              Color Wallet.
+             ANTLIA Wallet.
             </label>
           </div>
         </TmFormGroup>
@@ -191,7 +193,7 @@ export default {
         }
         else if (localStorage.getItem(`qramount`)==="undefined" && localStorage.getItem(`qraddress`)==="undefined")
         {  
-          this.$router.push(`/wallet`)
+          this.$router.push(`/`)
         }
       } catch (error) {
         this.$toast.open({

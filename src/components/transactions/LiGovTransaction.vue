@@ -9,8 +9,11 @@
     :hide-meta-data="hideMetaData"
   >
     <template v-if="txType === `color/MsgSubmitProposal`">
+    <div slot="type">
+        Submitted
+      </div>
       <div slot="caption">
-        Submitted {{ tx.proposal_type.toLowerCase() }} proposal
+        <!-- Submitted {{ tx.proposal_type.toLowerCase() }} proposal -->
         <b>{{ initialDeposit.amount | toAtoms | prettyLong }}</b>
         <span>{{ initialDeposit.denom | viewDenom }}</span>
       </div>

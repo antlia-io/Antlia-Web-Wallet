@@ -1,120 +1,146 @@
 <template>
   <transition v-if="show" name="slide-fade">
     <div id="signModal" class="action-modal" tabindex="0" @keyup.esc="close">
-      <div id="closeBtn" class="action-modal-icon action-modal-close" @click="close">
-        <i class="material-icons">close</i>
-      </div>
-      <div class="action-modal-header">
-        <span class="action-modal-title">{{ requiresSignIn ? `Sign in required` : 'Sign' }}</span>
-      </div>
-      <div v-if="requiresSignIn" class="action-modal-form">
+      <div class="modal-inner">
+        <div id="closeBtn" class="action-modal-icon action-modal-close" @click="close">
+          <i class="material-icons">close</i>
+        </div>
+
+        <!-- <div v-if="requiresSignIn" class="action-modal-form">
         <p class="form-message notice">You need to sign in to submit a transaction.</p>
-      </div>
-      <div v-else-if="step === signStep" class="action-modal-form">
-        <TmFormGroup
-          :error="$v.message.$error && $v.message.$invalid"
-          class="action-modal-form-group"
-          field-id="message"
-          field-label="Message"
-        >
-          <TmField
-            id="message"
-            ref="message"
-            v-model="$v.message.$model"
-            v-focus
-            type="text"
-            placeholder="Message"
-            @keyup.enter.native="enterPressed"
-          />
-          <TmFormMsg
-            v-if="$v.message.$error && !$v.message.maxLength"
-            :max="$v.message.$params.maxLength.max"
-            name="Message"
-            type="maxLength"
-          />
-          <TmFormMsg
-            v-if="$v.message.$error && !$v.message.required"
-            name="Message"
-            type="required"
-          />
-        </TmFormGroup>
-        <TmFormGroup
-          v-if="signMethods.length > 1"
-          class="action-modal-form-group"
-          field-id="sign-method"
-          field-label="Signing Method"
-        >
-          <TmField
-            id="sign-method"
-            v-model="selectedSignMethod"
-            :options="signMethods"
-            type="select"
-          />
-        </TmFormGroup>
-        <HardwareState
-          v-if="selectedSignMethod === SIGN_METHODS.LEDGER"
-          :icon="session.browserWithLedgerSupport ? 'usb' : 'info'"
-          :loading="!!sending"
-        >
-          <div v-if="session.browserWithLedgerSupport">
-            {{
-            sending
-            ? `Please verify and sign the transaction on your Ledger`
-            : `Please plug in your Ledger&nbsp;Nano and open
-            the Color app`
-            }}
+        </div>-->
+        <div v-if="step === signStep" class="action-modal-form">
+          <div class="action-modal-header">
+            <span class="action-modal-title">Create QR Code</span>
           </div>
-          <div v-else>
-            Please use Chrome, Brave, or Opera. Ledger is not supported in this
-            browser.
-          </div>
-        </HardwareState>
-        <HardwareState
-          v-if="selectedSignMethod === SIGN_METHODS.EXTENSION"
-          :icon="session.browserWithLedgerSupport ? 'laptop' : 'info'"
-          :loading="!!sending"
-        >
-          <div v-if="extension.enabled && !sending">
-            Please send the transaction to be signed in the Color Browser
-            Extension.
-          </div>
-          <div v-if="extension.enabled && sending">
-            Please open the Color Browser Extension, review the details, and
-            approve the transaction.
-          </div>
-          <div v-if="!extension.enabled">
-            Please install the Color Browser Extension from the
-            <a
-              href="https://chrome.google.com/webstore/category/extensions"
-              target="_blank"
-              rel="noopener norefferer"
-            >Chrome Web Store</a>.
-          </div>
-        </HardwareState>
-        <form
-          v-else-if="selectedSignMethod === SIGN_METHODS.LOCAL"
-          @submit.prevent="validateChangeStep"
-        >
           <TmFormGroup
-            :error="$v.password.$error && $v.password.$invalid"
-            class="action-modal-group"
-            field-id="password"
-            field-label="Password"
+            class="action-modal-form-group"
+            field-id="publicAddress"
+            field-label="Public Link"
           >
-            <TmField id="password" v-model="password" type="password" placeholder="Password" />
+            <TmField
+              id="publicAddress"
+              ref="publicAddress"
+              v-focus
+              :value="session.address"
+              type="text"
+              readonly
+              placeholder="Public link"
+              @keyup.enter.native="enterPressed"
+            />
+          </TmFormGroup>
+             
+          <TmFormGroup
+         :error="$v.message.$error && $v.message.$invalid"
+            class="action-modal-form-group"
+            field-id="message"
+            field-label="Message"
+          >
+            <TmField
+              id="message"
+              ref="message"
+              v-model="$v.message.$model"
+              v-focus
+              type="text"
+              placeholder="Type you message"
+              @keyup.enter.native="enterPressed"
+            />
             <TmFormMsg
-              v-if="$v.password.$error && !$v.password.required"
-              name="Password"
+              v-if="$v.message.$error && !$v.message.maxLength"
+              :max="$v.message.$params.maxLength.max"
+              name="Message"
+              type="maxLength"
+            />
+            <TmFormMsg
+              v-if="$v.message.$error && !$v.message.required"
+              name="Message"
               type="required"
             />
           </TmFormGroup>
-        </form>
-      </div>
-      <div v-else-if="step === successStep" class="action-modal-form success-step">
-        <TmDataMsg icon="check" id="successStep">
-          <div slot="title">Signed Message:</div>
-          <div slot="subtitle">
-            <div class="displayflex">
+          <TmFormGroup
+            v-if="signMethods.length > 1"
+            class="action-modal-form-group"
+            field-id="sign-method"
+            field-label="Signing Method"
+          >
+            <TmField
+              id="sign-method"
+              v-model="selectedSignMethod"
+              :options="signMethods"
+              type="select"
+            />
+          </TmFormGroup>
+          <HardwareState
+            v-if="selectedSignMethod === SIGN_METHODS.LEDGER"
+            :icon="session.browserWithLedgerSupport ? 'usb' : 'info'"
+            :loading="!!sending"
+          >
+            <div v-if="session.browserWithLedgerSupport">
+              {{
+              sending
+              ? `Please verify and sign the transaction on your Ledger`
+              : `Please plug in your Ledger&nbsp;Nano and open
+              the Color app`
+              }}
+            </div>
+            <div v-else>
+              Please use Chrome, Brave, or Opera. Ledger is not supported in this
+              browser.
+            </div>
+          </HardwareState>
+          <HardwareState
+            v-if="selectedSignMethod === SIGN_METHODS.EXTENSION"
+            :icon="session.browserWithLedgerSupport ? 'laptop' : 'info'"
+            :loading="!!sending"
+          >
+            <div v-if="extension.enabled && !sending">
+              Please send the transaction to be signed in the Color Browser
+              Extension.
+            </div>
+            <div v-if="extension.enabled && sending">
+              Please open the Color Browser Extension, review the details, and
+              approve the transaction.
+            </div>
+            <div v-if="!extension.enabled">
+              Please install the Color Browser Extension from the
+              <a
+                href="https://chrome.google.com/webstore/category/extensions"
+                target="_blank"
+                rel="noopener norefferer"
+              >Chrome Web Store</a>.
+            </div>
+          </HardwareState>
+          <form
+            v-else-if="selectedSignMethod === SIGN_METHODS.LOCAL"
+            @submit.prevent="validateChangeStep"
+          >
+            <TmFormGroup
+              :error="$v.password.$error && $v.password.$invalid"
+              class="action-modal-group"
+              field-id="password"
+              field-label="Password"
+            >
+              <TmField id="password" v-model="password" type="password" placeholder="Password" />
+              <TmFormMsg
+                v-if="$v.password.$error && !$v.password.required"
+                name="Password"
+                type="required"
+              />
+            </TmFormGroup>
+          </form>
+        </div>
+        <div v-else-if="step === successStep" class="action-modal-form success-step">
+          <TmDataMsg icon="done" id="successStep">
+            <div class="success-icon">
+              <i class="material-icons">done</i>
+            </div>
+            <!-- <h3>Successfully Created QR code</h3> -->
+            <div slot="title">Successfully Created QR code</div>
+            <div slot="subtitle">
+              <div class="qrcode">
+                <qrcode-vue :value="qrcode" :size="size" level="H"></qrcode-vue>
+              </div>
+              <!-- <div class="displayflex">
               <div
                 class="hash"
                 v-tooltip.top="txHash"
@@ -129,37 +155,48 @@
               <div :class="{ active: copySuccess }" class="copied">
                 <span>Copied</span>
               </div>
+              </div>-->
+              <!-- <p>Copy above signed message to verify signature</p> -->
             </div>
-            <p>Copy above signed message to verify signature</p>
-          </div>
-        </TmDataMsg>
-      </div>
-      <div v-show="step === signStep" class="action-modal-footer">
-        <slot name="action-modal-footer">
-          <TmFormGroup class="action-modal-group">
-            <div>
-              <TmBtn
-                v-if="requiresSignIn"
-                v-focus
-                value="Sign In"
-                @click.native="goToSession"
-                @click.enter.native="goToSession"
-              />
-              <TmBtn v-else-if="sending" :value="submitButtonCaption" disabled="disabled" />
-              <TmBtn v-else-if="!connected" value="Connecting..." disabled="disabled" />
-              <TmBtn
-                v-else
-                value="Sign"
-                @click.native="validateChangeStep"
-                @keyup.enter.native="enterPressed"
-              />
-            </div>
-          </TmFormGroup>
-        </slot>
-        <p
-          v-if="submissionError"
-          class="tm-form-msg sm tm-form-msg--error submission-error"
-        >{{ submissionError }}</p>
+          </TmDataMsg>
+        </div>
+        <div v-show="step === signStep" class="action-modal-footer">
+          <slot name="action-modal-footer">
+            <TmFormGroup class="action-modal-group">
+              <div>
+                <!-- <TmBtn
+        id="receive-btn"
+        :value="'Create'"
+        :to="''"
+        type="anchor"
+        color="primary"
+        class="paddingright1"
+        @click.native="receive()"
+      />
+                <Receive ref="Receive" />-->
+                <TmBtn
+                  v-if="requiresSignIn"
+                  v-focus
+                  value="Sign In"
+                  @click.native="goToSession"
+                  @click.enter.native="goToSession"
+                />
+                <TmBtn v-else-if="sending" :value="submitButtonCaption" disabled="disabled" />
+                <!-- <TmBtn v-else-if="!connected" value="Connecting..." disabled="disabled" /> -->
+                <TmBtn
+                  v-else
+                  value="Create"
+                  @click.native="validateChangeStep"
+                  @keyup.enter.native="enterPressed"
+                />
+              </div>
+            </TmFormGroup>
+          </slot>
+          <p
+            v-if="submissionError"
+            class="tm-form-msg sm tm-form-msg--error submission-error"
+          >{{ submissionError }}</p>
+        </div>
       </div>
     </div>
   </transition>
@@ -191,6 +228,8 @@ import isEmpty from "lodash.isempty"
 import trim from "lodash.trim"
 import transaction from "../utils/transactionTypes"
 import ActionManager from "../utils/ActionManager.js"
+import Receive from "src/ActionModal/components/Receive"
+import QrcodeVue from "qrcode.vue"
 
 const signStep = `sign`
 const inclusionStep = `send`
@@ -235,7 +274,9 @@ export default {
     TmBtn,
     HardwareState,
     TmDataMsg,
-    Steps
+    QrcodeVue,
+    Steps,
+    Receive
   },
   props: {
     validate: {
@@ -248,6 +289,7 @@ export default {
     address: ``,
     amount: null,
     message: ``,
+    publicAddress: ``,
     denom: ``,
     max_memo_characters: 256,
     editMemo: false,
@@ -263,6 +305,7 @@ export default {
     copySuccess: false,
     copySuccessPublicKey: false,
     signStep,
+    url: config.qrcode,
     inclusionStep,
     successStep,
     SIGN_METHODS
@@ -324,6 +367,9 @@ export default {
           this.address
         }`
       }
+    },
+    qrcode() {
+      return this.url + "/#/" + this.wallet.address + "/" + this.message
     }
   },
   validations() {
@@ -369,6 +415,9 @@ export default {
     }
   },
   methods: {
+    receive() {
+      this.$refs.Receive.open()
+    },
     viewDenom,
     open() {
       this.trackEvent(`event`, `modal`, this.title)
@@ -426,7 +475,7 @@ export default {
             return
           }
           this.sending = true
-          await this.simulate()
+          // await this.simulate()
           await this.submit()
           this.sending = false
           return
@@ -447,7 +496,7 @@ export default {
         try {
           await this.connectLedger()
         } catch (error) {
-          // ${this.submissionErrorPrefix}: 
+          // ${this.submissionErrorPrefix}:
           this.submissionError = `${error.message}.`
           this.sending = false
           return
@@ -463,7 +512,7 @@ export default {
       }
 
       try {
-        const temp  = await this.actionManager.sendSign(feeProperties)
+        const temp = await this.actionManager.sendSign(feeProperties)
         this.txHash = temp
         this.onTxIncluded(type, transactionProperties, feeProperties)
       } catch ({ message }) {
@@ -493,7 +542,7 @@ export default {
     },
     onSendingFailed(message) {
       this.step = signStep
-      // ${this.submissionErrorPrefix}: 
+      // ${this.submissionErrorPrefix}:
       this.submissionError = `${message}.`
       this.trackEvent(`event`, `failed-submit`, this.title, message)
     },
@@ -519,6 +568,34 @@ export default {
 }
 </script>
 <style scoped>
+.action-modal {
+  background: #000000bf;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 5rem;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  /* max-width: 630px; */
+  min-height: 400px;
+  z-index: var(--z-modal);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  box-shadow: 0 2px 8px rgba(200, 200, 200, 0.1);
+}
+.modal-inner {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  background: #fff;
+  width: 100%;
+  max-width: 660px;
+  padding: 5rem;
+  border-radius: 5px;
+}
 #edit-memo-btn {
   display: inline-block;
   height: 58px;
@@ -526,7 +603,13 @@ export default {
   box-sizing: content-box;
   font-size: var(--sm);
 }
-
+#successStep h3 {
+  font-weight: 600;
+  color: #000847;
+  text-align: center;
+  margin: 1rem 0 !important;
+  font-size: 2rem;
+}
 #successStep p {
   margin-top: 1rem !important;
   font-weight: 300;
@@ -543,6 +626,14 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.qrcode {
+  width: 100%;
+  max-width: 200px;
+  margin: 2rem auto 0;
+  text-align: center;
+  padding: 0.5rem;
 }
 
 a {
@@ -599,4 +690,5 @@ a:hover {
   color: var(--success);
   font-size: var(--m);
 }
+
 </style>

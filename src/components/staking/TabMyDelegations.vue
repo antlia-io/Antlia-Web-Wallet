@@ -22,7 +22,7 @@
         to make your first delegation!
       </div>
     </TmDataMsg>
-    <div v-if="delegation.loaded && unbondingTransactions.length > 0" class="undelegations">
+    <!-- <div v-if="delegation.loaded && unbondingTransactions.length > 0" class="undelegations">
       <h3 class="tab-header transactions">
         Pending Undelegations
       </h3>
@@ -44,7 +44,7 @@
           <br />
         </template>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

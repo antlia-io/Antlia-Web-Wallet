@@ -1,9 +1,12 @@
 <template>
   <div class="tm-data-msg">
-    <div class="tm-data-msg__icon">
+    <div class="icon-div">
+     <div class="tm-data-msg__icon">
       <i :class="spinnerClass" class="material-icons">{{ icon }}</i>
     </div>
+    </div>
     <div class="tm-data-msg__text">
+     
       <h2 class="tm-data-msg__title">
         <slot name="title">
           {{ title }}
@@ -48,12 +51,126 @@ export default {
 </script>
 
 <style>
+#signModal .tm-data-msg {
+  background: transparent;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 0.25rem;
+}
+#signModal .icon-div,
+#signModal .tm-data-msg__text{
+  width: 100%;
+}
 .tm-data-msg {
-  background: white;
+  background: #2c3255;
   padding: 4rem;
   display: flex;
   align-items: center;
   border-radius: 0.25rem;
+}
+#modal-propose .tm-data-msg,
+#modal-deposit .tm-data-msg,
+#delegation-modal .tm-data-msg,
+#undelegation-modal .tm-data-msg,
+#modal-withdraw-rewards .tm-data-msg,
+#send-modal  .tm-data-msg {
+  background: transparent;
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.25rem;
+}
+#modal-propose .inclusion-step,
+#modal-deposit .inclusion-step,
+#delegation-modal  .inclusion-step,
+#undelegation-modal  .inclusion-step,
+#modal-withdraw-rewards  .inclusion-step,
+#send-modal  .inclusion-step {
+  border-left: 8px solid #ffc107;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#modal-propose .success-step,
+#modal-deposit .success-step,
+#delegation-modal .success-step,
+#undelegation-modal .success-step,
+#modal-withdraw-rewards .success-step,
+#send-modal  .success-step {
+  border-left: 8px solid #23b681;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#send-modal .tm-data-msg__icon {
+  width: 50px;
+  height: 100%;
+  /* border: 5px solid #c7c7c7; */
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  
+}
+#modal-propose .tm-data-msg__icon i.material-icons,
+#modal-deposit .tm-data-msg__icon i.material-icons,
+#delegation-modal .tm-data-msg__icon i.material-icons,
+#undelegation-modal .tm-data-msg__icon i.material-icons,
+#modal-withdraw-rewards .tm-data-msg__icon i.material-icons,
+#send-modal .tm-data-msg__icon i.material-icons {
+background: #ffc230;
+color: white
+}
+#modal-propose .success-step .tm-data-msg__icon i.material-icons,
+#modal-deposit .success-step .tm-data-msg__icon i.material-icons,
+#delegation-modal .success-step .tm-data-msg__icon i.material-icons,
+#undelegation-modal .success-step .tm-data-msg__icon i.material-icons,
+#modal-withdraw-rewards .success-step .tm-data-msg__icon i.material-icons,
+#send-modal .success-step .tm-data-msg__icon i.material-icons {
+background: #23b861;
+color: white
+}
+#modal-propose .tm-data-msg__title,
+#modal-deposit .tm-data-msg__title,
+#delegation-modal .tm-data-msg__title,
+#undelegation-modal .tm-data-msg__title,
+#modal-withdraw-rewards .tm-data-msg__title,
+ #send-modal .tm-data-msg__title {
+  font-weight: 600;
+  color: #000847;
+  font-size: var(--h2);
+  text-align: left;
+  text-transform: unset;
+  margin: 0 0 1rem;
+}
+#send-modal .tm-data-msg__text {
+    padding: 0 1rem;
+}
+#signModal .tm-data-msg__icon {
+  width: 100%;
+  max-width: 50px;
+  height: 50px;
+  border: 5px solid #c7c7c7;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 2rem;
+}
+#signModal .tm-data-msg__icon i.material-icons {
+  background: transparent;
+  color: var(--link);
+  font-size: 2rem;
+  font-weight: 600;
+  }
+ #signModal .tm-data-msg__title {
+  font-weight: 600;
+  color: #000847;
+  font-size: var(--h2);
+  text-align: center;
+  text-transform: capitalize;
 }
 
 .tm-data-msg__icon {
@@ -70,12 +187,12 @@ export default {
 
 .tm-data-msg__title {
   font-weight: 400;
-  color: black;
+  color: white;
   font-size: var(--h2);
 }
 
 .tm-data-msg__subtitle {
-  color: black;
+  color: #848688;
   font-size: 1rem;
 }
 

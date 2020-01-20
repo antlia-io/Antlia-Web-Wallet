@@ -1,5 +1,6 @@
 <template>
   <div class="bech32-address">
+  
     <div
       id="address"
       v-tooltip.top="address"
@@ -17,6 +18,7 @@
 
 <script>
 import { formatBech32 } from "src/filters"
+
 
 export default {
   name: `bech32-address`,
@@ -38,6 +40,7 @@ export default {
     copySuccess: false
   }),
   methods: {
+       
     onCopy() {
       this.copySuccess = true
       setTimeout(() => {
@@ -49,26 +52,27 @@ export default {
 </script>
 <style>
 .bech32-address {
-  align-items: flex-start;
-  display: inline-flex;
-  padding: 0;
-  margin: 0;
-}
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0; 
+  }
 
-.publicaddress .bech32-address {
+/* .publicaddress .bech32-address {
   margin-left: 4rem
+} */
+.action-modal .address{
+  color: black;
 }
-
-.publicaddress .address {
-  color: #48C0B6 !important
-}
-
 .bech32-address .address {
-  color: #0a73b1;
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
 }
 
 @media screen and (max-width: 572px) {
@@ -90,20 +94,27 @@ export default {
 }
 
 .publicaddress .copied {
-  color: white !important
+  color: white !important;
+  width: 100%;
+  text-align: center;
 }
 
 .bech32-address .copied {
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   display: flex;
   color: black;
   font-size: var(--sm);
   opacity: 0;
-  padding-left: 10px;
-  padding-top: 2px;
+  padding: 5px 0 0;
   transition: opacity 500ms ease;
 }
-
+.prop-link .bech32-address .copied {
+  color: white;
+}
+.prop-link .bech32-address {
+  flex-wrap: nowrap;
+}
 .bech32-address .copied.active {
   opacity: 1;
 }

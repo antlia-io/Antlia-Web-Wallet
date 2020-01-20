@@ -33,8 +33,11 @@
       </div>
     </template>
     <template v-else-if="txType === `color/MsgDelegate`">
-      <div slot="caption">
+    <div slot="type">
         Delegated
+      </div>
+      <div slot="caption">
+        
         <b>{{ tx.amount.amount | toAtoms | prettyLong }}</b>
         <span>{{ tx.amount.denom | viewDenom }}</span>
       </div>
@@ -46,8 +49,10 @@
       </div>
     </template>
     <template v-else-if="txType === `color/MsgUndelegate`">
-      <div slot="caption">
+    <div slot="type">
         Undelegated
+      </div>
+      <div slot="caption">
         <b>
           {{ tx.amount.amount | toAtoms | prettyLong}}
         </b>
@@ -66,8 +71,10 @@
       </div>
     </template>
     <template v-else-if="txType === `color/MsgBeginRedelegate`">
-      <div slot="caption">
+    <div slot="type">
         Redelegated
+      </div>
+      <div slot="caption">
         <b>
           {{ tx.amount.amount | toAtoms | prettyLong}}
         </b>

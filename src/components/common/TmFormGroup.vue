@@ -73,11 +73,11 @@ export default {
   font-weight: 500;
 }
 
-#signModal .tm-form-group__label  {
-  color: white
-}
+/* #signModal .tm-form-group__label  {
+  color: black;
+} */
 
-#verifyModal .tm-form-group__label  {
+/* #verifyModal .tm-form-group__label  {
   color: white
 }
 
@@ -90,10 +90,6 @@ export default {
 }
 
 #undelegation-modal .tm-form-group__label  {
-  color: white
-}
-
-#send-modal .tm-form-group__label  {
   color: white
 }
 
@@ -111,7 +107,7 @@ export default {
 
 #modal-vote .tm-form-group__label  {
   color: white
-}
+} */
 
 .tm-form-group__sub-label ~ .tm-form-group__label {
   line-height: 1rem;

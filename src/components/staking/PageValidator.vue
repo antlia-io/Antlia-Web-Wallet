@@ -15,26 +15,15 @@
             v-if="validator.keybase && validator.keybase.avatarUrl"
             :src="validator.keybase.avatarUrl"
             class="avatar"
-          /><img
-            v-else
-            class="avatar"
-            src="~assets/images/color.svg"
           />
+          <img v-else class="avatar" src="~assets/images/color.svg" />
           <div class="col-lg-6 validator-name-and-address">
             <div class="page-profile__status-and-title">
-              <span
-                id="tooltip-target-6"
-                :class="statusColor"
-                class="page-profile__status"
-              />
-              <b-tooltip target="tooltip-target-6" triggers="hover">
-                {{status}}
-              </b-tooltip>
-              <div class="page-profile__title">
-                {{ validator.description.moniker }}
-              </div>
+              <span id="tooltip-target-6" :class="statusColor" class="page-profile__status" />
+              <b-tooltip target="tooltip-target-6" triggers="hover">{{status}}</b-tooltip>
+              <div class="page-profile__title">{{ validator.description.moniker }}</div>
             </div>
-            <Bech32 :address="validator.operator_address" class="validatoraddress"/>
+            <Bech32 :address="validator.operator_address" class="validatoraddress" />
           </div>
           <div class="col-lg-2 page-profile__header__actions">
             <TmBtn
@@ -71,21 +60,15 @@
           </dl>
           <dl class="col-lg-2 info_dl colored_dl">
             <dt>VOTING POWER</dt>
-            <dd id="page-profile__power">
-              {{ num.percent(powerRatio) }}
-            </dd>
+            <dd id="page-profile__power">{{ num.percent(powerRatio) }}</dd>
           </dl>
           <dl class="col-lg-2 info_dl colored_dl">
             <dt>UPTIME</dt>
-            <dd id="page-profile__uptime">
-              {{ uptime }}
-            </dd>
+            <dd id="page-profile__uptime">{{ uptime }}</dd>
           </dl>
           <dl class="col-lg-3 info_dl colored_dl width">
             <dt>COMMISSION</dt>
-            <dd id="page-profile__commission">
-              {{ num.percent(validator.commission.rate) }}
-            </dd>
+            <dd id="page-profile__commission">{{ num.percent(validator.commission.rate) }}</dd>
           </dl>
         </div>
       </div>
@@ -111,9 +94,7 @@
             </dl>
             <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Keybase ID</dt>
-              <dd>
-                {{ translateEmptyDescription(validator.description.identity) }}
-              </dd>
+              <dd>{{ translateEmptyDescription(validator.description.identity) }}</dd>
             </dl>
             <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Max Daily Commission Change</dt>
@@ -127,13 +108,9 @@
                   :href="website"
                   target="_blank"
                   rel="nofollow noreferrer noopener"
-                >
-                  {{ website }}
-                </a>
+                >{{ website }}</a>
               </dd>
-              <dd v-else>
-                {{ website }}
-              </dd>
+              <dd v-else>{{ website }}</dd>
             </dl>
             <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Last Commission Change</dt>
@@ -141,15 +118,13 @@
             </dl>
             <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Description</dt>
-              <dd class="info_dl__text-box">
-                {{ translateEmptyDescription(validator.description.details) }}
-              </dd>
+              <dd
+                class="info_dl__text-box"
+              >{{ translateEmptyDescription(validator.description.details) }}</dd>
             </dl>
             <dl class="info_dl col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <dt>Self Delegation</dt>
-              <dd id="page-profile__self-bond">
-                {{ selfBond }}
-              </dd>
+              <dd id="page-profile__self-bond">{{ selfBond }}</dd>
             </dl>
           </div>
         </div>
@@ -171,16 +146,11 @@
       />
     </template>
     <template v-else>
-      <template slot="title">
-        Validator Not Found
-      </template>
+      <template slot="title">Validator Not Found</template>
       <template slot="subtitle">
         <div>
           Please visit the
-          <router-link to="/staking/validators/">
-            Validators
-          </router-link>
-          page to view all validators
+          <router-link to="/staking/validators/">Validators</router-link>page to view all validators
         </div>
       </template>
     </template>
@@ -438,11 +408,11 @@ export default {
 }
 
 .page-profile__status-and-title {
-  display: flex
+  display: flex;
 }
 
 .outline {
-  outline: 0
+  outline: 0;
 }
 
 .validator-name-and-address {
@@ -469,7 +439,7 @@ export default {
     /* padding: 0; */
     margin: 1rem auto;
   }
-  .page-profile__status-and-title{
+  .page-profile__status-and-title {
     justify-content: center;
   }
   .validatoraddress {

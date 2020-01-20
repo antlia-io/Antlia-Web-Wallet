@@ -1,20 +1,20 @@
 <template>
   <div>
     <ul class="table-invoice">
-      <li v-if="subTotal > 0">
-        <span>Subtotal</span>
-        <span> {{ subTotal | fullDecimals }} {{ bondDenom | viewDenom }} </span>
+       <li class="total-row">
+        <span class="property">Total</span>
+        <span class="value"> {{ total | fullDecimals }} {{ bondDenom | viewDenom }} </span>
       </li>
       <li>
-        <span>Network Fee</span>
-        <span>
+        <span class="property">Network Fee</span>
+        <span class="value">
           {{ estimatedFee | fullDecimals }}
           {{ bondDenom | viewDenom }}
         </span>
       </li>
-      <li class="total-row">
-        <span>Total</span>
-        <span> {{ total | fullDecimals }} {{ bondDenom | viewDenom }} </span>
+           <li v-if="subTotal > 0">
+        <span class="property">Grand Total</span>
+        <span class="valuebold"> {{ subTotal | fullDecimals }} {{ bondDenom | viewDenom }} </span>
       </li>
     </ul>
   </div>
@@ -67,17 +67,31 @@ export default {
 .table-invoice li {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 0.5rem;
 }
 
 .table-invoice span {
   padding: 0;
-  color: var(--dim);
+  color: black;
+  width: 100%;
 }
-
-.table-invoice span:not(:first-child) {
-  text-align: right;
+.table-invoice .property{
+  font-size: 1rem;
+  color: #848688;
+  font-weight: 500;
+}
+.table-invoice .value{
+  font-size: 1.3rem;
+  color: black;
+  font-weight: 600;
+}
+.table-invoice .valuebold{
+  font-size: 2rem;
+  color: #23b861;
+  font-weight: 600;
 }
 
 .total-row {

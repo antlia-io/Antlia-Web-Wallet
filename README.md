@@ -44,7 +44,7 @@ Antlia Wallet supports sending transactions through the `Antlia` app for [Ledger
 With Node, Yarn and Docker installed, you're ready to check out the source code:
 
 ```bash
-git clone https://github.com/RNSSolution/Antlia-Web-Wallet.git
+git clone https://github.com/antlia-io/Antlia-Web-Wallet.git
 cd Antlia-Web-Wallet
 yarn install
 ```
@@ -66,7 +66,7 @@ yarn certificates
 You can simply start a docker based testnet and the frontend.
 
 ```bash
-yarn start
+yarn startlocal
 ```
 
 This will create a rich account. You need to import that account into Antlia Wallet:

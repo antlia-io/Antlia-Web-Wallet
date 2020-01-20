@@ -1,37 +1,36 @@
 <template>
   <transition v-if="show" name="slide-fade">
     <div v-focus-last class="action-modal" tabindex="0" @keyup.esc="close">
-      
-      <div
-        id="closeBtn"
-        class="action-modal-icon action-modal-close"
-        @click="close"
-      >
+      <div :class="step === inclusionStep || step === successStep ?  'send-inner' : 'modal-inner'">
+      <div id="closeBtn" class="action-modal-icon action-modal-close" @click="close">
         <i class="material-icons">close</i>
       </div>
       <div class="action-modal-header">
-        <span class="action-modal-title">
-          {{ requiresSignIn ? `Sign in required` : title }}
-        </span>
+        <div :class="step === feeStep ?  'session-db' : 'session-dn'">
+         <a @click="gotostepone" class="session-back" :class="step === feeStep ?  'session-db' : 'session-dn'">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </a>
+        </div>
+        <span class="action-modal-title">{{ step === inclusionStep || step === successStep ? "" : step === feeStep ? "Confirmation" : title }}</span>
+                <!-- <span class="action-modal-title"> {{ gotostepone ? "Send" && gotosteptwo ? "Confirmation"}}</span> -->
         <Steps
-          v-if="[defaultStep, feeStep, signStep].includes(step)"
-          :steps="['Details', 'Fees', 'Sign']"
-          :active-step="step"
+          v-if="[defaultStep, feeStep].includes(step)"
+         
         />
+         <!-- :steps="['Details', 'Fees', 'Sign']"
+          :active-step="step" -->
       </div>
       <div v-if="requiresSignIn" class="action-modal-form">
-        <p class="form-message notice">
-          You need to sign in to submit a transaction.
-        </p>
+        <p class="form-message notice">You need to sign in to submit a transaction.</p>
       </div>
       <div v-else-if="step === defaultStep" class="action-modal-form">
         <slot />
       </div>
       <div v-else-if="step === feeStep" class="action-modal-form">
-        <a @click="gotostepone">
-          <i class="material-icons session-back">arrow_back</i>
-        </a>
-        <TmFormGroup
+              <!-- <div v-else-if="step === signStep" class="action-modal-form">  -->
+        
+       
+        <!-- <TmFormGroup
           v-if="session.experimentalMode"
           :error="$v.gasPrice.$error && $v.gasPrice.$invalid"
           class="action-modal-group"
@@ -65,7 +64,7 @@
             name="Gas price"
             type="between"
           />
-        </TmFormGroup>
+        </TmFormGroup> -->
         <TableInvoice
           :amount="Number(amount)"
           :estimated-fee="estimatedFee"
@@ -78,11 +77,6 @@
           min="0"
           :max="balanceInAtoms"
         />
-      </div>
-      <div v-else-if="step === signStep" class="action-modal-form">
-        <a @click="gotosteptwo">
-          <i class="material-icons session-back">arrow_back</i>
-        </a>
         <TmFormGroup
           v-if="signMethods.length > 1"
           class="action-modal-form-group"
@@ -103,9 +97,9 @@
         >
           <div v-if="session.browserWithLedgerSupport">
             {{
-              sending
-                ? `Please verify and sign the transaction on your Ledger`
-                : `Please plug in your Ledger&nbsp;Nano and open
+            sending
+            ? `Please verify and sign the transaction on your Ledger`
+            : `Please plug in your Ledger&nbsp;Nano and open
             the Color app`
             }}
           </div>
@@ -133,15 +127,14 @@
               href="https://chrome.google.com/webstore/category/extensions"
               target="_blank"
               rel="noopener norefferer"
-              >Chrome Web Store</a
-            >.
+            >Chrome Web Store</a>.
           </div>
         </HardwareState>
         <form
           v-else-if="selectedSignMethod === SIGN_METHODS.LOCAL"
           @submit.prevent="validateChangeStep"
         >
-          <TmFormGroup
+           <TmFormGroup
             :error="$v.password.$error && $v.password.$invalid"
             class="action-modal-group"
             field-id="password"
@@ -160,13 +153,18 @@
               type="required"
             />
           </TmFormGroup>
+          
         </form>
       </div>
-      <div v-else-if="step === inclusionStep" class="action-modal-form">
+      <!-- <div v-else-if="step === signStep" class="action-modal-form">
+        <a @click="gotosteptwo" class="session-back">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </a>
+        
+      </div> -->
+      <div v-else-if="step === inclusionStep" class="action-modal-form inclusion-step">
         <TmDataMsg icon="hourglass_empty">
-          <div slot="title">
-            Sent and confirming
-          </div>
+          <div slot="title">Send and Confirming</div>
           <div slot="subtitle">
             The transaction
             <!--with the hash {{ txHash }}-->
@@ -175,27 +173,21 @@
           </div>
         </TmDataMsg>
       </div>
-      <div
-        v-else-if="step === successStep"
-        class="action-modal-form success-step"
-      >
+      <div v-else-if="step === successStep" class="action-modal-form success-step">
         <TmDataMsg icon="check">
-          <div slot="title">
-            {{ notifyMessage.title }}
-          </div>
+          <div slot="title">{{ notifyMessage.title }}</div>
           <div slot="subtitle" class="addressbreak">
-            {{ notifyMessage.body }} <br /><br />
-            Block
-            <router-link :to="`/blocks/${includedHeight}`"
-              >#{{ includedHeight }}</router-link
-            >.
+            {{ notifyMessage.body }}
+            <br />
+            <br />Block
+            <router-link :to="`/blocks/${includedHeight}`">#{{ includedHeight }}</router-link>.
           </div>
         </TmDataMsg>
       </div>
       <div class="action-modal-footer">
         <slot name="action-modal-footer">
           <TmFormGroup
-            v-if="[defaultStep, feeStep, signStep].includes(step)"
+            v-if="[defaultStep, feeStep].includes(step)"
             class="action-modal-group"
           >
             <div>
@@ -206,30 +198,19 @@
                 @click.native="goToSession"
                 @click.enter.native="goToSession"
               />
+              <TmBtn v-else-if="sending" :value="submitButtonCaption" disabled="disabled" />
+              <TmBtn v-else-if="!connected" value="Connecting..." disabled="disabled" />
               <TmBtn
-                v-else-if="sending"
-                :value="submitButtonCaption"
-                disabled="disabled"
-              />
-              <TmBtn
-                v-else-if="!connected"
-                value="Connecting..."
-                disabled="disabled"
-              />
-              <TmBtn
-                v-else-if="step !== signStep"
+                v-else-if="step !== feeStep"
                 ref="next"
-                value="Next"
+                value="Confirm"
                 :disabled="
                   disabled || (step === feeStep && $v.invoiceTotal.$invalid)
                 "
                 @click.native="validateChangeStep"
               />
-              <TmBtn
-                v-else
-                value="Send"
-                @click.native="validateChangeStep"
-              />
+               <TmBtn v-else value="Send" @click.native="validateChangeStep" />
+              
               <!-- :disabled="!session.browserWithLedgerSupport" -->
             </div>
           </TmFormGroup>
@@ -237,10 +218,9 @@
         <p
           v-if="submissionError"
           class="tm-form-msg sm tm-form-msg--error submission-error"
-        >
-          {{ submissionError }}
-        </p>
+        >{{ submissionError }}</p>
       </div>
+    </div>
     </div>
   </transition>
 </template>
@@ -264,7 +244,7 @@ import ActionManager from "../utils/ActionManager.js"
 
 const defaultStep = `details`
 const feeStep = `fees`
-const signStep = `sign`
+// const signStep = `sign`
 const inclusionStep = `send`
 const successStep = `success`
 
@@ -362,7 +342,7 @@ export default {
     txHash: null,
     defaultStep,
     feeStep,
-    signStep,
+    // signStep,
     inclusionStep,
     successStep,
     SIGN_METHODS
@@ -493,9 +473,6 @@ export default {
           if (!this.isValidInput(`invoiceTotal`)) {
             return
           }
-          this.step = signStep
-          return
-        case signStep:
           if (!this.isValidInput(`password`)) {
             return
           }
@@ -504,6 +481,18 @@ export default {
           await this.submit()
           this.sending = false
           return
+
+          // this.step = signStep
+          // return
+        // case signStep:
+        //   if (!this.isValidInput(`password`)) {
+        //     return
+        //   }
+        //   // submit transaction
+        //   this.sending = true
+        //   await this.submit()
+        //   this.sending = false
+        //   return
         default:
           return
       }
@@ -515,11 +504,10 @@ export default {
         this.gasEstimate = await this.actionManager.simulate(memo)
         this.step = feeStep
       } catch ({ message }) {
-        if(message.includes("insufficient")){
-        // ${this.submissionErrorPrefix}:
-        this.submissionError = `Insufficient Fees`
-        }
-        else {
+        if (message.includes("insufficient")) {
+          // ${this.submissionErrorPrefix}:
+          this.submissionError = `Insufficient Fees`
+        } else {
           this.submissionError = `${message}`
         }
       }
@@ -592,7 +580,7 @@ export default {
       })
     },
     onSendingFailed(message) {
-      this.step = signStep
+      this.step = feeStep
       // ${this.submissionErrorPrefix}:
       this.submissionError = `${message}.`
       this.trackEvent(`event`, `failed-submit`, this.title, message)
@@ -616,7 +604,7 @@ export default {
         required: requiredIf(
           () =>
             this.selectedSignMethod === SIGN_METHODS.LOCAL &&
-            this.step === signStep
+            this.step === feeStep
         )
       },
       gasPrice: {
@@ -636,14 +624,14 @@ export default {
 </script>
 
 <style>
-.action-modal {
-  background: #3a3046;
+/* .action-modal {
+  background: #fff;
   display: flex;
   flex-direction: column;
   right: 1rem;
-  padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+  padding: 4rem 5rem;
   position: fixed;
-  bottom: 0;
+  left: 25%;
   width: 100%;
   max-width: 630px;
   min-height: 400px;
@@ -651,25 +639,62 @@ export default {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   box-shadow: 0 2px 8px rgba(200, 200, 200, 0.1);
+} */
+.action-modal {
+  background: #000000bf;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 5rem;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  /* max-width: 630px; */
+  min-height: 400px;
+  z-index: var(--z-modal);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  box-shadow: 0 2px 8px rgba(200, 200, 200, 0.1);
+}
+.modal-inner {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    background: #fff;
+    width: 100%;
+    max-width: 660px;
+    padding: 5rem;
+    border-radius: 5px;
+}
+.send-inner {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    background: #fff;
+    width: 100%;
+    max-width: 660px;
+    padding: 0;
+    border-radius: 5px;
 }
 
 .action-modal:focus {
-  outline: none
+  outline: none;
 }
 
 .action-modal-header {
   align-items: center;
-  flex-direction: column;
-  text-align: center;
+  justify-content: flex-start;
   display: flex;
 }
 
 .action-modal-title {
   flex: 1;
   font-size: var(--h2);
-  font-weight: 400;
-  color: var(--bright);
-  padding-bottom: 1rem;
+  font-weight: 600;
+  color: #000847;
+  text-align: left;
 }
 
 .action-modal-icon {
@@ -680,13 +705,18 @@ export default {
 
 .action-modal-icon i {
   font-size: var(--lg);
+  color: var(--link);
+  font-weight: 600;
 }
 
 .action-modal-icon.action-modal-close {
   cursor: pointer;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 2rem;
+  right: 2rem;
+  border: 2px solid #c7c7c7;
+  padding: 5px;
+  border-radius: 50px;
 }
 
 .action-modal-icon.action-modal-close:hover i {
@@ -694,7 +724,7 @@ export default {
 }
 
 .stepsbutton {
-  background-color: #542d82 !important
+  background-color: #542d82 !important;
 }
 
 .action-modal-form .tm-form-group {
@@ -705,15 +735,16 @@ export default {
 .action-modal-footer {
   display: flex;
   /* keeps button in bottom right no matter the size of the action modal */
-  flex-grow: 1;
-  align-self: flex-end;
+  /* flex-grow: 1; */
+  /* align-self: flex-end; */
   flex-direction: column;
-  margin: 15px 0;
+  margin: 0;
+  width: 100%;
 }
 
 @media screen and (max-width: 480px) {
   #delegation-modal .action-modal-footer {
-    margin: 2.5rem 0 0 0
+    margin: 2.5rem 0 0 0;
   }
 }
 
@@ -727,7 +758,7 @@ export default {
   font-size: var(--sm);
   font-weight: 500;
   font-style: italic;
-  color: white;
+  color: red;
   display: inline-block;
 }
 
@@ -745,13 +776,12 @@ export default {
 
 .form-message.notice {
   border-radius: 2px;
-  background-color: #504261;
   font-weight: 300;
   margin: 2rem 0;
-  padding: 1rem 1rem;
-  font-size: 14px;
+  font-size: 1rem;
   font-style: normal;
   width: 100%;
+  color: #848688;
 }
 
 .slide-fade-enter-active {

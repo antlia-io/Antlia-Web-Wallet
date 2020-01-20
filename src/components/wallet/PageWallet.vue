@@ -7,7 +7,6 @@
     :data-empty="dataEmpty"
     data-title="Wallet"
     :sign-in-required="true"
-    :sendReceive="true"
   >
     <TmDataMsg
       id="account_empty_msg"
@@ -22,6 +21,16 @@
       </div>
     </TmDataMsg>
     <template slot="managed-body">
+       <div class="row header">
+        <div class="col-lg-6">
+          <h2>Transactions</h2>
+        </div>
+        <div class="col-lg-6 search-field">
+          <div>
+            <input type="text" name="Search" placeholder="Search" class="form-control" />
+          </div>
+        </div>
+      </div>
       <PageTransactions />
     </template>
   </TmPage>

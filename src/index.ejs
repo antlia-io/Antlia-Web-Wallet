@@ -8,25 +8,42 @@
   <meta name="theme-color" content="#ffffff">
 
   <meta http-equiv="Content-Security-Policy" content="%%CSP_CONTENT%%">
-  <title>Color Wallet</title>
+  <title>Antlia Wallet</title>
 
-  <link rel="apple-touch-icon" sizes="180x180"
-    href="images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32"
-    href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16"
-    href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <!-- Needs webpack loader -->
   <!-- <link rel="manifest" href="images/site.webmanifest"> -->
   <link rel="mask-icon" href="images/safari-pinned-tab.png" color="#5bbad5">
 
-  <% if (htmlWebpackPlugin.options.appModules) { %>
-  <% } %>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+  <!-- For Country Select -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+ 
+
+  <script src="./scripts/niceCountryInput.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+   <% if (htmlWebpackPlugin.options.appModules) { %>
+   <% } %>
 </head>
 
 <body style="background: #15182d">
   <% if (!htmlWebpackPlugin.options.e2e) { %>
   <script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script>
+    function onChangeCallback(ctr){
+          console.log("The country was changed: " + ctr);
+          $("#selectionSpan").text(ctr);
+      }
+    
+      $(document).ready(function () {
+          $(".niceCountryInputSelector").each(function(i){
+              new NiceCountryInput($(".niceCountryInputSelector")).init();
+          });
+      });
+    </script>
   <!-- Appzi: Capture Insightful Feedback -->
   <!-- <script async
     src="https://app.appzi.io/bootstrap/bundle.js?token=LWNp0"></script> -->
@@ -35,5 +52,4 @@
 
   <div id="app" style="background: #15182d"></div>
 </body>
-
 </html>

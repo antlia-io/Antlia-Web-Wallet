@@ -1,19 +1,31 @@
 <template>
   <div>
-    <MaintenanceBar />
-    <DisconnectedBar />
+  
+    
     <div id="app">
+       <ScanQR/>
       <router-view name="session" />
+      <AppHeader />
       <div id="app-content">
-        <CookieBar />
-        <AppHeader />
-        <router-view />
+          <!-- <CookieBar /> -->
+          <MaintenanceBar />
+    <!-- <DisconnectedBar /> -->
+          <div class="ratebox-displayres">
+          <TmBalance/>
+          </div>
+        <router-view class="main-width"/>
+        <div class="ratebox-displaydesk">
+          <TmBalance/>
+          </div>
       </div>
+   
       <MobileMenu />
       <!-- <TmNotifications :notifications="notifications" /> -->
-      <ConnectedNetwork />
+      <!-- <ConnectedNetwork /> -->
     </div>
+     
   </div>
+  
 </template>
 
 <script>
@@ -24,8 +36,11 @@ import CookieBar from "common/CookieBar"
 import ConnectedNetwork from "common/TmConnectedNetwork"
 import MaintenanceBar from "common/MaintenanceBar"
 import DisconnectedBar from "common/DisconnectedBar"
+import TmBalance from "common/TmBalance"
 // import TmNotifications from "common/TmNotifications"
 import store from "./vuex/store"
+import ScanQR from "./ActionModal/components/ScanQR"
+
 
 export default {
   name: `app`,
@@ -36,7 +51,8 @@ export default {
     MaintenanceBar,
     DisconnectedBar,
     ConnectedNetwork,
-    MobileMenu
+    MobileMenu,
+    TmBalance
   },
   computed: {
     ...mapGetters([`notifications`, `session`])
@@ -62,4 +78,6 @@ export default {
 
 <style>
 @import "./styles/app.css";
+@import "./styles/niceCountryInput.css";
+/* @import "./scripts/niceCountryInput.js"; */
 </style>

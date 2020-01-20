@@ -211,7 +211,7 @@ input[type="checkbox"] {
   background: var(--input-bg, #fff);
   border: 1px solid var(--input-bc, #ccc);
   border-radius: 0;
-  color: white;
+  color: black;
   display: block;
   font-size: 16px;
   line-height: 1.5rem;

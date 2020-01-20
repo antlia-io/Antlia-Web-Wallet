@@ -10,8 +10,9 @@
     @close="clear"
     v-if="session.signedIn"
   >
+
   <!-- submission-error-prefix="Sending tokens failed" -->
-    <TmFormGroup
+    <!-- <TmFormGroup
       :error="$v.denom.$dirty && $v.denom.$invalid"
       class="action-modal-form-group"
       field-id="send-denomination"
@@ -24,8 +25,11 @@
         type="required"
         color="white"
       />
-    </TmFormGroup>
-
+    </TmFormGroup> -->
+    <!-- <div class="action-modal-header">
+        <span class="action-modal-title">Send</span>
+  
+      </div> -->
     <TmFormGroup
       :error="$v.address.$error && $v.address.$invalid"
       class="action-modal-form-group"
@@ -37,7 +41,7 @@
         v-model.number="$v.address.$model"
         v-focus
         type="text"
-        placeholder="Address"
+        placeholder="Enter public address"
         @keyup.enter.native="refocusOnAmount"
       />
       <TmFormMsg v-if="$v.address.$error && !$v.address.required" name="Address" type="required" />
@@ -53,6 +57,7 @@
       field-id="amount"
       field-label="Amount"
     >
+      <span class="coin-sml">ANT</span>
       <TmField
         id="amount"
         ref="amount"
@@ -87,6 +92,7 @@
         class="tm-form-msg--desc max-message"
         type="custom"
       />
+    
     </TmFormGroup>
     <TmBtn
       v-if="editMemo === false"
@@ -260,5 +266,14 @@ export default {
   .memo {
     padding: 2.5rem 0 0 0;
   }
+}
+</style>
+<style scoped>
+span.coin-sml {
+    color: #848688;
+    position: absolute;
+    top: 2.5rem;
+    right: 2rem;
+    font-weight: 600;
 }
 </style>

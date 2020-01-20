@@ -62,8 +62,8 @@ export default {
 <style>
 .panel-sort-container {
   padding: 1rem;
-  color: black;
-  background-color: white;
+  color: #fff;
+  background-color: #2c3255;
 }
 
 .panel-sort-table-header {
@@ -81,7 +81,7 @@ export default {
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
-  color: black !important;
+  /* color: black !important; */
 }
 
 .sort-by.active a {

@@ -1,59 +1,103 @@
 <template>
-  <div class="li-tx">
-    <div class="li-tx__content">
-      <div class="li-tx__content__left">
-        <div class="li-tx__icon">
-          <img rel="preload" :style="{ borderColor: color }" src="~assets/images/color.svg" />
-        </div>
-        <div class="li-tx-desc">
-        <div class="li-tx__content__caption">
-          <p class="li-tx__content__caption__title alignment-res">
-            <slot name="caption"/>
-          </p>
-        </div>
-        <div class="li-tx__content__information">
-          <slot name="details" />
-          <span v-if="memo">&nbsp;- {{ memo }}</span>
-        </div>
-        <div class="tx-hash">
-          Tx Hash #&nbsp;
-          <div
-            id="address"
-            v-tooltip.top="txhash"
-            v-clipboard:copy="txhash"
-            v-clipboard:success="() => onCopy()"
-            class="address"
-          >{{ txhash }}</div>
-          <div :class="{ active: copySuccess }" class="copied">
-            <i class="material-icons">check</i>
-            <span>Copied</span>
+  <tr>
+    <td>
+      <div class="txuser-icon">
+       <img rel="preload" :style="{ borderColor: color }" src="~assets/images/antlia.svg" />
+      <slot name="details" />
+      </div>
+    </td>
+    <td>
+      <div class="tx-hash">
+      <div
+        id="address"
+        v-tooltip.top="txhash"
+        v-clipboard:copy="txhash"
+        v-clipboard:success="() => onCopy()"
+        class="address"
+      >{{ txhash }}</div>
+      <div :class="{ active: copySuccess }" class="copied">
+        <i class="material-icons">check</i>
+        <span>Copied</span>
+      </div>
+      </div>
+    </td>
+    <td>
+      <slot name="caption" />
+    </td>
+    <td>
+      <slot name="type" />
+    </td>
+    <td>  <router-link :to="{ name: `block`, params: { height: block } }">{{ block }}&nbsp;</router-link></td>
+    <td v-if="!hideMetaData"> <b>{{ fees.amount | toAtoms }}</b>
+            <span>{{ fees.denom | viewDenom }}</span></td>
+    <td v-if="!hideMetaData">{{ date }}</td>
+  </tr>
+
+  <!-- <table class="data-table">
+            <thead>
+              <PanelSort :properties="properties" />
+            </thead>
+            <tbody>
+            </tbody>
+  </table>-->
+
+  <!-- <div class="li-tx">
+      <div class="li-tx__content">
+        <div class="li-tx__content__left">
+          <div class="li-tx__icon">
+            <img rel="preload" :style="{ borderColor: color }" src="~assets/images/color.svg" />
+          </div>
+          <div class="li-tx-desc">
+            <div class="li-tx__content__caption">
+              <p class="li-tx__content__caption__title alignment-res">
+                <slot name="caption" />
+              </p>
+            </div>
+            <div class="li-tx__content__information">
+              <slot name="details" />
+              <span v-if="memo">&nbsp;- {{ memo }}</span>
+            </div>
+            <div class="tx-hash">
+              Tx Hash #&nbsp;
+              <div
+                id="address"
+                v-tooltip.top="txhash"
+                v-clipboard:copy="txhash"
+                v-clipboard:success="() => onCopy()"
+                class="address"
+              >{{ txhash }}</div>
+              <div :class="{ active: copySuccess }" class="copied">
+                <i class="material-icons">check</i>
+                <span>Copied</span>
+              </div>
+            </div>
           </div>
         </div>
+        <div v-if="!hideMetaData" class="li-tx__content__right">
+          <div>
+            Network Fee:&nbsp;
+            <b>{{ fees.amount | toAtoms }}</b>
+            <span>{{ fees.denom | viewDenom }}</span>
+          </div>
+          <div class="li-tx__content__block">
+            <router-link :to="{ name: `block`, params: { height: block } }">Block #{{ block }}&nbsp;</router-link>
+          </div>
+          <div class="li-tx__content__block">{{ date }}</div>
         </div>
       </div>
-      <div v-if="!hideMetaData" class="li-tx__content__right">
-        <div>
-          Network Fee:&nbsp;
-          <b>{{ fees.amount | toAtoms }}</b>
-          <span>{{ fees.denom | viewDenom }}</span>
-        </div>
-        <div class="li-tx__content__block">
-          <router-link :to="{ name: `block`, params: { height: block } }">Block #{{ block }}&nbsp;</router-link>
-        </div>
-           <div class="li-tx__content__block">
-         {{ date }}
-        </div>
-      </div>
-    </div>
-  </div>
+  </div>-->
 </template>
 
 <script>
 import moment from "moment"
 import { atoms as toAtoms, viewDenom } from "../../scripts/num.js"
+// import PanelSort from "staking/PanelSort"
 
 export default {
   name: `li-transaction`,
+  components: {
+    // PanelSort
+  },
   filters: {
     toAtoms,
     viewDenom
@@ -72,6 +116,10 @@ export default {
       required: true
     },
     txhash: {
+      type: String,
+      default: null
+    },
+    type: {
       type: String,
       default: null
     },
@@ -102,11 +150,51 @@ export default {
   computed: {
     date({ time } = this) {
       const momentTime = moment(time)
-      return moment.utc(momentTime).format(`MMM Do YYYY, HH:mm:ssa z`) 
+      return   moment.utc(momentTime).format(`MMM Do YYYY, HH:mm:ssa z`)
       // momentTime.format(
       //   `${moment().isSame(momentTime, `day`) ? `` : `MMM Do YYYY `}HH:mm:ss`
       // )
     }
+    //  properties() {
+    //   return [
+    //     {
+    //       title: `To`,
+    //       value: `Sent to`,
+    //       tooltip: `Amount receiver'name`
+    //     },
+    //     {
+    //       title: `Hash ID`,
+    //       value: `Hash ID`,
+    //       tooltip: `Validator's Hash ID`
+    //     },
+    //     {
+    //       title: `Amount`,
+    //       value: `Amount`,
+    //       tooltip: `Amount sent to this validator`
+    //     },
+
+    //     {
+    //       title: `Type`,
+    //       value: `Type`,
+    //       tooltip: `Transactions Type`
+    //     },
+    //     {
+    //       title: `Block`,
+    //       value: `Block`,
+    //       tooltip: `Numbers of block`
+    //     },
+    //     {
+    //       title: `Network Fee`,
+    //       value: `Network Fee`,
+    //       tooltip: `Network Fee`
+    //     },
+    //     {
+    //       title: `Time`,
+    //       value: `Time`,
+    //       tooltip: `Validator Time`
+    //     }
+    //   ]
+    // }
   }
 }
 </script>
@@ -195,25 +283,49 @@ a:hover {
 .li-tx__content__caption p {
   margin: 0;
 }
-
-.tx-hash {
-  display: inline-flex;
+.txuser-icon{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.txuser-icon img{
+  width: 100%;
+  height: 2.2rem;
+    width: 2.2rem;
+    margin-right: .2rem;
+    border-radius: 50px;
+    background: #62438d;
+}
+.main-table td {
+  width: 14.3%;
+  overflow: hidden;
+}
+.main-table tr {
+  background: transparent;
+}
+.main-table .tx-hash {
+  /* width:70px; */
+   display: flex;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+   align-items: center;
   padding: 0;
   font-size: 14px;
   color: #2d2c2c;
   margin: 0;
 }
 
-.tx-hash .address {
+.main-table .tx-hash .address {
   color: #0a73b1;
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
-  width: 20%;
+  width: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 /* .tooltip-content{
 word-break: break-all;
 } */
@@ -231,15 +343,16 @@ word-break: break-all;
   color: #00d6e1;
 }
 
-.tx-hash .copied {
+.main-table .tx-hash .copied {
   align-items: flex-end;
   display: flex;
-  color: black;
+  color: white;
   font-size: var(--sm);
   opacity: 0;
   padding-left: 10px;
   padding-top: 2px;
   transition: opacity 500ms ease;
+  width: 100%;
 }
 
 .tx-hash .copied.active {
@@ -258,29 +371,28 @@ word-break: break-all;
     flex-direction: column;
     text-align: left;
   }
-.li-tx__content__left {
-  width: 100%;
-}
+  .li-tx__content__left {
+    width: 100%;
+  }
   .li-tx__content__right {
     text-align: left;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     width: 100%;
   }
 }
-
 
 @media screen and (max-width: 414px) {
   .li-tx__icon {
     padding: 1rem 0;
-}
+  }
   .li-tx__content {
     flex-direction: column;
     text-align: left;
   }
-.li-tx__content__left {
-  width: 100%;
-  flex-wrap: wrap;
-}
+  .li-tx__content__left {
+    width: 100%;
+    flex-wrap: wrap;
+  }
   .li-tx__content__right {
     text-align: left;
     padding: 1rem 0;
@@ -288,8 +400,8 @@ word-break: break-all;
   }
 }
 
-@media (max-width: 767px){
-  .alignment-res div{
+@media (max-width: 767px) {
+  .alignment-res div {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -303,5 +415,4 @@ word-break: break-all;
     width: 100%;
   }
 }
-
 </style>

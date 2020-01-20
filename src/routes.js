@@ -32,10 +32,10 @@ export default [
     props: true
   },
   {
-    path: `/staking`,
+    path: `/`,
     name: `Staking`,
     component: require(`./components/staking/PageStaking`).default,
-    redirect: `/staking/validators/`,
+    redirect: `/validators`,
     children: [
       {
         path: `my-delegations`,
@@ -47,6 +47,11 @@ export default [
         path: `validators`,
         name: `Validators`,
         component: require(`./components/staking/TabValidators`).default
+      },
+      {
+        path: `pending-delegations`,
+        name: `Pending Delegations`,
+        component: require(`./components/staking/TabPendingDelegations`).default
       },
       {
         path: `staking-parameters`,
@@ -87,11 +92,11 @@ export default [
     component: require(`./components/wallet/PageTransactions`).default,
     meta: { requiresAuth: true }
   },
-  {
-    path: `/`,
-    name: `network`,
-    component: require(`./components/network/PageNetwork`).default
-  },
+  // {
+  //   path: `/`,
+  //   name: `network`,
+  //   component: require(`./components/network/PageNetwork`).default
+  // },
   {
     path: `/blocks/:height`,
     name: `block`,
@@ -174,5 +179,47 @@ export default [
     path: `/careers`,
     component: require(`./components/common/PageCareers`).default
   },
-  { path: `*`, component: require(`./components/common/Page404`).default }
+  { path: `*`, component: require(`./components/common/Page404`).default },
+  {
+    path: `/settings`,
+    name: `Settings`,
+    component: require(`./components/settings/Settings`).default,
+    redirect: `/settings/themes`,
+    children: [
+      {
+        path: `themes`,
+        name: `Themes`,
+        component: require(`./components/settings/Themes`).default
+      },
+      {
+        path: `localization`,
+        name: `Localization`,
+        component: require(`./components/settings/Localization`).default
+      },
+      {
+        path: `changeqrcode`,
+        name: `ChangeQRCode`,
+        component: require(`./components/settings/QRCodeChange`).default
+      },
+      
+    ]
+  },
+  {
+    path: `/help`,
+    component: require(`./components/help/Help`).default
+    
+  },
+  {
+    path: `/whatsnew`,
+    // name: `whatsnew`,
+    component: require(`./components/whatsnew/WhatsNew`).default
+    
+  },
+  {
+    path: `/scanqr`,                                                                                                           
+    component: require(`./ActionModal/components/ScanQR`).default
+    
+  },
+ 
+
 ]

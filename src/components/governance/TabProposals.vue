@@ -8,7 +8,7 @@
     Click the 'Create Proposal' button to submit a proposal."
     icon="account_balance_wallet"
   />
-  <TableProposals
+   <TableProposals
     v-else
     :proposals="proposals.proposals"
     :loading="proposals.loading"

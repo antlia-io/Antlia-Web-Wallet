@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-for="(msg, index) in transaction.tx.value.msg" :key="index">
+  <table class="data-table">
+    <tbody class="main-tbody" v-for="(msg, index) in transaction.tx.value.msg" :key="index">
       <LiBankTransaction
         v-if="bankTx(msg.type)"
         :tx="msg.value"
@@ -65,9 +65,10 @@
       >
         <span slot="caption">Unknown Transaction Type</span>
       </LiTransaction>
-    </div>
-  </div>
+    </tbody>
+  </table>
 </template>
+
 
 <script>
 import LiBankTransaction from "./LiBankTransaction"
@@ -164,3 +165,16 @@ export default {
   }
 }
 </script>
+<style scoped>
+.main-table table {
+  background-color: #171b38 !important;
+  /* box-shadow:  0 5px 0 #000; */
+}
+.main-table table:nth-child(2n) {
+  background-color: #1c203e !important;
+}
+.main-table table:hover {
+  background: #2f3865 !important;
+  /* box-shadow:  0 0 0 #000; */
+}
+</style>

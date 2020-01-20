@@ -1,67 +1,79 @@
 <template>
   <menu>
     <router-link
-      :class="{active: (this.$route.fullPath === '/wallet') || (this.$route.fullPath === '/send') || (this.$route.fullPath === '/sendAmount')}"
-      to="/wallet"
+      :class="{active: (this.$route.fullPath === '/validators/') || (this.$route.fullPath === '/validators') || (this.$route.fullPath === '/send') || (this.$route.fullPath === '/sendAmount')}"
+      to="/"
       exact="exact"
-      title="Wallet"
+      title="My Wallet"
     >
       <i class="material-icons">home</i>
       <h2 class="app-menu-title">
-        Wallet
+        My Wallet
       </h2>
     </router-link>
     <router-link
-      :class="{active: (this.$route.fullPath === '/staking/my-delegations') || (this.$route.fullPath === '/staking/validators/') || (this.$route.fullPath === '/staking/validators') || (this.$route.fullPath === '/staking/validators/'+$route.params.validator)}"
+      :class="{active: (this.$route.fullPath === '/staking/my-delegations') || (this.$route.fullPath === '/staking/pending-delegations') || (this.$route.fullPath === '/staking/validators/') || (this.$route.fullPath === '/staking/validators') || (this.$route.fullPath === '/staking/validators/'+$route.params.validator)}"
       to="/staking/my-delegations" 
-      title="Staking"
+      title="Transactions"
     >
-      <i class="material-icons">swap_horiz</i>
+      <i class="material-icons">
+        swap_horiz
+      </i>
       <h2 class="app-menu-title">
-        Staking
+        Transactions
       </h2>
     </router-link>
     <router-link
       :class="{active: (this.$route.fullPath === '/governance/proposals') || (this.$route.fullPath === '/governance/'+$route.params.proposalId)}"
       to="/governance/proposals" 
-      title="Governance"
+      title="Proposals"
     >
-      <i class="material-icons">transfer_within_a_station</i>
+       <i class="material-icons">
+        assignment
+      </i>
       <h2 class="app-menu-title">
-        Governance
+        Proposals
       </h2>
     </router-link>
     <router-link
-      :class="{active: (this.$route.fullPath === '/sign')}"
-      to="/sign"
+
+      to="/settings"
       exact="exact"
-      title="Sign/Verify"
+      title="Settings"
     >
-      <i class="material-icons">offline_pin</i>
+       <i class="material-icons">
+        build
+      </i>
       <h2 class="app-menu-title">
-        Sign/Verify
+        Settings
       </h2>
     </router-link>
+     <!-- v-if="totalAtomsDisplay === 0 && session.signedIn"
+      @click.native="getFaucet" -->
     <router-link
-      v-if="totalAtomsDisplay === 0 && session.signedIn"
-      @click.native="getFaucet"
-      title="Get Coins"
-      to=""
+     
+      title="Help"
+      to="/help"
     >
-      <i class="material-icons">local_atm</i>
+       <i class="material-icons">
+        info
+      </i>
       <h2 class="app-menu-title">
-        Get Coins
+        Help
       </h2>
     </router-link>
+     <!-- :class="{active: (this.$route.fullPath === '/') || (this.$route.fullPath === '/blocks/'+$route.params.height)}" -->
     <router-link
-      :class="{active: (this.$route.fullPath === '/') || (this.$route.fullPath === '/blocks/'+$route.params.height)}"
-      to="/"
+     
+      to="/whatsnew"
       exact="exact"
-      title="Network"
+      title=" What's New"
     >
-      <i class="material-icons">my_location</i>
+     <i class="material-icons">
+        fiber_new
+      </i>
       <h2 class="app-menu-title">
-        Network
+        What's New
       </h2>
     </router-link>
   </menu>
@@ -127,7 +139,7 @@ menu {
   width: 100vw;
   display: flex;
   z-index: calc(var(--z-appHeader) - 2);
-  background: #232021;
+  background: #1c2340;
   flex-flow: row;
   align-items: center;
   justify-content: center;
@@ -147,7 +159,7 @@ menu a i {
 }
 
 .active {
-  background: #0a73b1;
+  background: #2c3255;
   color: white !important
 }
 
@@ -171,6 +183,11 @@ i.material-icons {
 
 @media screen and (min-width: 668px) {
   menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 414px) {
+ menu a h2{
     display: none;
   }
 }

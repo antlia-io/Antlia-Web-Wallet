@@ -1,18 +1,21 @@
 <template>
-  <div class="table-proposal">
+<div>
+
+  <!-- <div class="table-proposal">
     <table class="data-table table-responsive">
       <thead>
         <PanelSort :sort="sort" :properties="properties" />
       </thead>
-      <tbody>
+      <tbody> -->
         <LiProposal
           v-for="(value, key) in filteredProposals"
           :key="key"
           :proposal="value"
         />
-      </tbody>
+      <!-- </tbody>
     </table>
-  </div>
+  </div> -->
+</div>
 </template>
 
 <script>

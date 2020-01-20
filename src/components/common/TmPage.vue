@@ -1,6 +1,6 @@
 <template>
 <div>
-  <FixedSideBar />
+  <!-- <FixedSideBar /> -->
   <div class="tm-page">
     <TmPageHeader v-if="!hideHeader" :tabs="tabs">
       <h2 v-if="title" slot="title">
@@ -10,13 +10,13 @@
         {{ subtitle }}
       </h3>
       <slot slot="menu-body" name="menu-body">
-        <ToolBar />
-        <TmBalance v-if="session.signedIn" />
-        <div v-if="session.signedIn" class="card">
+   
+        <!-- <TmBalance v-if="session.signedIn" /> -->
+        <!-- <div v-if="session.signedIn" class="card">
           <h3>Your Public Color Address</h3>
           <Bech32 :address="session.address || ''" long-form />
-        </div>
-        <div v-if="session.signedIn && sendReceive">
+        </div> -->
+        <div v-if="sendReceive">
           <LiCoin
             v-for="coin in filteredBalances"
             :key="coin.denom"
@@ -67,14 +67,14 @@ import SendModal from "src/ActionModal/components/SendModal"
 import TmDataConnecting from "common/TmDataConnecting"
 import TmBalance from "common/TmBalance"
 import FixedSideBar from "common/FixedSideBar"
-import ToolBar from "common/ToolBar"
+
 import Bech32 from "common/Bech32"
 
 export default {
   name: `tm-page`,
   components: {
     TmBalance,
-    ToolBar,
+
     LiCoin,
     SendModal,
     TmPageHeader,
@@ -206,15 +206,15 @@ export default {
   border-radius: 2px;
   padding: 1rem;
   font-size: var(--m);
-  margin-bottom: 0.5rem;
-  border: 1px solid var(--bc-dim);
+  margin-bottom: 1rem !important;
+  /* border: 1px solid var(--bc-dim); */
 }
 
 .card h3 {
   font-size: 14px;
   font-weight: 400;
   margin-bottom: .5rem;
-  color: black !important;
+  color: white !important;
 }
 
 .column {

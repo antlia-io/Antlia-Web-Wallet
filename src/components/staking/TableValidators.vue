@@ -10,6 +10,7 @@
           :key="validator.operator_address"
           :validator="validator"
         />
+      
       </tbody>
     </table>
   </div>
@@ -100,22 +101,23 @@ export default {
     properties() {
       return [
         {
-          title: `Node Name`,
+          title: `Validator List`,
           value: `small_moniker`,
           tooltip: `The validator's name`
         },
+          {
+          title: `Rewards`,
+          value: `rewards`,
+          tooltip: `Rewards you have earned from this validator`
+        },
         {
-          title: `My Delegations`,
+          title: `Delegations`,
           value: `my_delegations`,
           tooltip: `Number of ${num.viewDenom(
             this.bondDenom
           )} you have delegated to this validator`
         },
-        {
-          title: `Rewards`,
-          value: `rewards`,
-          tooltip: `Rewards you have earned from this validator`
-        },
+      
         {
           title: `Voting Power`,
           value: `voting_power`,
@@ -130,6 +132,11 @@ export default {
           title: `Uptime`,
           value: `uptime`,
           tooltip: `Ratio of blocks signed within the last 10k blocks`
+        },
+         {
+          title: `Status`,
+          value: `status`,
+          tooltip: `Validator Status`
         }
       ]
     },
@@ -161,3 +168,4 @@ export default {
   }
 }
 </script>
+

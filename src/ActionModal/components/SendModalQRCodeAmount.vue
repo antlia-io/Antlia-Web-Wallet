@@ -204,7 +204,7 @@ export default {
       return !this.$v.$invalid
     },
     clear() {
-      this.$router.push('/wallet') 
+      this.$router.push('/') 
       this.$v.$reset()
 
       this.getAddress = undefined

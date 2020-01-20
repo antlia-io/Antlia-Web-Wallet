@@ -38,32 +38,7 @@
         type="required"
       />
     </TmFormGroup>
-    <TmFormGroup
-      :error="$v.description.$error && $v.description.$invalid"
-      class="action-modal-form-group"
-      field-id="description"
-      field-label="Description"
-    >
-      <TmField
-        id="description"
-        ref="description"
-        v-model.trim="description"
-        type="textarea"
-        class="textarea-large"
-        placeholder="Write your proposal here..."
-      />
-      <TmFormMsg
-        v-if="$v.description.$error && !$v.description.maxLength"
-        :max="$v.description.$params.maxLength.max"
-        name="Description"
-        type="maxLength"
-      />
-      <TmFormMsg
-        v-if="$v.description.$error && !$v.description.required"
-        name="Description"
-        type="required"
-      />
-    </TmFormGroup>
+  <div class="ps-field">
     <TmFormGroup
       :error="$v.requestedfund.$error && $v.requestedfund.$invalid"
       class="action-modal-form-group"
@@ -96,7 +71,59 @@
         type="between"
       />
     </TmFormGroup>
-    <TmFormGroup
+     <TmFormGroup
+      :error="$v.amount.$error && $v.amount.$invalid"
+      class="action-modal-form-group"
+      field-id="amount"
+      field-label="Deposit ANT"
+    >
+      <span class="input-suffix">{{ denom | viewDenom }}</span>
+      <TmField
+        id="amount"
+        v-model="amount"
+        :value="Number(amount)"
+        type="number"
+        @keyup.enter.native="enterPressed"
+      />
+      <TmFormMsg
+        v-if="balance === 0"
+        :msg="`doesn't have any ${viewDenom(denom)}`"
+        name="Wallet"
+        type="custom"
+      />
+      <!-- <TmFormMsg
+        v-else-if="amount > balance"
+        :msg="`doesn't have sufficient ${viewDenom(denom)}`"
+        name="Wallet"
+        type="custom"
+      /> -->
+      <!-- <TmFormMsg
+        v-else-if="amount > 0 && amount < 10000"
+        :msg="`must be greater than or equal to 10,000 ${viewDenom(denom)}`"
+        name="Deposit"
+        type="custom"
+      /> -->
+      <TmFormMsg
+        v-else-if="$v.amount.$error && (!$v.amount.required || amount === 0)"
+        name="Deposit"
+        type="required"
+      />
+      <TmFormMsg
+        v-else-if="$v.amount.$error && !$v.amount.decimal"
+        name="Deposit"
+        type="numberic"
+      />
+      <TmFormMsg
+        v-else-if="$v.amount.$error && !$v.amount.between"
+        :max="$v.amount.$params.between.max"
+        :min="$v.amount.$params.between.min"
+        :msg="`doesn't have sufficient ${viewDenom(denom)}`"
+        name="Wallet"
+        type="custom"
+      />
+    </TmFormGroup>
+  </div>
+    <!-- <TmFormGroup
       :error="$v.fundcycle.$error && $v.fundcycle.$invalid"
       class="action-modal-form-group"
       field-id="fundcycle"
@@ -126,57 +153,32 @@
         name="Funding Cycle"
         type="between"
       />
-    </TmFormGroup>
-    <TmFormGroup
-      :error="$v.amount.$error && $v.amount.$invalid"
+    </TmFormGroup> -->
+   
+      <TmFormGroup
+      :error="$v.description.$error && $v.description.$invalid"
       class="action-modal-form-group"
-      field-id="amount"
-      field-label="Deposit"
+      field-id="description"
+      field-label="Description"
     >
-      <span class="input-suffix">{{ denom | viewDenom }}</span>
       <TmField
-        id="amount"
-        v-model="amount"
-        :value="Number(amount)"
-        type="number"
-        @keyup.enter.native="enterPressed"
-        readonly
+        id="description"
+        ref="description"
+        v-model.trim="description"
+        type="textarea"
+        class="textarea-large"
+        placeholder="Write your proposal here..."
       />
       <TmFormMsg
-        v-if="balance === 0"
-        :msg="`doesn't have any ${viewDenom(denom)}`"
-        name="Wallet"
-        type="custom"
+        v-if="$v.description.$error && !$v.description.maxLength"
+        :max="$v.description.$params.maxLength.max"
+        name="Description"
+        type="maxLength"
       />
       <TmFormMsg
-        v-else-if="balance > 0 && balance < 10000"
-        :msg="`doesn't have 10,000 ${viewDenom(denom)}`"
-        name="Wallet"
-        type="custom"
-      />
-      <TmFormMsg
-        v-else-if="amount > 0 && amount < 10000"
-        :msg="`must be greater than or equal to 10,000 ${viewDenom(denom)}`"
-        name="Deposit"
-        type="custom"
-      />
-      <TmFormMsg
-        v-else-if="$v.amount.$error && (!$v.amount.required || amount === 0)"
-        name="Deposit"
+        v-if="$v.description.$error && !$v.description.required"
+        name="Description"
         type="required"
-      />
-      <TmFormMsg
-        v-else-if="$v.amount.$error && !$v.amount.decimal"
-        name="Deposit"
-        type="numberic"
-      />
-      <TmFormMsg
-        v-else-if="$v.amount.$error && !$v.amount.between"
-        :max="$v.amount.$params.between.max < 10000 ? $v.amount.$params.between.min : $v.amount.$params.between.max"
-        :min="$v.amount.$params.between.min"
-        :msg="`doesn't have 10,000 ${viewDenom(denom)}`"
-        name="Wallet"
-        type="custom"
       />
     </TmFormGroup>
   </ActionModal>
@@ -301,18 +303,18 @@ export default {
       amount: {
         required: x => !!x && x !== `0`,
         decimal,
-        between: between(10000, atoms(this.balance))
+        between: between(0, atoms(this.balance))
       },
       requestedfund: {
         required: x => !!x && x !== `0`,
         decimal,
         between: between(0, this.minting)
       },
-      fundcycle: {
-        required: x => !!x && x !== `0`,
-        decimal,
-        last: between(1, 6)
-      },
+      // fundcycle: {
+      //   required: x => !!x && x !== `0`,
+      //   decimal,
+      //   last: between(1, 6)
+      // },
     }
   },
   mounted() {

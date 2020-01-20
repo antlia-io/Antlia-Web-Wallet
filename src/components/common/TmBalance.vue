@@ -1,12 +1,40 @@
 <template>
-  <div class="card">
-    <div class="row">
-      <div class="col-lg-12">
-        <h3>Total {{ num.viewDenom(bondDenom) }}:</h3>
-        <h2 class="total-atoms__value color">{{ totalAtomsDisplay | prettyLong }}</h2>
+  <div class="ratebox-sidebar">
+    <div class="card">
+      <div class="title-logout box-header">
+        <h4>Public Address</h4>
+        <router-link to="/scanqr" v-if="session.signedIn">
+          <!-- <i v-tooltip.bottom.end="'Sign Out'" class="material-icons">
+        exit_to_app
+          </i>-->
+          <img src="~assets/images/logout.png" v-tooltip.bottom.end="'Scan QR Code'" />
+        </router-link>
+      </div>
+      <div v-if="session.signedIn" class="br-top">
+        <TmBtn value="Create QR Code" class="custom-btn" @click.native="showModal()" />
+        <SignModal ref="signModal" />
+        <div class="vadrs">
+          <p>Create QR Code to verify address</p>
+        </div>
+        <div class="publicaddress">
+          <Bech32 :address="session.address || ''" long-form />
+        </div>
       </div>
     </div>
-    <b-progress v-if="hidebar" class="mt-2" :max="max" show-value>
+    <div class="card">
+      <div class="box-header">
+        <h4>Total {{ num.viewDenom(bondDenom) }}:</h4>
+      </div>
+      <div class="chart-value">
+        <!-- <div class="graph-set">
+          <PieChart :data="chartData" :options="chartOptions"></PieChart>
+          </div> -->
+
+        <img class="chart-set" src="~assets/images/chart_donut_pie.png" />
+        <p class="total-atoms__value color">{{ totalAtomsDisplay | prettyLong }}</p>
+      </div>
+    </div>
+    <!-- <b-progress v-if="hidebar" class="mt-2" :max="max" show-value>
       <b-progress-bar
         :value="((num.atoms(liquidAtoms)) *100 ) / (num.atoms(totalAtoms))"
         :label="`${(((num.atoms(liquidAtoms)) *100 ) / (num.atoms(totalAtoms))).toFixed(2)}%`"
@@ -25,65 +53,124 @@
         variant="danger"
         animated
       ></b-progress-bar>
-    </b-progress>
-    <div class="row textalign">
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
-        
-        <h3><p class="green"></p>Liquid {{ num.viewDenom(bondDenom) }}:</h3>
-        <h2 class="color">{{ unbondedAtoms | prettyLong }}</h2>
+    </b-progress>-->
+
+    <div class="card">
+      <div class="box-header">
+        <h4>
+          <!-- <p class="green"></p> -->
+          Liquid {{ num.viewDenom(bondDenom) }}:
+        </h4>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
-        
-        <h3><p class="blue"></p>Delegated {{ num.viewDenom(bondDenom) }}:</h3>
-        <h2 class="color">{{ delegated | prettyLong }}</h2>
-      </div>
-       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment">
-        <h3><p class="purple"></p>Pending {{ num.viewDenom(bondDenom) }}:</h3>
-        <h2 class="color">{{ unbondingAtoms | prettyLong }}</h2>
-      </div>
-      <div v-if="rewards" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 alignment display">
-        <h3 class="margintop">Available Rewards:</h3>
-        <!-- <h2 class="color topleft">{{ rewards }}  -->
-          <TmBtn
-            id="withdraw-btn"
-            :value="rewards"
-            :disabled="!readyToWithdraw"
-            :to="''"
-            type="anchor"
-            color="primary"
-            class="withdrawbtn"
-            @click.native="readyToWithdraw && onWithdrawal()"
-          />
-          <!-- </h2> -->
-       
+      <div class="chart-value">
+        <img class="chart-set" src="~assets/images/chart_donut_pie.png" />
+        <p class="total-atoms__value color">{{ unbondedAtoms | prettyLong }}</p>
       </div>
     </div>
-    <ModalWithdrawRewards
-      ref="ModalWithdrawRewards"
-      :rewards="totalRewards"
-      :denom="bondDenom"
-    />
+
+    <div class="card">
+      <div class="box-header">
+        <h4>
+          <!-- <p class="blue"></p> -->
+          Delegated {{ num.viewDenom(bondDenom) }}:
+        </h4>
+      </div>
+      <div class="chart-value">
+        <img class="chart-set" src="~assets/images/chart_donut_pie.png" />
+        <p class="total-atoms__value color">{{ delegated | prettyLong }}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="box-header">
+        <h4>
+          <!-- <p class="purple"></p> -->
+          Pending {{ num.viewDenom(bondDenom) }}:
+        </h4>
+      </div>
+      <div class="chart-value">
+        <img class="chart-set" src="~assets/images/chart_donut_pie.png" />
+        <p class="total-atoms__value color">{{ unbondingAtoms | prettyLong }}</p>
+      </div>
+    </div>
+
+  
+      <div v-if="rewards" class="card  display">
+        <div class="box-header">
+          <h4 class="margintop">Available Rewards:</h4>
+        </div>
+        <div class="chart-value">
+          <img class="chart-set" src="~assets/images/chart_donut_pie.png" />
+          <div class="reward-withdraw">
+            <p>{{ rewards }}</p>
+            <TmBtn
+              v-if="session.signedIn"
+              id="withdraw-btn"
+              value="Withdraw"
+              :to="''"
+              type="anchor"
+              color="primary"
+              class="withdrawbtn"
+              @click.native="readyToWithdraw && onWithdrawal()"
+            />
+          </div>
+       <!-- :disabled="!readyToWithdraw" -->
+      </div>
+    </div>
+    <ModalWithdrawRewards ref="ModalWithdrawRewards" :rewards="totalRewards" :denom="bondDenom" />
   </div>
 </template>
 <script>
 import num from "scripts/num"
 import { mapGetters } from "vuex"
-import { atoms as toAtoms , prettyLong} from "../../scripts/num.js"
+import { atoms as toAtoms, prettyLong } from "../../scripts/num.js"
 import ModalWithdrawRewards from "src/ActionModal/components/ModalWithdrawRewards"
 import TmBtn from "./TmBtn"
+import Bech32 from "./Bech32"
 import "bootstrap/dist/css/bootstrap.css"
+import SignModal from "src/ActionModal/components/SignModal"
+// import PieChart from "./common/PieChart.js";
 
 export default {
   name: `tm-balance`,
-  components: {TmBtn,ModalWithdrawRewards},
-  data() {
+  components: { 
+    TmBtn, 
+    ModalWithdrawRewards, 
+    Bech32, 
+    SignModal, 
+    // PieChart
+     },
+      data() {
     return {
-      num,
+       num,
       lastUpdate: 0,
       value: 0,
-      max: 100
-    }
+      max: 100,
+      chartOptions: {
+        hoverBorderWidth: 20
+      },
+      chartData: {
+        hoverBackgroundColor: "red",
+        hoverBorderWidth: 10,
+        labels: ["Green", "Red", "Blue"],
+        datasets: [
+          {
+            label: "Data One",
+            backgroundColor: ["#41B883", "#E46651", "#00D8FF"],
+            data: [1, 10, 5]
+          }
+        ]
+      }
+    };
   },
+  // data() {
+  //   return {
+  //     num,
+  //     lastUpdate: 0,
+  //     value: 0,
+  //     max: 100
+  //   }
+  // },
   filters: {
     toAtoms,
     prettyLong
@@ -110,7 +197,10 @@ export default {
       return this.wallet.loaded && this.delegation.loaded
     },
     hidebar() {
-      return this.num.atoms(this.totalAtoms) || this.num.atoms(this.liquidAtoms) !== 0
+      return (
+        this.num.atoms(this.totalAtoms) ||
+        this.num.atoms(this.liquidAtoms) !== 0
+      )
     },
     totalAtomsDisplay() {
       return this.loaded ? this.num.atoms(this.totalAtoms) : `--`
@@ -121,8 +211,8 @@ export default {
     unbondingAtoms() {
       return this.loaded ? this.num.atoms(this.oldUnbondingAtoms) : `--`
     },
-    delegated(){
-      return this.loaded ? (this.num.atoms(this.oldBondedAtoms)) : `--`
+    delegated() {
+      return this.loaded ? this.num.atoms(this.oldBondedAtoms) : `--`
     },
     readyToWithdraw() {
       return this.totalRewards > 0
@@ -135,11 +225,11 @@ export default {
       return this.num.fullDecimals(
         this.num.atoms(rewards && rewards > 10 ? rewards : 0)
       )
-    },
+    }
     // LiquidbarValue() {
     //   if (this.num.atoms(this.totalAtoms) === 0)
     //     return 0
-    //   else 
+    //   else
     //     return (((this.num.atoms(this.liquidAtoms)) * 100) / (this.num.atoms(this.totalAtoms)))
     // }
   },
@@ -174,8 +264,17 @@ export default {
     onWithdrawal() {
       this.$refs.ModalWithdrawRewards.open()
     },
+    showModal() {
+      this.$refs.signModal.open()
+    },
+
+    signOut() {
+      this.$store.dispatch(`signOut`)
+      localStorage.setItem(`qraddress`, undefined)
+      localStorage.setItem(`qramount`, undefined)
+    }
   },
-  mounted(){
+  mounted() {
     this.totalAtoms
     this.oldBondedAtoms
     this.oldUnbondingAtoms
@@ -185,25 +284,79 @@ export default {
 }
 </script>
 <style scoped>
+.card {
+  background: #1c2340;
+  padding: 0;
+}
+.card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.br-top {
+  border-top: 1px solid #3c466c;
+  padding: 1rem;
+}
+.vadrs {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0 0 1rem;
+}
+.vadrs p {
+  color: #848688 !important;
+  font-size: 10px;
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid #3c466c;
+}
+.card p {
+  color: #fff;
+  font-weight: 600;
+}
 .mt-2.progress {
   margin: 1rem !important;
 }
-
+.box-header {
+  padding: 0.7rem 1rem;
+}
+.title-logout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+}
+.title-logout img {
+  width: 20px;
+}
+.chart-value {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid #3c466c;
+  padding: 1rem;
+}
+.chart-set {
+  width: 50px;
+  margin: 0 1rem 0 0;
+  display: block;
+}
 .header-balance {
   display: flex;
   padding: 1rem 0 2.5rem 1rem;
 }
-
-/* .display {
-  display: contents
-} */
+.reward-withdraw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+}
 
 .margintop {
-  margin-top: 0.2rem !important
+  margin-top: 0.2rem !important;
 }
 
 h3 {
-  color: black !important;
+  color: white !important;
   font-size: 1rem !important;
   display: inline;
   /* line-height: 1.2; */
@@ -211,16 +364,15 @@ h3 {
 
 .topleft {
   margin-top: 0.2rem;
-  margin-left: 0.3rem
+  margin-left: 0.3rem;
 }
 
 .textalign {
-  text-align: left
+  text-align: left;
 }
 
 .withdrawbtn {
-  margin-bottom: .5rem;
-  margin-left: .5rem
+  width: 30% !important;
 }
 
 .col-md-4 {
@@ -232,14 +384,53 @@ h3 {
 }
 
 h2 {
-  color: black !important;
+  color: white !important;
   font-size: 1rem !important;
   display: inline;
   margin-bottom: 0.5rem;
   overflow: hidden;
-  font-weight: 500
+  font-weight: 500;
 }
+ .ratebox-sidebar {
+    width: 100%;
+    padding: 1rem 1rem 1rem 0;
+  }
+  /* @media (min-width: 1920px){
+  .ratebox-sidebar {
+    width: 25rem;
+    padding: 1rem 1rem 1rem 0;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1680px) {
+  .ratebox-sidebar {
+    width: 20rem;
+    padding: 1rem 1rem 1rem 0;
+  }
+} */
 
+
+@media (max-width: 1300px) {
+  .ratebox-sidebar {
+    width: 100%;
+    padding: 1rem 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .card{
+    width: 32%;
+  }
+}
+@media (max-width: 991px) {
+  .card{
+    width: 49%;
+  }
+}
+@media (max-width: 575px) {
+  .card{
+    width: 100%;
+  }
+}
 .displayinline {
   display: inline-flex;
 }
@@ -274,15 +465,6 @@ h2 {
   height: 15px;
   display: -webkit-inline-box;
   margin: 0 5px 0 0;
-}
-
-.color {
-  color: #0a73b1 !important;
-}
-
-p {
-  margin-bottom: 0 !important;
-  margin-top: 2px
 }
 
 .total-atoms.top-section {
@@ -326,13 +508,13 @@ p {
 @media screen and (max-width: 867px) {
   .col-md-4 {
     display: flex;
-    max-width: none
+    max-width: none;
   }
 }
 
 @media screen and (max-width: 768px) {
   .display {
-    display: block
+    display: block;
   }
 }
 
@@ -342,7 +524,7 @@ p {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-}
+  }
 }
 /* TODO fix scaling on medium sized screens and pick proper break point */
 @media screen and (max-width: 550px) {
@@ -367,7 +549,7 @@ p {
 
 @media screen and (max-width: 320px) {
   .withdrawbtn {
-    margin-left: 0rem !important
+    margin-left: 0rem !important;
   }
 }
 </style>

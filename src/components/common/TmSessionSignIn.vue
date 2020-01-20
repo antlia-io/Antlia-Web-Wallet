@@ -114,7 +114,7 @@ export default {
         }
         else if (localStorage.getItem(`qramount`)==="undefined" && localStorage.getItem(`qraddress`)==="undefined")
         {  
-          this.$router.push(`/wallet`)
+          this.$router.push(`/`)
         }
       } else {
         this.error = `The provided username or password is wrong.`

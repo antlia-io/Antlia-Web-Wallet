@@ -55,6 +55,6 @@ describe(`SessionExtension`, () => {
       sessionType: `extension`,
       address: "cosmosaddress123"
     })
-    expect(wrapper.vm.$router.push).toHaveBeenCalledWith(`/wallet`)
+    expect(wrapper.vm.$router.push).toHaveBeenCalledWith(`/`)
   })
 })

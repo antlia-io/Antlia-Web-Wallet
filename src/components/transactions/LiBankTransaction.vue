@@ -9,8 +9,11 @@
     :hide-meta-data="hideMetaData"
   >
     <template v-if="address === ''">
+      <div slot="type">
+        Send
+      </div>
       <div slot="caption">
-        Sent <b>{{ txAmount | toAtoms | prettyLong }}</b>
+         <b>{{ txAmount | toAtoms | prettyLong }}</b>
         <span>{{ txDenom | viewDenom }}</span>
       </div>
       <span slot="details">
@@ -22,8 +25,11 @@
       </span>
     </template>
     <template v-else-if="sent">
+       <div slot="type">
+        Send
+      </div>
       <div slot="caption">
-        Sent <b>{{ txAmount | toAtoms | prettyLong }}</b>
+        <b>{{ txAmount | toAtoms | prettyLong }}</b>
         <span>{{ txDenom | viewDenom }}</span>
       </div>
       <span slot="details">
@@ -37,8 +43,11 @@
       </span>
     </template>
     <template v-else>
+      <div slot="type">
+        Received
+      </div>
       <div slot="caption">
-        Received <b>{{ txAmount | toAtoms | prettyLong }}</b>
+         <b>{{ txAmount | toAtoms | prettyLong }}</b>
         <span>{{ txDenom | viewDenom }}</span>
       </div>
       <span slot="details"> From &nbsp; <Bech32 :address="sender" /> </span>
@@ -50,6 +59,7 @@
 import Bech32 from "common/Bech32"
 import LiTransaction from "./LiTransaction"
 import { atoms as toAtoms, viewDenom, prettyLong } from "../../scripts/num.js"
+import PanelSort from "staking/PanelSort"
 
 export default {
   name: `li-bank-transaction`,

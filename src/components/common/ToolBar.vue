@@ -1,15 +1,23 @@
 <template>
   <div class="tool-bar">
     <slot />
-    <a v-if="session.signedIn" id="signOut-btn" @click="signOut()">
+    <!-- <a v-if="session.signedIn" id="signOut-btn" @click="signOut()">
       <i v-tooltip.bottom.end="'Sign Out'" class="material-icons">
         exit_to_app
       </i>
-    </a>
+    </a> -->
+     <TmBtn
+      v-if="session.signedIn"
+      id="signOut-btn"
+      class="sign-in-button"
+      value="Sign Out"
+      color="primary"
+       @click.native="signOut()"
+    />
     <TmBtn
       v-if="!session.signedIn"
       class="sign-in-button"
-      value="Sign In"
+      value="Join Wallet"
       color="primary"
       @click.native="signIn()"
     />
@@ -33,7 +41,7 @@ export default {
   },
   methods: {
     signIn() {
-      this.$router.push(`/welcome`)
+      this.$router.push(`/existing`)
     },
     signOut() {
       this.$store.dispatch(`signOut`)
@@ -53,7 +61,8 @@ export default {
 }
 
 .sign-in-button {
-  margin: 1rem 0 1rem 1rem;
+  margin: 1rem auto;
+  width: 200px;
 }
 
 .tool-bar i {

@@ -41,6 +41,7 @@
             min="5"
           />
         </TmFormGroup>
+          <div class="ps-field">
         <TmFormGroup
           :error="$v.fields.signUpPassword.$error"
           field-id="sign-up-password"
@@ -94,6 +95,7 @@
             type="match"
           />
         </TmFormGroup>
+          </div>
         <TmFormGroup
           field-id="sign-up-seed"
           class="sign-up-seed-group"
@@ -244,7 +246,7 @@ export default {
         }
         else if (localStorage.getItem(`qramount`)==="undefined" && localStorage.getItem(`qraddress`)==="undefined")
         {  
-          this.$router.push(`/wallet`)
+          this.$router.push(`/`)
         }
       } catch (error) {
         this.$toast.open({

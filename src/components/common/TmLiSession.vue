@@ -1,16 +1,16 @@
 <template>
   <router-link :to="route" class="tm-li-session">
-    <div class="tm-li-session-icon">
+    <!-- <div class="tm-li-session-icon">
       <i class="material-icons circle">{{ icon }}</i>
-    </div>
+    </div> -->
     <div class="tm-li-session-text">
       <div class="tm-li-session-title">
         <span>{{ title }}</span>
       </div>
     </div>
-    <div class="tm-li-session-icon">
+    <!-- <div class="tm-li-session-icon">
       <i class="material-icons">arrow_forward</i>
-    </div>
+    </div> -->
   </router-link>
 </template>
 
@@ -38,15 +38,16 @@ export default {
 .tm-li-session {
   display: flex;
   padding: 1rem;
-  margin-bottom: 0.25rem;
-  border: 2px solid var(--bc);
-  background-color: white;
-  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  /* border: 1px solid #c7c7c7; */
+  background: #d6ddef;
+  border-radius: 3px;
+  width: 49%;
 }
 
 .tm-li-session:hover {
   cursor: pointer;
-  background: var(--hover-bg);
+  /* background: var(--hover-bg); */
 }
 
 .tm-li-session-icon {
@@ -60,9 +61,10 @@ export default {
 }
 
 .tm-li-session-title {
-  color: black;
-  font-size: var(--h4);
+  color: #004bff;
+  font-size: 1rem;
   font-weight: 400;
+  text-align: center;
 }
 
 .tm-li-session-text {
@@ -70,7 +72,6 @@ export default {
   display: flex;
   justify-content: center;
   flex-flow: column nowrap;
-  padding: 0 1rem;
 }
 
 .material-icons.circle {

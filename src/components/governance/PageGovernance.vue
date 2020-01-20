@@ -1,7 +1,7 @@
 <template>
   <TmPage class="governance" data-title="Governance">
     <TabParameters />
-    <div class="row buttoncenter">
+    <!-- <div class="row buttoncenter">
       <TmBtn
         id="propose-btn"
         slot="header-buttons"
@@ -10,8 +10,8 @@
         color="primary"
         @click.native="onPropose"
       />
-    </div>
-    <Tabs v-if="tabs" :tabs="tabs" />
+    </div> -->
+    <!-- <Tabs v-if="tabs" :tabs="tabs" /> -->
     <ModalPropose ref="modalPropose" :denom="depositDenom" />
     <router-view />
   </TmPage>

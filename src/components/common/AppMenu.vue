@@ -1,41 +1,97 @@
 <template>
   <menu class="app-menu">
     <div class="app-menu-main">
+        <router-link
+        class="app-menu-item hide-xs"
+        :class="{active: (this.$route.fullPath === '/my-delegations') || (this.$route.fullPath === '/validators') || (this.$route.fullPath === '/validators/') || (this.$route.fullPath === '/pending-delegations') || (this.$route.fullPath === '/staking/validators/'+$route.params.validator)}"
+        to="/"
+        title="My Wallet"
+        @click.native="close"
+      >
+       <i class="material-icons">
+        home
+      </i>
+        <span class="app-menu-title">
+          My Wallet
+        </span>
+      </router-link>
       <router-link
         class="app-menu-item hide-xs"
         :class="{active: (this.$route.fullPath === '/wallet') || (this.$route.fullPath === '/send') || (this.$route.fullPath === '/sendAmount')}"
         to="/wallet"
         exact="exact"
-        title="Wallet"
+        title="Transactions"
         @click.native="close"
       >
-        <h2 class="app-menu-title">
-          Wallet
-        </h2>
+        <i class="material-icons">
+        swap_horiz
+      </i>
+        <span class="app-menu-title">
+          Transactions
+        </span>
       </router-link>
-      <router-link
-        class="app-menu-item hide-xs"
-        :class="{active: (this.$route.fullPath === '/staking/my-delegations') || (this.$route.fullPath === '/staking/validators') || (this.$route.fullPath === '/staking/validators/'+$route.params.validator)}"
-        to="/staking/validators/"
-        title="Staking"
-        @click.native="close"
-      >
-        <h2 class="app-menu-title">
-          Staking
-        </h2>
-      </router-link>
-      <router-link
+        <router-link
         class="app-menu-item hide-xs"
         :class="{active: (this.$route.fullPath === '/governance/'+$route.params.proposalId)}"
         to="/governance/proposals"
-        title="Governance"
+        title="Proposals"
         @click.native="close"
       >
-        <h2 class="app-menu-title">
-          Governance
-        </h2>
+        <i class="material-icons">
+        assignment
+      </i>
+        <span class="app-menu-title">
+          Proposals
+        </span>
       </router-link>
-      <router-link
+            <router-link
+        class="app-menu-item hide-xs"
+        :class="{active: (this.$route.fullPath === '/settings') || (this.$route.fullPath === '/send') || (this.$route.fullPath === '/sendAmount')}"
+        to="/settings"
+        exact="exact"
+        title="Settings"
+        @click.native="close"
+      >
+        <i class="material-icons">
+        build
+      </i>
+        <span class="app-menu-title">
+          Settings
+        </span>
+      </router-link>
+            <router-link
+        class="app-menu-item hide-xs"
+             :class="{active: (this.$route.fullPath === '/help')}"
+        to="/help"
+        exact="exact"
+        title="Help"
+        @click.native="close"
+      >
+        <i class="material-icons">
+        info
+      </i>
+        <span class="app-menu-title">
+          Help
+        </span>
+      </router-link>
+            <router-link
+        class="app-menu-item hide-xs"
+        :class="{active: (this.$route.fullPath === '/whatsnew')}"
+        to="/whatsnew"
+        exact="exact"
+        title="What's New"
+        @click.native="close"
+      >
+        <i class="material-icons">
+        fiber_new
+      </i>
+        <span class="app-menu-title">
+          What's New
+         </span>
+      </router-link>
+    
+     
+      <!-- <router-link
         class="app-menu-item hide-xs"
         :class="{active: (this.$route.fullPath === '/sign')}"
         to="/sign"
@@ -43,19 +99,25 @@
         title="Sign/Verify"
         @click.native="close"
       >
-        <h2 class="app-menu-title">
+        <i class="material-icons">
+        exit_to_app
+      </i>
+        <span class="app-menu-title">
           Sign/Verify
-        </h2>
-      </router-link>
-      <li
+        </span>
+      </router-link> -->
+      <!-- <li
         v-if="totalAtomsDisplay === 0 && session.signedIn"
         class="app-menu-item hide-xs"
         title="Get Coins"
         @click="close() & getFaucet()"
       >
-        <h2 class="app-menu-title">
+        <i class="material-icons">
+        exit_to_app
+      </i>
+        <span class="app-menu-title">
           Get Coins
-        </h2>
+        </span>
       </li>
        <router-link
         class="app-menu-item hide-xs"
@@ -65,10 +127,26 @@
         title="Network"
         @click.native="close"
       >
-        <h2 class="app-menu-title">
+        <i class="material-icons">
+        exit_to_app
+      </i>
+        <span class="app-menu-title">
           Network
-        </h2>
-      </router-link>
+        </span>
+      </router-link> -->
+        <!-- <div class="buttons">
+      <TmBtn
+        v-if="!session.signedIn"
+          class="joinbtn"
+          value="Join Wallet"
+          color="primary"
+          @click.native="showModal()"
+        /> 
+      </div> -->
+          <ToolBar />
+      <div class="explorer-link">
+        <a href="https://www.antlia.io/" target="_blank" rel=”noopener”>Go to Explorer</a>
+      </div>
       <!-- <div class="buttons">
       <TmBtn
           value="Sign"
@@ -82,8 +160,8 @@
         />
       </div> -->
     </div>
-    <SignModal ref="signModal" />
-    <VerifyModal ref="verifyModal" />
+    <!-- <SignModal ref="signModal" />
+    <VerifyModal ref="verifyModal" /> -->
   </menu>
 </template>
 
@@ -99,6 +177,7 @@ import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/index.css';
 import SignModal from "src/ActionModal/components/SignModal"
 import VerifyModal from "src/ActionModal/components/VerifyModal"
+import ToolBar from "common/ToolBar"
 Vue.use(VueToast);
 
 export default {
@@ -106,7 +185,8 @@ export default {
   components: {
     TmBtn,
     VerifyModal,
-    SignModal
+    SignModal,
+    ToolBar,
   },
   filters: {
     atoms,
@@ -160,6 +240,7 @@ export default {
 </script>
 
 <style scoped>
+
 .app-menu {
   z-index: var(--z-appMenu);
   display: flex;
@@ -167,26 +248,39 @@ export default {
   position: relative;
   height: 100%;
 }
-
+.app-menu-main{
+  overflow-y: auto;
+}
 .app-menu .app-menu-item {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 0.5rem 0.5rem 0.5rem 0.75rem;
-  margin: 0.5rem 1rem;
-  font-weight: 400;
-  font-size: 14px;
-  color: var(--text);
-  border-radius: 0.25rem;
+  padding: 1rem 1rem 1rem 2rem;
+  margin: 0;
+  color: #fff; 
   transition: all 0.5s ease;
 }
 
 .buttons {
-  padding: 1rem
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 1rem auto;
+}
+.tm-btn{
+  font-weight: 600 !important;
+}
+.app-menu .material-icons{
+  font-size:24px;
+  font-weight: 600;
+  margin: 0 1rem 0 0;
+  color: #fff !important;
 }
 
 .app-menu-item:hover {
-  background: var(--hover-bg);
+  /* background: var(--hover-bg); */
+  background: #2c3255;
+  
 }
 
 .session-link {
@@ -219,49 +313,65 @@ export default {
   cursor: pointer;
 }
 
-.app-menu .app-menu-item--link:hover {
+/* .app-menu .app-menu-item--link:hover {
   color: var(--link);
-}
+} */
 
-.app-menu .app-menu-item.router-link-active {
-  background: #0a73b1;
+.app-menu .app-menu-item .router-link-active {
+  background: #2c3255;
 }
 
 .active {
-  background: #0a73b1
+  background: #2c3255;
 }
 
-.app-menu .app-menu-item.router-link-active i {
+.app-menu .app-menu-item .router-link-active i {
   color: var(--tertiary);
 }
 
-.app-menu .app-menu-item.router-link-active h2 {
-  color: var(--bright);
-  font-weight: 500;
+.app-menu .app-menu-item .router-link-active span {
+  /* color: var(--bright); */
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: 14px;
+  margin-bottom: 0 !important;
 }
-
+.explorer-link{
+  display: none;
+}
 @media screen and (max-width: 1023px) {
   .app-menu {
-    background: #232021;
     height: 100vh;
   }
-
-  .app-menu .app-menu-item {
-    padding: 0.5rem;
-  }
-
-  .app-menu-title {
-    font-size: x-large;
-    line-height: 1.125;
-    font-weight: inherit;
-    letter-spacing: 0.004em;
-    color: var(--bright);
-  }
+.explorer-link{
+  background: #2c3255;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+.explorer-link a{
+ font-size: 16px;
+ color: #fff;
+ font-weight: 600; 
+ text-align: center;
+ text-transform: uppercase;
+}
+.app-menu .app-menu-item {
+  padding: 1rem;
 }
 
-@media screen and (min-width: 1023px) {
+  /* .app-menu-title {
+    font-size: x-large;
+    line-height: 1.125;
+    font-weight: 600;
+    letter-spacing: 0.004em;
+    color: var(--bright);
+  } */
+}
+
+/* @media screen and (min-width: 1023px) {
   .app-menu {
     width: var(--width-side);
   }
-}
+} */
 </style>
