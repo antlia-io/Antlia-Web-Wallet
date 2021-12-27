@@ -9,7 +9,7 @@
 // parse command line options
 const options = {
   port: 9071,
-  target: `https://lcd.testnet.color-platform.org/`
+  target: `https://lcd.antlia.io/`
 }
 
 // Start the proxy

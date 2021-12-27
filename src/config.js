@@ -2,8 +2,8 @@ const dev = process.env.NODE_ENV === `development`
 const stargate =
   process.env.STARGATE ||
   (dev
-    ? `https://proxy.testnet.color-platform.rnssol.com:9071/`
-    : `https://proxy.testnet.color-platform.org:9061/`)
+    ? `https://proxy.antlia.io:9071/`
+    : `https://proxy.antlia.io:9071/`)
 
 const faucet =
   process.env.FAUCET ||
@@ -26,15 +26,15 @@ const qrcode =
 const rpc =
   process.env.RPC ||
   (dev
-    ? `https://rpc.testnet.color-platform.rnssol.com/`
-    : `https://rpc.testnet.color-platform.org/`)
+    ? `https://rpc.antlia.io/`
+    : `https://rpc.antlia.io/`)
 
-const chain = process.env.CHAIN || (dev ? `local-testnet` : `color-testnet-02`)
+const chain = process.env.CHAIN || (dev ? `antlia-test-01` : `antlia-test-01`)
 
 export default {
   name: `colorwallet`,
   development: dev,
-  network: process.env.NETWORK || `local-testnet`,
+  network: process.env.NETWORK || `antlia-test-01`,
   stargate,
   rpc,
   qrcode,
